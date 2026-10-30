@@ -68,6 +68,10 @@ header img{height:40px;width:auto}
 .hero h1{font-size:clamp(34px,5.6vw,56px)}
 .hero h1 em{font-style:normal;color:var(--terra-esc)}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:6px}
+.selos-facil{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:600;color:var(--grafite)}
+.selos-facil li{position:relative;padding-left:24px}
+.selos-facil li::before{content:"✓";position:absolute;left:0;top:0;color:var(--salvia);font-weight:700}
+@media (max-width:720px){.selos-facil{flex-direction:column;gap:6px}}
 .hero-vis{flex:1 1 300px;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative}
 .hero-vis .legenda{position:relative;z-index:1;margin:0}
 .blob{position:absolute;border-radius:50%;z-index:0}
@@ -344,7 +348,12 @@ footer a{color:#fff}
     <div class="hero-txt">
       <div class="eyebrow">Para psicólogas e psicólogos</div>
       <h1>Conteúdo para o seu perfil profissional, <em>sem aparecer na câmera.</em></h1>
-      <p class="lead">102 prompts feitos para a psicologia, criados para respeitar o Código de Ética do CFP, e um calendário de 365 dias com 700 temas. O resultado são vídeos curtos de texto para Reels, feed e Stories: você copia, cola, revisa e posta em cerca de 15 minutos por vídeo.</p>
+      <p class="lead">102 comandos prontos (prompts) feitos para a psicologia, criados para respeitar o Código de Ética do CFP, e um calendário de 365 dias com 700 temas. O resultado são vídeos curtos de texto para Reels, feed e Stories: você copia, cola, revisa e posta em cerca de 15 minutos por vídeo.</p>
+      <ul class="selos-facil">
+        <li>Sem precisar entender de IA</li>
+        <li>Sem fórmulas nem planilhas complicadas</li>
+        <li>Passo a passo do primeiro dia</li>
+      </ul>
       <div class="hero-cta">
         <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="topo">Quero o kit por R$ 47</a>
         <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
@@ -555,9 +564,9 @@ footer a{color:#fff}
 <section class="faq">
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
+    <details><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. Funciona na versão gratuita do ChatGPT, do Gemini ou do Claude.</p></details>
     <details><summary>Vou precisar aparecer em algum momento?</summary><p>Não na câmera. O formato é texto no centro da tela, sobre um vídeo de fundo, com música. Sem rosto e sem voz. Nos posts de convite, você inclui seu nome e CRP, como pede o Código de Ética.</p></details>
     <details><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram criados para respeitar o Código de Ética do CFP: não fazem diagnóstico, não prometem resultado, não usam depoimentos e não divulgam preço. Mesmo assim, a IA gera um rascunho e a revisão final de cada publicação é sempre sua.</p></details>
-    <details><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. Funciona na versão gratuita do ChatGPT, do Gemini ou do Claude.</p></details>
     <details><summary>Serve para qualquer abordagem?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso.</p></details>
     <details><summary>Quanto tempo leva por vídeo?</summary><p>Cerca de 15 minutos depois que a Ficha está preenchida. Pouco mais de 1 hora para a semana inteira.</p></details>
     <details><summary>Preciso pagar alguma ferramenta?</summary><p>Não. Dá para usar tudo com as versões gratuitas: ChatGPT (ou outra IA), Canva ou CapCut, e bancos de vídeo gratuitos.</p></details>
