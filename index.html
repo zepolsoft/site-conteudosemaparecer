@@ -75,6 +75,20 @@ header img{height:40px;width:auto}
 @media (max-width:720px){.selos-facil{flex-direction:column;gap:6px}}
 .hero-vis{flex:1 1 300px;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative}
 .hero-vis .legenda{position:relative;z-index:1;margin:0}
+.phone-wrap{position:relative;z-index:1}
+.fmt{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--grafite);font-size:13.5px;font-weight:700;padding:8px 14px 8px 10px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(59,54,51,.45);white-space:nowrap;animation:flutua 4.5s ease-in-out infinite alternate}
+.fmt svg{width:18px;height:18px;fill:none;stroke:var(--terra-esc);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fmt.f1{left:-74px;top:16%;--r:-6deg;animation-delay:0s}
+.fmt.f2{right:-82px;top:30%;--r:5deg;animation-delay:-1.2s}
+.fmt.f3{left:-62px;top:60%;--r:4deg;animation-delay:-2.4s}
+.fmt.f4{right:-92px;top:72%;--r:-4deg;animation-delay:-3.4s}
+.fmt.f2 svg,.fmt.f3 svg{stroke:var(--salvia)}
+@keyframes flutua{from{transform:rotate(var(--r)) translateY(0)}to{transform:rotate(var(--r)) translateY(-7px)}}
+@media (max-width:720px){
+  .fmt{font-size:12px;padding:6px 11px 6px 8px;gap:5px}.fmt svg{width:15px;height:15px}
+  .fmt.f1{left:-46px}.fmt.f2{right:-50px;top:22%}.fmt.f3{left:-40px;top:50%}.fmt.f4{right:-56px;top:58%}
+}
+@media (prefers-reduced-motion:reduce){.fmt{animation:none;transform:rotate(var(--r))}}
 .blob{position:absolute;border-radius:50%;z-index:0}
 .phone{position:relative;z-index:1;width:280px;height:540px;border-radius:40px;background:var(--grafite);padding:12px;box-shadow:0 30px 60px -20px rgba(59,54,51,.45)}
 .screen{width:100%;height:100%;border-radius:30px;position:relative;overflow:hidden;background:var(--grafite)}
@@ -363,6 +377,8 @@ footer a{color:#fff}
     <div class="hero-vis">
       <div class="blob" aria-hidden="true" style="width:340px;height:340px;background:var(--salvia-cl);top:-30px;right:-40px"></div>
       <div class="blob" aria-hidden="true" style="width:200px;height:200px;background:var(--pessego);bottom:10px;left:0"></div>
+      <div class="phone-wrap">
+        <div class="fmts" aria-hidden="true"><span class="fmt f1"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M10 9.2v5.6l4.6-2.8z" fill="currentColor"/></svg>Reels</span><span class="fmt f2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3.2 2.2"/><circle cx="12" cy="12" r="4.2"/></svg>Stories</span><span class="fmt f3"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Feed</span><span class="fmt f4"><svg viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="11" height="15" rx="2"/><path d="M3.5 7.5v9M20.5 7.5v9"/></svg>Carrossel</span></div>
       <div class="phone" aria-hidden="true">
         <div class="screen">
           <div class="bars"><span><i></i></span><span><i></i></span><span><i></i></span></div>
@@ -376,7 +392,8 @@ footer a{color:#fff}
           <div class="slide s3"><div class="tag">Mito x Verdade</div><div class="big">Salve para lembrar.</div><div class="ln"></div><div class="sig">@seuperfil · Nome · CRP 00/00000</div></div>
         </div>
       </div>
-      <p class="legenda">Exemplo de vídeo feito com o kit</p>
+      </div>
+      <p class="legenda">Um vídeo, vários formatos: Reels, feed, Stories e carrossel</p>
     </div>
   </div>
 </section>
