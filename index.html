@@ -256,6 +256,8 @@ footer a{color:#fff}
   body{padding-bottom:76px}
 }
 </style>
+<!-- Umami (medição de visitas sem cookies) -->
+<script defer src="https://stats.kitprecocerto.com.br/script.js" data-website-id="519bde5e-3086-4b1c-ae31-8acf3809ff52"></script>
 </head>
 <body>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=981739894395812&ev=PageView&noscript=1"></noscript>
@@ -263,7 +265,7 @@ footer a{color:#fff}
 <header>
   <div class="wrap">
     <img src="img/logo.png" alt="Conteúdo Sem Aparecer" width="126" height="40">
-    <a class="btn btn-sm" href="#oferta">Quero o kit</a>
+    <a class="btn btn-sm" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="menu">Quero o kit</a>
   </div>
 </header>
 
@@ -275,7 +277,7 @@ footer a{color:#fff}
       <h1>Conteúdo para o seu perfil profissional, <em>sem aparecer na câmera.</em></h1>
       <p class="lead">102 prompts feitos para a psicologia e um calendário de 365 dias com 700 temas prontos, criados para respeitar o Código de Ética do CFP. Você copia, cola, revisa e posta em cerca de 15 minutos por vídeo.</p>
       <div class="hero-cta">
-        <a class="btn" href="#oferta">Quero o kit por R$ 47</a>
+        <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="topo">Quero o kit por R$ 47</a>
         <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
       </div>
     </div>
@@ -440,7 +442,7 @@ footer a{color:#fff}
         <li>Guia Comece Aqui (PDF)</li>
         <li>Acesso pela área de membros da Hotmart</li>
       </ul>
-      <a class="btn" href="https://pay.hotmart.com/S108248865H?checkoutMode=10">Garantir meu acesso por R$ 47</a>
+      <a class="btn" href="https://pay.hotmart.com/S108248865H?checkoutMode=10" data-umami-event="checkout">Garantir meu acesso por R$ 47</a>
       <p class="micro center">Compra segura pela Hotmart · Pix, cartão ou boleto · Acesso enviado por e-mail</p>
     </div>
   </div>
@@ -476,7 +478,7 @@ footer a{color:#fff}
   <div class="wrap narrow stack">
     <h2 class="h2">O seu próximo post pode estar pronto em cerca de 15 minutos.</h2>
     <p class="lead">102 prompts, 365 dias de temas e um processo simples, sem aparecer na câmera.</p>
-    <a class="btn" href="#oferta" style="margin-top:6px">Quero o kit por R$ 47</a>
+    <a class="btn" href="#oferta" style="margin-top:6px" data-umami-event="quero-o-kit" data-umami-event-local="final">Quero o kit por R$ 47</a>
     <span class="micro">Acesso imediato · Garantia de 7 dias</span>
   </div>
 </section>
@@ -493,7 +495,7 @@ footer a{color:#fff}
 
 <div class="mbar" id="mbar">
   <b>R$ 47</b>
-  <a class="btn" href="#oferta">Quero o kit</a>
+  <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="barra-fixa">Quero o kit</a>
 </div>
 
 <script>
@@ -510,6 +512,14 @@ document.querySelectorAll('a[href^="https://pay.hotmart.com"]').forEach(function
   new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd();}).observe(hero);
   new IntersectionObserver(function(e){ofVis=e[0].isIntersecting;upd();}).observe(of);
 })();
+</script>
+<script>
+// Umami: registra qual pergunta do FAQ foi aberta
+document.querySelectorAll('.faq details').forEach(function(d){
+  d.addEventListener('toggle',function(){
+    if(d.open && window.umami) umami.track('faq',{pergunta:d.querySelector('summary').textContent.trim()});
+  });
+});
 </script>
 </body>
 </html>
