@@ -38,8 +38,8 @@ p{margin:0}
 .narrow{max-width:760px}
 section{padding:72px 0}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc)}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--terra);color:#fff;font-weight:700;font-size:17px;text-decoration:none;padding:17px 30px;border-radius:12px;min-height:52px;transition:background .2s,transform .2s;text-align:center}
-.btn:hover{background:var(--terra-esc);transform:translateY(-1px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--terra-esc);box-shadow:0 8px 20px -8px rgba(164,95,63,.6);color:#fff;font-weight:700;font-size:17px;text-decoration:none;padding:17px 30px;border-radius:12px;min-height:52px;transition:background .2s,transform .2s;text-align:center}
+.btn:hover{background:#8C4E32;transform:translateY(-1px)}
 .btn:focus-visible{outline:3px solid var(--grafite);outline-offset:3px}
 .micro{font-size:14px;color:var(--texto2)}
 .h2{font-size:clamp(28px,4.4vw,40px)}
@@ -104,6 +104,22 @@ header img{height:40px;width:auto}
 .bump ul{margin:0;padding-left:20px;color:var(--texto2)}
 .bump li{margin:4px 0}
 
+/* por dentro */
+.dentro{background:var(--areia)}
+.dentro-grid{display:flex;flex-wrap:wrap;align-items:flex-end;gap:40px;margin-top:18px}
+.laptop{flex:1 1 560px;min-width:0}
+.laptop .tela{background:var(--grafite);border-radius:16px 16px 0 0;padding:12px 12px 14px}
+.laptop .tela img{border-radius:6px;width:100%}
+.laptop .base{height:16px;background:#cfc6bb;border-radius:0 0 14px 14px;margin:0 -4%;position:relative}
+.laptop .base::after{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:90px;height:6px;background:#bdb3a7;border-radius:0 0 6px 6px}
+.folhas{flex:0 1 300px;position:relative;margin:0 auto;padding:0 0 0 40px}
+.folhas img{width:240px;border-radius:4px;box-shadow:0 18px 40px -16px rgba(59,54,51,.45)}
+.folhas .f1{position:relative;z-index:2;transform:rotate(-3deg)}
+.folhas .f2{position:absolute;top:-18px;left:0;z-index:1;transform:rotate(5deg);opacity:.95}
+.legenda{font-size:14px;color:var(--texto2);margin-top:14px;text-align:center}
+/* bump box */
+.bump-box{border:2px dashed var(--terra);border-radius:22px;padding:34px 28px;background:rgba(255,255,255,.45);position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:36px}
+.selo-op{position:absolute;top:-15px;left:28px;background:var(--terra-esc);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
 /* para quem */
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .box{border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
@@ -166,7 +182,9 @@ footer a{color:#fff}
   header .btn-sm{display:none}
   .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--creme);border-top:1px solid var(--linha);padding:10px 16px;gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .25s}
   .mbar.on{transform:none}
-  .mbar .btn{flex:1;padding:14px 16px;font-size:16px}
+  .mbar .btn{flex:1;padding:14px 16px;font-size:16px;animation:pulso 2.4s ease-in-out infinite}
+  @keyframes pulso{0%,100%{box-shadow:0 0 0 0 rgba(164,95,63,.45)}50%{box-shadow:0 0 0 10px rgba(164,95,63,0)}}
+  @media (prefers-reduced-motion:reduce){.mbar .btn{animation:none}}
   .mbar b{font-family:"Playfair Display",serif;font-size:22px;white-space:nowrap}
   body{padding-bottom:76px}
 }
@@ -214,6 +232,7 @@ footer a{color:#fff}
     <h2 class="h2">O perfil parado está custando clientes</h2>
     <p>Você sabe que muita gente procura psicólogo pelo Instagram. Vê colegas postando todo dia e pensa que deveria fazer o mesmo.</p>
     <p>Mas gravar o próprio rosto dá desconforto. Pensar no que postar toma a noite inteira. E quando você finalmente escreve alguma coisa, sai igual ao que todo perfil de psicologia já publicou, ou fica a dúvida se aquilo pode ser postado.</p>
+    <p>E depois de horas escrevendo, o post aparece para quase ninguém.</p>
     <p class="quote">O problema não é falta de conhecimento. É falta de um processo que transforme o que você sabe em conteúdo.</p>
   </div>
   <div class="wrap" style="margin-top:40px">
@@ -254,12 +273,35 @@ footer a{color:#fff}
   </div>
 </section>
 
+<!-- 4b. POR DENTRO -->
+<section class="dentro">
+  <div class="wrap stack">
+    <div class="eyebrow">Veja por dentro</div>
+    <h2 class="h2">Abriu, viu o dia, postou</h2>
+    <p class="lead">A aba Minha Semana mostra o pilar, o código do prompt e o tema de cada dia. Um clique em "Abrir prompt" leva direto ao texto certo no Banco.</p>
+    <div class="dentro-grid">
+      <figure class="laptop" style="margin:0">
+        <div class="tela"><picture><source media="(max-width:720px)" srcset="img/tela-calendario-m.jpg"><img src="img/tela-calendario.jpg" alt="Aba Minha Semana do Calendário 365, com pilar, código, tema e link do prompt de cada dia" loading="lazy" width="1400" height="720"></picture></div>
+        <div class="base"></div>
+        <figcaption class="legenda">Calendário 365 · temas reais da primeira semana</figcaption>
+      </figure>
+      <figure class="folhas" style="margin:0 auto">
+        <img class="f2" src="img/pdf-rotina.jpg" alt="Página A rotina do dia, do Guia Comece Aqui" loading="lazy" width="909" height="1287">
+        <img class="f1" src="img/pdf-capa.jpg" alt="Capa do Guia Comece Aqui" loading="lazy" width="909" height="1287">
+        <figcaption class="legenda">Guia Comece Aqui (PDF)</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- 5. ORDER BUMP -->
 <section class="bump">
   <div class="wrap">
+   <div class="bump-box">
+    <span class="selo-op">Complemento opcional</span>
     <div class="bump-img"><img src="img/pack-20.jpg" alt="Pack 20 Modelos Canva para Psicólogos" loading="lazy" width="960" height="540"></div>
     <div class="bump-txt">
-      <div class="eyebrow">Opcional, na página de pagamento</div>
+      <div class="eyebrow">Na página de pagamento</div>
       <h2 class="h2">Pack 20 Modelos Canva para Psicólogos</h2>
       <p>Se quiser pular a parte do design, adicione o Pack ao finalizar a compra. São 20 modelos de vídeo em texto centralizado, prontos para editar no Canva:</p>
       <ul>
@@ -269,6 +311,7 @@ footer a{color:#fff}
       </ul>
       <p class="micro">O Pack é um complemento opcional por R$ 27. Ele aparece desmarcado no checkout, e você só leva se quiser.</p>
     </div>
+   </div>
   </div>
 </section>
 
@@ -302,7 +345,7 @@ footer a{color:#fff}
 <section class="oferta center" id="oferta">
   <div class="wrap">
     <h2 class="h2">Um ano de conteúdo organizado, por menos do que o valor de uma sessão.</h2>
-    <p class="lead" style="margin-top:12px">Abra o kit, preencha a ficha e monte o seu primeiro vídeo hoje.</p>
+    <p class="lead" style="margin-top:12px">Terceirizar conteúdo custa todo mês. Aqui você paga uma vez e usa o ano inteiro.</p>
     <div class="offer-card">
       <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
       <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
