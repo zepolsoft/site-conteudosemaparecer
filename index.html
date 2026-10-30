@@ -16,11 +16,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- ===== PIXEL DA META =====
-  Quando criar o Pixel no Gerenciador de Eventos, cole aqui o código base
-  que a Meta fornece (começa com <script>!function(f,b,e,v,n,t,s)...)
-  e apague este comentário. Não precisa mexer em mais nada da página.
-  ========================== -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '981739894395812');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name: 'Kit Conteúdo Sem Aparecer para Psicólogos', content_ids: ['8836086'], content_type: 'product', value: 47, currency: 'BRL'});
+</script>
+<!-- End Meta Pixel Code -->
 
 <style>
 :root{
@@ -191,6 +201,7 @@ footer a{color:#fff}
 </style>
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=981739894395812&ev=PageView&noscript=1"></noscript>
 
 <header>
   <div class="wrap">
@@ -414,6 +425,11 @@ footer a{color:#fff}
   <a class="btn" href="#oferta">Quero o kit</a>
 </div>
 
+<script>
+document.querySelectorAll('a[href^="https://pay.hotmart.com"]').forEach(function(el){
+  el.addEventListener('click',function(){ if(window.fbq) fbq('trackCustom','CliqueComprar',{value:47,currency:'BRL'}); });
+});
+</script>
 <script>
 (function(){
   var bar=document.getElementById('mbar'), hero=document.querySelector('.hero'), of=document.getElementById('oferta');
