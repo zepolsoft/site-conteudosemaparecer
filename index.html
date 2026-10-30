@@ -74,7 +74,7 @@ header img{height:40px;width:auto}
 .phone{position:relative;z-index:1;width:280px;height:540px;border-radius:40px;background:var(--grafite);padding:12px;box-shadow:0 30px 60px -20px rgba(59,54,51,.45)}
 .screen{width:100%;height:100%;border-radius:30px;position:relative;overflow:hidden;background:var(--grafite)}
 /* telas do story: rótulo + título + linha + assinatura, como os posts do kit */
-.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:0 22px;text-align:center;opacity:0;animation:12s linear infinite}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:0 22px;text-align:center;opacity:0;animation:9s linear infinite}
 .slide::before,.slide::after{content:"";position:absolute;border-radius:50%}
 .slide::before{width:170px;height:170px;top:-50px;right:-50px}
 .slide::after{width:130px;height:130px;bottom:-45px;left:-45px}
@@ -93,7 +93,7 @@ header img{height:40px;width:auto}
 .s3::before{background:rgba(239,231,220,.25)}.s3::after{background:rgba(59,54,51,.12)}
 .screen .bars{position:absolute;top:12px;left:16px;right:16px;display:flex;gap:4px;z-index:2}
 .screen .bars span{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.45);box-shadow:0 0 0 .5px rgba(59,54,51,.18);overflow:hidden}
-.screen .bars i{display:block;height:100%;width:0;background:#fff;animation:12s linear infinite}
+.screen .bars i{display:block;height:100%;width:0;background:#fff;animation:9s linear infinite}
 .screen .bars span:nth-child(1) i{animation-name:b1}
 .screen .bars span:nth-child(2) i{animation-name:b2}
 .screen .bars span:nth-child(3) i{animation-name:b3}
@@ -103,8 +103,14 @@ header img{height:40px;width:auto}
 @keyframes b1{0%{width:0}33.3%,99%{width:100%}100%{width:0}}
 @keyframes b2{0%,33.3%{width:0}66.6%,99%{width:100%}100%{width:0}}
 @keyframes b3{0%,66.6%{width:0}99%{width:100%}100%{width:0}}
+/* ícones do Reels (curtir, comentar, salvar); o salvar se preenche na tela 3 */
+.screen .ico{position:absolute;right:11px;bottom:16px;z-index:3;display:flex;flex-direction:column;gap:12px;color:#fff;animation:ico 9s linear infinite}
+.screen .ico svg{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.18))}
+.screen .ico .sv{transform-origin:50% 50%;animation:save 9s linear infinite}
+@keyframes ico{0%,31%{color:#F7F2EA}34%,64%{color:#2F3A30}67%,97%{color:#FFF8F0}100%{color:#F7F2EA}}
+@keyframes save{0%,70%{fill:transparent;transform:scale(1)}74%{fill:currentColor;transform:scale(1.28)}78%,97%{fill:currentColor;transform:scale(1)}100%{fill:transparent;transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){
-  .slide,.screen .bars i{animation:none}
+  .slide,.screen .bars i,.screen .ico,.screen .ico .sv{animation:none}
   .s1{opacity:1}
   .screen .bars span:nth-child(1) i{width:100%}
 }
@@ -305,6 +311,11 @@ footer a{color:#fff}
       <div class="phone" aria-hidden="true">
         <div class="screen">
           <div class="bars"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+          <div class="ico">
+            <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>
+            <svg viewBox="0 0 24 24" class="sv"><path d="M6.5 3.5h11v17l-5.5-4.8-5.5 4.8z"/></svg>
+          </div>
           <div class="slide s1"><div class="tag">Mito</div><div class="big">Terapia é só para quem está em crise.</div><div class="ln"></div><div class="sig">@seuperfil · Nome · CRP 00/00000</div></div>
           <div class="slide s2"><div class="tag">Verdade</div><div class="big">Muita gente busca terapia para se conhecer melhor.</div><div class="ln"></div><div class="sig">@seuperfil · Nome · CRP 00/00000</div></div>
           <div class="slide s3"><div class="tag">Mito x Verdade</div><div class="big">Salve para lembrar.</div><div class="ln"></div><div class="sig">@seuperfil · Nome · CRP 00/00000</div></div>
