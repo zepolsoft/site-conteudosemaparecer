@@ -40,7 +40,7 @@ fbq('track', 'ViewContent', {content_name: 'Kit Conteúdo Sem Aparecer para Psic
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--creme);color:var(--grafite);font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--creme);color:var(--grafite);font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
 img{max-width:100%;height:auto;display:block}
 h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:700;line-height:1.15;margin:0;letter-spacing:-.01em}
 p{margin:0}
@@ -68,15 +68,46 @@ header img{height:40px;width:auto}
 .hero h1{font-size:clamp(34px,5.6vw,56px)}
 .hero h1 em{font-style:normal;color:var(--terra-esc)}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:6px}
-.hero-vis{flex:1 1 300px;display:flex;justify-content:center;position:relative}
+.hero-vis{flex:1 1 300px;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative}
+.hero-vis .legenda{position:relative;z-index:1;margin:0}
 .blob{position:absolute;border-radius:50%;z-index:0}
 .phone{position:relative;z-index:1;width:280px;height:540px;border-radius:40px;background:var(--grafite);padding:12px;box-shadow:0 30px 60px -20px rgba(59,54,51,.45)}
-.screen{width:100%;height:100%;border-radius:30px;background:linear-gradient(160deg,#6f7f6d 0%,#4c5c4b 55%,#3e4a3d 100%);display:flex;flex-direction:column;justify-content:space-between;padding:26px 20px;color:#fff;text-align:center;position:relative;overflow:hidden}
-.screen .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
-.screen .big{font-family:"Playfair Display",serif;font-weight:700;font-size:28px;line-height:1.25;text-shadow:0 2px 12px rgba(0,0,0,.25)}
-.screen .sig{font-size:11px;opacity:.85}
-.screen .bar{position:absolute;top:10px;left:20px;right:20px;height:3px;background:rgba(255,255,255,.3);border-radius:2px}
-.screen .bar i{display:block;width:40%;height:100%;background:#fff;border-radius:2px}
+.screen{width:100%;height:100%;border-radius:30px;position:relative;overflow:hidden;background:var(--grafite)}
+/* telas do story: rótulo + título + linha + assinatura, como os posts do kit */
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:0 22px;text-align:center;opacity:0;animation:12s linear infinite}
+.slide::before,.slide::after{content:"";position:absolute;border-radius:50%}
+.slide::before{width:170px;height:170px;top:-50px;right:-50px}
+.slide::after{width:130px;height:130px;bottom:-45px;left:-45px}
+.slide .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:40px}
+.slide .big{font-family:"Playfair Display",serif;font-weight:700;font-size:26px;line-height:1.25}
+.slide .ln{width:36px;height:2px;border-radius:2px;margin-top:4px}
+.slide .sig{font-size:10.5px;font-weight:600;margin-top:22px;opacity:.7}
+.s1{background:#3B3633;color:#F7F2EA;animation-name:s1}
+.s1 .tag{color:#E0A98C}.s1 .ln{background:#E0A98C}
+.s1::before{background:rgba(156,175,154,.22)}.s1::after{background:rgba(201,139,107,.25)}
+.s2{background:#DDE5DA;color:#2F3A30;animation-name:s2}
+.s2 .tag{color:#5E7A5C}.s2 .ln{background:#5E7A5C}
+.s2::before{background:rgba(156,175,154,.45)}.s2::after{background:rgba(59,54,51,.08)}
+.s3{background:#B5714F;color:#FFF8F0;animation-name:s3}
+.s3 .tag{color:#F3E2D8}.s3 .ln{background:#F3E2D8}
+.s3::before{background:rgba(239,231,220,.25)}.s3::after{background:rgba(59,54,51,.12)}
+.screen .bars{position:absolute;top:12px;left:16px;right:16px;display:flex;gap:4px;z-index:2}
+.screen .bars span{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.45);box-shadow:0 0 0 .5px rgba(59,54,51,.18);overflow:hidden}
+.screen .bars i{display:block;height:100%;width:0;background:#fff;animation:12s linear infinite}
+.screen .bars span:nth-child(1) i{animation-name:b1}
+.screen .bars span:nth-child(2) i{animation-name:b2}
+.screen .bars span:nth-child(3) i{animation-name:b3}
+@keyframes s1{0%,31%{opacity:1}34%,97%{opacity:0}100%{opacity:1}}
+@keyframes s2{0%,31%{opacity:0}34%,64%{opacity:1}67%,100%{opacity:0}}
+@keyframes s3{0%,64%{opacity:0}67%,97%{opacity:1}100%{opacity:0}}
+@keyframes b1{0%{width:0}33.3%,99%{width:100%}100%{width:0}}
+@keyframes b2{0%,33.3%{width:0}66.6%,99%{width:100%}100%{width:0}}
+@keyframes b3{0%,66.6%{width:0}99%{width:100%}100%{width:0}}
+@media (prefers-reduced-motion:reduce){
+  .slide,.screen .bars i{animation:none}
+  .s1{opacity:1}
+  .screen .bars span:nth-child(1) i{width:100%}
+}
 
 /* cards dor */
 .alt{background:var(--creme)}
@@ -90,10 +121,10 @@ header img{height:40px;width:auto}
 /* passos */
 .passos{background:var(--salvia-cl)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
-.step{background:#fff;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:8px}
+.step{background:#fff;border-radius:16px;padding:22px 24px;display:grid;grid-template-columns:44px 1fr;align-items:center;gap:8px 14px}
 .num{width:44px;height:44px;border-radius:50%;background:var(--salvia);color:#fff;font-family:"Playfair Display",serif;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center}
 .step h3{font-size:20px}
-.step p{color:var(--texto2);font-size:16px}
+.step p{color:var(--texto2);font-size:16px;grid-column:1 / -1}
 
 /* modulos */
 .mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
@@ -102,6 +133,7 @@ header img{height:40px;width:auto}
 .mod div{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px}
 .mod h3{font-size:21px}
 .mod p{color:var(--texto2);font-size:16px}
+.mods-dica{display:none;font-size:13px;color:var(--texto2);margin-top:-4px}
 .extras{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .pill{background:var(--pessego);color:var(--grafite);font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px}
 
@@ -156,11 +188,15 @@ header img{height:40px;width:auto}
 .center{text-align:center}
 
 /* garantia */
-.garantia .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:28px}
-.selo{flex:0 0 132px;height:132px;border-radius:50%;border:3px solid var(--terra);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Playfair Display",serif;color:var(--terra-esc);text-align:center;line-height:1.05}
-.selo b{font-size:46px}
-.selo small{font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.garantia-txt{flex:1 1 400px;display:flex;flex-direction:column;gap:12px}
+.garantia .wrap{display:grid;grid-template-columns:132px 1fr;grid-template-areas:"selo tit" "selo txt";align-items:center;column-gap:32px;row-gap:12px}
+.garantia .wrap h2{grid-area:tit;align-self:end}
+.garantia .wrap p{grid-area:txt;align-self:start}
+.selo{grid-area:selo;width:132px;height:132px;border-radius:50%;border:3px solid var(--terra);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-family:"Playfair Display",serif;color:var(--terra-esc);text-align:center}
+.selo b{font-size:46px;line-height:1;display:block}
+.selo small{font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.25}
+
+/* calendário em texto (só no celular) */
+.cal-m{display:none}
 
 /* faq */
 .faq{background:var(--areia)}
@@ -188,7 +224,28 @@ footer a{color:#fff}
   section{padding:56px 0}
   .hero{padding:44px 0 56px}
   .phone{width:240px;height:460px}
-  .screen .big{font-size:24px}
+  .slide .big{font-size:22px}
+  /* módulos em carrossel horizontal */
+  .mods{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:14px -20px 0;padding:0 20px 10px;scroll-padding-left:20px;-webkit-overflow-scrolling:touch}
+  .mod{flex:0 0 84%;scroll-snap-align:start}
+  .mods-dica{display:block}
+  /* calendário: lista legível no lugar do print */
+  .laptop .tela picture{display:none}
+  .cal-m{display:block;background:#fff;border-radius:8px;padding:14px 14px 4px}
+  .cal-m h4{margin:0;font-size:16px;font-weight:700}
+  .cal-m .sub{font-size:12px;color:var(--terra-esc);margin:2px 0 8px}
+  .cal-m ol{list-style:none;margin:0;padding:0}
+  .cal-m li{border-top:1px solid var(--linha);padding:10px 0;display:flex;flex-direction:column;gap:4px}
+  .cal-m .top{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--texto2)}
+  .cal-m .chip{font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;color:var(--grafite)}
+  .cal-m .cod{margin-left:auto;font-weight:700;color:var(--terra-esc)}
+  .cal-m .tema{font-size:14px;line-height:1.4;color:var(--grafite)}
+  /* garantia: selo menor ao lado do título */
+  .garantia .wrap{grid-template-columns:84px 1fr;grid-template-areas:"selo tit" "txt txt";column-gap:18px;row-gap:16px}
+  .garantia .wrap h2{align-self:center}
+  .selo{width:84px;height:84px;border-width:2px;gap:3px}
+  .selo b{font-size:30px}
+  .selo small{font-size:8px;letter-spacing:.06em}
   header .btn-sm{display:none}
   .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--creme);border-top:1px solid var(--linha);padding:10px 16px;gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .25s}
   .mbar.on{transform:none}
@@ -216,23 +273,24 @@ footer a{color:#fff}
     <div class="hero-txt">
       <div class="eyebrow">Para psicólogas e psicólogos</div>
       <h1>Conteúdo para o seu perfil profissional, <em>sem aparecer na câmera.</em></h1>
-      <p class="lead">102 prompts feitos para a psicologia e um calendário de 365 dias com 700 temas prontos, criados para respeitar o Código de Ética do CFP. Você copia, cola e posta em cerca de 15 minutos por vídeo.</p>
+      <p class="lead">102 prompts feitos para a psicologia e um calendário de 365 dias com 700 temas prontos, criados para respeitar o Código de Ética do CFP. Você copia, cola, revisa e posta em cerca de 15 minutos por vídeo.</p>
       <div class="hero-cta">
         <a class="btn" href="#oferta">Quero o kit por R$ 47</a>
         <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
       </div>
     </div>
-    <div class="hero-vis" aria-hidden="true">
-      <div class="blob" style="width:340px;height:340px;background:var(--salvia-cl);top:-30px;right:-40px"></div>
-      <div class="blob" style="width:200px;height:200px;background:var(--pessego);bottom:-20px;left:0"></div>
-      <div class="phone">
+    <div class="hero-vis">
+      <div class="blob" aria-hidden="true" style="width:340px;height:340px;background:var(--salvia-cl);top:-30px;right:-40px"></div>
+      <div class="blob" aria-hidden="true" style="width:200px;height:200px;background:var(--pessego);bottom:10px;left:0"></div>
+      <div class="phone" aria-hidden="true">
         <div class="screen">
-          <div class="bar"><i></i></div>
-          <div class="tag">Mito</div>
-          <div class="big">Terapia é só para quem está em crise.</div>
-          <div class="sig">@seuperfil · Nome · CRP 00/00000</div>
+          <div class="bars"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+          <div class="slide s1"><div class="tag">Mito</div><div class="big">Terapia é só para quem está em crise.</div><div class="ln"></div><div class="sig">@seuperfil · Nome · CRP 00/00000</div></div>
+          <div class="slide s2"><div class="tag">Verdade</div><div class="big">Muita gente busca terapia para se conhecer melhor.</div><div class="ln"></div><div class="sig">@seuperfil · Nome · CRP 00/00000</div></div>
+          <div class="slide s3"><div class="tag">Mito x Verdade</div><div class="big">Salve para lembrar.</div><div class="ln"></div><div class="sig">@seuperfil · Nome · CRP 00/00000</div></div>
         </div>
       </div>
+      <p class="legenda">Exemplo de vídeo feito com o kit</p>
     </div>
   </div>
 </section>
@@ -240,10 +298,10 @@ footer a{color:#fff}
 <!-- 2. DOR -->
 <section class="alt">
   <div class="wrap narrow stack">
-    <h2 class="h2">O perfil parado está custando clientes</h2>
+    <h2 class="h2">O perfil parado está custando pacientes</h2>
     <p>Você sabe que muita gente procura psicólogo pelo Instagram. Vê colegas postando todo dia e pensa que deveria fazer o mesmo.</p>
     <p>Mas gravar o próprio rosto dá desconforto. Pensar no que postar toma a noite inteira. E quando você finalmente escreve alguma coisa, sai igual ao que todo perfil de psicologia já publicou, ou fica a dúvida se aquilo pode ser postado.</p>
-    <p>E depois de horas escrevendo, o post aparece para quase ninguém.</p>
+    <p>E na semana seguinte, começa tudo de novo.</p>
     <p class="quote">O problema não é falta de conhecimento. É falta de um processo que transforme o que você sabe em conteúdo.</p>
   </div>
   <div class="wrap" style="margin-top:40px">
@@ -275,6 +333,7 @@ footer a{color:#fff}
     <div class="eyebrow">O que você recebe</div>
     <h2 class="h2">Tudo organizado em 4 módulos</h2>
     <p class="lead">Abre no celular ou no computador, em Google Docs, Sheets e PDF. Sem instalar nada.</p>
+    <p class="mods-dica">Arraste para o lado para ver os 4 módulos →</p>
     <div class="mods" style="margin-top:14px">
       <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui em PDF, com os passos para publicar o seu primeiro vídeo ainda hoje.</p></div></article>
       <article class="mod"><img src="img/modulo-02.jpg" alt="Módulo 02, Personalize a IA" loading="lazy" width="960" height="540"><div><h3>02 · Personalize a IA</h3><p>Ficha do Negócio + Prompt de Contexto. Você preenche uma vez e a IA passa a escrever com a sua abordagem e o seu tom, longe das frases batidas.</p></div></article>
@@ -292,7 +351,21 @@ footer a{color:#fff}
     <p class="lead">A aba Minha Semana mostra o pilar, o código do prompt e o tema de cada dia. Um clique em "Abrir prompt" leva direto ao texto certo no Banco.</p>
     <div class="dentro-grid">
       <figure class="laptop" style="margin:0">
-        <div class="tela"><picture><source media="(max-width:720px)" srcset="img/tela-calendario-m.jpg"><img src="img/tela-calendario.jpg" alt="Aba Minha Semana do Calendário 365, com pilar, código, tema e link do prompt de cada dia" loading="lazy" width="1400" height="720"></picture></div>
+        <div class="tela">
+          <div class="cal-m">
+            <h4>Minha Semana</h4>
+            <p class="sub">Psicologia · hoje: 26/10/2026</p>
+            <ol>
+              <li><div class="top">seg 26/10 <span class="chip" style="background:#DDE5DA">Educar</span><span class="cod">PS-01</span></div><div class="tema">Cansaço que não passa nem nas férias</div></li>
+              <li><div class="top">ter 27/10 <span class="chip" style="background:#F3E2D8">Mito x Verdade</span><span class="cod">PS-25</span></div><div class="tema">Foco em quem quer se conhecer melhor</div></li>
+              <li><div class="top">qua 28/10 <span class="chip" style="background:#EFE7DC">Bastidores</span><span class="cod">PS-45</span></div><div class="tema">O preparo do dia anterior aos atendimentos</div></li>
+              <li><div class="top">qui 29/10 <span class="chip" style="background:#E3E8F2">Perguntas Frequentes</span><span class="cod">PS-61</span></div><div class="tema">Como é a primeira conversa, do começo ao fim</div></li>
+              <li><div class="top">sex 30/10 <span class="chip" style="background:#F6E3CF">Convite</span><span class="cod">PS-81</span></div><div class="tema">Para quem pensa em começar no ano novo</div></li>
+              <li><div class="top">sáb 31/10 <span class="chip" style="background:#ECEAE7">Reaproveitar</span><span class="cod">PS-R</span></div><div class="tema">Repostar como carrossel o vídeo com mais salvamentos</div></li>
+              <li><div class="top">dom 01/11 <span class="chip" style="background:#ECEAE7">Planejar</span><span class="cod">PS-P</span></div><div class="tema">Revisar os temas da semana que vem (20 min)</div></li>
+            </ol>
+          </div>
+          <picture><source media="(max-width:720px)" srcset="img/tela-calendario-m.jpg"><img src="img/tela-calendario.jpg" alt="Aba Minha Semana do Calendário 365, com pilar, código, tema e link do prompt de cada dia" loading="lazy" width="1400" height="720"></picture></div>
         <div class="base"></div>
         <figcaption class="legenda">Calendário 365 · temas reais da primeira semana</figcaption>
       </figure>
@@ -356,7 +429,7 @@ footer a{color:#fff}
 <section class="oferta center" id="oferta">
   <div class="wrap">
     <h2 class="h2">Um ano de conteúdo organizado, por menos do que o valor de uma sessão.</h2>
-    <p class="lead" style="margin-top:12px">Terceirizar conteúdo custa todo mês. Aqui você paga uma vez e usa o ano inteiro.</p>
+    <p class="lead" style="margin-top:12px">Você paga uma vez e usa o ano inteiro.</p>
     <div class="offer-card">
       <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
       <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
@@ -376,11 +449,9 @@ footer a{color:#fff}
 <!-- 8. GARANTIA -->
 <section class="garantia">
   <div class="wrap narrow">
-    <div class="selo"><b>7</b><small>dias de<br>garantia</small></div>
-    <div class="garantia-txt">
-      <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Experimente sem risco</h2>
-      <p>Você tem 7 dias para abrir o kit, testar os prompts e montar seus primeiros vídeos. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.</p>
-    </div>
+    <div class="selo" role="img" aria-label="7 dias de garantia"><b>7</b><small>dias de<br>garantia</small></div>
+    <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Experimente sem risco</h2>
+    <p>Você tem 7 dias para abrir o kit, testar os prompts e montar seus primeiros vídeos. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.</p>
   </div>
 </section>
 
@@ -403,7 +474,7 @@ footer a{color:#fff}
 <!-- 10. CTA FINAL -->
 <section class="final">
   <div class="wrap narrow stack">
-    <h2 class="h2">O seu próximo post pode estar pronto em 15 minutos.</h2>
+    <h2 class="h2">O seu próximo post pode estar pronto em cerca de 15 minutos.</h2>
     <p class="lead">102 prompts, 365 dias de temas e um processo simples, sem aparecer na câmera.</p>
     <a class="btn" href="#oferta" style="margin-top:6px">Quero o kit por R$ 47</a>
     <span class="micro">Acesso imediato · Garantia de 7 dias</span>
