@@ -13,6 +13,24 @@ h1{font-family:"Playfair Display",Georgia,serif;font-size:32px;line-height:1.2}
 h2{font-size:18px;margin-top:32px}
 a{color:#A45F3F}
 </style>
+<!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
+<script>
+(function(){
+  try{
+    var q=new URLSearchParams(location.search), msg='';
+    if(q.has('nao-contar')){ localStorage.setItem('umami.disabled','1'); msg='Este navegador não será contado no Umami.'; }
+    else if(q.has('contar')){ localStorage.removeItem('umami.disabled'); msg='Este navegador voltou a ser contado no Umami.'; }
+    if(msg){
+      history.replaceState(null,'',location.pathname+location.hash);
+      document.addEventListener('DOMContentLoaded',function(){
+        var t=document.createElement('div'); t.textContent=msg;
+        t.style.cssText='position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:99;background:#3B3633;color:#fff;font:600 14px Montserrat,sans-serif;padding:12px 18px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.25)';
+        document.body.appendChild(t); setTimeout(function(){t.remove()},4000);
+      });
+    }
+  }catch(e){}
+})();
+</script>
 <!-- Umami (medição de visitas sem cookies) -->
 <script defer src="https://stats.kitprecocerto.com.br/script.js" data-website-id="519bde5e-3086-4b1c-ae31-8acf3809ff52"></script>
 </head>
