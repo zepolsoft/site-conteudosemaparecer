@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit Conteúdo Sem Aparecer para Psicólogos</title>
+<meta name="description" content="102 prompts feitos para a psicologia e um calendário de 365 dias com 700 temas prontos. Conteúdo para o seu perfil profissional, sem aparecer na câmera.">
+<meta property="og:title" content="Kit Conteúdo Sem Aparecer para Psicólogos">
+<meta property="og:description" content="102 prompts para psicologia + calendário de 365 dias. Conteúdo para o seu perfil, sem aparecer na câmera.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ===== PIXEL DA META =====
+  Quando criar o Pixel no Gerenciador de Eventos, cole aqui o código base
+  que a Meta fornece (começa com <script>!function(f,b,e,v,n,t,s)...)
+  e apague este comentário. Não precisa mexer em mais nada da página.
+  ========================== -->
+
+<style>
+:root{
+  --areia:#EFE7DC; --creme:#FAF7F2; --grafite:#3B3633; --texto2:#625953;
+  --terra:#B5714F; --terra-esc:#A45F3F; --terra-cl:#C98B6B;
+  --salvia:#5E7A5C; --salvia-cl:#DDE5DA; --pessego:#F3E2D8; --linha:#E2D8CB;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--grafite);font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:700;line-height:1.15;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+section{padding:72px 0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--terra);color:#fff;font-weight:700;font-size:17px;text-decoration:none;padding:17px 30px;border-radius:12px;min-height:52px;transition:background .2s,transform .2s;text-align:center}
+.btn:hover{background:var(--terra-esc);transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--grafite);outline-offset:3px}
+.micro{font-size:14px;color:var(--texto2)}
+.h2{font-size:clamp(28px,4.4vw,40px)}
+.lead{font-size:18px;color:var(--texto2)}
+
+/* header */
+header{background:var(--creme);border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+header img{height:40px;width:auto}
+.btn-sm{font-size:14px;padding:10px 18px;min-height:44px;border-radius:999px}
+
+/* hero */
+.hero{background:var(--areia);padding:64px 0 76px;overflow:hidden}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:48px}
+.hero-txt{flex:1 1 480px;display:flex;flex-direction:column;gap:20px}
+.hero h1{font-size:clamp(34px,5.6vw,56px)}
+.hero h1 em{font-style:normal;color:var(--terra-esc)}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:6px}
+.hero-vis{flex:1 1 300px;display:flex;justify-content:center;position:relative}
+.blob{position:absolute;border-radius:50%;z-index:0}
+.phone{position:relative;z-index:1;width:280px;height:540px;border-radius:40px;background:var(--grafite);padding:12px;box-shadow:0 30px 60px -20px rgba(59,54,51,.45)}
+.screen{width:100%;height:100%;border-radius:30px;background:linear-gradient(160deg,#6f7f6d 0%,#4c5c4b 55%,#3e4a3d 100%);display:flex;flex-direction:column;justify-content:space-between;padding:26px 20px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.screen .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.screen .big{font-family:"Playfair Display",serif;font-weight:700;font-size:28px;line-height:1.25;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.screen .sig{font-size:11px;opacity:.85}
+.screen .bar{position:absolute;top:10px;left:20px;right:20px;height:3px;background:rgba(255,255,255,.3);border-radius:2px}
+.screen .bar i{display:block;width:40%;height:100%;background:#fff;border-radius:2px}
+
+/* cards dor */
+.alt{background:var(--creme)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:21px}
+.card p{color:var(--texto2)}
+.stack{display:flex;flex-direction:column;gap:18px}
+.quote{border-left:4px solid var(--terra);padding:6px 0 6px 18px;font-family:"Playfair Display",serif;font-size:22px;font-weight:600;line-height:1.35}
+
+/* passos */
+.passos{background:var(--salvia-cl)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+.step{background:#fff;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:8px}
+.num{width:44px;height:44px;border-radius:50%;background:var(--salvia);color:#fff;font-family:"Playfair Display",serif;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:20px}
+.step p{color:var(--texto2);font-size:16px}
+
+/* modulos */
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.mod{background:#fff;border:1px solid var(--linha);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.mod img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.mod div{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px}
+.mod h3{font-size:21px}
+.mod p{color:var(--texto2);font-size:16px}
+.extras{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.pill{background:var(--pessego);color:var(--grafite);font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px}
+
+/* bump */
+.bump{background:var(--pessego)}
+.bump .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:36px}
+.bump-img{flex:1 1 340px}
+.bump-img img{border-radius:18px;box-shadow:0 20px 40px -20px rgba(59,54,51,.4)}
+.bump-txt{flex:1 1 400px;display:flex;flex-direction:column;gap:16px}
+.bump ul{margin:0;padding-left:20px;color:var(--texto2)}
+.bump li{margin:4px 0}
+
+/* para quem */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.box{border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.box.sim{background:var(--salvia-cl)}
+.box.nao{background:#fff;border:1px solid var(--linha)}
+.box h3{font-size:22px}
+.box ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.box li{padding-left:30px;position:relative}
+.box.sim li::before{content:"✓";position:absolute;left:0;top:0;color:var(--salvia);font-weight:700}
+.box.nao li::before{content:"✕";position:absolute;left:0;top:0;color:var(--terra-esc);font-weight:700}
+
+/* oferta */
+.oferta{background:var(--grafite);color:#fff}
+.oferta .h2{color:#fff}
+.oferta .lead{color:#D9D0C6}
+.offer-card{background:var(--creme);color:var(--grafite);border-radius:22px;padding:34px 28px;max-width:520px;margin:34px auto 0;display:flex;flex-direction:column;gap:18px;text-align:left}
+.price{display:flex;align-items:baseline;gap:10px;justify-content:center}
+.price strong{font-family:"Playfair Display",serif;font-size:58px;line-height:1}
+.price span{color:var(--texto2);font-size:15px}
+.offer-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.offer-card li{padding-left:30px;position:relative}
+.offer-card li::before{content:"✓";position:absolute;left:0;color:var(--salvia);font-weight:700}
+.offer-card .btn{width:100%}
+.center{text-align:center}
+
+/* garantia */
+.garantia .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:28px}
+.selo{flex:0 0 132px;height:132px;border-radius:50%;border:3px solid var(--terra);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Playfair Display",serif;color:var(--terra-esc);text-align:center;line-height:1.05}
+.selo b{font-size:46px}
+.selo small{font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.garantia-txt{flex:1 1 400px;display:flex;flex-direction:column;gap:12px}
+
+/* faq */
+.faq{background:var(--areia)}
+details{background:#fff;border-radius:14px;padding:0 22px;border:1px solid var(--linha)}
+details+details{margin-top:12px}
+summary{cursor:pointer;list-style:none;font-weight:700;padding:20px 30px 20px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:16px;font-size:24px;color:var(--terra);font-weight:500}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 20px;color:var(--texto2)}
+
+/* final */
+.final{text-align:center}
+.final .stack{align-items:center}
+
+footer{background:var(--grafite);color:#CFC6BC;font-size:14px;padding:40px 0}
+footer .wrap{display:flex;flex-direction:column;gap:14px}
+footer img{height:36px;width:auto;align-self:flex-start}
+footer a{color:#fff}
+.aviso{font-size:13px;color:#A99F95;max-width:820px}
+
+/* barra fixa mobile */
+.mbar{display:none}
+@media (max-width:720px){
+  section{padding:56px 0}
+  .hero{padding:44px 0 56px}
+  .phone{width:240px;height:460px}
+  .screen .big{font-size:24px}
+  header .btn-sm{display:none}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--creme);border-top:1px solid var(--linha);padding:10px 16px;gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .25s}
+  .mbar.on{transform:none}
+  .mbar .btn{flex:1;padding:14px 16px;font-size:16px}
+  .mbar b{font-family:"Playfair Display",serif;font-size:22px;white-space:nowrap}
+  body{padding-bottom:76px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Conteúdo Sem Aparecer" width="126" height="40">
+    <a class="btn btn-sm" href="#oferta">Quero o kit</a>
+  </div>
+</header>
+
+<!-- 1. TOPO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-txt">
+      <div class="eyebrow">Para psicólogas e psicólogos</div>
+      <h1>Conteúdo para o seu perfil profissional, <em>sem aparecer na câmera.</em></h1>
+      <p class="lead">102 prompts feitos para a psicologia e um calendário de 365 dias com 700 temas prontos, criados para respeitar o Código de Ética do CFP. Você copia, cola e posta em cerca de 15 minutos por vídeo.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#oferta">Quero o kit por R$ 47</a>
+        <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
+      </div>
+    </div>
+    <div class="hero-vis" aria-hidden="true">
+      <div class="blob" style="width:340px;height:340px;background:var(--salvia-cl);top:-30px;right:-40px"></div>
+      <div class="blob" style="width:200px;height:200px;background:var(--pessego);bottom:-20px;left:0"></div>
+      <div class="phone">
+        <div class="screen">
+          <div class="bar"><i></i></div>
+          <div class="tag">Mito</div>
+          <div class="big">Terapia é só para quem está em crise.</div>
+          <div class="sig">@seuperfil · Nome · CRP 00/00000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. DOR -->
+<section class="alt">
+  <div class="wrap narrow stack">
+    <h2 class="h2">O perfil parado está custando clientes</h2>
+    <p>Você sabe que muita gente procura psicólogo pelo Instagram. Vê colegas postando todo dia e pensa que deveria fazer o mesmo.</p>
+    <p>Mas gravar o próprio rosto dá desconforto. Pensar no que postar toma a noite inteira. E quando você finalmente escreve alguma coisa, sai igual ao que todo perfil de psicologia já publicou, ou fica a dúvida se aquilo pode ser postado.</p>
+    <p class="quote">O problema não é falta de conhecimento. É falta de um processo que transforme o que você sabe em conteúdo.</p>
+  </div>
+  <div class="wrap" style="margin-top:40px">
+    <div class="grid3">
+      <div class="card"><h3>Não quer expor o rosto</h3><p>O formato é texto no centro da tela, sobre um vídeo calmo. Sem rosto, sem voz e sem dancinha.</p></div>
+      <div class="card"><h3>Tem receio de errar diante do CFP</h3><p>Os prompts foram criados para evitar diagnóstico, promessa de resultado, depoimentos e sensacionalismo.</p></div>
+      <div class="card"><h3>Não tem tempo entre um atendimento e outro</h3><p>O calendário diz o que postar em cada dia. Você não precisa pensar no tema, só revisar o roteiro.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SOLUÇÃO -->
+<section class="passos">
+  <div class="wrap stack">
+    <div class="eyebrow">Como funciona</div>
+    <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
+    <div class="steps" style="margin-top:12px">
+      <div class="step"><div class="num">1</div><h3>Preencha a Ficha</h3><p>Uma vez só, em cerca de 15 minutos: sua abordagem, seu público e seu tom de voz.</p></div>
+      <div class="step"><div class="num">2</div><h3>Abra o dia no calendário</h3><p>Ele mostra o tema e o prompt certo para hoje.</p></div>
+      <div class="step"><div class="num">3</div><h3>Cole o prompt na IA</h3><p>ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p></div>
+      <div class="step"><div class="num">4</div><h3>Monte e publique</h3><p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Você revisa e posta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. O QUE VOCÊ RECEBE -->
+<section>
+  <div class="wrap stack">
+    <div class="eyebrow">O que você recebe</div>
+    <h2 class="h2">Tudo organizado em 4 módulos</h2>
+    <p class="lead">Abre no celular ou no computador, em Google Docs, Sheets e PDF. Sem instalar nada.</p>
+    <div class="mods" style="margin-top:14px">
+      <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui em PDF, com os passos para publicar o seu primeiro vídeo ainda hoje.</p></div></article>
+      <article class="mod"><img src="img/modulo-02.jpg" alt="Módulo 02, Personalize a IA" loading="lazy" width="960" height="540"><div><h3>02 · Personalize a IA</h3><p>Ficha do Negócio + Prompt de Contexto. Você preenche uma vez e a IA passa a escrever com a sua abordagem e o seu tom, longe das frases batidas.</p></div></article>
+      <article class="mod"><img src="img/modulo-03.jpg" alt="Módulo 03, Banco de Prompts" loading="lazy" width="960" height="540"><div><h3>03 · Banco de 102 Prompts</h3><p>Organizados por pilar: educar, mito x verdade, bastidores, perguntas frequentes, convite, datas especiais, além de reaproveitar e planejar a semana.</p></div></article>
+      <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>O pilar, o prompt e o tema de cada dia, com 700 temas e as datas da saúde mental (Janeiro Branco, Setembro Amarelo e outras) já marcadas.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ORDER BUMP -->
+<section class="bump">
+  <div class="wrap">
+    <div class="bump-img"><img src="img/pack-20.jpg" alt="Pack 20 Modelos Canva para Psicólogos" loading="lazy" width="960" height="540"></div>
+    <div class="bump-txt">
+      <div class="eyebrow">Opcional, na página de pagamento</div>
+      <h2 class="h2">Pack 20 Modelos Canva para Psicólogos</h2>
+      <p>Se quiser pular a parte do design, adicione o Pack ao finalizar a compra. São 20 modelos de vídeo em texto centralizado, prontos para editar no Canva:</p>
+      <ul>
+        <li>15 modelos pensados para psicologia</li>
+        <li>5 modelos universais (gancho, lista, pergunta, comparação e aviso)</li>
+        <li>Funcionam com conta gratuita do Canva</li>
+      </ul>
+      <p class="micro">O Pack é um complemento opcional por R$ 27. Ele aparece desmarcado no checkout, e você só leva se quiser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PARA QUEM É -->
+<section>
+  <div class="wrap stack">
+    <h2 class="h2">Este kit é para você?</h2>
+    <div class="two" style="margin-top:12px">
+      <div class="box sim">
+        <h3>É para você se…</h3>
+        <ul>
+          <li>Você é psicóloga ou psicólogo e quer manter o Instagram ativo sem gravar o rosto.</li>
+          <li>Tem pouco tempo entre atendimentos e quer um processo simples.</li>
+          <li>Quer conteúdo com a sua abordagem, não textos genéricos.</li>
+          <li>Se preocupa em postar dentro das orientações do CFP.</li>
+        </ul>
+      </div>
+      <div class="box nao">
+        <h3>Não é para você se…</h3>
+        <ul>
+          <li>Procura uma fórmula de seguidores ou de pacientes garantidos. Ninguém pode prometer isso.</li>
+          <li>Quer postar sem revisar. A IA faz o rascunho, a palavra final é sempre sua.</li>
+          <li>Já tem uma rotina de conteúdo que funciona e não quer mudar nada.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. OFERTA -->
+<section class="oferta center" id="oferta">
+  <div class="wrap">
+    <h2 class="h2">Um ano de conteúdo organizado, por menos do que o valor de uma sessão.</h2>
+    <p class="lead" style="margin-top:12px">Abra o kit, preencha a ficha e monte o seu primeiro vídeo hoje.</p>
+    <div class="offer-card">
+      <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
+      <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
+      <ul>
+        <li>Banco de 102 prompts para psicologia</li>
+        <li>Calendário de 365 dias com 700 temas</li>
+        <li>Ficha do Negócio + Prompt de Contexto</li>
+        <li>Guia Comece Aqui (PDF)</li>
+        <li>Acesso pela área de membros da Hotmart</li>
+      </ul>
+      <a class="btn" href="https://pay.hotmart.com/S108248865H?checkoutMode=10">Quero começar a postar</a>
+      <p class="micro center">Compra segura pela Hotmart · Pix, cartão ou boleto · Acesso enviado por e-mail</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. GARANTIA -->
+<section class="garantia">
+  <div class="wrap narrow">
+    <div class="selo"><b>7</b><small>dias de<br>garantia</small></div>
+    <div class="garantia-txt">
+      <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Experimente sem risco</h2>
+      <p>Você tem 7 dias para abrir o kit, testar os prompts e montar seus primeiros vídeos. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="faq">
+  <div class="wrap narrow">
+    <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
+    <details><summary>Vou precisar aparecer em algum momento?</summary><p>Não na câmera. O formato é texto no centro da tela, sobre um vídeo de fundo, com música. Sem rosto e sem voz. Nos posts de convite, você inclui seu nome e CRP, como pede o Código de Ética.</p></details>
+    <details><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram criados para respeitar o Código de Ética do CFP: não fazem diagnóstico, não prometem resultado, não usam depoimentos e não divulgam preço. Mesmo assim, a IA gera um rascunho e a revisão final de cada publicação é sempre sua.</p></details>
+    <details><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. Funciona na versão gratuita do ChatGPT, do Gemini ou do Claude.</p></details>
+    <details><summary>Serve para qualquer abordagem?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso.</p></details>
+    <details><summary>Quanto tempo leva por vídeo?</summary><p>Cerca de 15 minutos depois que a Ficha está preenchida. Pouco mais de 1 hora para a semana inteira.</p></details>
+    <details><summary>Preciso pagar alguma ferramenta?</summary><p>Não. Dá para usar tudo com as versões gratuitas: ChatGPT (ou outra IA), Canva ou CapCut, e bancos de vídeo gratuitos.</p></details>
+    <details><summary>Como recebo o kit?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart. No Pix, a confirmação costuma sair em poucos minutos.</p></details>
+    <details><summary>Os arquivos ficam comigo?</summary><p>Sim. Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso pela Hotmart, sem precisar explicar o motivo.</p></details>
+  </div>
+</section>
+
+<!-- 10. CTA FINAL -->
+<section class="final">
+  <div class="wrap narrow stack">
+    <h2 class="h2">O seu próximo post pode estar pronto em 15 minutos.</h2>
+    <p class="lead">102 prompts, 365 dias de temas e um processo simples, sem aparecer na câmera.</p>
+    <a class="btn" href="#oferta" style="margin-top:6px">Quero o kit por R$ 47</a>
+    <span class="micro">Acesso imediato · Garantia de 7 dias</span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-claro.png" alt="Conteúdo Sem Aparecer" width="113" height="36">
+    <p>Conteúdo Sem Aparecer · CNPJ [PREENCHER]</p>
+    <p>Suporte: <a href="mailto:suporte.conteudosemaparecer@gmail.com">suporte.conteudosemaparecer@gmail.com</a> · <a href="privacidade.html">Política de privacidade</a></p>
+    <p class="aviso">Este material oferece modelos e prompts para apoiar a criação de conteúdo. Ele não substitui o julgamento profissional nem a leitura do Código de Ética Profissional do Psicólogo e das resoluções do CFP. A responsabilidade pelo que é publicado é sempre do profissional. Resultados de alcance, seguidores ou atendimentos não são garantidos.</p>
+    <p class="aviso">A compra é processada pela Hotmart. Este site não é afiliado ao Conselho Federal de Psicologia.</p>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <b>R$ 47</b>
+  <a class="btn" href="#oferta">Quero o kit</a>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('mbar'), hero=document.querySelector('.hero'), of=document.getElementById('oferta');
+  if(!('IntersectionObserver' in window)) return;
+  var heroVis=true, ofVis=false;
+  function upd(){ bar.classList.toggle('on', !heroVis && !ofVis); }
+  new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd();}).observe(hero);
+  new IntersectionObserver(function(e){ofVis=e[0].isIntersecting;upd();}).observe(of);
+})();
+</script>
+</body>
+</html>
