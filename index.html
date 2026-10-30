@@ -254,6 +254,11 @@ footer a{color:#fff}
 .mp-c>div{background:#FAF7F2;color:#3B3633;box-shadow:inset 0 0 0 1px var(--linha)}.mp-c .t{color:#A45F3F}.mp-c .l{background:#A45F3F}
 .mp-c>div::before{background:rgba(201,139,107,.28)}.mp-c>div::after{background:rgba(156,175,154,.26)}
 .mp .t.mito{color:#A45F3F}
+.mp .vb{position:absolute;top:10px;left:12px;right:12px;display:flex;gap:3px;z-index:1}
+.mp .vb i{flex:1;height:2px;border-radius:2px;background:currentColor;opacity:.25}
+.mp .vb i:first-child{opacity:.85}
+.formatos{display:flex;flex-wrap:wrap;gap:8px}
+.formatos span{background:var(--pessego);color:var(--grafite);font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px}
 .ex-seta{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid var(--linha);background:#fff;color:var(--grafite);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 16px -6px rgba(59,54,51,.35);display:flex;align-items:center;justify-content:center}
 .ex-seta:hover{background:var(--areia)}
 .ex-seta:focus-visible{outline:3px solid var(--grafite);outline-offset:2px}
@@ -339,7 +344,7 @@ footer a{color:#fff}
     <div class="hero-txt">
       <div class="eyebrow">Para psicólogas e psicólogos</div>
       <h1>Conteúdo para o seu perfil profissional, <em>sem aparecer na câmera.</em></h1>
-      <p class="lead">102 prompts feitos para a psicologia e um calendário de 365 dias com 700 temas prontos, criados para respeitar o Código de Ética do CFP. Você copia, cola, revisa e posta em cerca de 15 minutos por vídeo.</p>
+      <p class="lead">102 prompts feitos para a psicologia, criados para respeitar o Código de Ética do CFP, e um calendário de 365 dias com 700 temas. O resultado são vídeos curtos de texto para Reels, feed e Stories: você copia, cola, revisa e posta em cerca de 15 minutos por vídeo.</p>
       <div class="hero-cta">
         <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="topo">Quero o kit por R$ 47</a>
         <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
@@ -453,14 +458,16 @@ footer a{color:#fff}
 <section class="exemplos">
   <div class="wrap stack">
     <div class="eyebrow">Exemplos</div>
-    <h2 class="h2">Os vídeos ficam assim</h2>
-    <p class="lead">Texto no centro e o seu nome com CRP. Tudo é editável: você troca o texto, o estilo de letra e as cores para deixar com a cara do seu perfil. Monte do zero no Canva ou no CapCut, ou parta dos modelos prontos do Pack.</p>
+    <h2 class="h2">Vídeos curtos, prontos para Reels, feed e Stories</h2>
+    <p class="lead">Cada vídeo tem algumas telas de texto que passam em sequência, com música de fundo. Você baixa em MP4 e usa como quiser: publica como Reels (que também aparece no seu feed), compartilha nos Stories ou reaproveita as telas como carrossel.</p>
+    <div class="formatos"><span>Reels</span><span>Feed</span><span>Stories</span><span>Carrossel</span></div>
+    <p class="lead">Tudo é editável: você troca o texto, o estilo de letra e as cores para deixar com a cara do seu perfil. Monte do zero no Canva ou no CapCut, ou parta dos modelos prontos do Pack.</p>
   </div>
   <div class="ex-wrap">
     <button class="ex-seta ant" type="button" aria-label="Exemplo anterior">‹</button>
     <button class="ex-seta prox" type="button" aria-label="Próximo exemplo">›</button>
     <div class="ex-viewport" role="region" aria-label="Exemplos de vídeos (arraste para os lados)">
-    <div class="ex-track"><div class="mp mp-g"><div><span class="t">Pergunta</span><span class="b">Como sei se preciso de terapia?</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-s"><div><span class="t mito">Mito</span><span class="b">Terapia é só para quem está em crise.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-p"><div><span class="t">07:30</span><span class="b">O que eu faço antes do primeiro atendimento</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-t"><div><span class="t">Lista</span><span class="b">3 pausas que cabem no seu dia</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-a"><div><span class="t">Comparação</span><span class="b">Desabafar x fazer terapia</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-c"><div><span class="t">Aviso</span><span class="b">Este conteúdo não substitui acompanhamento profissional.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-g"><div><span class="t">Psicologia</span><span class="b">Ninguém fala do cansaço de ser forte o tempo todo.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-s"><div><span class="t">Verdade</span><span class="b">Pedir ajuda também é autocuidado.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div></div>
+    <div class="ex-track"><div class="mp mp-g"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Pergunta</span><span class="b">Como sei se preciso de terapia?</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-s"><div><span class="vb"><i></i><i></i><i></i></span><span class="t mito">Mito</span><span class="b">Terapia é só para quem está em crise.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-p"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">07:30</span><span class="b">O que eu faço antes do primeiro atendimento</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-t"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Lista</span><span class="b">3 pausas que cabem no seu dia</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-a"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Comparação</span><span class="b">Desabafar x fazer terapia</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-c"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Aviso</span><span class="b">Este conteúdo não substitui acompanhamento profissional.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-g"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Psicologia</span><span class="b">Ninguém fala do cansaço de ser forte o tempo todo.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div><div class="mp mp-s"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Verdade</span><span class="b">Pedir ajuda também é autocuidado.</span><span class="l"></span><span class="a">@seuperfil · CRP 00/00000</span></div></div></div>
   </div>
   </div>
   <p class="ex-dica">← Arraste para ver mais →</p>
