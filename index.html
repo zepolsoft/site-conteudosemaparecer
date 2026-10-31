@@ -591,15 +591,15 @@ footer a{color:#fff}
 <section class="faq">
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
-    <details><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. Funciona na versão gratuita do ChatGPT, do Gemini ou do Claude.</p></details>
-    <details><summary>Vou precisar aparecer em algum momento?</summary><p>Não na câmera. O formato é texto no centro da tela, sobre um vídeo de fundo, com música. Sem rosto e sem voz. Nos posts de convite, você inclui seu nome e CRP, como pede o Código de Ética.</p></details>
-    <details><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram criados para respeitar o Código de Ética do CFP: não fazem diagnóstico, não prometem resultado, não usam depoimentos e não divulgam preço. Mesmo assim, a IA gera um rascunho e a revisão final de cada publicação é sempre sua.</p></details>
-    <details><summary>Serve para qualquer abordagem?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso.</p></details>
-    <details><summary>Quanto tempo leva por vídeo?</summary><p>Cerca de 15 minutos depois que a Ficha está preenchida. Pouco mais de 1 hora para a semana inteira.</p></details>
-    <details><summary>Preciso pagar alguma ferramenta?</summary><p>Não. Dá para usar tudo com as versões gratuitas: ChatGPT (ou outra IA), Canva ou CapCut, e bancos de vídeo gratuitos.</p></details>
-    <details><summary>Como recebo o kit?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart. No Pix, a confirmação costuma sair em poucos minutos.</p></details>
-    <details><summary>Os arquivos ficam comigo?</summary><p>Sim. Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas.</p></details>
-    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso pela Hotmart, sem precisar explicar o motivo.</p></details>
+    <details name="faq"><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. Funciona na versão gratuita do ChatGPT, do Gemini ou do Claude.</p></details>
+    <details name="faq"><summary>Vou precisar aparecer em algum momento?</summary><p>Não na câmera. O formato é texto no centro da tela, sobre um vídeo de fundo, com música. Sem rosto e sem voz. Nos posts de convite, você inclui seu nome e CRP, como pede o Código de Ética.</p></details>
+    <details name="faq"><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram criados para respeitar o Código de Ética do CFP: não fazem diagnóstico, não prometem resultado, não usam depoimentos e não divulgam preço. Mesmo assim, a IA gera um rascunho e a revisão final de cada publicação é sempre sua.</p></details>
+    <details name="faq"><summary>Serve para qualquer abordagem?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso.</p></details>
+    <details name="faq"><summary>Quanto tempo leva por vídeo?</summary><p>Cerca de 15 minutos depois que a Ficha está preenchida. Pouco mais de 1 hora para a semana inteira.</p></details>
+    <details name="faq"><summary>Preciso pagar alguma ferramenta?</summary><p>Não. Dá para usar tudo com as versões gratuitas: ChatGPT (ou outra IA), Canva ou CapCut, e bancos de vídeo gratuitos.</p></details>
+    <details name="faq"><summary>Como recebo o kit?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart. No Pix, a confirmação costuma sair em poucos minutos.</p></details>
+    <details name="faq"><summary>Os arquivos ficam comigo?</summary><p>Sim. Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas.</p></details>
+    <details name="faq"><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso pela Hotmart, sem precisar explicar o motivo.</p></details>
   </div>
 </section>
 
@@ -647,6 +647,11 @@ document.querySelectorAll('a[href^="https://pay.hotmart.com"]').forEach(function
 // Umami: registra qual pergunta do FAQ foi aberta
 document.querySelectorAll('.faq details').forEach(function(d){
   d.addEventListener('toggle',function(){
+    // só uma pergunta aberta por vez
+    if(d.open){
+      document.querySelectorAll('.faq details[open]').forEach(function(o){ if(o!==d) o.open=false; });
+      var r=d.getBoundingClientRect(); if(r.top<80) window.scrollBy({top:r.top-90,behavior:'smooth'});
+    }
     if(d.open && window.umami) umami.track('faq',{pergunta:d.querySelector('summary').textContent.trim()});
   });
 });
