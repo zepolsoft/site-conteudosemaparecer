@@ -301,6 +301,26 @@ footer a{color:#fff}
 .presenca .quote{margin-top:8px}
 .sem-linha{flex-basis:100%;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc)}
 .oferta .conta{max-width:620px;margin:10px auto 0;font-size:16px;color:#BFB5AA}
+/* opções de tema por dia */
+.opcoes{margin-top:34px;background:#fff;border:1px solid var(--linha);border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.op-txt{display:flex;flex-direction:column;gap:10px}
+.op-num{font-size:15px;color:var(--texto2);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.op-num b{font-family:"Playfair Display",Georgia,serif;font-size:42px;line-height:1;color:var(--terra-esc)}
+.op-num span{font-size:14px}
+.op-txt h3{font-size:24px}
+.op-txt p{color:var(--texto2)}
+.op-dia{background:var(--creme);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.op-cab{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
+.chip-e{background:#DDE5DA;color:#2F3A30;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+.op{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--linha);border-radius:12px;padding:12px 14px;cursor:pointer;font-size:15px;line-height:1.4;transition:border-color .2s,box-shadow .2s}
+.op input{position:absolute;opacity:0;pointer-events:none}
+.op .bol{flex:0 0 18px;height:18px;border-radius:50%;border:2px solid #C9BBAE;position:relative}
+.op:has(input:checked){border-color:var(--terra);box-shadow:0 4px 14px -8px rgba(164,95,63,.5)}
+.op:has(input:checked) .bol{border-color:var(--terra-esc)}
+.op:has(input:checked) .bol::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--terra-esc)}
+.op:has(input:focus-visible){outline:3px solid var(--grafite);outline-offset:2px}
+.op-leg{font-size:12.5px;color:var(--texto2);text-align:center}
+@media (max-width:720px){.opcoes{grid-template-columns:1fr;padding:22px 18px;gap:20px}.op-num b{font-size:36px}}
 /* barra fixa mobile */
 .mbar{display:none}
 @media (max-width:720px){
@@ -468,7 +488,7 @@ footer a{color:#fff}
     <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
     <div class="steps" style="margin-top:12px">
       <div class="step"><div class="num">1</div><h3>Preencha a Ficha</h3><p>Uma vez só, em cerca de 10 minutos: sua abordagem, seu público e seu tom de voz.</p></div>
-      <div class="step"><div class="num">2</div><h3>Abra o dia no calendário</h3><p>Ele mostra o tema e o prompt certo para hoje.</p></div>
+      <div class="step"><div class="num">2</div><h3>Abra o dia no calendário</h3><p>Ele mostra as opções de tema e o prompt certo para hoje.</p></div>
       <div class="step"><div class="num">3</div><h3>Cole o prompt na IA</h3><p>ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p></div>
       <div class="step"><div class="num">4</div><h3>Monte e publique</h3><p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Você revisa e posta.</p></div>
     </div>
@@ -522,6 +542,19 @@ footer a{color:#fff}
         <img class="f1" src="img/pdf-capa.jpg" alt="Capa do Guia Comece Aqui" loading="lazy" width="909" height="1287">
         <figcaption class="legenda">Guia Comece Aqui (PDF)</figcaption>
       </figure>
+    </div>
+    <div class="opcoes">
+      <div class="op-txt">
+        <div class="op-num"><b>700</b> temas<span>para</span><b>365</b> dias</div>
+        <h3>Não são 365 posts fixos</h3>
+        <p>Na maioria dos dias, o calendário traz mais de uma opção de tema. Você escolhe a que combina com a sua semana e guarda a outra para depois.</p>
+      </div>
+      <div class="op-dia" aria-label="Exemplo de um dia do calendário com duas opções de tema">
+        <div class="op-cab"><span>Segunda-feira</span><span class="chip-e">Educar</span></div>
+        <label class="op on"><input type="radio" name="op-ex" checked><span class="bol"></span><span>Cansaço que não passa nem nas férias</span></label>
+        <label class="op"><input type="radio" name="op-ex"><span class="bol"></span><span>Por que descansar também é cuidar da saúde mental</span></label>
+        <p class="op-leg">Toque para escolher · exemplo ilustrativo</p>
+      </div>
     </div>
   </div>
 </section>
@@ -597,7 +630,7 @@ footer a{color:#fff}
 <section class="oferta center" id="oferta">
   <div class="wrap">
     <h2 class="h2">Um ano de conteúdo organizado, por menos do que o valor de uma sessão.</h2>
-    <p class="lead" style="margin-top:12px">Você paga uma vez e usa o ano inteiro.</p>
+    <p class="lead" style="margin-top:12px">Pagamento único. E os prompts continuam servindo nos anos seguintes.</p>
     <p class="lead conta">Se hoje você leva 1 hora por post e posta 3 vezes por semana, são mais de 150 horas por ano. Com o kit, cerca de 15 minutos por vídeo.</p>
     <div class="offer-card">
       <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
@@ -605,7 +638,7 @@ footer a{color:#fff}
       <p class="micro center" style="margin-top:-10px">365 dias de temas por menos de R$ 0,13 por dia</p>
       <ul>
         <li>Banco de 102 prompts para psicologia</li>
-        <li>Calendário de 365 dias com 700 temas</li>
+        <li>Calendário de 365 dias com 700 temas: mais de uma opção na maioria dos dias</li>
         <li>Ficha do Negócio + Prompt de Contexto</li>
         <li>Guia Comece Aqui + 3 guias práticos com prints</li>
         <li>Acesso pela área de membros da Hotmart</li>
