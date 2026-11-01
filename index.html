@@ -225,9 +225,9 @@ header img{height:40px;width:auto}
 .center{text-align:center}
 
 /* garantia */
-.garantia .g-box{display:grid;grid-template-columns:132px 1fr;grid-template-areas:"selo tit" "selo txt";align-items:center;column-gap:32px;row-gap:12px}
-.garantia .g-box h2{grid-area:tit;align-self:end}
-.garantia .g-box p{grid-area:txt;align-self:start}
+.garantia .wrap{display:grid;grid-template-columns:132px 1fr;grid-template-areas:"selo tit" "selo txt";align-items:center;column-gap:32px;row-gap:12px}
+.garantia .wrap h2{grid-area:tit;align-self:end}
+.garantia .wrap p{grid-area:txt;align-self:start}
 .selo{grid-area:selo;width:132px;height:132px;border-radius:50%;border:3px solid var(--terra);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-family:"Playfair Display",serif;color:var(--terra-esc);text-align:center}
 .selo b{font-size:46px;line-height:1;display:block}
 .selo small{font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.25}
@@ -349,27 +349,10 @@ footer a{color:#fff}
 .card-ic{flex:0 0 40px;width:40px;height:40px;border-radius:12px;background:var(--pessego);display:flex;align-items:center;justify-content:center;margin-top:-4px}
 .card-ic svg{width:22px;height:22px;fill:none;stroke:var(--terra-esc);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .tambem{font-size:14px;color:var(--texto2);margin-top:-6px}
-.mods-tit{font-size:24px;margin-top:34px}
-.pack-mini{max-width:520px;margin:18px auto 0;display:flex;gap:16px;align-items:center;text-align:left;border:1.5px dashed rgba(243,226,216,.55);border-radius:18px;padding:14px;color:#E6DDD3}
-.pack-mini img{width:120px;border-radius:10px;flex:0 0 auto}
-.pack-mini p{font-size:14.5px;line-height:1.5}
-.pack-mini b{color:#fff}
-.selo-op-mini{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F3E2D8;margin-bottom:4px}
-@media (max-width:720px){.pack-mini{align-items:flex-start;gap:12px}.pack-mini img{width:96px}.pack-mini p{font-size:13.5px}}
-.mods2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
-.mod2{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--linha);border-radius:14px;padding:10px}
-.mod2 img{width:128px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:0 0 auto}
-.mod2 h4{margin:0 0 3px;font-family:"Playfair Display",Georgia,serif;font-size:17px}
-.mod2 p{font-size:14px;line-height:1.45;color:var(--texto2)}
-.dentro .laptop{max-width:860px;margin:0 auto!important}
-@media (max-width:720px){.mods2{grid-template-columns:1fr}.mod2 img{width:96px}.sh-r:nth-child(n+5){display:none}}
 /* barra fixa mobile */
 .mbar{display:none}
 @media (max-width:720px){
-  section{padding:46px 0}
-  .card{padding:20px}
-  .grid3{gap:12px}
-  .box{padding:22px}
+  section{padding:56px 0}
   .hero{padding:44px 0 56px}
   .phone{width:240px;height:460px}
   .slide .big{font-size:22px}
@@ -389,8 +372,8 @@ footer a{color:#fff}
   .cal-m .cod{margin-left:auto;font-weight:700;color:var(--terra-esc)}
   .cal-m .tema{font-size:14px;line-height:1.4;color:var(--grafite)}
   /* garantia: selo menor ao lado do título */
-  .garantia .g-box{grid-template-columns:84px 1fr;grid-template-areas:"selo tit" "txt txt";column-gap:18px;row-gap:16px}
-  .garantia .g-box h2{align-self:center}
+  .garantia .wrap{grid-template-columns:84px 1fr;grid-template-areas:"selo tit" "txt txt";column-gap:18px;row-gap:16px}
+  .garantia .wrap h2{align-self:center}
   .selo{width:84px;height:84px;border-width:2px;gap:3px}
   .selo b{font-size:30px}
   .selo small{font-size:8px;letter-spacing:.06em}
@@ -483,11 +466,14 @@ footer a{color:#fff}
 <section class="alt">
   <div class="wrap narrow stack">
     <h2 class="h2">O perfil parado está custando pacientes</h2>
-    <p class="lead">Você sabe o que dizer. O que falta é um processo para transformar isso em conteúdo, toda semana, sem começar do zero.</p>
+    <p>Você sabe que muita gente procura psicólogo pelo Instagram. Vê colegas postando todo dia e pensa que deveria fazer o mesmo.</p>
+    <p>Mas gravar o próprio rosto dá desconforto. Pensar no que postar toma a noite inteira. E quando você finalmente escreve alguma coisa, sai igual ao que todo perfil de psicologia já publicou, ou fica a dúvida se aquilo pode ser postado.</p>
+    <p>E na semana seguinte, começa tudo de novo.</p>
+    <p class="quote">O problema não é falta de conhecimento. É falta de um processo que transforme o que você sabe em conteúdo.</p>
   </div>
-  <div class="wrap" style="margin-top:32px">
+  <div class="wrap" style="margin-top:40px">
     <div class="grid3">
-      <div class="card"><h3 class="card-t"><span class="card-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5h3l1.6-2h6.8l1.6 2h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/><path d="M3.5 3.5l17 17"/></svg></span><span>Não quer expor o rosto</span></h3><p>Texto no centro da tela, sobre um vídeo calmo. Sem rosto, sem voz e sem dancinha.</p></div>
+      <div class="card"><h3 class="card-t"><span class="card-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5h3l1.6-2h6.8l1.6 2h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/><path d="M3.5 3.5l17 17"/></svg></span><span>Não quer expor o rosto</span></h3><p>O formato é texto no centro da tela, sobre um vídeo calmo. Sem rosto, sem voz e sem dancinha. Nos bastidores, só mãos e detalhes do espaço, ou um vídeo gratuito de banco de imagens.</p></div>
       <div class="card"><h3 class="card-t"><span class="card-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8l7.5 3v5.4c0 4.6-3.2 8.4-7.5 9.9-4.3-1.5-7.5-5.3-7.5-9.9V5.8z"/><path d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg></span><span>Tem receio de errar diante do CFP</span></h3><p>Os prompts foram criados para evitar diagnóstico, promessa de resultado, depoimentos e sensacionalismo.</p></div>
       <div class="card"><h3 class="card-t"><span class="card-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4.2l2.8 1.8M9.5 2.8h5M12 2.8V5"/></svg></span><span>Não tem tempo entre um atendimento e outro</span></h3><p>O calendário diz o que postar em cada dia. Você não precisa pensar no tema, só revisar o roteiro.</p></div>
       <div class="card"><h3 class="card-t"><span class="card-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M12 17.2s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z"/></svg></span><span>Prefere preservar a vida pessoal</span></h3><p>Você divulga o seu trabalho sem expor a sua imagem, a sua casa ou a sua família para quem você atende.</p></div>
@@ -495,27 +481,36 @@ footer a{color:#fff}
   </div>
 </section>
 
-<!-- 3. EXEMPLOS -->
-<section class="exemplos">
+<!-- 2b. PRESENÇA -->
+<section class="presenca">
   <div class="wrap stack">
-    <div class="eyebrow">Exemplos</div>
-    <h2 class="h2">Vídeos curtos, prontos para Reels, feed e Stories</h2>
-    <p class="lead">Algumas telas de texto em sequência, com música de fundo. Você baixa em MP4 e publica como Reels, nos Stories ou como carrossel. Texto, letra e cores são editáveis.</p>
-    <div class="formatos"><span>Reels</span><span>Feed</span><span>Stories</span><span>Carrossel</span></div>
-    <p class="tambem">O mesmo MP4 também pode ir para o Facebook e o TikTok, sem trabalho extra.</p>
+    <div class="eyebrow">Sem aparecer</div>
+    <h2 class="h2">Sem aparecer não é sem presença</h2>
+    <div class="two" style="margin-top:8px">
+      <div class="box nao">
+        <h3>Você não precisa</h3>
+        <ul>
+          <li>Gravar o rosto ou a voz</li>
+          <li>Falar para a câmera</li>
+          <li>Mostrar a sua casa ou a sua família</li>
+          <li>Dançar trend ou aprender edição</li>
+        </ul>
+      </div>
+      <div class="box sim">
+        <h3>O que aparece de você</h3>
+        <ul>
+          <li>Seu nome, a palavra psicóloga e o seu CRP</li>
+          <li>O seu jeito de explicar, a partir da Ficha</li>
+          <li>A sua abordagem e o seu público</li>
+          <li>As cores do seu perfil</li>
+        </ul>
+      </div>
+    </div>
+    <p class="quote">Quem acompanha o seu perfil conhece primeiro a sua forma de pensar. Mostrar o rosto é opcional.</p>
   </div>
-  <div class="ex-wrap">
-    <button class="ex-seta ant" type="button" aria-label="Exemplo anterior">‹</button>
-    <button class="ex-seta prox" type="button" aria-label="Próximo exemplo">›</button>
-    <div class="ex-viewport" role="region" aria-label="Exemplos de vídeos (arraste para os lados)">
-    <div class="ex-track"><div class="mp mp-g"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Pergunta</span><span class="b">Como sei se preciso de terapia?</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-s"><div><span class="vb"><i></i><i></i><i></i></span><span class="t mito">Mito</span><span class="b">Terapia é só para quem está em crise.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-p"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">07:30</span><span class="b">O que eu faço antes do primeiro atendimento</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-t"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Lista</span><span class="b">3 pausas que cabem no seu dia</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-a"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Comparação</span><span class="b">Desabafar x fazer terapia</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-c"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Aviso</span><span class="b">Este conteúdo não substitui acompanhamento profissional.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-g"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Psicologia</span><span class="b">Ninguém fala do cansaço de ser forte o tempo todo.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-s"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Verdade</span><span class="b">Pedir ajuda também é autocuidado.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div></div>
-  </div>
-  </div>
-  <p class="ex-dica">← Arraste para ver mais →</p>
-  <p class="legenda" style="margin-top:0">Exemplos ilustrativos no estilo dos modelos do Pack 20</p>
 </section>
 
-<!-- 4. COMO FUNCIONA -->
+<!-- 3. SOLUÇÃO -->
 <section class="passos">
   <div class="wrap stack">
     <div class="eyebrow">Como funciona</div>
@@ -529,10 +524,26 @@ footer a{color:#fff}
   </div>
 </section>
 
-<!-- 5. O QUE VEM NO KIT -->
-<section class="dentro">
+<!-- 4. O QUE VOCÊ RECEBE -->
+<section>
   <div class="wrap stack">
     <div class="eyebrow">O que você recebe</div>
+    <h2 class="h2">Tudo organizado em 4 módulos</h2>
+    <p class="lead">Abre no celular ou no computador, em Google Docs, Sheets e PDF. Sem instalar nada.</p>
+    <p class="mods-dica">Arraste para o lado para ver os 4 módulos →</p>
+    <div class="mods" style="margin-top:14px">
+      <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui em PDF, com os passos para publicar o seu primeiro vídeo ainda hoje.<br><span class="guia">+ Leitura de 10 minutos, com a rotina da semana pronta para seguir.</span></p></div></article>
+      <article class="mod"><img src="img/modulo-02.jpg" alt="Módulo 02, Personalize a IA" loading="lazy" width="960" height="540"><div><h3>02 · Personalize a IA</h3><p>Ficha do Negócio + Prompt de Contexto. Você preenche uma vez e a IA passa a escrever com a sua abordagem e o seu tom, longe das frases batidas.<br><span class="guia">+ Guia prático com prints do ChatGPT, Gemini e Claude.</span></p></div></article>
+      <article class="mod"><img src="img/modulo-03.jpg" alt="Módulo 03, Banco de Prompts" loading="lazy" width="960" height="540"><div><h3>03 · Banco de 102 Prompts</h3><p>Um pilar por dia: segunda Educar, terça Mito x Verdade, quarta Bastidores, quinta Perguntas Frequentes, sexta Convite, sábado Reaproveitar e domingo Planejar. E prompts para as datas especiais.<br><span class="guia">+ Guia prático: o que trocar em cada prompt, com exemplo completo.</span></p></div></article>
+      <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>O pilar, o prompt e o tema de cada dia, com mais de 700 temas. 8 datas especiais (Janeiro Branco, Dia do Psicólogo, Setembro Amarelo, Dia Mundial da Saúde Mental e outras) entram sozinhas no calendário.<br><span class="guia">+ Guia prático: a rotina do dia, passo a passo.</span></p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4b. POR DENTRO -->
+<section class="dentro">
+  <div class="wrap stack">
+    <div class="eyebrow">Veja por dentro</div>
     <h2 class="h2">Abriu, viu o dia, postou</h2>
     <p class="lead">A aba Minha Semana mostra hoje e os próximos 6 dias: o pilar, o prompt, o tema e o formato. Um clique em "Abrir prompt" leva direto ao texto certo no Banco.</p>
     <div class="temas700">
@@ -555,83 +566,60 @@ footer a{color:#fff}
         <div class="base"></div>
         <figcaption class="legenda">Calendário 365 · temas reais do kit · as datas acompanham o dia de hoje</figcaption>
       </figure>
-    </div>
-    <h3 class="mods-tit">Tudo organizado em 4 módulos, no celular ou no computador</h3>
-    <div class="mods2">
-      <article class="mod2"><img src="img/modulo-01.jpg" alt="Módulo 01 · Boas-Vindas" loading="lazy" width="960" height="540"><div><h4>01 · Boas-Vindas</h4><p>Guia Comece Aqui em PDF: o seu primeiro vídeo ainda hoje, em 10 minutos de leitura.</p></div></article>
-      <article class="mod2"><img src="img/modulo-02.jpg" alt="Módulo 02 · Personalize a IA" loading="lazy" width="960" height="540"><div><h4>02 · Personalize a IA</h4><p>Ficha do Negócio + Prompt de Contexto: a IA escreve com a sua abordagem e o seu tom. Com guia e prints.</p></div></article>
-      <article class="mod2"><img src="img/modulo-03.jpg" alt="Módulo 03 · Banco de 102 Prompts" loading="lazy" width="960" height="540"><div><h4>03 · Banco de 102 Prompts</h4><p>Um pilar por dia da semana, mais as datas especiais. Com guia do que trocar em cada prompt.</p></div></article>
-      <article class="mod2"><img src="img/modulo-04.jpg" alt="Módulo 04 · Calendário 365" loading="lazy" width="960" height="540"><div><h4>04 · Calendário 365</h4><p>Mais de 700 temas e 8 datas especiais que entram sozinhas. Com a rotina do dia passo a passo.</p></div></article>
+      <figure class="folhas" style="margin:0 auto">
+        <img class="f2" src="img/pdf-rotina.jpg" alt="Página A rotina do dia, do Guia Comece Aqui" loading="lazy" width="909" height="1287">
+        <img class="f1" src="img/pdf-capa.jpg" alt="Capa do Guia Comece Aqui" loading="lazy" width="909" height="1287">
+        <figcaption class="legenda">Guia Comece Aqui (PDF)</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- 6. SEM APARECER -->
-<section class="presenca">
+<!-- 4c. EXEMPLOS -->
+<section class="exemplos">
   <div class="wrap stack">
-    <div class="eyebrow">Sem aparecer</div>
-    <h2 class="h2">Sem aparecer não é sem presença</h2>
-    <div class="two" style="margin-top:8px">
-      <div class="box nao">
-        <h3>Você não precisa</h3>
-        <ul>
-          <li>Gravar o rosto ou a voz</li>
-          <li>Falar para a câmera</li>
-          <li>Mostrar a sua casa ou a sua família</li>
-          <li>Dançar trend ou aprender edição</li>
-        </ul>
-      </div>
-      <div class="box sim">
-        <h3>O que aparece de você</h3>
-        <ul>
-          <li>Seu nome, a palavra psicóloga e o seu CRP</li>
-          <li>O seu jeito de explicar, a partir da Ficha</li>
-          <li>A sua abordagem e o seu público</li>
-          <li>As cores do seu perfil</li>
-          <li>Nos bastidores, só mãos e detalhes do espaço, se você quiser</li>
-        </ul>
-      </div>
-    </div>
-    <p class="quote">Quem acompanha o seu perfil conhece primeiro a sua forma de pensar. Mostrar o rosto é opcional.</p>
+    <div class="eyebrow">Exemplos</div>
+    <h2 class="h2">Vídeos curtos, prontos para Reels, feed e Stories</h2>
+    <p class="lead">Cada vídeo tem algumas telas de texto que passam em sequência, com música de fundo. Você baixa em MP4 e usa como quiser: publica como Reels (que também aparece no seu feed), compartilha nos Stories ou reaproveita as telas como carrossel.</p>
+    <div class="formatos"><span>Reels</span><span>Feed</span><span>Stories</span><span>Carrossel</span></div>
+    <p class="tambem">O mesmo MP4 também pode ir para o Facebook e o TikTok, sem trabalho extra.</p>
+    <p class="lead">Tudo é editável: você troca o texto, o estilo de letra e as cores para deixar com a cara do seu perfil. Monte do zero no Canva ou no CapCut, ou parta dos modelos prontos do Pack.</p>
   </div>
+  <div class="ex-wrap">
+    <button class="ex-seta ant" type="button" aria-label="Exemplo anterior">‹</button>
+    <button class="ex-seta prox" type="button" aria-label="Próximo exemplo">›</button>
+    <div class="ex-viewport" role="region" aria-label="Exemplos de vídeos (arraste para os lados)">
+    <div class="ex-track"><div class="mp mp-g"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Pergunta</span><span class="b">Como sei se preciso de terapia?</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-s"><div><span class="vb"><i></i><i></i><i></i></span><span class="t mito">Mito</span><span class="b">Terapia é só para quem está em crise.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-p"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">07:30</span><span class="b">O que eu faço antes do primeiro atendimento</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-t"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Lista</span><span class="b">3 pausas que cabem no seu dia</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-a"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Comparação</span><span class="b">Desabafar x fazer terapia</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-c"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Aviso</span><span class="b">Este conteúdo não substitui acompanhamento profissional.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-g"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Psicologia</span><span class="b">Ninguém fala do cansaço de ser forte o tempo todo.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div><div class="mp mp-s"><div><span class="vb"><i></i><i></i><i></i></span><span class="t">Verdade</span><span class="b">Pedir ajuda também é autocuidado.</span><span class="l"></span><span class="a">Seu nome · Psicóloga · CRP&nbsp;00/00000</span></div></div></div>
+  </div>
+  </div>
+  <p class="ex-dica">← Arraste para ver mais →</p>
+  <p class="legenda" style="margin-top:0">Exemplos ilustrativos no estilo dos modelos do Pack 20 · texto, fontes e cores editáveis</p>
 </section>
 
-<!-- 7. OFERTA -->
-<section class="oferta center" id="oferta">
+<!-- 5. ORDER BUMP -->
+<section class="bump">
   <div class="wrap">
-    <h2 class="h2">Um ano de conteúdo organizado, por menos do que o valor de uma sessão.</h2>
-    <p class="lead" style="margin-top:12px">Pagamento único. E os prompts continuam servindo nos anos seguintes.</p>
-    <p class="lead conta">Se hoje você leva 1 hora por post e posta 3 vezes por semana, são mais de 150 horas por ano. Com o kit, cerca de 15 minutos por vídeo.</p>
-    <div class="offer-card">
-      <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
-      <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
-      <p class="micro center" style="margin-top:-10px">365 dias de temas por menos de R$ 0,13 por dia</p>
+   <div class="bump-box">
+    <span class="selo-op">Complemento opcional</span>
+    <div class="bump-img"><img src="img/pack-20.jpg" alt="Pack 20 Modelos Canva para Psicólogos" loading="lazy" width="960" height="540"></div>
+    <div class="bump-txt">
+      <div class="eyebrow">Na página de pagamento</div>
+      <h2 class="h2">Pack 20 Modelos Canva para Psicólogos</h2>
+      <p>Se quiser pular a parte do design, adicione o Pack ao finalizar a compra. São 20 modelos de vídeo em texto centralizado, prontos para editar no Canva:</p>
       <ul>
-        <li>Banco de 102 prompts para psicologia</li>
-        <li>Calendário de 365 dias com mais de 700 temas (7 por prompt), que começa no dia que você escolher</li>
-        <li>Ficha do Negócio + Prompt de Contexto</li>
-        <li>Guia Comece Aqui + 3 guias práticos com prints</li>
-        <li>Acesso pela área de membros da Hotmart</li>
+        <li>15 modelos pensados para psicologia</li>
+        <li>5 modelos universais (gancho, lista, pergunta, comparação e aviso)</li>
+        <li>Funcionam com conta gratuita do Canva</li>
       </ul>
-      <a class="btn" href="https://pay.hotmart.com/S108248865H?checkoutMode=10" data-umami-event="checkout">Garantir meu acesso por R$&nbsp;47</a>
-      <p class="micro center">Compra segura pela Hotmart · Pix, cartão ou boleto · Acesso enviado por e-mail</p>
+      <p class="micro">O Pack é um complemento opcional por R$ 27. Ele aparece desmarcado no checkout, e você só leva se quiser.</p>
     </div>
-    <div class="pack-mini">
-      <img src="img/pack-20.jpg" alt="Pack 20 Modelos Canva para Psicólogos" loading="lazy" width="960" height="540">
-      <div><span class="selo-op-mini">Opcional no checkout</span>
-      <p><b>Pack 20 Modelos Canva por R$ 27.</b> 20 modelos de vídeo prontos para editar no Canva, se quiser pular a parte do design. Ele aparece desmarcado: você só leva se quiser.</p></div>
-    </div>
+   </div>
   </div>
 </section>
 
-<!-- 8. GARANTIA + PARA QUEM É -->
-<section class="garantia">
-  <div class="wrap narrow g-box">
-    <div class="selo" role="img" aria-label="7 dias de garantia"><b>7</b><small>dias de<br>garantia</small></div>
-    <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Experimente sem risco</h2>
-    <p>Você tem 7 dias para abrir o kit, testar os prompts e montar seus primeiros vídeos. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.</p>
-  </div>
-  <div class="wrap stack" style="margin-top:48px">
+<!-- 6. PARA QUEM É -->
+<section>
+  <div class="wrap stack">
     <h2 class="h2">Este kit é para você?</h2>
     <div class="two" style="margin-top:12px">
       <div class="box sim">
@@ -655,17 +643,53 @@ footer a{color:#fff}
   </div>
 </section>
 
+<!-- 7. OFERTA -->
+<section class="oferta center" id="oferta">
+  <div class="wrap">
+    <h2 class="h2">Um ano de conteúdo organizado, por menos do que o valor de uma sessão.</h2>
+    <p class="lead" style="margin-top:12px">Pagamento único. E os prompts continuam servindo nos anos seguintes.</p>
+    <p class="lead conta">Se hoje você leva 1 hora por post e posta 3 vezes por semana, são mais de 150 horas por ano. Com o kit, cerca de 15 minutos por vídeo.</p>
+    <div class="offer-card">
+      <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
+      <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
+      <p class="micro center" style="margin-top:-10px">365 dias de temas por menos de R$ 0,13 por dia</p>
+      <ul>
+        <li>Banco de 102 prompts para psicologia</li>
+        <li>Calendário de 365 dias com mais de 700 temas (7 por prompt), que começa no dia que você escolher</li>
+        <li>Ficha do Negócio + Prompt de Contexto</li>
+        <li>Guia Comece Aqui + 3 guias práticos com prints</li>
+        <li>Acesso pela área de membros da Hotmart</li>
+      </ul>
+      <a class="btn" href="https://pay.hotmart.com/S108248865H?checkoutMode=10" data-umami-event="checkout">Garantir meu acesso por R$&nbsp;47</a>
+      <p class="micro center">Compra segura pela Hotmart · Pix, cartão ou boleto · Acesso enviado por e-mail</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. GARANTIA -->
+<section class="garantia">
+  <div class="wrap narrow">
+    <div class="selo" role="img" aria-label="7 dias de garantia"><b>7</b><small>dias de<br>garantia</small></div>
+    <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Experimente sem risco</h2>
+    <p>Você tem 7 dias para abrir o kit, testar os prompts e montar seus primeiros vídeos. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.</p>
+  </div>
+</section>
+
 <!-- 9. FAQ -->
 <section class="faq">
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
     <details name="faq"><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. Funciona na versão gratuita do ChatGPT, do Gemini ou do Claude. Se você já tem um plano pago, também serve. E cada módulo tem um guia com prints mostrando onde clicar.</p></details>
-    <details name="faq"><summary>Sem mostrar o rosto, as pessoas vão confiar em mim?</summary><p>A confiança vem de postar com constância, explicar com clareza e se identificar bem: em cada publicação vão o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP, como pedem as orientações de publicidade dos Conselhos de Psicologia. Mostrar o rosto é uma escolha, não uma obrigação.</p></details>
+    <details name="faq"><summary>Sem mostrar o rosto, as pessoas vão confiar em mim?</summary><p>A confiança vem de postar com constância, explicar com clareza e se identificar bem: o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP em cada publicação. Mostrar o rosto é uma escolha, não uma obrigação. Se um dia você quiser aparecer, tudo o que já postou continua valendo.</p></details>
+    <details name="faq"><summary>Vou precisar aparecer em algum momento?</summary><p>Não na câmera. O formato é texto no centro da tela, sobre um vídeo de fundo, com música. Sem rosto e sem voz. Em todas as publicações, inclua o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP, como pedem as orientações de publicidade dos Conselhos de Psicologia.</p></details>
     <details name="faq"><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram criados para respeitar o Código de Ética do CFP: não fazem diagnóstico, não prometem resultado, não usam depoimentos e não divulgam preço. Mesmo assim, a IA gera um rascunho e a revisão final de cada publicação é sempre sua.</p></details>
     <details name="faq"><summary>Serve para qualquer abordagem?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso.</p></details>
-    <details name="faq"><summary>Preciso pagar alguma ferramenta?</summary><p>Não. Dá para usar tudo com as versões gratuitas: ChatGPT (ou outra IA), Canva ou CapCut, e bancos de vídeo gratuitos. Depois que a Ficha está preenchida, cada vídeo leva cerca de 15 minutos.</p></details>
+    <details name="faq"><summary>Quanto tempo leva por vídeo?</summary><p>Cerca de 15 minutos depois que a Ficha está preenchida. Pouco mais de 1 hora para a semana inteira.</p></details>
+    <details name="faq"><summary>Preciso pagar alguma ferramenta?</summary><p>Não. Dá para usar tudo com as versões gratuitas: ChatGPT (ou outra IA), Canva ou CapCut, e bancos de vídeo gratuitos.</p></details>
     <details name="faq"><summary>Serve também para Facebook e TikTok?</summary><p>Sim. É o mesmo vídeo vertical em MP4: você publica no Instagram e, se quiser, sobe o mesmo arquivo no Facebook e no TikTok. Use o arquivo original (sem marca d'água de outra rede) e escolha a música na biblioteca de cada aplicativo. As orientações de publicidade do CFP valem em qualquer rede.</p></details>
-    <details name="faq"><summary>Como recebo o kit? Os arquivos ficam comigo?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart. No Pix, a confirmação costuma sair em poucos minutos. Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas.</p></details>
+    <details name="faq"><summary>Como recebo o kit?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart. No Pix, a confirmação costuma sair em poucos minutos.</p></details>
+    <details name="faq"><summary>Os arquivos ficam comigo?</summary><p>Sim. Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas.</p></details>
+    <details name="faq"><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso pela Hotmart, sem precisar explicar o motivo.</p></details>
   </div>
 </section>
 
