@@ -304,26 +304,13 @@ footer a{color:#fff}
 .presenca .quote{margin-top:8px}
 .sem-linha{flex-basis:100%;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc)}
 .oferta .conta{max-width:620px;margin:10px auto 0;font-size:16px;color:#BFB5AA}
-/* opções de tema por dia */
-.opcoes{margin-top:34px;background:#fff;border:1px solid var(--linha);border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
-.op-txt{display:flex;flex-direction:column;gap:10px}
-.op-num{font-size:15px;color:var(--texto2);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.op-num b{font-family:"Playfair Display",Georgia,serif;font-size:42px;line-height:1;color:var(--terra-esc)}
-.op-num span{font-size:14px}
-.op-txt h3{font-size:24px}
-.op-txt p{color:var(--texto2)}
-.op-dia{background:var(--creme);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
-.op-cab{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
-.chip-e{background:#DDE5DA;color:#2F3A30;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
-.op{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--linha);border-radius:12px;padding:12px 14px;cursor:pointer;font-size:15px;line-height:1.4;transition:border-color .2s,box-shadow .2s}
-.op input{position:absolute;opacity:0;pointer-events:none}
-.op .bol{flex:0 0 18px;height:18px;border-radius:50%;border:2px solid #C9BBAE;position:relative}
-.op:has(input:checked){border-color:var(--terra);box-shadow:0 4px 14px -8px rgba(164,95,63,.5)}
-.op:has(input:checked) .bol{border-color:var(--terra-esc)}
-.op:has(input:checked) .bol::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--terra-esc)}
-.op:has(input:focus-visible){outline:3px solid var(--grafite);outline-offset:2px}
-.op-leg{font-size:12.5px;color:var(--texto2);text-align:center}
-@media (max-width:720px){.opcoes{grid-template-columns:1fr;padding:22px 18px;gap:20px}.op-num b{font-size:36px}}
+/* 700 temas */
+.temas700{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.6);border:1px solid var(--linha);border-radius:16px;padding:16px 22px}
+.temas700 .op-num{display:flex;align-items:baseline;gap:6px;white-space:nowrap;font-size:14px;color:var(--texto2)}
+.temas700 .op-num b{font-family:"Playfair Display",Georgia,serif;font-size:34px;line-height:1;color:var(--terra-esc)}
+.temas700 p{color:var(--texto2);font-size:16px;line-height:1.55}
+.temas700 strong{color:var(--grafite)}
+@media (max-width:720px){.temas700{flex-direction:column;align-items:flex-start;gap:8px;padding:16px 18px}.temas700 .op-num b{font-size:30px}}
 /* barra fixa mobile */
 .mbar{display:none}
 @media (max-width:720px){
@@ -521,6 +508,10 @@ footer a{color:#fff}
     <div class="eyebrow">Veja por dentro</div>
     <h2 class="h2">Abriu, viu o dia, postou</h2>
     <p class="lead">A aba Minha Semana mostra o pilar, o código do prompt e o tema de cada dia. Um clique em "Abrir prompt" leva direto ao texto certo no Banco.</p>
+    <div class="temas700">
+      <div class="op-num"><b>700</b> temas<span>para</span><b>365</b> dias</div>
+      <p><strong>Não são 365 posts fixos.</strong> Na maioria dos dias, o calendário traz mais de uma opção de tema. Você escolhe a que combina com a sua semana e guarda a outra para depois.</p>
+    </div>
     <div class="dentro-grid">
       <figure class="laptop" style="margin:0">
         <div class="tela">
@@ -546,19 +537,6 @@ footer a{color:#fff}
         <img class="f1" src="img/pdf-capa.jpg" alt="Capa do Guia Comece Aqui" loading="lazy" width="909" height="1287">
         <figcaption class="legenda">Guia Comece Aqui (PDF)</figcaption>
       </figure>
-    </div>
-    <div class="opcoes">
-      <div class="op-txt">
-        <div class="op-num"><b>700</b> temas<span>para</span><b>365</b> dias</div>
-        <h3>Não são 365 posts fixos</h3>
-        <p>Na maioria dos dias, o calendário traz mais de uma opção de tema. Você escolhe a que combina com a sua semana e guarda a outra para depois.</p>
-      </div>
-      <div class="op-dia" aria-label="Exemplo de um dia do calendário com duas opções de tema">
-        <div class="op-cab"><span>Segunda-feira</span><span class="chip-e">Educar</span></div>
-        <label class="op on"><input type="radio" name="op-ex" checked><span class="bol"></span><span>Cansaço que não passa nem nas férias</span></label>
-        <label class="op"><input type="radio" name="op-ex"><span class="bol"></span><span>Por que descansar também é cuidar da saúde mental</span></label>
-        <p class="op-leg">Toque para escolher · exemplo ilustrativo</p>
-      </div>
     </div>
   </div>
 </section>
