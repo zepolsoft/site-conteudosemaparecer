@@ -311,6 +311,39 @@ footer a{color:#fff}
 .temas700 p{color:var(--texto2);font-size:16px;line-height:1.55}
 .temas700 strong{color:var(--grafite)}
 @media (max-width:720px){.temas700{flex-direction:column;align-items:flex-start;gap:8px;padding:16px 18px}.temas700 .op-num b{font-size:30px}}
+/* planilha Minha Semana (dinâmica) */
+.sheet{background:#fff;border-radius:6px;overflow:hidden;font-size:12.5px;color:#3B3633;font-variant-numeric:tabular-nums}
+.sh-bar{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid #E9E4DE;font-size:12.5px;color:#625953}
+.sh-ico{width:14px;height:18px;border-radius:2px;background:#1E8E3E;display:inline-block}
+.sh-head{display:flex;align-items:baseline;gap:14px;padding:14px 14px 10px}
+.sh-head b{font-size:17px}
+.sh-head span{font-size:12.5px;color:var(--terra-esc);font-weight:600}
+.sh-tab{padding:0 14px 6px}
+.sh-r{display:grid;grid-template-columns:142px 168px 60px minmax(0,1fr) 96px;align-items:center;gap:0;border-bottom:1px solid #EEE9E3;min-height:34px}
+.sh-r>span{padding:6px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sh-th{background:#3B3633;color:#fff;font-weight:700;min-height:30px;border-radius:4px 4px 0 0}
+.sh-r .pl{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600}
+.sh-r .cd{color:var(--terra-esc);font-weight:700}
+.sh-r .lk{color:#1A5FB4;text-decoration:underline}
+.sh-r .st{display:inline-block;background:#FFF1C7;border-radius:4px;padding:1px 7px;font-size:11px}
+.sh-r.hoje{background:#FBF3EE;box-shadow:inset 3px 0 0 var(--terra-esc)}
+.sh-r .c-f,.sh-r .c-s,.sh-th .h-f,.sh-th .h-s{display:none}
+.sh-r .c-t{white-space:normal;line-height:1.3}
+.sh-r .hj{display:inline-block;margin-left:6px;background:var(--terra-esc);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:1px 6px;border-radius:999px;vertical-align:1px}
+.sh-abas{display:flex;gap:2px;padding:6px 10px;background:#F4F1EC;border-top:1px solid #E9E4DE;font-size:11.5px;color:#625953;overflow:hidden}
+.sh-abas span{padding:4px 10px;white-space:nowrap}
+.sh-abas .on{background:#fff;color:#1E8E3E;font-weight:700;border-bottom:2px solid #1E8E3E}
+@media (max-width:720px){
+  .laptop .tela{padding:8px}
+  .sh-bar,.sh-abas,.sh-th{display:none}
+  .sh-head{flex-direction:column;gap:2px;padding:12px 12px 6px}
+  .sh-tab{padding:0 12px 4px}
+  .sh-r{grid-template-columns:auto 1fr auto;grid-template-areas:"d p c" "t t t";padding:8px 0;gap:2px 8px}
+  .sh-r>span{padding:0;white-space:normal}
+  .sh-r .c-d{grid-area:d;color:#625953}.sh-r .c-p{grid-area:p}.sh-r .c-c{grid-area:c}.sh-r .c-t{grid-area:t;font-size:14px;line-height:1.4}
+  .sh-r .c-f,.sh-r .c-l,.sh-r .c-s{display:none}
+  .sh-r.hoje{padding-left:8px;margin-left:-8px}
+}
 /* barra fixa mobile */
 .mbar{display:none}
 @media (max-width:720px){
@@ -391,13 +424,13 @@ footer a{color:#fff}
       <p class="lead hero-lead">O kit <mark class="mk" style="--d:.4s">diz o que postar em cada dia</mark> e entrega o <mark class="mk" style="--d:.8s">texto pronto para você revisar</mark>. Em <b class="t15">cerca de 15 minutos</b>, o vídeo está pronto.</p>
       <ul class="selos-facil">
         <li><b>Não precisa entender de IA:</b> você só copia e cola, como no WhatsApp.</li>
-        <li><b>Nada de planilha complicada:</b> o calendário já mostra o tema de cada dia.</li>
+        <li><b>Nada de planilha complicada:</b> você preenche só a data de hoje, e o resto se organiza sozinho.</li>
         <li><b>Seu primeiro vídeo ainda hoje:</b> guias curtos com prints mostram cada passo.</li>
       </ul>
       <div class="hero-cta">
         <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="topo">Quero o kit por R$&nbsp;47</a>
         <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
-        <span class="sem-linha">Sem rosto · sem voz · sem gravar</span>
+        <span class="sem-linha">Sem rosto · sem voz · sem falar para a câmera</span>
       </div>
     </div>
     <div class="hero-vis">
@@ -435,7 +468,7 @@ footer a{color:#fff}
   </div>
   <div class="wrap" style="margin-top:40px">
     <div class="grid3">
-      <div class="card"><h3>Não quer expor o rosto</h3><p>O formato é texto no centro da tela, sobre um vídeo calmo. Sem rosto, sem voz e sem dancinha.</p></div>
+      <div class="card"><h3>Não quer expor o rosto</h3><p>O formato é texto no centro da tela, sobre um vídeo calmo. Sem rosto, sem voz e sem dancinha. Nos bastidores, só mãos e detalhes do espaço, ou um vídeo gratuito de banco de imagens.</p></div>
       <div class="card"><h3>Tem receio de errar diante do CFP</h3><p>Os prompts foram criados para evitar diagnóstico, promessa de resultado, depoimentos e sensacionalismo.</p></div>
       <div class="card"><h3>Não tem tempo entre um atendimento e outro</h3><p>O calendário diz o que postar em cada dia. Você não precisa pensar no tema, só revisar o roteiro.</p></div>
       <div class="card"><h3>Prefere preservar a vida pessoal</h3><p>Você divulga o seu trabalho sem expor a sua imagem, a sua casa ou a sua família para quem você atende.</p></div>
@@ -454,7 +487,7 @@ footer a{color:#fff}
         <ul>
           <li>Gravar o rosto ou a voz</li>
           <li>Falar para a câmera</li>
-          <li>Mostrar o consultório, a casa ou a rotina</li>
+          <li>Mostrar a sua casa ou a sua família</li>
           <li>Dançar trend ou aprender edição</li>
         </ul>
       </div>
@@ -480,7 +513,7 @@ footer a{color:#fff}
     <div class="steps" style="margin-top:12px">
       <div class="step"><div class="num">1</div><h3>Preencha a Ficha</h3><p>Uma vez só, em cerca de 10 minutos: sua abordagem, seu público e seu tom de voz.</p></div>
       <div class="step"><div class="num">2</div><h3>Abra o dia no calendário</h3><p>Ele mostra o tema sugerido e o prompt certo para hoje. Não gostou do tema? Troque por um dos outros 6 do mesmo prompt.</p></div>
-      <div class="step"><div class="num">3</div><h3>Cole o prompt na IA</h3><p>ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p></div>
+      <div class="step"><div class="num">3</div><h3>Cole o prompt na IA</h3><p>Troque o [Tema] pelo tema do dia e cole no ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p></div>
       <div class="step"><div class="num">4</div><h3>Monte e publique</h3><p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Você revisa e posta.</p></div>
     </div>
   </div>
@@ -496,8 +529,8 @@ footer a{color:#fff}
     <div class="mods" style="margin-top:14px">
       <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui em PDF, com os passos para publicar o seu primeiro vídeo ainda hoje.<br><span class="guia">+ Leitura de 10 minutos, com a rotina da semana pronta para seguir.</span></p></div></article>
       <article class="mod"><img src="img/modulo-02.jpg" alt="Módulo 02, Personalize a IA" loading="lazy" width="960" height="540"><div><h3>02 · Personalize a IA</h3><p>Ficha do Negócio + Prompt de Contexto. Você preenche uma vez e a IA passa a escrever com a sua abordagem e o seu tom, longe das frases batidas.<br><span class="guia">+ Guia prático com prints do ChatGPT, Gemini e Claude.</span></p></div></article>
-      <article class="mod"><img src="img/modulo-03.jpg" alt="Módulo 03, Banco de Prompts" loading="lazy" width="960" height="540"><div><h3>03 · Banco de 102 Prompts</h3><p>Organizados por pilar: educar, mito x verdade, bastidores, perguntas frequentes, convite, datas especiais, além de reaproveitar e planejar a semana.<br><span class="guia">+ Guia prático: o que trocar em cada prompt, com exemplo completo.</span></p></div></article>
-      <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>O pilar, o prompt e o tema de cada dia, com 700 temas e as datas da saúde mental (Janeiro Branco, Setembro Amarelo e outras) já marcadas.<br><span class="guia">+ Guia prático: a rotina do dia, passo a passo.</span></p></div></article>
+      <article class="mod"><img src="img/modulo-03.jpg" alt="Módulo 03, Banco de Prompts" loading="lazy" width="960" height="540"><div><h3>03 · Banco de 102 Prompts</h3><p>Um pilar por dia: segunda Educar, terça Mito x Verdade, quarta Bastidores, quinta Perguntas Frequentes, sexta Convite, sábado Reaproveitar e domingo Planejar. E prompts para as datas especiais.<br><span class="guia">+ Guia prático: o que trocar em cada prompt, com exemplo completo.</span></p></div></article>
+      <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>O pilar, o prompt e o tema de cada dia, com mais de 700 temas. 8 datas especiais (Janeiro Branco, Dia do Psicólogo, Setembro Amarelo, Dia Mundial da Saúde Mental e outras) entram sozinhas no calendário.<br><span class="guia">+ Guia prático: a rotina do dia, passo a passo.</span></p></div></article>
     </div>
   </div>
 </section>
@@ -507,7 +540,7 @@ footer a{color:#fff}
   <div class="wrap stack">
     <div class="eyebrow">Veja por dentro</div>
     <h2 class="h2">Abriu, viu o dia, postou</h2>
-    <p class="lead">A aba Minha Semana mostra o pilar, o código do prompt e o tema de cada dia. Um clique em "Abrir prompt" leva direto ao texto certo no Banco.</p>
+    <p class="lead">A aba Minha Semana mostra hoje e os próximos 6 dias: o pilar, o prompt, o tema e o formato. Um clique em "Abrir prompt" leva direto ao texto certo no Banco.</p>
     <div class="temas700">
       <div class="op-num"><b>102</b> prompts<span>×</span><b>7</b> temas</div>
       <p><strong>Não são 365 posts fixos.</strong> Cada prompt vem com 7 temas prontos, mais de 700 no total. O calendário sugere um por dia, e no Índice de Prompts você troca por outro quando quiser. Todos pensados para respeitar o Código de Ética do CFP.</p>
@@ -515,22 +548,18 @@ footer a{color:#fff}
     <div class="dentro-grid">
       <figure class="laptop" style="margin:0">
         <div class="tela">
-          <div class="cal-m">
-            <h4>Minha Semana</h4>
-            <p class="sub">Psicologia · hoje: 26/10/2026</p>
-            <ol>
-              <li><div class="top">seg 26/10 <span class="chip" style="background:#DDE5DA">Educar</span><span class="cod">PS-01</span></div><div class="tema">Cansaço que não passa nem nas férias</div></li>
-              <li><div class="top">ter 27/10 <span class="chip" style="background:#F3E2D8">Mito x Verdade</span><span class="cod">PS-25</span></div><div class="tema">Foco em quem quer se conhecer melhor</div></li>
-              <li><div class="top">qua 28/10 <span class="chip" style="background:#EFE7DC">Bastidores</span><span class="cod">PS-45</span></div><div class="tema">O preparo do dia anterior aos atendimentos</div></li>
-              <li><div class="top">qui 29/10 <span class="chip" style="background:#E3E8F2">Perguntas Frequentes</span><span class="cod">PS-61</span></div><div class="tema">Como é a primeira conversa, do começo ao fim</div></li>
-              <li><div class="top">sex 30/10 <span class="chip" style="background:#F6E3CF">Convite</span><span class="cod">PS-81</span></div><div class="tema">Para quem pensa em começar no ano novo</div></li>
-              <li><div class="top">sáb 31/10 <span class="chip" style="background:#ECEAE7">Reaproveitar</span><span class="cod">PS-R</span></div><div class="tema">Repostar como carrossel o vídeo com mais salvamentos</div></li>
-              <li><div class="top">dom 01/11 <span class="chip" style="background:#ECEAE7">Planejar</span><span class="cod">PS-P</span></div><div class="tema">Revisar os temas da semana que vem (20 min)</div></li>
-            </ol>
+          <div class="sheet" id="sheet" aria-label="Exemplo da aba Minha Semana do Calendário 365">
+            <div class="sh-bar"><span class="sh-ico"></span>Calendário 365 · Conteúdo Sem Aparecer</div>
+            <div class="sh-head"><b>Minha Semana</b><span id="sh-hoje">Psicologia · hoje e os próximos 6 dias</span></div>
+            <div class="sh-tab" role="table">
+              <div class="sh-r sh-th" role="row"><span>Data</span><span>Pilar</span><span>Código</span><span>Tema sugerido</span><span class="h-f">Formato</span><span>Prompt</span><span class="h-s">Status</span></div>
+              <div id="sh-rows"></div>
+            </div>
+            <div class="sh-abas"><span>Comece Aqui</span><span class="on">Minha Semana</span><span>Psicólogos</span><span>Índice de Prompts</span><span>Datas Especiais</span></div>
           </div>
-          <picture><source media="(max-width:720px)" srcset="img/tela-calendario-m.jpg"><img src="img/tela-calendario.jpg" alt="Aba Minha Semana do Calendário 365, com pilar, código, tema e link do prompt de cada dia" loading="lazy" width="1400" height="720"></picture></div>
+        </div>
         <div class="base"></div>
-        <figcaption class="legenda">Calendário 365 · temas reais da primeira semana</figcaption>
+        <figcaption class="legenda">Calendário 365 · temas reais do kit · as datas acompanham o dia de hoje</figcaption>
       </figure>
       <figure class="folhas" style="margin:0 auto">
         <img class="f2" src="img/pdf-rotina.jpg" alt="Página A rotina do dia, do Guia Comece Aqui" loading="lazy" width="909" height="1287">
@@ -746,6 +775,29 @@ document.querySelectorAll('.faq details').forEach(function(d){
   if('IntersectionObserver' in window) new IntersectionObserver(function(e){visivel=e[0].isIntersecting}).observe(vp);
   window.addEventListener('resize',function(){var r=W?vp.scrollLeft/W:0; medir(); if(r) vp.scrollLeft=r*W});
   medir(); requestAnimationFrame(quadro);
+})();
+</script>
+<script>
+// Minha Semana: datas a partir de hoje, pilar pelo dia da semana (como na planilha)
+(function(){
+  var box=document.getElementById('sh-rows'); if(!box) return;
+  var P={1:['Educar','#DDE5DA','PS-01','Cansaço que não passa nem nas férias','Texto centralizado'],
+         2:['Mito x Verdade','#F3E2D8','PS-25','Foco em quem quer se conhecer melhor','Texto centralizado'],
+         3:['Bastidores','#EFE7DC','PS-45','O preparo do dia anterior aos atendimentos','Cenas com as mãos + texto'],
+         4:['Perguntas Frequentes','#E3E8F2','PS-61','Como é a primeira conversa, do começo ao fim','Texto + carrossel'],
+         5:['Convite','#F6E3CF','PS-81','Para quem não sabe por onde começar','Texto centralizado'],
+         6:['Reaproveitar','#ECEAE7','PS-R','Carrossel com o vídeo mais salvo da semana','Carrossel + stories'],
+         0:['Planejar','#ECEAE7','PS-P','Revisar os temas e escolher os ganchos da semana','Planejamento']};
+  var D=['dom','seg','ter','qua','qui','sex','sáb'], hoje=new Date(), h='';
+  function dd(d){return ('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)}
+  for(var i=0;i<7;i++){
+    var d=new Date(hoje.getFullYear(),hoje.getMonth(),hoje.getDate()+i), p=P[d.getDay()];
+    h+='<div class="sh-r'+(i===0?' hoje':'')+'" role="row"><span class="c-d">'+D[d.getDay()]+' '+dd(d)+(i===0?'<i class="hj">HOJE</i>':'')+'</span>'+
+       '<span class="c-p"><span class="pl" style="background:'+p[1]+'">'+p[0]+'</span></span><span class="c-c cd">'+p[2]+'</span>'+
+       '<span class="c-t">'+p[3]+'</span><span class="c-f">'+p[4]+'</span><span class="c-l lk">Abrir prompt</span><span class="c-s"><i class="st">A fazer</i></span></div>';
+  }
+  box.innerHTML=h;
+  var t=document.getElementById('sh-hoje'); if(t) t.textContent='Psicologia · hoje: '+dd(hoje)+'/'+hoje.getFullYear();
 })();
 </script>
 </body>
