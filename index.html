@@ -691,7 +691,7 @@ footer a{color:#fff}
   <div class="wrap narrow stack">
     <h2 class="h2">O seu próximo post pode estar pronto em cerca de 15 minutos.</h2>
     <p class="lead">102 prompts, 365 dias de temas e um processo simples, sem aparecer na câmera.</p>
-    <a class="btn" href="#oferta" style="margin-top:6px" data-umami-event="quero-o-kit" data-umami-event-local="final">Quero o kit por R$&nbsp;47</a>
+    <a class="btn" href="https://pay.hotmart.com/S108248865H?checkoutMode=10" style="margin-top:6px" data-umami-event="checkout" data-umami-event-local="final">Quero o kit por R$&nbsp;47</a>
     <span class="micro">Acesso imediato · Garantia de 7 dias</span>
   </div>
 </section>
@@ -708,7 +708,7 @@ footer a{color:#fff}
 
 <div class="mbar" id="mbar">
   <b>R$ 47</b>
-  <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="barra-fixa">Quero o kit</a>
+  <a class="btn" id="mbar-btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="barra-fixa">Quero o kit</a>
 </div>
 
 <script>
@@ -721,6 +721,17 @@ document.querySelectorAll('a[href^="https://pay.hotmart.com"]').forEach(function
   var bar=document.getElementById('mbar'), hero=document.querySelector('.hero'), of=document.getElementById('oferta');
   if(!('IntersectionObserver' in window)) return;
   var heroVis=true, ofVis=false;
+  var btn=document.getElementById('mbar-btn'), CK='https://pay.hotmart.com/S108248865H?checkoutMode=10', passou=false;
+  // barra inteligente: antes da oferta leva à oferta; depois de passar por ela, vai direto ao checkout
+  function modo(){
+    var p=of.getBoundingClientRect().bottom<0;
+    if(p===passou) return; passou=p;
+    btn.href=p?CK:'#oferta';
+    btn.setAttribute('data-umami-event',p?'checkout':'quero-o-kit');
+    btn.textContent=p?'Garantir meu acesso':'Quero o kit';
+  }
+  btn.addEventListener('click',function(){ if(passou&&window.fbq) fbq('trackCustom','CliqueComprar',{value:47,currency:'BRL'}); });
+  window.addEventListener('scroll',modo,{passive:true}); modo();
   function upd(){ bar.classList.toggle('on', !heroVis && !ofVis); }
   new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd();}).observe(hero);
   new IntersectionObserver(function(e){ofVis=e[0].isIntersecting;upd();}).observe(of);
