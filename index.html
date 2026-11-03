@@ -467,7 +467,7 @@ p,li{text-wrap:pretty}
 .gl{position:absolute;left:calc(50% - var(--w)/2 + var(--i)*var(--o));bottom:14px;width:var(--w);padding:0;border:0;background:none;cursor:pointer;transform-origin:50% 120%;transform:rotate(calc(var(--i)*6deg));transition:transform .45s cubic-bezier(.3,.7,.3,1),filter .3s;z-index:calc(5 - var(--i)*var(--i));filter:saturate(.9) brightness(.97)}
 .gl img{display:block;width:100%;height:auto;border-radius:5px;box-shadow:0 14px 28px -14px rgba(59,54,51,.5),0 0 0 1px rgba(59,54,51,.06)}
 .gl{transform-origin:50% 100%}
-.gl.on{transform:rotate(0) scale(var(--s));z-index:10;filter:none}
+.gl.on{transform:translateX(calc(var(--i)*-16px)) rotate(0) scale(var(--s));z-index:10;filter:none}
 .gl.on img{box-shadow:0 22px 40px -16px rgba(59,54,51,.55),0 0 0 1px rgba(59,54,51,.06)}
 .gl:focus-visible{outline:3px solid var(--grafite);outline-offset:3px;border-radius:6px}
 .gl-tag{position:absolute;top:-9px;right:-6px;background:var(--terra-esc);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:999px;box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
@@ -499,6 +499,7 @@ p,li{text-wrap:pretty}
 @media (max-width:720px){.mods{align-items:stretch}.mod{flex:0 0 80%}}
 @media (max-width:380px){.leque{--w:108px;--o:38px}}
 .guias{overflow-x:clip}
+.guias{background:var(--areia);border-color:transparent}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -650,6 +651,15 @@ p,li{text-wrap:pretty}
       <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>Mais de 700 temas e 8 datas especiais. A aba Hoje entrega o prompt do dia pronto para copiar.</p><span class="guia">+ Guia: a rotina do dia, passo a passo.</span></div></article>
       <article class="mod mod-pack"><span class="mod-selo">Opcional · R$&nbsp;27</span><img src="img/modulo-pack.jpg" alt="Complemento opcional, Pack 20 Modelos Canva" loading="lazy" width="960" height="540"><div><h3>Pack 20 Modelos Canva</h3><p>20 modelos de vídeo prontos: troque o texto no Canva e baixe em MP4. Você adiciona no pagamento, se quiser.</p><span class="guia">+ Guia com o link de cada modelo.</span></div></article>
     </div>
+    <div class="guias">
+      <div class="guias-txt">
+        <div class="eyebrow">Guias com prints</div>
+        <h3 class="h3">Um guia em PDF para cada módulo</h3>
+        <p>Curtos e diretos, com a tela de cada passo. Você nunca fica sem saber onde clicar.</p>
+      </div>
+      <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." aria-label="01 · Comece Aqui"><img src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." aria-label="02 · Personalize a IA"><img src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." aria-label="03 · Banco de Prompts"><img src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." aria-label="04 · Calendário 365"><img src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="420" height="594"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." aria-label="Pack 20 · Modelos Canva"><img src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="420" height="594"><span class=gl-tag>Com o Pack</span></button></div>
+      <p class="leque-info" aria-live="polite"><b id="lq-t">01 · Comece Aqui</b><span id="lq-d">Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura.</span></p>
+    </div>
   </div>
 </section>
 
@@ -705,15 +715,6 @@ p,li{text-wrap:pretty}
         <div class="base"></div>
         <figcaption class="legenda">Da aba Hoje para a IA · temas reais do kit · a cada dia, um post novo</figcaption>
       </figure>
-    </div>
-    <div class="guias">
-      <div class="guias-txt">
-        <div class="eyebrow">Guias com prints</div>
-        <h3 class="h3">Um guia em PDF para cada módulo</h3>
-        <p>Curtos e diretos, com a tela de cada passo. Você nunca fica sem saber onde clicar.</p>
-      </div>
-      <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." aria-label="01 · Comece Aqui"><img src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." aria-label="02 · Personalize a IA"><img src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." aria-label="03 · Banco de Prompts"><img src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." aria-label="04 · Calendário 365"><img src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="420" height="594"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." aria-label="Pack 20 · Modelos Canva"><img src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="420" height="594"><span class=gl-tag>Com o Pack</span></button></div>
-      <p class="leque-info" aria-live="polite"><b id="lq-t">01 · Comece Aqui</b><span id="lq-d">Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura.</span></p>
     </div>
   </div>
 </section>
