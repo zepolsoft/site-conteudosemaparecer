@@ -584,7 +584,7 @@ p,li{text-wrap:pretty}
 .c1 .c1-mais{background:none;border:0;padding:2px 0 0;font-size:11.5px;color:var(--texto2)}
 .c1 .c1-mais b{color:var(--salvia)}
 @media (max-width:720px){
-  .fx-barra{position:sticky;top:72px;z-index:6;margin-left:auto;margin-right:auto}
+  .fx-barra{position:sticky;top:64px;z-index:6;margin:0 -20px 18px;max-width:none;border-radius:0 0 16px 16px;padding:12px 20px;box-shadow:0 10px 18px -14px rgba(59,54,51,.55)}
   .fx{transition:box-shadow .35s,transform .35s,opacity .35s}
   .fx:not(.on):not(.done){opacity:.75}
 }
@@ -693,7 +693,7 @@ p,li{text-wrap:pretty}
     <div class="eyebrow">Como funciona</div>
     <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
     <div class="fluxo" id="fluxo">
-      <div class="fx-barra" aria-hidden="true"><span class="fx-rel"></span><span class="fx-lb" id="fx-lb">Post de hoje</span><span class="fx-trilho"><i id="fx-fill"></i></span><b><i id="fx-min">0</i> min</b></div>
+      <div class="fx-barra" aria-hidden="true"><span class="fx-rel"></span><span class="fx-lb" id="fx-lb">Post de hoje</span><span class="fx-trilho"><i id="fx-fill"></i></span><b><i id="fx-min">0</i><span id="fx-de"> de 15</span> min</b></div>
       <ol class="fx-steps">
         <li class="fx" data-min="0">
           <div class="fx-top"><span class="fx-num">1</span><span class="fx-t fx-t1">uma vez só · 10 min</span></div>
@@ -1170,18 +1170,18 @@ document.querySelectorAll('.faq details').forEach(function(d){
     ps.forEach(function(p,j){ p.classList.toggle('on',j===n); p.classList.toggle('done',j<n); });
     var ficha=(n===0);
     barra.classList.toggle('ficha',ficha);
-    lb.textContent=ficha?'Ficha · uma vez só':'Post de hoje';
+    lb.textContent=ficha?'Ficha · só no 1º dia':'Post de hoje';
+    document.getElementById('fx-de').style.display=ficha?'none':'';
     if(ficha){ clearInterval(tm); tm=null; cur=alvo=10; mn.textContent='10'; fill.style.width='100%'; return; }
     if(cur===10&&n>0){ cur=0; mn.textContent='0'; }
     conta(n<0?0:+ps[n].dataset.min); }
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; fill.style.width='100%'; return; }
   // celular: acompanha a rolagem
-  function topo(){ if(hd) barra.style.top=(hd.offsetHeight+8)+'px'; }
+  function topo(){ if(hd) barra.style.top=(hd.offsetHeight-1)+'px'; }
   function rola(){
     if(!mob.matches) return;
-    var meio=innerHeight*0.55, n=-1;
-    ps.forEach(function(p,j){ if(p.getBoundingClientRect().top<meio) n=j; });
-    if(n<0 && ps[0].getBoundingClientRect().top<innerHeight) n=0;
+    var topoVis=(hd?hd.offsetHeight:0)+barra.offsetHeight, meio=topoVis+(innerHeight-topoVis-80)*0.45, n=0, best=1e9;
+    ps.forEach(function(p,j){ var r=p.getBoundingClientRect(), c=r.top+r.height/2, d=Math.abs(c-meio); if(d<best){best=d;n=j} });
     marca(n);
   }
   addEventListener('scroll',rola,{passive:true}); addEventListener('resize',function(){topo();rola()}); topo(); rola();
