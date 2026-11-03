@@ -322,7 +322,6 @@ footer a{color:#fff}
 .formatos span{background:var(--pessego);color:var(--grafite);font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px}
 .formatos span{display:inline-flex;align-items:center;gap:7px}
 .formatos svg{width:18px;height:18px;fill:none;stroke:var(--terra-esc);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
-@media (max-width:420px){.formatos{gap:6px}.formatos span{font-size:12.5px;padding:6px 10px 6px 8px;gap:4px}.formatos svg{width:16px!important;height:16px!important}}
 .ex-seta{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid var(--linha);background:#fff;color:var(--grafite);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 16px -6px rgba(59,54,51,.35);display:flex;align-items:center;justify-content:center}
 .ex-seta:hover{background:var(--areia)}
 .ex-seta:focus-visible{outline:3px solid var(--grafite);outline-offset:2px}
@@ -455,6 +454,34 @@ footer a{color:#fff}
   body{padding-bottom:76px}
 }
 .mod .guia{display:inline-block;margin-top:8px;font-weight:600;color:var(--terra-esc)}
+
+/* revisão mobile */
+h1,h2,h3,.gancho,.quote{text-wrap:balance}
+p,li{text-wrap:pretty}
+.nw{white-space:nowrap}
+.ex-leg{padding:0 20px}
+.guias{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:10px 40px;align-items:center;margin-top:34px;background:rgba(255,255,255,.55);border:1px solid var(--linha);border-radius:22px;padding:30px 34px}
+.guias-txt .h3{font-family:"Playfair Display",Georgia,serif;font-size:26px;line-height:1.2;margin:6px 0 8px;color:var(--grafite)}
+.guias-txt p{color:var(--texto2);font-size:16px;line-height:1.55}
+.leque{--w:150px;--o:96px;position:relative;height:calc(var(--w)*1.414 + 46px);grid-row:span 2}
+.gl{position:absolute;left:calc(50% - var(--w)/2 + var(--i)*var(--o));bottom:14px;width:var(--w);padding:0;border:0;background:none;cursor:pointer;transform-origin:50% 120%;transform:rotate(calc(var(--i)*6deg));transition:transform .45s cubic-bezier(.3,.7,.3,1),filter .3s;z-index:calc(5 - var(--i)*var(--i));filter:saturate(.9) brightness(.97)}
+.gl img{display:block;width:100%;height:auto;border-radius:5px;box-shadow:0 14px 28px -14px rgba(59,54,51,.5),0 0 0 1px rgba(59,54,51,.06)}
+.gl.on{transform:translateY(-16px) rotate(0) scale(1.07);z-index:10;filter:none}
+.gl:focus-visible{outline:3px solid var(--grafite);outline-offset:3px;border-radius:6px}
+.gl-tag{position:absolute;top:-9px;right:-6px;background:var(--terra-esc);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:999px;box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
+.leque-info{min-height:52px;font-size:15px;line-height:1.5;color:var(--texto2)}
+.leque-info b{display:block;color:var(--terra-esc);font-size:15px}
+@media (max-width:720px){
+  .guias{grid-template-columns:1fr;padding:24px 18px 20px;margin-top:28px;gap:8px}
+  .guias-txt .h3{font-size:23px}
+  .leque{--w:100px;--o:42px;grid-row:auto;margin-top:6px}
+  .gl{transform:rotate(calc(var(--i)*6deg))}
+  .gl.on{transform:translateY(-12px) rotate(0) scale(1.12)}
+  .leque-info{text-align:center;font-size:14.5px;min-height:66px}
+  .mods{align-items:flex-start}
+  .sem-linha{font-size:12px;letter-spacing:.1em;line-height:1.7}
+  .formatos{gap:6px}.formatos span{font-size:12px;padding:6px 9px 6px 7px;gap:4px}.formatos svg{width:14px!important;height:14px!important}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -503,7 +530,7 @@ footer a{color:#fff}
       <div class="hero-cta">
         <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="topo">Quero o kit por R$&nbsp;47</a>
         <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
-        <span class="sem-linha">Sem rosto · sem voz · sem falar para a câmera</span>
+        <span class="sem-linha"><span class="nw">Sem rosto · sem voz ·</span> <span class="nw">sem falar para a câmera</span></span>
       </div>
     </div>
     <div class="hero-vis">
@@ -552,7 +579,7 @@ footer a{color:#fff}
 <!-- 2b. PRESENÇA -->
 <section class="presenca">
   <div class="wrap stack">
-    <div class="eyebrow">Sem aparecer</div>
+    <div class="eyebrow">Presença sem exposição</div>
     <h2 class="h2">Sem aparecer não é sem presença</h2>
     <div class="two" style="margin-top:8px">
       <div class="box nao">
@@ -660,11 +687,15 @@ footer a{color:#fff}
         <div class="base"></div>
         <figcaption class="legenda">Da aba Hoje para a IA · temas reais do kit · a cada dia, um post novo</figcaption>
       </figure>
-      <figure class="folhas" style="margin:0 auto">
-        <img class="f2" src="img/pdf-rotina.jpg" alt="Página A rotina do dia, do Guia Comece Aqui" loading="lazy" width="909" height="1287">
-        <img class="f1" src="img/pdf-capa.jpg" alt="Capa do Guia Comece Aqui" loading="lazy" width="909" height="1287">
-        <figcaption class="legenda">Guia Comece Aqui (PDF)</figcaption>
-      </figure>
+    </div>
+    <div class="guias">
+      <div class="guias-txt">
+        <div class="eyebrow">Guias com prints</div>
+        <h3 class="h3">Um guia em PDF para cada módulo</h3>
+        <p>Curtos e diretos, com a tela de cada passo. Você nunca fica sem saber onde clicar.</p>
+      </div>
+      <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." aria-label="01 · Comece Aqui"><img src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." aria-label="02 · Personalize a IA"><img src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." aria-label="03 · Banco de Prompts"><img src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." aria-label="04 · Calendário 365"><img src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="420" height="594"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." aria-label="Pack 20 · Modelos Canva"><img src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="420" height="594"><span class=gl-tag>Com o Pack</span></button></div>
+      <p class="leque-info" aria-live="polite"><b id="lq-t">01 · Comece Aqui</b><span id="lq-d">Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura.</span></p>
     </div>
   </div>
 </section>
@@ -687,7 +718,7 @@ footer a{color:#fff}
   </div>
   </div>
   <p class="ex-dica">← Arraste para ver mais →</p>
-  <p class="legenda" style="margin-top:0">Exemplos ilustrativos no estilo dos modelos do Pack 20 · texto, fontes e cores editáveis</p>
+  <p class="legenda ex-leg" style="margin-top:0">Exemplos ilustrativos no estilo dos modelos do Pack 20 · texto, fontes e cores editáveis</p>
 </section>
 
 <!-- 5. ORDER BUMP -->
@@ -750,7 +781,7 @@ footer a{color:#fff}
         <li>Banco de 102 prompts para psicologia</li>
         <li>Calendário de 365 dias com mais de 700 temas (7 por prompt), que começa no dia que você escolher</li>
         <li>Ficha do Negócio + Prompt de Contexto</li>
-        <li>Guia Comece Aqui + 3 guias práticos com prints</li>
+        <li>4 guias em PDF com prints, um para cada módulo</li>
         <li>Acesso pela área de membros da Hotmart</li>
       </ul>
       <p class="bump"><b>Opcional no pagamento:</b> adicione o Pack 20 Modelos Canva por R$&nbsp;27 e já comece com os modelos de vídeo prontos para editar.</p>
@@ -972,6 +1003,19 @@ document.querySelectorAll('.faq details').forEach(function(d){
     if(!vis||document.hidden){ setTimeout(roda,400); return; }
     var x=passos[p]; setTimeout(function(){ x[1](); p=(p+1)%passos.length; roda(); }, x[0]);
   })();
+})();
+</script>
+<script>
+// Leque dos guias: um de cada vez vem para frente; toque para escolher
+(function(){
+  var lq=document.getElementById('leque'); if(!lq) return;
+  var bs=[].slice.call(lq.querySelectorAll('.gl')), t=document.getElementById('lq-t'), d=document.getElementById('lq-d'), at=0, pausa=0, vis=false;
+  function ativa(k){ at=k; bs.forEach(function(b,j){b.classList.toggle('on',j===k)}); t.textContent=bs[k].dataset.t; d.textContent=bs[k].dataset.d; }
+  bs.forEach(function(b,j){ b.addEventListener('click',function(){ ativa(j); pausa=Date.now()+9000; }); });
+  ativa(0);
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.4}).observe(lq); } else vis=true;
+  setInterval(function(){ if(vis&&!document.hidden&&Date.now()>pausa) ativa((at+1)%bs.length); },2800);
 })();
 </script>
 </body>
