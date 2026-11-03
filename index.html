@@ -477,7 +477,8 @@ p,li{text-wrap:pretty}
   .guias{grid-template-columns:1fr;padding:24px 14px 20px;margin-top:28px;gap:8px}
   .guias-txt{padding:0 4px}
   .guias-txt .h3{font-size:23px}
-  .leque{--w:118px;--o:44px;--s:1.5;grid-row:auto;margin-top:10px}
+  .leque{--w:118px;--o:44px;--s:1.8;grid-row:auto;margin-top:10px}
+  .gl.on{transform:translateX(calc(var(--i)*-34px)) rotate(0) scale(var(--s))}
   .gl{transform:rotate(calc(var(--i)*6deg))}
   .gl:not(.on){filter:saturate(.85) brightness(.94)}
   .leque-info{text-align:center;font-size:15px;min-height:70px;padding:0 4px}
@@ -497,7 +498,7 @@ p,li{text-wrap:pretty}
 .mod-selo{position:absolute;top:10px;right:10px;z-index:2;background:#FAF7F2;color:var(--terra-esc);font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;box-shadow:0 4px 12px -6px rgba(0,0,0,.45)}
 @media (max-width:1060px) and (min-width:721px){.mods{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:720px){.mods{align-items:stretch}.mod{flex:0 0 80%}}
-@media (max-width:380px){.leque{--w:108px;--o:38px}}
+@media (max-width:380px){.leque{--w:104px;--o:38px;--s:1.75}}
 .guias{overflow-x:clip}
 .guias{background:var(--areia);border-color:transparent}
 </style>
@@ -657,7 +658,7 @@ p,li{text-wrap:pretty}
         <h3 class="h3">Um guia em PDF para cada módulo</h3>
         <p>Curtos e diretos, com a tela de cada passo. Você nunca fica sem saber onde clicar.</p>
       </div>
-      <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." aria-label="01 · Comece Aqui"><img src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." aria-label="02 · Personalize a IA"><img src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." aria-label="03 · Banco de Prompts"><img src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="420" height="594"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." aria-label="04 · Calendário 365"><img src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="420" height="594"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." aria-label="Pack 20 · Modelos Canva"><img src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="420" height="594"><span class=gl-tag>Com o Pack</span></button></div>
+      <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." aria-label="01 · Comece Aqui"><img src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." aria-label="02 · Personalize a IA"><img src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." aria-label="03 · Banco de Prompts"><img src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." aria-label="04 · Calendário 365"><img src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="640" height="905"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." aria-label="Pack 20 · Modelos Canva"><img src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="640" height="905"><span class=gl-tag>Com o Pack</span></button></div>
       <p class="leque-info" aria-live="polite"><b id="lq-t">01 · Comece Aqui</b><span id="lq-d">Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura.</span></p>
     </div>
   </div>
