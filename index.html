@@ -583,6 +583,11 @@ p,li{text-wrap:pretty}
 .c1-doc{width:12px;height:15px;border-radius:2px;background:#4285F4;flex:0 0 auto}
 .c1 .c1-mais{background:none;border:0;padding:2px 0 0;font-size:11.5px;color:var(--texto2)}
 .c1 .c1-mais b{color:var(--salvia)}
+@media (max-width:720px){
+  .fx-barra{position:sticky;top:72px;z-index:6;margin-left:auto;margin-right:auto}
+  .fx{transition:box-shadow .35s,transform .35s,opacity .35s}
+  .fx:not(.on):not(.done){opacity:.75}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1148,23 +1153,36 @@ document.querySelectorAll('.faq details').forEach(function(d){
 })();
 </script>
 <script>
-// Fluxo animado: acende um passo de cada vez e o cronômetro acompanha
+// Fluxo animado: no celular segue a rolagem (passo no meio da tela acende); no computador passa sozinho
 (function(){
   var f=document.getElementById('fluxo'); if(!f) return;
-  var ps=[].slice.call(f.querySelectorAll('.fx')), mn=document.getElementById('fx-min'), k=-1, vis=false, cur=0, tm;
-  var fill=document.getElementById('fx-fill');
-  function conta(alvo){ fill.style.width=(alvo/15*100)+'%'; clearInterval(tm); tm=setInterval(function(){ if(cur<alvo){cur++;mn.textContent=cur}else clearInterval(tm) }, alvo>5?110:300); }
-  function passo(){
-    k++;
-    if(k>=ps.length){ k=-1; cur=0; mn.textContent='0'; fill.style.width='0'; ps.forEach(function(p){p.classList.remove('on','done')}); return setTimeout(roda,700); }
-    ps.forEach(function(p,j){ p.classList.toggle('on',j===k); p.classList.toggle('done',j<k); });
-    conta(+ps[k].dataset.min);
-    setTimeout(roda, k===ps.length-1?4200:2800);
+  var ps=[].slice.call(f.querySelectorAll('.fx')), mn=document.getElementById('fx-min'), fill=document.getElementById('fx-fill'),
+      barra=f.querySelector('.fx-barra'), hd=document.querySelector('header'), mob=matchMedia('(max-width:720px)'),
+      k=-1, vis=false, cur=0, alvo=0, tm=null;
+  function conta(a){ alvo=a; fill.style.width=(a/15*100)+'%'; if(tm) return;
+    tm=setInterval(function(){ if(cur===alvo){clearInterval(tm);tm=null;return} cur+=cur<alvo?1:-1; mn.textContent=cur; }, 70); }
+  function marca(n){ if(n===k) return; k=n;
+    ps.forEach(function(p,j){ p.classList.toggle('on',j===n); p.classList.toggle('done',j<n); });
+    conta(n<0?0:+ps[n].dataset.min); }
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; fill.style.width='100%'; return; }
+  // celular: acompanha a rolagem
+  function topo(){ if(hd) barra.style.top=(hd.offsetHeight+8)+'px'; }
+  function rola(){
+    if(!mob.matches) return;
+    var meio=innerHeight*0.55, n=-1;
+    ps.forEach(function(p,j){ if(p.getBoundingClientRect().top<meio) n=j; });
+    if(n<0 && ps[0].getBoundingClientRect().top<innerHeight) n=0;
+    marca(n);
   }
-  function roda(){ if(!vis||document.hidden) return setTimeout(roda,500); passo(); }
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; fill.style.width='100%'; return; }
+  addEventListener('scroll',rola,{passive:true}); addEventListener('resize',function(){topo();rola()}); topo(); rola();
+  // computador: passa sozinho quando a seção está visível
   if('IntersectionObserver' in window){ new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.25}).observe(f); } else vis=true;
-  roda();
+  var auto=-1;
+  (function roda(){
+    if(mob.matches||!vis||document.hidden) return setTimeout(roda,600);
+    auto++; if(auto>=ps.length){ auto=-1; marca(-1); return setTimeout(roda,900); }
+    marca(auto); setTimeout(roda, auto===ps.length-1?4200:2800);
+  })();
 })();
 </script>
 </body>
