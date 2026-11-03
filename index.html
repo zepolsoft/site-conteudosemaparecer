@@ -501,6 +501,10 @@ p,li{text-wrap:pretty}
 @media (max-width:380px){.leque{--w:104px;--o:38px;--s:1.75}}
 .guias{overflow-x:clip}
 .guias{background:var(--areia);border-color:transparent}
+.redes-leg b{color:var(--grafite)}
+.redes,.redes-leg{position:relative;z-index:3}
+.redes{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:8px}
+.redes span{background:#fff;border:1px solid var(--linha);color:var(--grafite);font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:999px}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -571,7 +575,8 @@ p,li{text-wrap:pretty}
         </div>
       </div>
       </div>
-      <p class="legenda">Um vídeo, vários formatos: Reels, feed, Stories e carrossel.<br><span class="leg-redes">E o mesmo vídeo vai também para o Facebook e o TikTok.</span></p>
+      <p class="legenda redes-leg"><b>Um vídeo, todas as redes.</b> O mesmo MP4 vertical vai para Reels, Stories e feed, e também para o Facebook e o TikTok. Para carrossel, é só baixar as telas como imagem.</p>
+      <p class="redes" aria-label="Redes"><span>Instagram</span><span>Facebook</span><span>TikTok</span></p>
     </div>
   </div>
 </section>
@@ -643,7 +648,7 @@ p,li{text-wrap:pretty}
   <div class="wrap stack">
     <div class="eyebrow">O que você recebe</div>
     <h2 class="h2">Tudo organizado em 4 módulos</h2>
-    <p class="lead">Abre no celular ou no computador, em Google Docs, Sheets e PDF. Sem instalar nada.</p>
+    <p class="lead">Tudo abre direto no celular, em Google Docs, Sheets e PDF, sem instalar nada. No computador, fica ainda mais confortável.</p>
     <p class="mods-dica">Arraste para o lado: 4 módulos + o complemento opcional →</p>
     <div class="mods" style="margin-top:14px">
       <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui leva você do primeiro acesso ao primeiro vídeo publicado.</p><span class="guia">+ Leitura de 10 minutos.</span></div></article>
@@ -825,6 +830,7 @@ p,li{text-wrap:pretty}
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
     <details name="faq"><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. E não precisa pagar nenhuma ferramenta: funciona com as versões gratuitas do ChatGPT (ou Gemini, ou Claude), do Canva ou CapCut e de bancos de vídeo. Cada módulo tem um guia com prints mostrando onde clicar.</p></details>
+    <details name="faq"><summary>Consigo usar só pelo celular?</summary><p>Consegue. A planilha, a IA e o Canva funcionam no celular, então dá para criar e postar no intervalo entre um atendimento e outro. Se tiver um computador por perto, preparar a semana nele fica ainda mais confortável.</p></details>
     <details name="faq"><summary>Sem aparecer, as pessoas vão confiar em mim?</summary><p>Sim. O formato é texto no centro da tela, sobre um vídeo de fundo, com música: sem rosto e sem voz. A confiança vem de postar com constância, explicar com clareza e se identificar bem, com o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP em cada publicação. Se um dia você quiser aparecer, tudo o que já postou continua valendo.</p></details>
     <details name="faq"><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram criados para respeitar o Código de Ética do CFP: não fazem diagnóstico, não prometem resultado, não usam depoimentos e não divulgam preço. Mesmo assim, a IA gera um rascunho e a revisão final de cada publicação é sempre sua.</p></details>
     <details name="faq"><summary>Serve para qualquer abordagem?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso.</p></details>
