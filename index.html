@@ -316,26 +316,52 @@ footer a{color:#fff}
 .sheet{background:#fff;border-radius:6px;overflow:hidden;font-size:12.5px;color:#3B3633;font-variant-numeric:tabular-nums}
 .sh-bar{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid #E9E4DE;font-size:12.5px;color:#625953}
 .sh-ico{width:14px;height:18px;border-radius:2px;background:#1E8E3E;display:inline-block}
-.hj-top{padding:14px 16px 6px;display:flex;flex-direction:column;gap:2px}
-.hj-top b{font-family:"Playfair Display",Georgia,serif;font-size:20px;color:var(--terra-esc)}
-.hj-top span{font-size:12px;color:#625953}
-.hj-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px;padding:8px 16px 16px;transition:opacity .35s}
-.hj-grid.fade{opacity:0}
-.hj-lab{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A7F77;margin-top:10px}
-.hj-col>.hj-lab:first-child{margin-top:0}
-.hj-val{font-size:13px;font-weight:600;margin-top:3px}
-.hj-big .pl{display:inline-block;padding:3px 11px;border-radius:999px;font-size:13px;font-weight:700}
-.hj-tema{background:#FFF3CD;border-radius:4px;padding:5px 8px;line-height:1.35}
-.hj-sel{display:flex;justify-content:space-between;align-items:center;border:1px solid #DDD6CE;border-radius:4px;padding:5px 8px;margin-top:6px;font-size:11px;color:#625953}
-.hj-sel i{font-style:normal;color:var(--terra-esc)}
-.hj-box{position:relative;margin-top:5px;border:1.5px solid #E2DBD2;border-radius:6px;padding:10px 11px;font-size:11.5px;line-height:1.5;color:#3B3633;height:196px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
-.hj-box::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(rgba(255,255,255,0),#fff)}
-.hj-box b{background:#FFF3CD;font-weight:600}
-.hj-box.sel{border-color:#1A73E8;box-shadow:0 0 0 2px rgba(26,115,232,.18)}
-.hj-box.sel #hj-txt{background:rgba(26,115,232,.13)}
-.hj-ok{position:absolute;right:8px;bottom:8px;z-index:2;font-style:normal;background:var(--salvia);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
-.hj-box.ok .hj-ok{opacity:1;transform:none}
-.hj-dica{font-size:11px;color:#8A7F77;margin-top:6px}
+.gs{border:1px solid #DADCE0;font-family:Montserrat,system-ui,sans-serif}
+.gs-top{display:flex;align-items:center;gap:10px;padding:9px 12px 7px;background:#fff}
+.gs-ico{width:22px;height:28px;border-radius:3px;background:#1E8E3E;position:relative;flex:0 0 auto}
+.gs-ico i{position:absolute;left:5px;right:5px;top:9px;bottom:6px;border:1.5px solid #fff;border-radius:1px;background:linear-gradient(#fff,#fff) center/1.5px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1.5px no-repeat}
+.gs-top b{display:block;font-size:13.5px;font-weight:600;color:#202124}
+.gs-menu{display:block;font-size:11px;color:#5F6368;white-space:nowrap;overflow:hidden;margin-top:2px}
+.gs-fx{display:flex;align-items:center;border-top:1px solid #E3E3E3;border-bottom:1px solid #E3E3E3;background:#F8F9FA;font-size:11.5px;height:28px}
+.gs-ref{width:62px;padding:0 10px;color:#202124;border-right:1px solid #E3E3E3;height:100%;display:flex;align-items:center}
+.gs-f{padding:0 10px;color:#9AA0A6;font-style:italic;font-weight:600;border-right:1px solid #E3E3E3;height:100%;display:flex;align-items:center}
+.gs-form{padding:0 10px;color:#3C4043;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px}
+.gs-grid{--w:26px;display:grid;grid-template-columns:var(--w) 14px minmax(0,.85fr) 18px minmax(0,1.25fr) 14px;
+  grid-template-rows:20px 6px 44px 24px 12px 20px 34px 20px 30px 20px 50px 24px 30px 20px 30px 30px;
+  background:#FAF7F2;position:relative;transition:opacity .35s;font-size:12.5px;color:#3B3633}
+.gs-grid.fade{opacity:0}
+.gs-grid>*{min-width:0}
+.gs-corner{grid-area:1/1;background:#F8F9FA;border-right:1px solid #C7C7C7;border-bottom:1px solid #C7C7C7}
+.gs-h{background:#F8F9FA;border-right:1px solid #E1E1E1;border-bottom:1px solid #C7C7C7;font-size:10px;color:#5F6368;display:flex;align-items:center;justify-content:center}
+.gs-n{grid-column:1;background:#F8F9FA;border-right:1px solid #C7C7C7;border-bottom:1px solid #E1E1E1;font-size:10px;color:#5F6368;display:flex;align-items:center;justify-content:center}
+.gs-n.on,.gs-h.on{background:#D3E3FD;color:#0B57D0;font-weight:700}
+.c-terra{grid-area:2/2/3/7;background:#A45F3F}
+.c-tit{grid-area:3/3/4/6;display:flex;align-items:flex-end;padding:0 4px 4px}
+.c-tit b{font-family:"Playfair Display",Georgia,serif;font-size:21px;color:#3B3633;line-height:1.1}
+.c-sub{grid-area:4/3/5/6;padding:0 4px;color:#625953;font-size:12px;display:flex;align-items:center}
+.c-l{padding:0 4px;font-size:9.5px;font-weight:700;letter-spacing:.1em;color:#A45F3F;display:flex;align-items:flex-end}
+.l1{grid-area:6/3}.l2{grid-area:8/3}.l3{grid-area:10/3}.l4{grid-area:14/3}.l5{grid-area:6/5}
+.c-pilar{grid-area:7/3;padding:0 4px;display:flex;align-items:center}
+.c-pilar span{font-size:14px;font-weight:700;padding:3px 10px;border-radius:4px}
+.c-cod{grid-area:9/3;padding:0 4px;display:flex;align-items:center;font-weight:600}
+.c-tema{grid-area:11/3;padding:0 4px;display:flex;align-items:center;font-size:14px;font-weight:700;color:#A45F3F;line-height:1.3}
+.c-q{grid-area:12/3;padding:0 4px;font-size:10.5px;color:#625953;display:flex;align-items:center;white-space:nowrap;overflow:hidden}
+.c-sel{grid-area:13/3;margin:3px 4px;background:#fff;border:1px solid #F3E2D8;display:flex;justify-content:space-between;align-items:center;padding:0 8px;font-size:11.5px;color:#625953}
+.c-sel i{font-style:normal;font-size:10px;color:#5F6368}
+.c-fmt{grid-area:15/3;padding:0 4px;display:flex;align-items:center}
+.c-link{grid-area:16/3;padding:0 4px;display:flex;align-items:center;font-weight:700;color:#A45F3F;text-decoration:underline;font-size:11.5px;white-space:nowrap;overflow:hidden}
+.c-dica{grid-area:7/5;padding:0 4px;font-size:10.5px;color:#625953;display:flex;align-items:center;line-height:1.35}
+.c-box{grid-area:8/5/17/6;position:relative;margin:2px 0 6px;background:#fff;border:2px solid #A45F3F;padding:9px 11px;font-size:11.5px;line-height:1.55;overflow:hidden;transition:box-shadow .3s}
+.c-box::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;background:linear-gradient(rgba(255,255,255,0),#fff)}
+.c-box b{color:#A45F3F;font-weight:700}
+.c-box.sel{box-shadow:0 0 0 2px #1A73E8}
+.c-box.sel #hj-txt{background:rgba(26,115,232,.12)}
+.hj-ok{position:absolute;right:8px;bottom:8px;z-index:2;font-style:normal;background:#5E7A5C;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.c-box.ok .hj-ok{opacity:1;transform:none}
+.gs-tabs{display:flex;align-items:stretch;gap:0;background:#F8F9FA;border-top:1px solid #DADCE0;font-size:11.5px;color:#444746;overflow:hidden;padding:0 6px}
+.gs-tabs span{padding:7px 12px;white-space:nowrap}
+.gs-tabs .gs-plus{padding:7px 8px;color:#5F6368}
+.gs-tabs .on{background:#E1E9F7;color:#0B57D0;font-weight:700;border-radius:0 0 6px 6px}
 .sh-abas{display:flex;gap:2px;padding:6px 10px;background:#F4F1EC;border-top:1px solid #E9E4DE;font-size:11.5px;color:#625953;overflow:hidden}
 .sh-abas span{padding:4px 10px;white-space:nowrap}
 .sh-abas .on{background:#fff;color:#1E8E3E;font-weight:700;border-bottom:2px solid #1E8E3E}
@@ -343,9 +369,14 @@ footer a{color:#fff}
 @media (max-width:720px){
   .laptop .tela{padding:8px}
   .sh-bar{display:none}
-  .hj-grid{grid-template-columns:1fr;gap:12px;padding:6px 12px 12px}
-  .hj-box{height:150px}
-  .sh-abas span{padding:4px 7px}
+  .gs-menu,.gs-top b{font-size:11px}.gs-menu{display:none}
+  .gs-grid{--w:22px;grid-template-columns:var(--w) 8px minmax(0,1fr) 8px;
+    grid-template-rows:20px 6px 40px 34px 10px 20px 34px 20px 28px 20px 48px 24px 30px 20px 28px 22px 168px 8px}
+  .c-terra{grid-area:2/2/3/5}.c-tit{grid-area:3/3/4/4}.c-sub{grid-area:4/3/5/4;line-height:1.35}
+  .c-link,.c-dica{display:none}
+  .l5{grid-area:16/3}
+  .c-box{grid-area:17/3/18/4;margin:2px 0 0}
+  .gs-fx .gs-form{font-size:10px}
 }
 .card-t{display:flex;align-items:flex-start;gap:12px}
 @media (min-width:721px){.card-t{flex-direction:column;gap:14px}.card-t .card-ic{margin-top:0}}
@@ -556,24 +587,31 @@ footer a{color:#fff}
     <div class="dentro-grid">
       <figure class="laptop" style="margin:0">
         <div class="tela">
-          <div class="sheet hj" id="sheet" aria-label="Exemplo da aba Hoje do Calendário 365">
-            <div class="sh-bar"><span class="sh-ico"></span>Calendário 365 Dias · Psicólogos</div>
-            <div class="hj-top"><b id="hj-tit">Hoje</b><span>O seu post de hoje: pilar, tema, formato e o prompt pronto para copiar.</span></div>
-            <div class="hj-grid" id="hj-grid">
-              <div class="hj-col">
-                <div class="hj-lab">Pilar do dia</div><div class="hj-val hj-big"><span class="pl" id="hj-pilar">Educar</span></div>
-                <div class="hj-lab">Prompt</div><div class="hj-val" id="hj-cod">PS-01</div>
-                <div class="hj-lab">Tema de hoje</div><div class="hj-val hj-tema" id="hj-tema">Cansaço que não passa nem nas férias</div>
-                <div class="hj-sel"><span>Quer outro tema? Escolha um dos 7</span><i>▾</i></div>
-                <div class="hj-lab">Formato</div><div class="hj-val" id="hj-fmt">Texto centralizado</div>
-              </div>
-              <div class="hj-col">
-                <div class="hj-lab">Seu prompt pronto</div>
-                <div class="hj-box" id="hj-box"><span id="hj-txt"></span><em class="hj-ok" id="hj-ok">✓ Copiado</em></div>
-                <div class="hj-dica">Clique na caixa, Ctrl + C e cole na IA.</div>
-              </div>
+          <div class="sheet gs" id="sheet" aria-label="Exemplo da aba Hoje do Calendário 365">
+            <div class="gs-top"><span class="gs-ico"><i></i></span><div><b>[Oficial] Calendário 365 Dias · Psicólogos</b><span class="gs-menu">Arquivo&nbsp; Editar&nbsp; Ver&nbsp; Inserir&nbsp; Formatar&nbsp; Dados&nbsp; Ferramentas&nbsp; Extensões</span></div></div>
+            <div class="gs-fx"><span class="gs-ref" id="gs-ref">B2</span><span class="gs-f">fx</span><span class="gs-form" id="gs-form">=IF(J1="";"Hoje";"Hoje · "&amp;INDEX(Psicólogos!C6:C404;J1)&amp;", "&amp;TEXT(TODAY();"dd/mm"))</span></div>
+            <div class="gs-grid" id="hj-grid">
+              <div class="gs-corner"></div>
+              <div class="gs-k ra"></div>
+              <div class="c-terra"></div>
+              <div class="c-tit"><b id="hj-tit">Hoje</b></div>
+              <div class="c-sub">O seu post de hoje: pilar, tema, formato e o prompt pronto para copiar.</div>
+              <div class="c-l l1">PILAR DO DIA</div>
+              <div class="c-pilar"><span id="hj-pilar">Educar</span></div>
+              <div class="c-l l2">PROMPT</div>
+              <div class="c-cod" id="hj-cod">PS-01</div>
+              <div class="c-l l3">TEMA DE HOJE</div>
+              <div class="c-tema" id="hj-tema">Cansaço que não passa nem nas férias</div>
+              <div class="c-q">Quer outro tema? Escolha um dos 7 deste prompt:</div>
+              <div class="c-sel"><span>Escolher outro tema</span><i>▾</i></div>
+              <div class="c-l l4">FORMATO</div>
+              <div class="c-fmt" id="hj-fmt">Texto centralizado</div>
+              <div class="c-link">Abrir este prompt no Banco de Prompts</div>
+              <div class="c-l l5">SEU PROMPT PRONTO</div>
+              <div class="c-dica">Clique uma vez na caixa, aperte Ctrl + C e cole na sua IA.</div>
+              <div class="c-box" id="hj-box"><span id="hj-txt"></span><em class="hj-ok" id="hj-ok">✓ Copiado</em></div>
             </div>
-            <div class="sh-abas"><span class="on">Hoje</span><span>Configuração</span><span>Minha Semana</span><span>Psicólogos</span><span>Índice de Prompts</span><span>Datas Especiais</span></div>
+            <div class="gs-tabs"><span class="gs-plus">+</span><span class="gs-plus">≡</span><span class="on">Hoje</span><span>Configuração</span><span>Minha Semana</span><span>Psicólogos</span><span>Índice de Prompts</span><span>Datas Especiais</span></div>
           </div>
         </div>
         <div class="base"></div>
@@ -838,6 +876,21 @@ document.querySelectorAll('.faq details').forEach(function(d){
     $('hj-txt').innerHTML='Crie um roteiro de Reels de 35 a 45 segundos sobre '+p[5]+': <b>'+p[3]+'</b>. Público: o da minha Ficha do Negócio. Estrutura: gancho com uma cena do dia a dia, desenvolvimento em linguagem simples e fechamento acolhedor. Regras: não faça diagnóstico, não prometa resultado, não use depoimentos nem casos de pacientes, sem tom alarmista. Entregue: 3 ganchos, roteiro com tempo por bloco, versão em texto centralizado (5 a 7 telas, até 8 palavras cada) e legenda terminando em pergunta.';
   }
   mostra(0);
+  // cabeçalhos de coluna e números de linha, conforme o layout (computador ou celular)
+  function grade(){
+    [].slice.call(g.querySelectorAll('.gs-h,.gs-n')).forEach(function(x){x.remove()});
+    var cs=getComputedStyle(g), nc=cs.gridTemplateColumns.split(' ').length, nr=cs.gridTemplateRows.split(' ').length, L='ABCDEFG';
+    for(var c=2;c<=nc;c++){var h=document.createElement('div');h.className='gs-h';h.style.gridArea='1/'+c;h.textContent=L[c-2];h.dataset.c=L[c-2];g.appendChild(h)}
+    for(var r=2;r<=nr;r++){var n=document.createElement('div');n.className='gs-n';n.style.gridRow=r;n.textContent=r-1;g.appendChild(n)}
+  }
+  grade(); var rz; addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(grade,200)});
+  var ref=$('gs-ref'), form=$('gs-form'), f0=form.textContent;
+  function foco(on){
+    var mob=getComputedStyle(g).gridTemplateColumns.split(' ').length<6;
+    ref.textContent=on?(mob?'B16':'D7'):'B2';
+    form.textContent=on?'=IF(J1="";"Coloque a data de início na aba Configuração.";SUBSTITUTE(INDEX(\'Índice de Prompts\'!N6:N107;J4);"[Tema]";J10))':f0;
+    [].slice.call(g.querySelectorAll('.gs-h')).forEach(function(h){h.classList.toggle('on',on&&h.dataset.c===(mob?'B':'D'))});
+  }
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var vis=false;
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.3}).observe(g)} else vis=true;
@@ -845,9 +898,9 @@ document.querySelectorAll('.faq details').forEach(function(d){
   setInterval(function(){
     if(!vis||document.hidden) return;
     fase=(fase+1)%4;
-    if(fase===1) box.classList.add('sel');
+    if(fase===1){ box.classList.add('sel'); foco(true); }
     else if(fase===2) box.classList.add('ok');
-    else if(fase===3){ box.classList.remove('sel','ok'); g.classList.add('fade');
+    else if(fase===3){ box.classList.remove('sel','ok'); foco(false); g.classList.add('fade');
       setTimeout(function(){ i=(i+1)%7; mostra(i); g.classList.remove('fade'); },380); }
   },1500);
 })();
