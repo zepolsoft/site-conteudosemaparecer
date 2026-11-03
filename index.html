@@ -592,6 +592,16 @@ p,li{text-wrap:pretty}
 .fx-barra.ficha b{color:var(--salvia)}
 .fx-barra .fx-lb{transition:color .3s}
 .fx-barra.ficha .fx-lb{color:#4A6448;font-weight:600}
+.fx-resumo{display:flex;align-items:stretch;gap:10px;margin-top:6px;max-width:640px}
+.fx-r{flex:1;background:rgba(255,255,255,.7);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.fx-r b{font-family:"Playfair Display",Georgia,serif;font-size:26px;line-height:1.1}
+.fx-r span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.fx-r small{font-size:13.5px;line-height:1.45;color:var(--texto2);margin-top:4px}
+.r1 b,.r1 span{color:#4A6448}
+.r2{background:#fff;box-shadow:0 10px 22px -16px rgba(59,54,51,.5)}
+.r2 b,.r2 span{color:var(--terra-esc)}
+.fx-mais{align-self:center;font-family:"Playfair Display",serif;font-size:24px;color:var(--texto2)}
+@media (max-width:720px){.fx-r{padding:11px 12px}.fx-r b{font-size:23px}.fx-r span{font-size:10.5px}.fx-r small{font-size:12.5px}.fx-resumo{gap:6px}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -692,6 +702,11 @@ p,li{text-wrap:pretty}
   <div class="wrap stack">
     <div class="eyebrow">Como funciona</div>
     <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
+    <div class="fx-resumo">
+      <div class="fx-r r1"><b>10 min</b><span>só no 1º dia</span><small>Você preenche a Ficha uma vez e a IA aprende o seu jeito.</small></div>
+      <div class="fx-mais" aria-hidden="true">+</div>
+      <div class="fx-r r2"><b>15 min</b><span>por post</span><small>Todo dia: aba Hoje, colar na IA, montar e publicar.</small></div>
+    </div>
     <div class="fluxo" id="fluxo">
       <div class="fx-barra" aria-hidden="true"><span class="fx-rel"></span><span class="fx-lb" id="fx-lb">Post de hoje</span><span class="fx-trilho"><i id="fx-fill"></i></span><b><i id="fx-min">0</i><span id="fx-de"> de 15</span> min</b></div>
       <ol class="fx-steps">
