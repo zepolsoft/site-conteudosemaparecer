@@ -470,7 +470,7 @@ p,li{text-wrap:pretty}
 .gl.on{transform:translateX(calc(var(--i)*-16px)) rotate(0) scale(var(--s));z-index:10;filter:none}
 .gl.on img{box-shadow:0 22px 40px -16px rgba(59,54,51,.55),0 0 0 1px rgba(59,54,51,.06)}
 .gl:focus-visible{outline:3px solid var(--grafite);outline-offset:3px;border-radius:6px}
-.gl-tag{position:absolute;top:-9px;right:-6px;background:var(--terra-esc);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:999px;box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
+.gl-tag{position:absolute;top:-9px;right:4px;z-index:4;background:var(--terra-esc);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:999px;box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
 .leque-info{min-height:52px;font-size:15px;line-height:1.5;color:var(--texto2)}
 .leque-info b{display:block;color:var(--terra-esc);font-size:15px}
 @media (max-width:720px){
@@ -506,27 +506,36 @@ p,li{text-wrap:pretty}
 .redes{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:8px}
 .redes span{background:#fff;border:1px solid var(--linha);color:var(--grafite);font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:999px}
 
-.fx-body{display:flex;flex-direction:column;flex:1}
-.fx-body .cena{margin-top:auto}
-.fx-body p{margin-bottom:10px}
+.embaca{filter:blur(4px);user-select:none;opacity:.75}
+.c-box .embaca{filter:blur(3.5px)}
+.tranca{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;background:#3B3633;color:#FAF7F2;font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
+.c-box.ok .tranca{opacity:0;transition:opacity .2s}
+.ia-r .bl{position:relative}
+.tranca.t2{position:static;transform:none;display:inline-block;margin-top:8px;white-space:normal;font-size:10.5px;background:var(--terra-esc)}
 /* fluxo animado (Como funciona) */
-.fluxo{position:relative;margin-top:14px}
-.fx-timer{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:7px 14px 7px 10px;font-size:13.5px;color:var(--texto2);box-shadow:0 8px 20px -14px rgba(59,54,51,.5);margin-bottom:16px}
-.fx-timer b{color:var(--terra-esc);font-size:15px}
-.fx-timer i{font-style:normal;font-variant-numeric:tabular-nums}
-.fx-rel{width:18px;height:18px;border-radius:50%;border:2px solid var(--terra-esc);position:relative}
+.fluxo{margin-top:14px}
+.fx-barra{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:9px 16px 9px 12px;font-size:13.5px;color:var(--texto2);box-shadow:0 8px 20px -14px rgba(59,54,51,.5);margin-bottom:18px;max-width:520px}
+.fx-lb{white-space:nowrap}
+.fx-trilho{flex:1;height:8px;background:#E7E1D9;border-radius:99px;overflow:hidden;min-width:60px}
+.fx-trilho i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--salvia),var(--terra-esc));border-radius:99px;transition:width .9s ease}
+.fx-barra b{color:var(--terra-esc);font-size:15px;white-space:nowrap}
+.fx-barra b i{font-style:normal;font-variant-numeric:tabular-nums}
+.fx-rel{width:18px;height:18px;border-radius:50%;border:2px solid var(--terra-esc);position:relative;flex:0 0 auto}
 .fx-rel::after{content:"";position:absolute;left:50%;top:2px;width:2px;height:6px;background:var(--terra-esc);transform-origin:50% 100%;margin-left:-1px;animation:ponteiro 2s linear infinite}
 @keyframes ponteiro{to{transform:rotate(360deg)}}
-.fx-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
-.fx{background:#fff;border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px;position:relative;transition:box-shadow .4s,transform .4s}
-.fx-num{width:40px;height:40px;border-radius:50%;background:#C9D3C6;color:#fff;font-family:"Playfair Display",serif;font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;transition:background .4s,transform .4s;flex:0 0 auto}
+.fx-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+.fx{background:#fff;border-radius:16px;padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;position:relative;transition:box-shadow .4s,transform .4s}
+.fx:not(:last-child)::after{content:"→";position:absolute;right:-21px;top:50%;transform:translateY(-50%);width:18px;text-align:center;color:var(--salvia);font-weight:700;font-size:18px}
+.fx-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.fx-num{width:36px;height:36px;border-radius:50%;background:#C9D3C6;color:#fff;font-family:"Playfair Display",serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .4s,transform .4s;flex:0 0 auto}
 .fx.done .fx-num{background:var(--salvia)}
 .fx.on .fx-num{background:var(--terra-esc);transform:scale(1.1)}
+.fx-t{font-size:11.5px;font-weight:700;color:var(--terra-esc);background:#FBF0EA;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.fx-t1{color:#4A6448;background:var(--salvia-cl)}
 .fx.on{box-shadow:0 18px 34px -20px rgba(59,54,51,.45);transform:translateY(-3px)}
 .fx h3{font-size:19px;line-height:1.25}
-.fx-tag{font-style:normal;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:var(--salvia);background:var(--salvia-cl);padding:2px 8px;border-radius:999px;vertical-align:3px;white-space:nowrap}
-.fx p{color:var(--texto2);font-size:15px;line-height:1.55;margin-top:4px}
-.cena{margin-top:10px;background:var(--creme);border:1px solid var(--linha);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--grafite);min-height:104px;filter:grayscale(.7);transition:filter .4s}
+.fx p{color:var(--texto2);font-size:14.5px;line-height:1.5}
+.cena{background:var(--creme);border:1px solid var(--linha);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;justify-content:center;gap:6px;font-size:12.5px;color:var(--grafite);height:150px;overflow:hidden;filter:grayscale(.7);transition:filter .4s}
 .fx.on .cena,.fx.done .cena{filter:none}
 .cena>*{opacity:.4;transition:opacity .4s}
 .fx.done .cena>*{opacity:1}
@@ -538,32 +547,36 @@ p,li{text-wrap:pretty}
 .c2-t{font-family:"Playfair Display",serif;font-weight:700;font-size:15px;color:var(--terra-esc)}
 .c2-p{align-self:flex-start;background:#FCEEE2;border-radius:999px;padding:2px 10px;font-weight:700;font-size:12px}
 .c2-tema{background:#FFF3CD;border-radius:6px;padding:4px 8px;font-weight:600}
-.c3-eu{align-self:flex-end;background:var(--pessego);border-radius:10px 10px 3px 10px;padding:4px 9px;font-size:11.5px}
-.c3-r{display:flex;gap:6px;align-items:baseline}
+.c3{gap:4px}
+.c3-eu{align-self:flex-end;background:var(--pessego);border-radius:10px 10px 3px 10px;padding:3px 9px;font-size:11.5px}
+.c3-r{display:flex;gap:6px;align-items:baseline;font-size:12px;line-height:1.3}
 .c3-r i{font-style:normal;flex:0 0 16px;height:16px;border-radius:50%;background:var(--grafite);color:#fff;font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
 .c4{flex-direction:row;align-items:center;justify-content:center;gap:14px}
-.c4-fone{width:62px;height:104px;border-radius:12px;background:var(--grafite);border:3px solid var(--grafite);color:#FAF7F2;font-family:"Playfair Display",serif;font-weight:700;font-size:9.5px;line-height:1.25;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px}
+.c4-fone{width:66px;height:118px;border-radius:12px;background:var(--grafite);border:3px solid var(--grafite);color:#FAF7F2;font-family:"Playfair Display",serif;font-weight:700;font-size:10px;line-height:1.25;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px}
 .c4-fone small{font-family:Montserrat,sans-serif;font-size:7px;letter-spacing:.1em;color:#E0A98C}
 .c4-fone i{width:14px;height:2px;background:#E0A98C}
 .c4-ok{background:var(--salvia);color:#fff;font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:999px}
 .fx.on .c4-ok{animation:pop .5s cubic-bezier(.3,1.6,.5,1) .9s forwards}
 @keyframes pop{0%{opacity:.4;transform:scale(.7)}100%{opacity:1;transform:none}}
-@media (max-width:900px) and (min-width:721px){.fx-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fx-fim{margin-top:16px;font-size:14.5px;color:var(--texto2)}
+@media (max-width:1000px) and (min-width:721px){.fx-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.fx:nth-child(2)::after{display:none}}
 @media (max-width:720px){
-  .fx-steps{grid-template-columns:1fr;gap:12px}
-  .fx-steps::before{content:"";position:absolute;left:37px;top:30px;bottom:30px;width:2px;background:#C9D3C6}
-  .fx{flex-direction:row;align-items:flex-start;gap:14px;padding:16px 16px 16px 17px}
-  .fx-body{flex:1;min-width:0}
-  .cena{min-height:0}
-  .c4{justify-content:flex-start}
+  .fx-steps{grid-template-columns:1fr;gap:30px}
+  .fx:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-27px;transform:translateX(-50%)}
+  .fx{padding:14px 14px 16px}
+  .cena{height:auto;min-height:118px}
+  .fx-barra{padding:8px 14px 8px 10px;font-size:13px}
+  .fx-fim{text-align:center}
 }
-@media (prefers-reduced-motion:reduce){.cena>*{opacity:1;transform:none;animation:none!important}.fx-rel::after{animation:none}}
-.embaca{filter:blur(4px);user-select:none;opacity:.75}
-.c-box .embaca{filter:blur(3.5px)}
-.tranca{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;background:#3B3633;color:#FAF7F2;font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
-.c-box.ok .tranca{opacity:0;transition:opacity .2s}
-.ia-r .bl{position:relative}
-.tranca.t2{position:static;transform:none;display:inline-block;margin-top:8px;white-space:normal;font-size:10.5px;background:var(--terra-esc)}
+@media (prefers-reduced-motion:reduce){.cena>*{opacity:1;animation:none!important}.fx-rel::after{animation:none}}
+/* páginas internas dos guias */
+.gl .capa{position:relative;z-index:3}
+.gl .pg{position:absolute;inset:0;width:100%;z-index:1;transition:transform .55s cubic-bezier(.3,.7,.3,1),opacity .3s;opacity:0}
+.gl .pa{transform:translate(-3px,3px)}.gl .pb{transform:translate(3px,5px)}
+.gl.on .pg{opacity:1}
+.gl.on .pa{transform:translateX(-42%) rotate(-9deg) scale(.92);transition-delay:.15s}
+.gl.on .pb{transform:translateX(42%) rotate(9deg) scale(.92);transition-delay:.25s;z-index:2}
+@media (max-width:720px){.gl.on .pa{transform:translateX(-30%) rotate(-8deg) scale(.9)}.gl.on .pb{transform:translateX(30%) rotate(8deg) scale(.9)}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -665,41 +678,34 @@ p,li{text-wrap:pretty}
     <div class="eyebrow">Como funciona</div>
     <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
     <div class="fluxo" id="fluxo">
-      <div class="fx-timer" aria-hidden="true"><span class="fx-rel"></span><span>Post de hoje:</span><b><i id="fx-min">0</i> min</b></div>
+      <div class="fx-barra" aria-hidden="true"><span class="fx-rel"></span><span class="fx-lb">Post de hoje</span><span class="fx-trilho"><i id="fx-fill"></i></span><b><i id="fx-min">0</i> min</b></div>
       <ol class="fx-steps">
         <li class="fx" data-min="0">
-          <div class="fx-num">1</div>
-          <div class="fx-body">
-            <h3>Preencha a Ficha <em class="fx-tag">uma vez só</em></h3>
-            <p>Cerca de 10 minutos: sua abordagem, seu público e seu tom de voz.</p>
-            <div class="cena c1" aria-hidden="true"><span><b>Abordagem:</b> TCC</span><span><b>Público:</b> adultos de 25 a 45</span><span><b>Tom:</b> acolhedor, sem drama</span></div>
-          </div>
+          <div class="fx-top"><span class="fx-num">1</span><span class="fx-t fx-t1">uma vez só · 10 min</span></div>
+          <h3>Preencha a Ficha</h3>
+          <div class="cena c1" aria-hidden="true"><span><b>Abordagem:</b> TCC</span><span><b>Público:</b> adultos de 25 a 45</span><span><b>Tom:</b> acolhedor, sem drama</span></div>
+          <p>Sua abordagem, seu público e seu tom. A IA passa a escrever como você.</p>
         </li>
         <li class="fx" data-min="1">
-          <div class="fx-num">2</div>
-          <div class="fx-body">
-            <h3>Abra a aba Hoje</h3>
-            <p>O pilar, o tema e o prompt do dia já estão lá. Não gostou do tema? Troque ali mesmo.</p>
-            <div class="cena c2" aria-hidden="true"><span class="c2-t">Hoje · terça</span><span class="c2-p">Mito x Verdade</span><span class="c2-tema">"Terapia é só para quem está em crise"</span></div>
-          </div>
+          <div class="fx-top"><span class="fx-num">2</span><span class="fx-t">1 min</span></div>
+          <h3>Abra a aba Hoje</h3>
+          <div class="cena c2" aria-hidden="true"><span class="c2-t">Hoje · terça</span><span class="c2-p">Mito x Verdade</span><span class="c2-tema">"Terapia é só para quem está em crise"</span></div>
+          <p>O pilar, o tema e o prompt do dia já estão lá, prontos para copiar.</p>
         </li>
         <li class="fx" data-min="3">
-          <div class="fx-num">3</div>
-          <div class="fx-body">
-            <h3>Cole o prompt na IA</h3>
-            <p>Copie e cole no ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p>
-            <div class="cena c3" aria-hidden="true"><span class="c3-eu">Crie um roteiro de Reels sobre…</span><span class="c3-r"><i>1</i>Mito: terapia é só para crises.</span><span class="c3-r"><i>2</i>Verdade: muita gente vai para se conhecer.</span><span class="c3-r"><i>3</i>Não precisa esperar o limite.</span></div>
-          </div>
+          <div class="fx-top"><span class="fx-num">3</span><span class="fx-t">2 min</span></div>
+          <h3>Cole o prompt na IA</h3>
+          <div class="cena c3" aria-hidden="true"><span class="c3-eu">Crie um roteiro de Reels sobre…</span><span class="c3-r"><i>1</i>Mito: terapia é só para crises.</span><span class="c3-r"><i>2</i>Verdade: muita gente vai para se conhecer.</span><span class="c3-r"><i>3</i>Não precisa esperar o limite.</span></div>
+          <p>No ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p>
         </li>
         <li class="fx" data-min="15">
-          <div class="fx-num">4</div>
-          <div class="fx-body">
-            <h3>Monte e publique</h3>
-            <p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Você revisa e posta.</p>
-            <div class="cena c4" aria-hidden="true"><span class="c4-fone"><small>MITO</small>Terapia é só para quem está em crise.<i></i></span><span class="c4-ok">✓ Publicado</span></div>
-          </div>
+          <div class="fx-top"><span class="fx-num">4</span><span class="fx-t">≈ 12 min</span></div>
+          <h3>Monte e publique</h3>
+          <div class="cena c4" aria-hidden="true"><span class="c4-fone"><small>MITO</small>Terapia é só para quem está em crise.<i></i></span><span class="c4-ok">✓ Publicado</span></div>
+          <p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Revise e poste.</p>
         </li>
       </ol>
+      <p class="fx-fim">Depois da Ficha, todo dia é só repetir os passos 2, 3 e 4.</p>
     </div>
   </div>
 </section>
@@ -754,7 +760,7 @@ p,li{text-wrap:pretty}
         <h3 class="h3">Um guia em PDF para cada módulo</h3>
         <p>Curtos e diretos, com a tela de cada passo. Você nunca fica sem saber onde clicar.</p>
       </div>
-      <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." aria-label="01 · Comece Aqui"><img src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." aria-label="02 · Personalize a IA"><img src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." aria-label="03 · Banco de Prompts"><img src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." aria-label="04 · Calendário 365"><img src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="640" height="905"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." aria-label="Pack 20 · Modelos Canva"><img src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="640" height="905"><span class=gl-tag>Com o Pack</span></button></div>
+      <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." data-p="7" aria-label="01 · Comece Aqui"><img class="pg pa" src="img/guia-01-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-01-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." data-p="6" aria-label="02 · Personalize a IA"><img class="pg pa" src="img/guia-02-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-02-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." data-p="5" aria-label="03 · Banco de Prompts"><img class="pg pa" src="img/guia-03-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-03-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." data-p="5" aria-label="04 · Calendário 365"><img class="pg pa" src="img/guia-04-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-04-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="640" height="905"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." data-p="6" aria-label="Pack 20 · Modelos Canva"><img class="pg pa" src="img/guia-pack-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-pack-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="640" height="905"><span class=gl-tag>Com o Pack</span></button></div>
       <p class="leque-info" aria-live="polite"><b id="lq-t">01 · Comece Aqui</b><span id="lq-d">Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura.</span></p>
     </div>
   </div>
@@ -1127,7 +1133,7 @@ document.querySelectorAll('.faq details').forEach(function(d){
 (function(){
   var lq=document.getElementById('leque'); if(!lq) return;
   var bs=[].slice.call(lq.querySelectorAll('.gl')), t=document.getElementById('lq-t'), d=document.getElementById('lq-d'), at=0, pausa=0, vis=false;
-  function ativa(k){ at=k; bs.forEach(function(b,j){b.classList.toggle('on',j===k)}); t.textContent=bs[k].dataset.t; d.textContent=bs[k].dataset.d; }
+  function ativa(k){ at=k; bs.forEach(function(b,j){b.classList.toggle('on',j===k)}); t.textContent=bs[k].dataset.t+(bs[k].dataset.p?' · '+bs[k].dataset.p+' páginas':''); d.textContent=bs[k].dataset.d; }
   bs.forEach(function(b,j){ b.addEventListener('click',function(){ ativa(j); pausa=Date.now()+9000; }); });
   ativa(0);
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1140,16 +1146,17 @@ document.querySelectorAll('.faq details').forEach(function(d){
 (function(){
   var f=document.getElementById('fluxo'); if(!f) return;
   var ps=[].slice.call(f.querySelectorAll('.fx')), mn=document.getElementById('fx-min'), k=-1, vis=false, cur=0, tm;
-  function conta(alvo){ clearInterval(tm); tm=setInterval(function(){ if(cur<alvo){cur++;mn.textContent=cur}else clearInterval(tm) }, alvo>5?110:300); }
+  var fill=document.getElementById('fx-fill');
+  function conta(alvo){ fill.style.width=(alvo/15*100)+'%'; clearInterval(tm); tm=setInterval(function(){ if(cur<alvo){cur++;mn.textContent=cur}else clearInterval(tm) }, alvo>5?110:300); }
   function passo(){
     k++;
-    if(k>=ps.length){ k=-1; cur=0; mn.textContent='0'; ps.forEach(function(p){p.classList.remove('on','done')}); return setTimeout(roda,700); }
+    if(k>=ps.length){ k=-1; cur=0; mn.textContent='0'; fill.style.width='0'; ps.forEach(function(p){p.classList.remove('on','done')}); return setTimeout(roda,700); }
     ps.forEach(function(p,j){ p.classList.toggle('on',j===k); p.classList.toggle('done',j<k); });
     conta(+ps[k].dataset.min);
     setTimeout(roda, k===ps.length-1?4200:2800);
   }
   function roda(){ if(!vis||document.hidden) return setTimeout(roda,500); passo(); }
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; return; }
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; fill.style.width='100%'; return; }
   if('IntersectionObserver' in window){ new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.25}).observe(f); } else vis=true;
   roda();
 })();
