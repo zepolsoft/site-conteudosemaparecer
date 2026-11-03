@@ -505,6 +505,59 @@ p,li{text-wrap:pretty}
 .redes,.redes-leg{position:relative;z-index:3}
 .redes{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:8px}
 .redes span{background:#fff;border:1px solid var(--linha);color:var(--grafite);font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:999px}
+
+.fx-body{display:flex;flex-direction:column;flex:1}
+.fx-body .cena{margin-top:auto}
+.fx-body p{margin-bottom:10px}
+/* fluxo animado (Como funciona) */
+.fluxo{position:relative;margin-top:14px}
+.fx-timer{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:7px 14px 7px 10px;font-size:13.5px;color:var(--texto2);box-shadow:0 8px 20px -14px rgba(59,54,51,.5);margin-bottom:16px}
+.fx-timer b{color:var(--terra-esc);font-size:15px}
+.fx-timer i{font-style:normal;font-variant-numeric:tabular-nums}
+.fx-rel{width:18px;height:18px;border-radius:50%;border:2px solid var(--terra-esc);position:relative}
+.fx-rel::after{content:"";position:absolute;left:50%;top:2px;width:2px;height:6px;background:var(--terra-esc);transform-origin:50% 100%;margin-left:-1px;animation:ponteiro 2s linear infinite}
+@keyframes ponteiro{to{transform:rotate(360deg)}}
+.fx-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
+.fx{background:#fff;border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px;position:relative;transition:box-shadow .4s,transform .4s}
+.fx-num{width:40px;height:40px;border-radius:50%;background:#C9D3C6;color:#fff;font-family:"Playfair Display",serif;font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;transition:background .4s,transform .4s;flex:0 0 auto}
+.fx.done .fx-num{background:var(--salvia)}
+.fx.on .fx-num{background:var(--terra-esc);transform:scale(1.1)}
+.fx.on{box-shadow:0 18px 34px -20px rgba(59,54,51,.45);transform:translateY(-3px)}
+.fx h3{font-size:19px;line-height:1.25}
+.fx-tag{font-style:normal;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:var(--salvia);background:var(--salvia-cl);padding:2px 8px;border-radius:999px;vertical-align:3px;white-space:nowrap}
+.fx p{color:var(--texto2);font-size:15px;line-height:1.55;margin-top:4px}
+.cena{margin-top:10px;background:var(--creme);border:1px solid var(--linha);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--grafite);min-height:104px;opacity:.5;transition:opacity .4s}
+.fx.on .cena,.fx.done .cena{opacity:1}
+.cena>*{opacity:0;transform:translateY(4px)}
+.fx.done .cena>*,.fx.on .cena>*{animation:entra .4s ease forwards}
+.fx.done .cena>*{animation-duration:0s}
+.fx.on .cena>*:nth-child(2){animation-delay:.45s}.fx.on .cena>*:nth-child(3){animation-delay:.9s}.fx.on .cena>*:nth-child(4){animation-delay:1.35s}
+@keyframes entra{to{opacity:1;transform:none}}
+.c1 span{background:#fff;border-radius:6px;padding:4px 8px;border:1px solid #EFE7DC}
+.c1 b{color:var(--terra-esc);font-weight:700}
+.c2-t{font-family:"Playfair Display",serif;font-weight:700;font-size:15px;color:var(--terra-esc)}
+.c2-p{align-self:flex-start;background:#FCEEE2;border-radius:999px;padding:2px 10px;font-weight:700;font-size:12px}
+.c2-tema{background:#FFF3CD;border-radius:6px;padding:4px 8px;font-weight:600}
+.c3-eu{align-self:flex-end;background:var(--pessego);border-radius:10px 10px 3px 10px;padding:4px 9px;font-size:11.5px}
+.c3-r{display:flex;gap:6px;align-items:baseline}
+.c3-r i{font-style:normal;flex:0 0 16px;height:16px;border-radius:50%;background:var(--grafite);color:#fff;font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.c4{flex-direction:row;align-items:center;justify-content:center;gap:14px}
+.c4-fone{width:62px;height:104px;border-radius:12px;background:var(--grafite);border:3px solid var(--grafite);color:#FAF7F2;font-family:"Playfair Display",serif;font-weight:700;font-size:9.5px;line-height:1.25;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px}
+.c4-fone small{font-family:Montserrat,sans-serif;font-size:7px;letter-spacing:.1em;color:#E0A98C}
+.c4-fone i{width:14px;height:2px;background:#E0A98C}
+.c4-ok{background:var(--salvia);color:#fff;font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:999px}
+.fx.on .c4-ok{animation:pop .5s cubic-bezier(.3,1.6,.5,1) .9s forwards}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:none}}
+@media (max-width:900px) and (min-width:721px){.fx-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){
+  .fx-steps{grid-template-columns:1fr;gap:12px}
+  .fx-steps::before{content:"";position:absolute;left:37px;top:30px;bottom:30px;width:2px;background:#C9D3C6}
+  .fx{flex-direction:row;align-items:flex-start;gap:14px;padding:16px 16px 16px 17px}
+  .fx-body{flex:1;min-width:0}
+  .cena{min-height:0}
+  .c4{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:reduce){.cena>*{opacity:1;transform:none;animation:none!important}.fx-rel::after{animation:none}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -600,6 +653,51 @@ p,li{text-wrap:pretty}
   </div>
 </section>
 
+<!-- 3. SOLUÇÃO (fluxo animado) -->
+<section class="passos">
+  <div class="wrap stack">
+    <div class="eyebrow">Como funciona</div>
+    <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
+    <div class="fluxo" id="fluxo">
+      <div class="fx-timer" aria-hidden="true"><span class="fx-rel"></span><span>Post de hoje:</span><b><i id="fx-min">0</i> min</b></div>
+      <ol class="fx-steps">
+        <li class="fx" data-min="0">
+          <div class="fx-num">1</div>
+          <div class="fx-body">
+            <h3>Preencha a Ficha <em class="fx-tag">uma vez só</em></h3>
+            <p>Cerca de 10 minutos: sua abordagem, seu público e seu tom de voz.</p>
+            <div class="cena c1" aria-hidden="true"><span><b>Abordagem:</b> TCC</span><span><b>Público:</b> adultos de 25 a 45</span><span><b>Tom:</b> acolhedor, sem drama</span></div>
+          </div>
+        </li>
+        <li class="fx" data-min="1">
+          <div class="fx-num">2</div>
+          <div class="fx-body">
+            <h3>Abra a aba Hoje</h3>
+            <p>O pilar, o tema e o prompt do dia já estão lá. Não gostou do tema? Troque ali mesmo.</p>
+            <div class="cena c2" aria-hidden="true"><span class="c2-t">Hoje · terça</span><span class="c2-p">Mito x Verdade</span><span class="c2-tema">"Terapia é só para quem está em crise"</span></div>
+          </div>
+        </li>
+        <li class="fx" data-min="3">
+          <div class="fx-num">3</div>
+          <div class="fx-body">
+            <h3>Cole o prompt na IA</h3>
+            <p>Copie e cole no ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p>
+            <div class="cena c3" aria-hidden="true"><span class="c3-eu">Crie um roteiro de Reels sobre…</span><span class="c3-r"><i>1</i>Mito: terapia é só para crises.</span><span class="c3-r"><i>2</i>Verdade: muita gente vai para se conhecer.</span><span class="c3-r"><i>3</i>Não precisa esperar o limite.</span></div>
+          </div>
+        </li>
+        <li class="fx" data-min="15">
+          <div class="fx-num">4</div>
+          <div class="fx-body">
+            <h3>Monte e publique</h3>
+            <p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Você revisa e posta.</p>
+            <div class="cena c4" aria-hidden="true"><span class="c4-fone"><small>MITO</small>Terapia é só para quem está em crise.<i></i></span><span class="c4-ok">✓ Publicado</span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <!-- 2b. PRESENÇA -->
 <section class="presenca">
   <div class="wrap stack">
@@ -629,19 +727,6 @@ p,li{text-wrap:pretty}
   </div>
 </section>
 
-<!-- 3. SOLUÇÃO -->
-<section class="passos">
-  <div class="wrap stack">
-    <div class="eyebrow">Como funciona</div>
-    <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
-    <div class="steps" style="margin-top:12px">
-      <div class="step"><div class="num">1</div><h3>Preencha a Ficha</h3><p>Uma vez só, em cerca de 10 minutos: sua abordagem, seu público e seu tom de voz.</p></div>
-      <div class="step"><div class="num">2</div><h3>Abra o dia no calendário</h3><p>A aba Hoje mostra o pilar, o tema e o formato do dia. Não gostou do tema? Escolha outro dos 7 do mesmo prompt, ali mesmo.</p></div>
-      <div class="step"><div class="num">3</div><h3>Cole o prompt na IA</h3><p>O prompt já vem pronto, com o tema do dia. É só copiar e colar no ChatGPT, Gemini ou Claude. O roteiro sai no formato sem aparecer.</p></div>
-      <div class="step"><div class="num">4</div><h3>Monte e publique</h3><p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Você revisa e posta.</p></div>
-    </div>
-  </div>
-</section>
 
 <!-- 4. O QUE VOCÊ RECEBE -->
 <section>
@@ -1042,6 +1127,25 @@ document.querySelectorAll('.faq details').forEach(function(d){
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if('IntersectionObserver' in window){ new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.4}).observe(lq); } else vis=true;
   setInterval(function(){ if(vis&&!document.hidden&&Date.now()>pausa) ativa((at+1)%bs.length); },2800);
+})();
+</script>
+<script>
+// Fluxo animado: acende um passo de cada vez e o cronômetro acompanha
+(function(){
+  var f=document.getElementById('fluxo'); if(!f) return;
+  var ps=[].slice.call(f.querySelectorAll('.fx')), mn=document.getElementById('fx-min'), k=-1, vis=false, cur=0, tm;
+  function conta(alvo){ clearInterval(tm); tm=setInterval(function(){ if(cur<alvo){cur++;mn.textContent=cur}else clearInterval(tm) }, alvo>5?110:300); }
+  function passo(){
+    k++;
+    if(k>=ps.length){ k=-1; cur=0; mn.textContent='0'; ps.forEach(function(p){p.classList.remove('on','done')}); return setTimeout(roda,700); }
+    ps.forEach(function(p,j){ p.classList.toggle('on',j===k); p.classList.toggle('done',j<k); });
+    conta(+ps[k].dataset.min);
+    setTimeout(roda, k===ps.length-1?4200:2800);
+  }
+  function roda(){ if(!vis||document.hidden) return setTimeout(roda,500); passo(); }
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; return; }
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.25}).observe(f); } else vis=true;
+  roda();
 })();
 </script>
 </body>
