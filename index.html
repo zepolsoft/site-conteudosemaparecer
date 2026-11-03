@@ -558,6 +558,12 @@ p,li{text-wrap:pretty}
   .c4{justify-content:flex-start}
 }
 @media (prefers-reduced-motion:reduce){.cena>*{opacity:1;transform:none;animation:none!important}.fx-rel::after{animation:none}}
+.embaca{filter:blur(4px);user-select:none;opacity:.75}
+.c-box .embaca{filter:blur(3.5px)}
+.tranca{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;background:#3B3633;color:#FAF7F2;font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
+.c-box.ok .tranca{opacity:0;transition:opacity .2s}
+.ia-r .bl{position:relative}
+.tranca.t2{position:static;transform:none;display:inline-block;margin-top:8px;white-space:normal;font-size:10.5px;background:var(--terra-esc)}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -759,7 +765,7 @@ p,li{text-wrap:pretty}
   <div class="wrap stack">
     <div class="eyebrow">Veja por dentro</div>
     <h2 class="h2">Abriu, viu o dia, postou</h2>
-    <p class="lead">Você abre a planilha e a aba <strong>Hoje</strong> já mostra o post do dia: pilar, tema, formato e o prompt pronto para copiar. Quer ver a semana inteira? A aba Minha Semana mostra os próximos 7 dias.</p>
+    <p class="lead"><strong>Como seria abrir uma planilha e o post do dia já estar te esperando?</strong> Toda manhã, a aba Hoje mostra o pilar, o tema e o prompt pronto. Você copia, cola na IA e o roteiro sai em segundos. Veja:</p>
     <div class="temas700">
       <div class="op-num"><b>102</b> prompts<span>×</span><b>7</b> temas</div>
       <p><strong>Não são 365 posts fixos.</strong> Cada prompt tem 7 temas, mais de 700 no total. Não gostou do tema do dia? Troque na própria aba Hoje.</p>
@@ -789,7 +795,7 @@ p,li{text-wrap:pretty}
               <div class="c-link">Abrir este prompt no Banco de Prompts</div>
               <div class="c-l l5">SEU PROMPT PRONTO</div>
               <div class="c-dica">Clique uma vez na caixa, aperte Ctrl + C e cole na sua IA.</div>
-              <div class="c-box" id="hj-box"><span id="hj-txt"></span><em class="hj-ok" id="hj-ok">✓ Copiado</em></div>
+              <div class="c-box" id="hj-box"><span id="hj-txt"></span><span class="tranca">🔒 Prompt completo no kit</span><em class="hj-ok" id="hj-ok">✓ Copiado</em></div>
             </div>
             <div class="gs-tabs"><span class="gs-plus">+</span><span class="gs-plus">≡</span><span class="on">Hoje</span><span>Configuração</span><span>Minha Semana</span><span>Psicólogos</span><span>Índice de Prompts</span><span>Datas Especiais</span></div>
           </div>
@@ -1065,7 +1071,7 @@ document.querySelectorAll('.faq details').forEach(function(d){
     var pl=$('hj-pilar'); pl.textContent=p[0]; pl.style.background=p[1];
     $('hj-cod').textContent=p[2]; $('hj-fmt').textContent=p[4];
     var t=p[3].charAt(0).toUpperCase()+p[3].slice(1); $('hj-tema').textContent=t;
-    $('hj-txt').innerHTML='Crie um roteiro de Reels de 35 a 45 segundos sobre '+p[5]+': <b>'+p[3]+'</b>. Público: o da minha Ficha do Negócio. Estrutura: gancho com uma cena do dia a dia, desenvolvimento em linguagem simples e fechamento acolhedor. Regras: não faça diagnóstico, não prometa resultado, não use depoimentos nem casos de pacientes, sem tom alarmista. Entregue: 3 ganchos, roteiro com tempo por bloco, versão em texto centralizado (5 a 7 telas, até 8 palavras cada) e legenda terminando em pergunta.';
+    $('hj-txt').innerHTML='<span id="hj-vis">Crie um roteiro de Reels de 35 a 45 segundos sobre '+p[5]+': <b>'+p[3]+'</b>.</span> <span class="embaca">Público: o da minha Ficha do Negócio. Estrutura: gancho com uma cena do dia a dia, desenvolvimento em linguagem simples e fechamento acolhedor. Regras: não faça diagnóstico, não prometa resultado, não use depoimentos nem casos de pacientes, sem tom alarmista. Entregue: 3 ganchos, roteiro com tempo por bloco e legenda.</span>';
   }
   mostra(0);
   // cabeçalhos de coluna e números de linha, conforme o layout (computador ou celular)
@@ -1091,11 +1097,11 @@ document.querySelectorAll('.faq details').forEach(function(d){
   function resposta(){
     var r=R[dia(i)], p=P[dia(i)];
     rr.innerHTML='<span class="ia-dig on" id="ia-dig"><i></i><i></i><i></i></span>'+
-      '<div class="cab">Roteiro pronto <span class="chip">'+p[0]+'</span><span class="chip" style="background:#F3E2D8;color:#8A4A2F">Reels 35–45s</span></div>'+
+      '<div class="cab">Roteiro pronto em segundos <span class="chip">'+p[0]+'</span><span class="chip" style="background:#F3E2D8;color:#8A4A2F">Reels 35–45s</span></div>'+
       '<div class="bl"><b>Gancho</b><span class="gch">'+r[0]+'</span></div>'+
-      '<div class="bl"><b>Telas do vídeo</b><ol>'+r[1].map(function(t,k){return '<li><em>'+(k+1)+'</em>'+t+'</li>'}).join('')+'</ol></div>'+
-      '<div class="bl"><b>Legenda</b><span class="leg">… '+r[2]+'</span></div>';
-    var t=$('hj-txt').textContent; eu.textContent=t.slice(0,t.lastIndexOf(' ',110))+'…';
+      '<div class="bl"><b>Telas do vídeo</b><ol>'+r[1].map(function(t,k){return '<li'+(k?' class="embaca"':'')+'><em>'+(k+1)+'</em>'+t+'</li>'}).join('')+'</ol></div>'+
+      '<div class="bl"><b>Legenda</b><span class="leg embaca">… '+r[2]+'</span><span class="tranca t2">🔒 Roteiro completo com legenda no kit</span></div>';
+    eu.textContent=$('hj-vis').textContent.replace(/\.$/,'')+'…';
   }
   // linha do tempo de cada dia: mostra → seleciona → copia → cola na IA → IA escreve → próximo dia
   var passos=[
