@@ -661,7 +661,6 @@ footer a{color:#fff}
   <div class="wrap">
     <h2 class="h2">Um ano de conteúdo organizado, por menos do que o valor de uma sessão.</h2>
     <p class="lead" style="margin-top:12px">Pagamento único. E os prompts continuam servindo nos anos seguintes.</p>
-    <p class="lead conta">Se hoje você leva 1 hora por post e posta 3 vezes por semana, são mais de 150 horas por ano. Com o kit, cerca de 15 minutos por vídeo.</p>
     <div class="offer-card">
       <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
       <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
@@ -749,6 +748,17 @@ document.querySelectorAll('a[href^="https://pay.hotmart.com"]').forEach(function
   }
   btn.addEventListener('click',function(){ if(passou&&window.fbq) fbq('trackCustom','CliqueComprar',{value:47,currency:'BRL'}); });
   window.addEventListener('scroll',modo,{passive:true}); modo();
+  // links para a oferta: rolam até o botão de pagamento ficar visível (no celular a oferta é mais alta que a tela)
+  var ckBtn=of.querySelector('.offer-card .btn');
+  document.querySelectorAll('a[href="#oferta"]').forEach(function(l){ l.addEventListener('click',function(e){
+    if(l.getAttribute('href')!=='#oferta'||!ckBtn) return;
+    e.preventDefault();
+    var hd=document.querySelector('header'), h=hd?hd.offsetHeight:0;
+    var topo=of.getBoundingClientRect().top+scrollY-h;
+    var fim=ckBtn.getBoundingClientRect().bottom+scrollY-innerHeight+56;
+    window.scrollTo({top:Math.max(topo,fim),behavior:'smooth'});
+    history.replaceState(null,'','#oferta');
+  }); });
   function upd(){ bar.classList.toggle('on', !heroVis && !ofVis); }
   new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd();}).observe(hero);
   new IntersectionObserver(function(e){ofVis=e[0].isIntersecting;upd();}).observe(of);
