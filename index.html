@@ -588,6 +588,10 @@ p,li{text-wrap:pretty}
   .fx{transition:box-shadow .35s,transform .35s,opacity .35s}
   .fx:not(.on):not(.done){opacity:.75}
 }
+.fx-barra.ficha .fx-trilho i{background:var(--salvia)}
+.fx-barra.ficha b{color:var(--salvia)}
+.fx-barra .fx-lb{transition:color .3s}
+.fx-barra.ficha .fx-lb{color:#4A6448;font-weight:600}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -689,7 +693,7 @@ p,li{text-wrap:pretty}
     <div class="eyebrow">Como funciona</div>
     <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
     <div class="fluxo" id="fluxo">
-      <div class="fx-barra" aria-hidden="true"><span class="fx-rel"></span><span class="fx-lb">Post de hoje</span><span class="fx-trilho"><i id="fx-fill"></i></span><b><i id="fx-min">0</i> min</b></div>
+      <div class="fx-barra" aria-hidden="true"><span class="fx-rel"></span><span class="fx-lb" id="fx-lb">Post de hoje</span><span class="fx-trilho"><i id="fx-fill"></i></span><b><i id="fx-min">0</i> min</b></div>
       <ol class="fx-steps">
         <li class="fx" data-min="0">
           <div class="fx-top"><span class="fx-num">1</span><span class="fx-t fx-t1">uma vez só · 10 min</span></div>
@@ -1161,8 +1165,14 @@ document.querySelectorAll('.faq details').forEach(function(d){
       k=-1, vis=false, cur=0, alvo=0, tm=null;
   function conta(a){ alvo=a; fill.style.width=(a/15*100)+'%'; if(tm) return;
     tm=setInterval(function(){ if(cur===alvo){clearInterval(tm);tm=null;return} cur+=cur<alvo?1:-1; mn.textContent=cur; }, 70); }
+  var lb=document.getElementById('fx-lb');
   function marca(n){ if(n===k) return; k=n;
     ps.forEach(function(p,j){ p.classList.toggle('on',j===n); p.classList.toggle('done',j<n); });
+    var ficha=(n===0);
+    barra.classList.toggle('ficha',ficha);
+    lb.textContent=ficha?'Ficha · uma vez só':'Post de hoje';
+    if(ficha){ clearInterval(tm); tm=null; cur=alvo=10; mn.textContent='10'; fill.style.width='100%'; return; }
+    if(cur===10&&n>0){ cur=0; mn.textContent='0'; }
     conta(n<0?0:+ps[n].dataset.min); }
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; fill.style.width='100%'; return; }
   // celular: acompanha a rolagem
