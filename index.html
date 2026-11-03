@@ -463,21 +463,25 @@ p,li{text-wrap:pretty}
 .guias{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:10px 40px;align-items:center;margin-top:34px;background:rgba(255,255,255,.55);border:1px solid var(--linha);border-radius:22px;padding:30px 34px}
 .guias-txt .h3{font-family:"Playfair Display",Georgia,serif;font-size:26px;line-height:1.2;margin:6px 0 8px;color:var(--grafite)}
 .guias-txt p{color:var(--texto2);font-size:16px;line-height:1.55}
-.leque{--w:150px;--o:96px;position:relative;height:calc(var(--w)*1.414 + 46px);grid-row:span 2}
+.leque{--w:165px;--o:100px;--s:1.18;position:relative;height:calc(var(--w)*1.414*var(--s) + 20px);grid-row:span 2}
 .gl{position:absolute;left:calc(50% - var(--w)/2 + var(--i)*var(--o));bottom:14px;width:var(--w);padding:0;border:0;background:none;cursor:pointer;transform-origin:50% 120%;transform:rotate(calc(var(--i)*6deg));transition:transform .45s cubic-bezier(.3,.7,.3,1),filter .3s;z-index:calc(5 - var(--i)*var(--i));filter:saturate(.9) brightness(.97)}
 .gl img{display:block;width:100%;height:auto;border-radius:5px;box-shadow:0 14px 28px -14px rgba(59,54,51,.5),0 0 0 1px rgba(59,54,51,.06)}
-.gl.on{transform:translateY(-16px) rotate(0) scale(1.07);z-index:10;filter:none}
+.gl{transform-origin:50% 100%}
+.gl.on{transform:rotate(0) scale(var(--s));z-index:10;filter:none}
+.gl.on img{box-shadow:0 22px 40px -16px rgba(59,54,51,.55),0 0 0 1px rgba(59,54,51,.06)}
 .gl:focus-visible{outline:3px solid var(--grafite);outline-offset:3px;border-radius:6px}
 .gl-tag{position:absolute;top:-9px;right:-6px;background:var(--terra-esc);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:999px;box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
 .leque-info{min-height:52px;font-size:15px;line-height:1.5;color:var(--texto2)}
 .leque-info b{display:block;color:var(--terra-esc);font-size:15px}
 @media (max-width:720px){
-  .guias{grid-template-columns:1fr;padding:24px 18px 20px;margin-top:28px;gap:8px}
+  .guias{grid-template-columns:1fr;padding:24px 14px 20px;margin-top:28px;gap:8px}
+  .guias-txt{padding:0 4px}
   .guias-txt .h3{font-size:23px}
-  .leque{--w:100px;--o:42px;grid-row:auto;margin-top:6px}
+  .leque{--w:118px;--o:44px;--s:1.5;grid-row:auto;margin-top:10px}
   .gl{transform:rotate(calc(var(--i)*6deg))}
-  .gl.on{transform:translateY(-12px) rotate(0) scale(1.12)}
-  .leque-info{text-align:center;font-size:14.5px;min-height:66px}
+  .gl:not(.on){filter:saturate(.85) brightness(.94)}
+  .leque-info{text-align:center;font-size:15px;min-height:70px;padding:0 4px}
+  .leque-info b{font-size:17px}
   .sem-linha{font-size:12px;letter-spacing:.1em;line-height:1.7}
   .formatos{gap:6px}.formatos span{font-size:12px;padding:6px 9px 6px 7px;gap:4px}.formatos svg{width:14px!important;height:14px!important}
 }
@@ -493,6 +497,8 @@ p,li{text-wrap:pretty}
 .mod-selo{position:absolute;top:10px;right:10px;z-index:2;background:#FAF7F2;color:var(--terra-esc);font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;box-shadow:0 4px 12px -6px rgba(0,0,0,.45)}
 @media (max-width:1060px) and (min-width:721px){.mods{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:720px){.mods{align-items:stretch}.mod{flex:0 0 80%}}
+@media (max-width:380px){.leque{--w:108px;--o:38px}}
+.guias{overflow-x:clip}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
