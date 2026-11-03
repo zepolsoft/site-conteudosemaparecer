@@ -478,11 +478,21 @@ p,li{text-wrap:pretty}
   .gl{transform:rotate(calc(var(--i)*6deg))}
   .gl.on{transform:translateY(-12px) rotate(0) scale(1.12)}
   .leque-info{text-align:center;font-size:14.5px;min-height:66px}
-  .mods{align-items:flex-start}
   .sem-linha{font-size:12px;letter-spacing:.1em;line-height:1.7}
   .formatos{gap:6px}.formatos span{font-size:12px;padding:6px 9px 6px 7px;gap:4px}.formatos svg{width:14px!important;height:14px!important}
 }
 .leg-redes{font-size:.92em;opacity:.85}
+
+/* módulos: mesmo tamanho + card do Pack */
+.mods{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;align-items:stretch}
+.mod div{flex:1}
+.mod h3{font-size:19px;line-height:1.25}
+.mod p{font-size:15px;line-height:1.55}
+.mod .guia{margin-top:auto;padding-top:8px;font-size:14px}
+.mod-pack{position:relative;border:2px dashed #C98B6B;background:#FBF3EE}
+.mod-selo{position:absolute;top:10px;right:10px;z-index:2;background:#FAF7F2;color:var(--terra-esc);font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;box-shadow:0 4px 12px -6px rgba(0,0,0,.45)}
+@media (max-width:1060px) and (min-width:721px){.mods{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.mods{align-items:stretch}.mod{flex:0 0 80%}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -626,12 +636,13 @@ p,li{text-wrap:pretty}
     <div class="eyebrow">O que você recebe</div>
     <h2 class="h2">Tudo organizado em 4 módulos</h2>
     <p class="lead">Abre no celular ou no computador, em Google Docs, Sheets e PDF. Sem instalar nada.</p>
-    <p class="mods-dica">Arraste para o lado para ver os 4 módulos →</p>
+    <p class="mods-dica">Arraste para o lado: 4 módulos + o complemento opcional →</p>
     <div class="mods" style="margin-top:14px">
-      <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui em PDF, com os passos para publicar o seu primeiro vídeo ainda hoje.<br><span class="guia">+ Leitura de 10 minutos, com a rotina da semana pronta para seguir.</span></p></div></article>
-      <article class="mod"><img src="img/modulo-02.jpg" alt="Módulo 02, Personalize a IA" loading="lazy" width="960" height="540"><div><h3>02 · Personalize a IA</h3><p>Ficha do Negócio + Prompt de Contexto. Você preenche uma vez e a IA passa a escrever com a sua abordagem e o seu tom, longe das frases batidas.<br><span class="guia">+ Guia prático com prints do ChatGPT, Gemini e Claude.</span></p></div></article>
-      <article class="mod"><img src="img/modulo-03.jpg" alt="Módulo 03, Banco de Prompts" loading="lazy" width="960" height="540"><div><h3>03 · Banco de 102 Prompts</h3><p>Os 102 prompts do kit, com um pilar para cada dia da semana, de Educar a Convite. E prompts para as datas especiais.<br><span class="guia">+ Guia prático: como os prompts são organizados, com exemplo completo.</span></p></div></article>
-      <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>O pilar, o prompt e o tema de cada dia, com mais de 700 temas. A aba Hoje já entrega o prompt pronto para copiar. 8 datas especiais (Janeiro Branco, Dia do Psicólogo, Setembro Amarelo, Dia Mundial da Saúde Mental e outras) entram sozinhas no calendário.<br><span class="guia">+ Guia prático: a rotina do dia, passo a passo.</span></p></div></article>
+      <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui leva você do primeiro acesso ao primeiro vídeo publicado.</p><span class="guia">+ Leitura de 10 minutos.</span></div></article>
+      <article class="mod"><img src="img/modulo-02.jpg" alt="Módulo 02, Personalize a IA" loading="lazy" width="960" height="540"><div><h3>02 · Personalize a IA</h3><p>Ficha do Negócio + Prompt de Contexto: a IA passa a escrever com a sua abordagem e o seu tom.</p><span class="guia">+ Guia com prints do ChatGPT, Gemini e Claude.</span></div></article>
+      <article class="mod"><img src="img/modulo-03.jpg" alt="Módulo 03, Banco de Prompts" loading="lazy" width="960" height="540"><div><h3>03 · Banco de 102 Prompts</h3><p>Um pilar para cada dia da semana, de Educar a Convite, e prompts para as datas especiais.</p><span class="guia">+ Guia com exemplo completo.</span></div></article>
+      <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>Mais de 700 temas e 8 datas especiais. A aba Hoje entrega o prompt do dia pronto para copiar.</p><span class="guia">+ Guia: a rotina do dia, passo a passo.</span></div></article>
+      <article class="mod mod-pack"><span class="mod-selo">Opcional · R$&nbsp;27</span><img src="img/modulo-pack.jpg" alt="Complemento opcional, Pack 20 Modelos Canva" loading="lazy" width="960" height="540"><div><h3>Pack 20 Modelos Canva</h3><p>20 modelos de vídeo prontos: troque o texto no Canva e baixe em MP4. Você adiciona no pagamento, se quiser.</p><span class="guia">+ Guia com o link de cada modelo.</span></div></article>
     </div>
   </div>
 </section>
