@@ -526,13 +526,13 @@ p,li{text-wrap:pretty}
 .fx h3{font-size:19px;line-height:1.25}
 .fx-tag{font-style:normal;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:var(--salvia);background:var(--salvia-cl);padding:2px 8px;border-radius:999px;vertical-align:3px;white-space:nowrap}
 .fx p{color:var(--texto2);font-size:15px;line-height:1.55;margin-top:4px}
-.cena{margin-top:10px;background:var(--creme);border:1px solid var(--linha);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--grafite);min-height:104px;opacity:.5;transition:opacity .4s}
-.fx.on .cena,.fx.done .cena{opacity:1}
-.cena>*{opacity:0;transform:translateY(4px)}
-.fx.done .cena>*,.fx.on .cena>*{animation:entra .4s ease forwards}
-.fx.done .cena>*{animation-duration:0s}
+.cena{margin-top:10px;background:var(--creme);border:1px solid var(--linha);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--grafite);min-height:104px;filter:grayscale(.7);transition:filter .4s}
+.fx.on .cena,.fx.done .cena{filter:none}
+.cena>*{opacity:.4;transition:opacity .4s}
+.fx.done .cena>*{opacity:1}
+.fx.on .cena>*{animation:entra .45s ease forwards}
 .fx.on .cena>*:nth-child(2){animation-delay:.45s}.fx.on .cena>*:nth-child(3){animation-delay:.9s}.fx.on .cena>*:nth-child(4){animation-delay:1.35s}
-@keyframes entra{to{opacity:1;transform:none}}
+@keyframes entra{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}
 .c1 span{background:#fff;border-radius:6px;padding:4px 8px;border:1px solid #EFE7DC}
 .c1 b{color:var(--terra-esc);font-weight:700}
 .c2-t{font-family:"Playfair Display",serif;font-weight:700;font-size:15px;color:var(--terra-esc)}
@@ -547,7 +547,7 @@ p,li{text-wrap:pretty}
 .c4-fone i{width:14px;height:2px;background:#E0A98C}
 .c4-ok{background:var(--salvia);color:#fff;font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:999px}
 .fx.on .c4-ok{animation:pop .5s cubic-bezier(.3,1.6,.5,1) .9s forwards}
-@keyframes pop{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:.4;transform:scale(.7)}100%{opacity:1;transform:none}}
 @media (max-width:900px) and (min-width:721px){.fx-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){
   .fx-steps{grid-template-columns:1fr;gap:12px}
