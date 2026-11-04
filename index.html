@@ -832,6 +832,11 @@ p,li{text-wrap:pretty}
   .vs-r>div{font-size:13.5px}
   .vs-fim{padding:14px 16px}.vs-fim p{font-size:15px}
 }
+@media (max-width:720px){
+  .vs-r .vs-a,.vs-r .vs-b{display:grid;grid-template-columns:18px 1fr;column-gap:8px;row-gap:6px;align-items:start;align-content:start}
+  .vs-a::before,.vs-b::before{grid-column:1/3}
+  .vs-r i{display:inline-flex;flex:none;width:18px;height:18px;font-size:10px;margin-top:2px}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
