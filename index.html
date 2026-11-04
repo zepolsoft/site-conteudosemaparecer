@@ -683,6 +683,42 @@ p,li{text-wrap:pretty}
 }
 @media (min-width:1001px) and (max-width:1150px){.grid3:has(> :nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.fx-tk{display:none}}
+/* IA com tamanho fixo (não cresce) e mock compacto no celular */
+.ia{top:24px;bottom:24px;max-height:none}
+.ia-msgs{flex:1;justify-content:flex-start}
+@media (max-width:720px){
+  .app{height:500px;display:flex;flex-direction:column}
+  .app-top{padding:8px 12px}.app-top b{font-size:12px}.app-gs{font-size:10px;padding:2px 8px}
+  .app-body{flex:1;min-height:0;overflow:hidden;padding:10px 12px}
+  .app-head{margin-bottom:8px;gap:6px}.app-head b{font-size:19px}
+  .app-sem span{padding:2px 0;font-size:11px;border-radius:7px}.app-sem i{font-size:8px}
+  .app-cols{gap:8px}
+  .app-card{padding:9px 11px;border-radius:12px}
+  .app-l{margin:6px 0 3px;font-size:9px}
+  .app-tema{font-size:12.5px;padding:5px 8px;min-height:44px;display:flex;align-items:center}
+  .app-sel{display:none}
+  .app-dia{display:grid;grid-template-columns:max-content 1fr;column-gap:10px;align-items:center}
+  .app-dia .app-l:nth-of-type(1){grid-column:1/3;margin-top:0}
+  .app-dia>div:nth-child(2){grid-column:1/3}
+  .app-dia .app-l:nth-of-type(2),.app-dia .app-tema{grid-column:1/3}
+  .app-dia .app-l:nth-of-type(3){grid-column:1;margin:6px 0 0}
+  .app-dia .app-fmt{grid-column:2;margin-top:6px;font-size:11.5px}
+  .app .c-box{min-height:0;height:96px;flex:none;font-size:11px;padding:8px 10px}
+  .tranca{bottom:8px;font-size:10px;padding:4px 9px}
+  .app-tabs{padding:7px 10px}.app-tabs span{font-size:10px;padding:3px 8px}
+  .ia{left:8px;right:8px;top:12px;bottom:12px;border-radius:12px}
+  .ia-top{padding:8px 12px}
+  .ia-msgs{padding:10px 12px 8px;gap:8px;justify-content:center}
+  .ia-eu{font-size:10.5px;padding:6px 10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .ia-r .cab{margin-bottom:6px;font-size:11px}
+  .ia-r .chip{font-size:9.5px;padding:1px 7px}
+  .ia-r .bl{padding:6px 10px;margin-bottom:6px;border-radius:9px}
+  .ia-r .gch{font-size:13px}
+  .ia-r li{font-size:11px}
+  .ia-r .bl:last-child .leg{display:none}
+  .tranca.t2{margin-top:2px;font-size:10px}
+  .ia-in{display:none}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
