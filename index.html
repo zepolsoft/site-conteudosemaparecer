@@ -1435,7 +1435,7 @@ document.querySelectorAll('.faq details').forEach(function(d){
 // Topo: mitos e verdades, um par por barra; o texto antigo sai antes do novo entrar
 (function(){
   var sc=document.querySelector('.screen'); if(!sc) return;
-  var sl=[].slice.call(sc.querySelectorAll('.slide.hm,.slide.hv')), bs=[].slice.call(sc.querySelectorAll('.bars.hb i')), k=0, D=2800;
+  var sl=[].slice.call(sc.querySelectorAll('.slide.hm,.slide.hv')), bs=[].slice.call(sc.querySelectorAll('.bars.hb i')), k=0, D=3800;
   if(!sl.length) return;
   function show(n){
     sl.forEach(function(x,j){x.classList.toggle('on',j===n)});
