@@ -719,6 +719,34 @@ p,li{text-wrap:pretty}
   .tranca.t2{margin-top:2px;font-size:10px}
   .ia-in{display:none}
 }
+/* celular: mock maior e IA preenchendo a janela */
+@media (max-width:720px){
+  .app{height:580px}
+  .app-top b{font-size:13px}
+  .app-head b{font-size:22px}
+  .app-sem span{font-size:12.5px;padding:4px 0}.app-sem i{font-size:9px}
+  .app-l{font-size:10px}
+  .app-pilar{font-size:14px}
+  .app-tema{font-size:14px;min-height:50px}
+  .app-dia .app-fmt{font-size:12.5px}
+  .app .c-box{height:120px;font-size:12.5px;line-height:1.55}
+  .app-tabs span{font-size:11px}
+  .ia-top b{font-size:14px}
+  .ia-msgs{justify-content:center;gap:12px;padding:14px 14px 10px}
+  .ia-msgs>*{flex-shrink:0}
+  .ia-eu{-webkit-line-clamp:3;max-height:none}
+  .ia-eu{font-size:12.5px;padding:8px 12px}
+  .ia-r .cab{font-size:12.5px;margin-bottom:8px}
+  .ia-r .chip{font-size:11px;padding:2px 9px}
+  .ia-r .bl{padding:9px 12px;margin-bottom:8px}
+  .ia-r .bl b{font-size:10px}
+  .ia-r .gch{font-size:17px}
+  .ia-r li{font-size:13.5px;gap:9px}
+  .ia-r li em{flex-basis:20px;height:20px;font-size:11px}
+  .ia-r ol{gap:7px}
+  .tranca.t2{font-size:11.5px;padding:6px 12px}
+  .ia-in{display:flex;margin:0 12px 12px;font-size:12px}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1251,7 +1279,7 @@ document.querySelectorAll('.faq details').forEach(function(d){
       '<div class="bl"><b>Gancho</b><span class="gch">'+r[0]+'</span></div>'+
       '<div class="bl"><b>Telas do vídeo</b><ol>'+r[1].map(function(t,k){return '<li'+(k?' class="embaca"':'')+'><em>'+(k+1)+'</em>'+t+'</li>'}).join('')+'</ol></div>'+
       '<div class="bl"><b>Legenda</b><span class="leg embaca">… '+r[2]+'</span><span class="tranca t2">🔒 Roteiro completo com legenda no kit</span></div>';
-    eu.textContent=$('hj-vis').textContent.replace(/\.$/,'')+'…';
+    var vt=$('hj-vis').textContent.replace(/\.$/,''); if(innerWidth<=720&&vt.length>78) vt=vt.slice(0,vt.lastIndexOf(' ',78)); eu.textContent=vt+'…';
   }
   // linha do tempo de cada dia: mostra → seleciona → copia → cola na IA → IA escreve → próximo dia
   var passos=[
