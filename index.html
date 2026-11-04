@@ -657,6 +657,11 @@ p,li{text-wrap:pretty}
 .lq-prog i{display:block;height:100%;width:0;background:var(--terra-esc)}
 .lq-prog i.run{animation:lqp 5.5s linear forwards}
 @keyframes lqp{to{width:100%}}
+.lanc{color:var(--terra-esc);font-weight:700}
+.selo-lanc{display:inline-flex;align-items:center;gap:6px;background:var(--pessego);color:var(--terra-esc);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:-4px}
+.selo-lanc::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--terra-esc);animation:pisca 1.6s ease-in-out infinite}
+@keyframes pisca{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.selo-lanc::before{animation:none}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -704,7 +709,7 @@ p,li{text-wrap:pretty}
       </ul>
       <div class="hero-cta">
         <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="topo">Quero o kit por R$&nbsp;47</a>
-        <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
+        <span class="micro"><b class="lanc">Preço de lançamento</b> · Acesso imediato · Garantia de 7 dias</span>
         <span class="sem-linha"><span class="nw">Sem rosto · sem voz ·</span> <span class="nw">sem falar para a câmera</span></span>
       </div>
     </div>
@@ -977,6 +982,7 @@ p,li{text-wrap:pretty}
     <p class="lead" style="margin-top:12px">Pagamento único. E os prompts continuam servindo nos anos seguintes.</p>
     <div class="offer-card">
       <div class="center"><div class="eyebrow">Kit Conteúdo Sem Aparecer para Psicólogos</div></div>
+      <div class="center"><span class="selo-lanc">Preço de lançamento</span></div>
       <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
       <p class="micro center" style="margin-top:-10px">365 dias de temas por menos de R$ 0,13 por dia</p>
       <ul>
@@ -1023,7 +1029,7 @@ p,li{text-wrap:pretty}
     <h2 class="h2">O seu próximo post pode estar pronto em cerca de 15 minutos.</h2>
     <p class="lead">102 prompts, 365 dias de temas e um processo simples, sem aparecer na câmera.</p>
     <a class="btn" href="https://pay.hotmart.com/S108248865H?checkoutMode=10" style="margin-top:6px" data-umami-event="checkout" data-umami-event-local="final">Quero o kit por R$&nbsp;47</a>
-    <span class="micro">Acesso imediato · Garantia de 7 dias</span>
+    <span class="micro"><b class="lanc">Preço de lançamento</b> · Acesso imediato · Garantia de 7 dias</span>
   </div>
 </section>
 
