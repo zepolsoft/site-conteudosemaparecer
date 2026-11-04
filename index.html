@@ -550,6 +550,7 @@ p,li{text-wrap:pretty}
 .c3{gap:4px}
 .c3-eu{align-self:flex-end;background:var(--pessego);border-radius:10px 10px 3px 10px;padding:3px 9px;font-size:11.5px}
 .c3-r{display:flex;gap:6px;align-items:baseline;font-size:12px;line-height:1.3}
+.c3-r b{font-weight:400}
 .c3-r i{font-style:normal;flex:0 0 16px;height:16px;border-radius:50%;background:var(--grafite);color:#fff;font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
 .c4{flex-direction:row;align-items:center;justify-content:center;gap:14px}
 .c4-fone{width:66px;height:118px;border-radius:12px;background:var(--grafite);border:3px solid var(--grafite);color:#FAF7F2;font-family:"Playfair Display",serif;font-weight:700;font-size:10px;line-height:1.25;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px}
@@ -602,6 +603,60 @@ p,li{text-wrap:pretty}
 .r2 b,.r2 span{color:var(--terra-esc)}
 .fx-mais{align-self:center;font-family:"Playfair Display",serif;font-size:24px;color:var(--texto2)}
 @media (max-width:720px){.fx-r{padding:11px 12px}.fx-r b{font-size:23px}.fx-r span{font-size:10.5px}.fx-r small{font-size:12.5px}.fx-resumo{gap:6px}}
+/* mock profissional da aba Hoje */
+.app{background:#FAF7F2;border-radius:10px;overflow:hidden;font-family:Montserrat,system-ui,sans-serif;color:#3B3633;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.app-top{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#fff;border-bottom:1px solid #EFE7DC;font-size:12.5px}
+.app-top b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app-dots{display:flex;gap:5px}.app-dots i{width:9px;height:9px;border-radius:50%;background:#E4DCD2}
+.app-dots i:first-child{background:#E8A58C}
+.app-gs{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#1E7E34;background:#E8F3EA;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.app-gs i{width:10px;height:12px;border-radius:2px;background:#1E8E3E}
+.app-body{padding:16px 18px 14px;transition:opacity .35s}
+.app-body.fade{opacity:0}
+.app-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px}
+.app-head small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A45F3F}
+.app-head b{font-family:"Playfair Display",Georgia,serif;font-size:24px;line-height:1.15;text-transform:capitalize}
+.app-sem{display:flex;gap:4px}
+.app-sem span{display:flex;flex-direction:column;align-items:center;width:30px;padding:4px 0;border-radius:9px;font-size:12px;font-weight:700;color:#8A7F77}
+.app-sem i{font-style:normal;font-size:9px;font-weight:600;opacity:.8}
+.app-sem .on{background:#A45F3F;color:#fff}
+.app-cols{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:12px}
+.app-card{background:#fff;border:1px solid #EFE7DC;border-radius:14px;padding:12px 14px}
+.app-l{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A7F77;margin:10px 0 4px}
+.app-dia .app-l:first-child{margin-top:0}
+.app-pilar{display:inline-block;padding:4px 11px;border-radius:999px;font-size:13px;font-weight:700}
+.app-cod{margin-left:8px;font-size:11.5px;font-weight:700;color:#A45F3F}
+.app-tema{font-size:14px;font-weight:700;color:#A45F3F;line-height:1.35;background:#FFF6DF;border-radius:8px;padding:6px 9px}
+.app-sel{display:flex;justify-content:space-between;align-items:center;margin-top:6px;border:1px dashed #E2D6C9;border-radius:8px;padding:5px 9px;font-size:11px;color:#8A7F77}
+.app-sel i{font-style:normal}
+.app-fmt{font-size:12.5px;font-weight:600}
+.app-pr{display:flex;flex-direction:column}
+.app-prh{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.app-prh .app-l{margin:0}
+.app-copy{font-size:11px;font-weight:700;color:#fff;background:#3B3633;padding:4px 11px;border-radius:999px;transition:background .3s}
+.app .c-box{position:relative;flex:1;min-height:150px;margin:0;background:#FAF7F2;border:1px solid #EFE7DC;border-radius:10px;padding:10px 11px;font-size:11.5px;line-height:1.55;overflow:hidden;transition:box-shadow .3s}
+.app .c-box.sel{box-shadow:0 0 0 2px #A45F3F}
+.app .c-box.sel #hj-txt{background:rgba(164,95,63,.10)}
+.app .c-box b{color:#A45F3F}
+.app:has(.c-box.sel) .app-copy{background:#A45F3F}
+.app-tabs{display:flex;gap:6px;padding:9px 14px;background:#fff;border-top:1px solid #EFE7DC;overflow:hidden}
+.app-tabs span{font-size:11px;font-weight:600;color:#8A7F77;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.app-tabs .on{background:#3B3633;color:#fff}
+.gs-aviso{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px;font-size:12.5px;color:var(--texto2);text-align:center;line-height:1.45}
+.gs-aviso b{color:#1E7E34}
+.gs-dot{flex:0 0 auto;width:10px;height:12px;border-radius:2px;background:#1E8E3E}
+@media (max-width:720px){
+  .app-body{padding:14px 12px 12px}
+  .app-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .app-sem{width:100%;justify-content:space-between}.app-sem span{width:auto;flex:1}
+  .app-cols{grid-template-columns:1fr}
+  .app .c-box{min-height:130px}
+  .gs-aviso{align-items:flex-start;text-align:left;padding:0 4px}.gs-dot{margin-top:3px}
+}
+.lq-prog{display:block;height:3px;background:rgba(59,54,51,.1);border-radius:3px;overflow:hidden;max-width:220px;margin:4px auto 0;width:100%}
+.lq-prog i{display:block;height:100%;width:0;background:var(--terra-esc)}
+.lq-prog i.run{animation:lqp 5.5s linear forwards}
+@keyframes lqp{to{width:100%}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -719,19 +774,19 @@ p,li{text-wrap:pretty}
         <li class="fx" data-min="1">
           <div class="fx-top"><span class="fx-num">2</span><span class="fx-t">1 min</span></div>
           <h3>Abra a aba Hoje</h3>
-          <div class="cena c2" aria-hidden="true"><span class="c2-t">Hoje · terça</span><span class="c2-p">Mito x Verdade</span><span class="c2-tema">"Terapia é só para quem está em crise"</span></div>
+          <div class="cena c2" aria-hidden="true"><span class="c2-t" id="fx-dia">Hoje · terça</span><span class="c2-p" id="fx-pilar">Mito x Verdade</span><span class="c2-tema" id="fx-tema">"Terapia é só para quem está em crise"</span></div>
           <p>O pilar, o tema e o prompt do dia já estão lá, prontos para copiar.</p>
         </li>
         <li class="fx" data-min="3">
           <div class="fx-top"><span class="fx-num">3</span><span class="fx-t">2 min</span></div>
           <h3>Cole o prompt na IA</h3>
-          <div class="cena c3" aria-hidden="true"><span class="c3-eu">Crie um roteiro de Reels sobre…</span><span class="c3-r"><i>1</i>Mito: terapia é só para crises.</span><span class="c3-r"><i>2</i>Verdade: muita gente vai para se conhecer.</span><span class="c3-r"><i>3</i>Não precisa esperar o limite.</span></div>
+          <div class="cena c3" aria-hidden="true"><span class="c3-eu">Crie um roteiro de Reels sobre…</span><span class="c3-r"><i>1</i><b id="fx-r1"></b></span><span class="c3-r"><i>2</i><b id="fx-r2"></b></span><span class="c3-r"><i>3</i><b id="fx-r3"></b></span></div>
           <p>No ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p>
         </li>
         <li class="fx" data-min="15">
           <div class="fx-top"><span class="fx-num">4</span><span class="fx-t">≈ 12 min</span></div>
           <h3>Monte e publique</h3>
-          <div class="cena c4" aria-hidden="true"><span class="c4-fone"><small>MITO</small>Terapia é só para quem está em crise.<i></i></span><span class="c4-ok">✓ Publicado</span></div>
+          <div class="cena c4" aria-hidden="true"><span class="c4-fone"><small id="fx-ey">MITO</small><span id="fx-fone">Terapia é só para quem está em crise.</span><i></i></span><span class="c4-ok">✓ Publicado</span></div>
           <p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Revise e poste.</p>
         </li>
       </ol>
@@ -791,6 +846,7 @@ p,li{text-wrap:pretty}
         <p>Curtos e diretos, com a tela de cada passo. Você nunca fica sem saber onde clicar.</p>
       </div>
       <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." data-p="7" aria-label="01 · Comece Aqui"><img class="pg pa" src="img/guia-01-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-01-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." data-p="6" aria-label="02 · Personalize a IA"><img class="pg pa" src="img/guia-02-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-02-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." data-p="5" aria-label="03 · Banco de Prompts"><img class="pg pa" src="img/guia-03-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-03-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." data-p="5" aria-label="04 · Calendário 365"><img class="pg pa" src="img/guia-04-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-04-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="640" height="905"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." data-p="6" aria-label="Pack 20 · Modelos Canva"><img class="pg pa" src="img/guia-pack-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-pack-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="640" height="905"><span class=gl-tag>Com o Pack</span></button></div>
+      <span class="lq-prog" aria-hidden="true"><i id="lq-prog"></i></span>
       <p class="leque-info" aria-live="polite"><b id="lq-t">01 · Comece Aqui</b><span id="lq-d">Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura.</span></p>
     </div>
   </div>
@@ -809,31 +865,24 @@ p,li{text-wrap:pretty}
     <div class="dentro-grid">
       <figure class="laptop" style="margin:0">
         <div class="tela">
-          <div class="sheet gs" id="sheet" aria-label="Exemplo da aba Hoje do Calendário 365">
-            <div class="gs-top"><span class="gs-ico"><i></i></span><div><b>[Oficial] Calendário 365 Dias · Psicólogos</b><span class="gs-menu">Arquivo&nbsp; Editar&nbsp; Ver&nbsp; Inserir&nbsp; Formatar&nbsp; Dados&nbsp; Ferramentas&nbsp; Extensões</span></div></div>
-            <div class="gs-fx"><span class="gs-ref" id="gs-ref">B2</span><span class="gs-f">fx</span><span class="gs-form" id="gs-form">=IF(J1="";"Hoje";"Hoje · "&amp;INDEX(Psicólogos!C6:C404;J1)&amp;", "&amp;TEXT(TODAY();"dd/mm"))</span></div>
-            <div class="gs-grid" id="hj-grid">
-              <div class="gs-corner"></div>
-              <div class="gs-k ra"></div>
-              <div class="c-terra"></div>
-              <div class="c-tit"><b id="hj-tit">Hoje</b></div>
-              <div class="c-sub">O seu post de hoje: pilar, tema, formato e o prompt pronto para copiar.</div>
-              <div class="c-l l1">PILAR DO DIA</div>
-              <div class="c-pilar"><span id="hj-pilar">Educar</span></div>
-              <div class="c-l l2">PROMPT</div>
-              <div class="c-cod" id="hj-cod">PS-01</div>
-              <div class="c-l l3">TEMA DE HOJE</div>
-              <div class="c-tema" id="hj-tema">Cansaço que não passa nem nas férias</div>
-              <div class="c-q">Quer outro tema? Escolha um dos 7 deste prompt:</div>
-              <div class="c-sel"><span>Escolher outro tema</span><i>▾</i></div>
-              <div class="c-l l4">FORMATO</div>
-              <div class="c-fmt" id="hj-fmt">Texto centralizado</div>
-              <div class="c-link">Abrir este prompt no Banco de Prompts</div>
-              <div class="c-l l5">SEU PROMPT PRONTO</div>
-              <div class="c-dica">Clique uma vez na caixa, aperte Ctrl + C e cole na sua IA.</div>
-              <div class="c-box" id="hj-box"><span id="hj-txt"></span><span class="tranca">🔒 Prompt completo no kit</span><em class="hj-ok" id="hj-ok">✓ Copiado</em></div>
+          <div class="app" id="sheet" aria-label="Exemplo da aba Hoje do Calendário 365">
+            <div class="app-top"><span class="app-dots"><i></i><i></i><i></i></span><b>Calendário 365 · Psicólogos</b><span class="app-gs"><i></i>Google Planilhas</span></div>
+            <div class="app-body" id="hj-grid">
+              <div class="app-head"><div><small>Hoje</small><b id="hj-tit">Hoje</b></div><div class="app-sem" id="hj-sem"></div></div>
+              <div class="app-cols">
+                <div class="app-card app-dia">
+                  <div class="app-l">Pilar do dia</div><div><span class="app-pilar" id="hj-pilar">Educar</span><span class="app-cod" id="hj-cod">PS-01</span></div>
+                  <div class="app-l">Tema de hoje</div><div class="app-tema" id="hj-tema">Cansaço que não passa nem nas férias</div>
+                  <div class="app-sel"><span>Trocar por outro dos 7 temas</span><i>▾</i></div>
+                  <div class="app-l">Formato</div><div class="app-fmt" id="hj-fmt">Texto centralizado</div>
+                </div>
+                <div class="app-card app-pr">
+                  <div class="app-prh"><span class="app-l">Seu prompt pronto</span><span class="app-copy">Copiar</span></div>
+                  <div class="c-box" id="hj-box"><span id="hj-txt"></span><span class="tranca">🔒 Prompt completo no kit</span><em class="hj-ok" id="hj-ok">✓ Copiado</em></div>
+                </div>
+              </div>
             </div>
-            <div class="gs-tabs"><span class="gs-plus">+</span><span class="gs-plus">≡</span><span class="on">Hoje</span><span>Configuração</span><span>Minha Semana</span><span>Psicólogos</span><span>Índice de Prompts</span><span>Datas Especiais</span></div>
+            <div class="app-tabs"><span class="on">Hoje</span><span>Minha Semana</span><span>Configuração</span><span>Índice de Prompts</span><span>Datas Especiais</span></div>
           </div>
           <div class="ia-fundo" id="ia-fundo"></div>
           <div class="ia" id="ia" aria-hidden="true">
@@ -847,6 +896,7 @@ p,li{text-wrap:pretty}
         </div>
         <div class="base"></div>
         <figcaption class="legenda">Da aba Hoje para a IA · temas reais do kit · a cada dia, um post novo</figcaption>
+        <p class="gs-aviso"><span class="gs-dot"></span><span>Funciona no <b>Google Planilhas</b>, grátis com a sua conta Google, no celular ou no computador. No Excel, as fórmulas não funcionam.</span></p>
       </figure>
     </div>
   </div>
@@ -963,7 +1013,7 @@ p,li{text-wrap:pretty}
     <details name="faq"><summary>Serve para qualquer abordagem?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso.</p></details>
     <details name="faq"><summary>Quanto tempo leva por vídeo?</summary><p>Cerca de 15 minutos depois que a Ficha está preenchida. Pouco mais de 1 hora para a semana inteira.</p></details>
     <details name="faq"><summary>Serve também para Facebook e TikTok?</summary><p>Sim. É o mesmo vídeo vertical em MP4: você publica no Instagram e, se quiser, sobe o mesmo arquivo no Facebook e no TikTok. Use o arquivo original (sem marca d'água de outra rede) e escolha a música na biblioteca de cada aplicativo. As orientações de publicidade do CFP valem em qualquer rede.</p></details>
-    <details name="faq"><summary>Como recebo o kit? Os arquivos ficam comigo?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart (no Pix, costuma sair em poucos minutos). Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas.</p></details>
+    <details name="faq"><summary>Como recebo o kit? Os arquivos ficam comigo?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart (no Pix, costuma sair em poucos minutos). Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas. Use o Calendário no Google Planilhas (grátis): se baixar para o Excel, as fórmulas da aba Hoje não funcionam.</p></details>
   </div>
 </section>
 
@@ -1103,7 +1153,9 @@ document.querySelectorAll('.faq details').forEach(function(d){
   function dd(d){return ('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)}
   function mostra(k){
     var d=new Date(hoje.getFullYear(),hoje.getMonth(),hoje.getDate()+k), p=P[d.getDay()];
-    $('hj-tit').textContent='Hoje · '+D[d.getDay()]+', '+dd(d);
+    $('hj-tit').textContent=D[d.getDay()]+', '+dd(d);
+    var sem=$('hj-sem'); if(sem){ var L='DSTQQSS', h='', ini=new Date(d); ini.setDate(d.getDate()-((d.getDay()+6)%7));
+      for(var q=0;q<7;q++){ var x=new Date(ini); x.setDate(ini.getDate()+q); h+='<span'+(x.getDay()===d.getDay()?' class=on':'')+'><i>'+L[x.getDay()]+'</i>'+x.getDate()+'</span>'; } sem.innerHTML=h; }
     var pl=$('hj-pilar'); pl.textContent=p[0]; pl.style.background=p[1];
     $('hj-cod').textContent=p[2]; $('hj-fmt').textContent=p[4];
     var t=p[3].charAt(0).toUpperCase()+p[3].slice(1); $('hj-tema').textContent=t;
@@ -1111,15 +1163,15 @@ document.querySelectorAll('.faq details').forEach(function(d){
   }
   mostra(0);
   // cabeçalhos de coluna e números de linha, conforme o layout (computador ou celular)
-  function grade(){
+  function grade(){ if(!g.classList.contains('gs-grid')) return;
     [].slice.call(g.querySelectorAll('.gs-h,.gs-n')).forEach(function(x){x.remove()});
     var cs=getComputedStyle(g), nc=cs.gridTemplateColumns.split(' ').length, nr=cs.gridTemplateRows.split(' ').length, L='ABCDEFG';
     for(var c=2;c<=nc;c++){var h=document.createElement('div');h.className='gs-h';h.style.gridArea='1/'+c;h.textContent=L[c-2];h.dataset.c=L[c-2];g.appendChild(h)}
     for(var r=2;r<=nr;r++){var n=document.createElement('div');n.className='gs-n';n.style.gridRow=r;n.textContent=r-1;g.appendChild(n)}
   }
   grade(); var rz; addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(grade,200)});
-  var ref=$('gs-ref'), form=$('gs-form'), f0=form.textContent;
-  function foco(on){
+  var ref=$('gs-ref'), form=$('gs-form'), f0=form?form.textContent:'';
+  function foco(on){ if(!ref) return;
     var mob=getComputedStyle(g).gridTemplateColumns.split(' ').length<6;
     ref.textContent=on?(mob?'B16':'D7'):'B2';
     form.textContent=on?'=IF(J1="";"Coloque a data de início na aba Configuração.";SUBSTITUTE(INDEX(\'Índice de Prompts\'!N6:N107;J4);"[Tema]";J10))':f0;
@@ -1163,12 +1215,17 @@ document.querySelectorAll('.faq details').forEach(function(d){
 (function(){
   var lq=document.getElementById('leque'); if(!lq) return;
   var bs=[].slice.call(lq.querySelectorAll('.gl')), t=document.getElementById('lq-t'), d=document.getElementById('lq-d'), at=0, pausa=0, vis=false;
-  function ativa(k){ at=k; bs.forEach(function(b,j){b.classList.toggle('on',j===k)}); t.textContent=bs[k].dataset.t+(bs[k].dataset.p?' · '+bs[k].dataset.p+' páginas':''); d.textContent=bs[k].dataset.d; }
-  bs.forEach(function(b,j){ b.addEventListener('click',function(){ ativa(j); pausa=Date.now()+9000; }); });
+  var pb=document.getElementById('lq-prog');
+  function prog(){ if(!pb) return; pb.classList.remove('run'); void pb.offsetWidth; pb.classList.add('run'); }
+  var tt;
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function agenda(){ clearTimeout(tt); if(rm) return; tt=setTimeout(function(){ if(vis&&!document.hidden) ativa((at+1)%bs.length); else agenda(); },5500); }
+  function ativa(k){ at=k; prog(); agenda(); bs.forEach(function(b,j){b.classList.toggle('on',j===k)}); t.textContent=bs[k].dataset.t+(bs[k].dataset.p?' · '+bs[k].dataset.p+' páginas':''); d.textContent=bs[k].dataset.d; }
+  bs.forEach(function(b,j){ b.addEventListener('click',function(){ ativa(j); pausa=Date.now()+4500; prog(); }); });
   ativa(0);
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if('IntersectionObserver' in window){ new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.4}).observe(lq); } else vis=true;
-  setInterval(function(){ if(vis&&!document.hidden&&Date.now()>pausa) ativa((at+1)%bs.length); },2800);
+  agenda();
 })();
 </script>
 <script>
@@ -1208,6 +1265,25 @@ document.querySelectorAll('.faq details').forEach(function(d){
     auto++; if(auto>=ps.length){ auto=-1; marca(-1); return setTimeout(roda,900); }
     marca(auto); setTimeout(roda, auto===ps.length-1?4200:2800);
   })();
+})();
+</script>
+<script>
+// Passo 2 a 4 do fluxo com a data de hoje e o pilar do dia
+(function(){
+  var d=new Date(), $=function(x){return document.getElementById(x)}; if(!$('fx-dia')) return;
+  var N=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  var M={1:['Educar','#E6EFFA','"Cansaço que não passa nem nas férias"',['O corpo descansou. E a mente?','Pode ser sinal de sobrecarga.','Conversar com alguém ajuda.'],'EDUCAR','Voltou das férias cansada?'],
+         2:['Mito x Verdade','#FCEEE2','"Terapia é só para quem está em crise"',['Mito: terapia é só para crises.','Verdade: muita gente vai para se conhecer.','Não precisa esperar o limite.'],'MITO','Terapia é só para quem está em crise.'],
+         3:['Bastidores','#E6F3E9','"O preparo antes dos atendimentos"',['Véspera de atendimentos.','Agenda revisada com calma.','Cuidar começa antes da sessão.'],'BASTIDORES','Cuidar começa antes da sessão.'],
+         4:['Perguntas Frequentes','#EFE9F7','"Como é a primeira conversa"',['Primeira sessão: o que acontece?','A gente se conhece, sem pressa.','Você fala só o que quiser.'],'PERGUNTA','Como é a primeira sessão?'],
+         5:['Convite','#FBE7E7','"Para quem não sabe por onde começar"',['Não sabe por onde começar?','Tudo bem não ter as palavras.','A primeira conversa ajuda nisso.'],'CONVITE','Não sabe por onde começar?'],
+         6:['Reaproveitar','#F2F3F4','"O vídeo mais salvo da semana"',['Capa: o tema mais salvo.','A ideia principal.','Um exemplo do dia a dia.'],'CARROSSEL','O post mais salvo da semana.'],
+         0:['Planejar','#F2F3F4','"Os ganchos da próxima semana"',['Seg: Você já sentiu isso?','Ter: Mito ou verdade?','Sex: Por onde começar?'],'PLANEJAR','Os ganchos da semana.']};
+  var m=M[d.getDay()];
+  $('fx-dia').textContent='Hoje · '+N[d.getDay()]+', '+('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2);
+  $('fx-pilar').textContent=m[0]; $('fx-pilar').style.background=m[1]; $('fx-tema').textContent=m[2];
+  $('fx-r1').textContent=m[3][0]; $('fx-r2').textContent=m[3][1]; $('fx-r3').textContent=m[3][2];
+  $('fx-ey').textContent=m[4]; $('fx-fone').textContent=m[5];
 })();
 </script>
 </body>
