@@ -753,6 +753,21 @@ p,li{text-wrap:pretty}
 .fx.on.ok .fx-num{background:var(--salvia);transform:scale(1)}
 .fx.on.ok .fx-num::after{content:"✓";position:absolute;right:-5px;bottom:-4px;width:16px;height:16px;border-radius:50%;background:#fff;color:var(--salvia);font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px -2px rgba(0,0,0,.3)}
 .fx.done .fx-num::after{content:"✓";position:absolute;right:-5px;bottom:-4px;width:16px;height:16px;border-radius:50%;background:#fff;color:var(--salvia);font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px -2px rgba(0,0,0,.3)}
+.c1{gap:8px}
+.c1 .c1-it{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #EFE7DC;border-radius:9px;padding:8px 10px}
+.c1-it>span{display:flex;flex-direction:column;min-width:0;flex:1}
+.c1-it b{font-size:12.5px;color:var(--grafite)}
+.c1-it small{font-size:11.5px;color:var(--texto2)}
+.c1-it u{text-decoration:none;background:#FFF3CD;color:#8A5A00;font-weight:700;padding:0 5px;border-radius:4px}
+.c1-gs{background:#1E8E3E!important}
+.c1-ck{font-style:normal;width:20px;height:20px;border-radius:50%;background:#E7E1D9;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;transition:background .3s}
+.fx.done .c1-ck,.fx.on .c1-it:nth-child(1) .c1-ck{background:var(--salvia)}
+.fx.on .c1-it:nth-child(2) .c1-ck{animation:ck .3s ease 1s forwards}
+.fx.done .c1-it:nth-child(2) .c1-ck{background:var(--salvia)}
+@keyframes ck{to{background:var(--salvia)}}
+.c1 .c1-it>span{background:none;border:0;padding:0;border-radius:0}
+.c1 .c1-it{padding:7px 9px;gap:8px}
+@media (min-width:721px){.cena{height:178px}.c1 .c1-it{padding:6px 8px}.c1-it b{font-size:12px}.c1-it small{font-size:11px}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -854,7 +869,7 @@ p,li{text-wrap:pretty}
     <div class="eyebrow">Como funciona</div>
     <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
     <div class="fx-resumo">
-      <div class="fx-r r1"><b>10 min</b><span>só no 1º dia · passo 1</span><small>Você preenche a Ficha uma vez e a IA aprende o seu jeito.</small><em class="fx-tk"><i id="tk1"></i></em></div>
+      <div class="fx-r r1"><b>10 min</b><span>só no 1º dia · passo 1</span><small>Ficha do Negócio + a data de início no Calendário. Feito uma vez, pronto.</small><em class="fx-tk"><i id="tk1"></i></em></div>
       <div class="fx-mais" aria-hidden="true">+</div>
       <div class="fx-r r2"><b>15 min</b><span>por post · passos 2 a 4</span><small>Todo dia: aba Hoje, colar na IA, montar e publicar.</small><em class="fx-tk"><i id="tk2"></i></em></div>
     </div>
@@ -863,9 +878,12 @@ p,li{text-wrap:pretty}
       <ol class="fx-steps">
         <li class="fx" data-min="0">
           <div class="fx-top"><span class="fx-num">1</span><span class="fx-t fx-t1">uma vez só · 10 min</span></div>
-          <h3>Preencha a Ficha</h3>
-          <div class="cena c1" aria-hidden="true"><span class="c1-h"><i class="c1-doc"></i>Ficha do Negócio <em>sua cópia</em></span><span><b>Abordagem:</b> TCC</span><span><b>Público:</b> adultos de 25 a 45</span><span class="c1-mais">+ 15 perguntas · <b>com exemplo</b></span></div>
-          <p>Faça a sua cópia e responda 17 perguntas curtas sobre o seu trabalho. Depois é só copiar e colar na IA.</p>
+          <h3>Prepare tudo, uma vez só</h3>
+          <div class="cena c1" aria-hidden="true">
+            <span class="c1-it"><i class="c1-doc"></i><span><b>Ficha do Negócio</b><small>17 perguntas curtas, com exemplo</small></span><em class="c1-ck">✓</em></span>
+            <span class="c1-it"><i class="c1-doc c1-gs"></i><span><b>Data de início <u id="fx-data">04/11/2026</u></b><small>Calendário · aba Configuração</small></span><em class="c1-ck">✓</em></span>
+          </div>
+          <p>Faça as suas cópias, responda a Ficha e coloque a data de hoje no Calendário. A partir daí, a aba Hoje se organiza sozinha.</p>
         </li>
         <li class="fx" data-min="1">
           <div class="fx-top"><span class="fx-num">2</span><span class="fx-t">1 min</span></div>
@@ -1379,7 +1397,7 @@ document.querySelectorAll('.faq details').forEach(function(d){
          5:['Convite','#FBE7E7','"Para quem não sabe por onde começar"',['Não sabe por onde começar?','Tudo bem não ter as palavras.','A primeira conversa ajuda nisso.'],'CONVITE','Não sabe por onde começar?'],
          6:['Reaproveitar','#F2F3F4','"O vídeo mais salvo da semana"',['Capa: o tema mais salvo.','A ideia principal.','Um exemplo do dia a dia.'],'CARROSSEL','O post mais salvo da semana.'],
          0:['Planejar','#F2F3F4','"Os ganchos da próxima semana"',['Seg: Você já sentiu isso?','Ter: Mito ou verdade?','Sex: Por onde começar?'],'PLANEJAR','Os ganchos da semana.']};
-  var m=M[d.getDay()];
+  var m=M[d.getDay()]; if($('fx-data')) $('fx-data').textContent=('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+'/'+d.getFullYear();
   $('fx-dia').textContent='Hoje · '+N[d.getDay()]+', '+('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2);
   $('fx-pilar').textContent=m[0]; $('fx-pilar').style.background=m[1]; $('fx-tema').textContent=m[2];
   $('fx-r1').textContent=m[3][0]; $('fx-r2').textContent=m[3][1]; $('fx-r3').textContent=m[3][2];
