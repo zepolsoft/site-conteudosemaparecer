@@ -817,6 +817,21 @@ p,li{text-wrap:pretty}
   .vs-b::before{content:"Kit";font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terra-esc)}
   .vs-r i{display:none}
 }
+/* posts prontos x kit: visual v2 */
+.vs-hb em{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:1px}
+.vs-fim{display:flex;align-items:center;gap:14px;margin-top:6px;background:var(--grafite);color:#F7F2EA;border-radius:16px;padding:16px 20px}
+.vs-fim p{font-size:16px;line-height:1.45;margin:0}
+.vs-fim b{color:#E0A98C}
+.vs-ic{flex:0 0 36px;height:36px;border-radius:50%;background:var(--terra-esc);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
+@media (max-width:720px){
+  .vs-t{border:0;background:none;display:flex;flex-direction:column;gap:12px;overflow:visible}
+  .vs-r{border:0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 10px 24px -18px rgba(59,54,51,.5);grid-template-columns:.85fr 1.15fr}
+  .vs-l{background:#fff;justify-content:flex-start!important;padding:12px 14px 8px!important;color:var(--terra-esc)!important}
+  .vs-a{background:#F6F3EF;color:#8A7F77}
+  .vs-b{background:#FBF3EE;border-left:3px solid var(--terra-esc);font-weight:600}
+  .vs-r>div{font-size:13.5px}
+  .vs-fim{padding:14px 16px}.vs-fim p{font-size:15px}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1098,10 +1113,10 @@ p,li{text-wrap:pretty}
     <h2 class="h2">Post pronto é de todo mundo. O seu conteúdo é seu.</h2>
     <p class="lead">Packs de posts prontos parecem mais rápidos. Mas o mesmo texto vai para centenas de perfis, e o paciente percebe.</p>
     <div class="vs-t">
-      <div class="vs-h"><div></div><div class="vs-ha">Pack de posts prontos</div><div class="vs-hb">Kit Conteúdo Sem Aparecer</div></div>
+      <div class="vs-h"><div></div><div class="vs-ha">Pack de posts prontos</div><div class="vs-hb">Kit Conteúdo Sem Aparecer <em>o seu jeito</em></div></div>
       <div class="vs-r"><div class="vs-l">O texto</div><div class="vs-a"><i>✕</i>Igual para centenas de perfis de psicologia.</div><div class="vs-b"><i>✓</i>Escrito com a sua abordagem, o seu público e o seu tom.</div></div><div class="vs-r"><div class="vs-l">Quando acaba</div><div class="vs-a"><i>✕</i>Acabou o pacote, acabaram as ideias.</div><div class="vs-b"><i>✓</i>102 prompts e mais de 700 temas, que continuam servindo nos anos seguintes.</div></div><div class="vs-r"><div class="vs-l">O formato</div><div class="vs-a"><i>✕</i>Imagens prontas para o feed.</div><div class="vs-b"><i>✓</i>Vídeos sem aparecer para Reels, Stories e TikTok, e também carrossel.</div></div><div class="vs-r"><div class="vs-l">A ética</div><div class="vs-a"><i>✕</i>Depende de quem escreveu cada post.</div><div class="vs-b"><i>✓</i>Prompts criados com os cuidados do CFP, e a revisão final é sua.</div></div>
     </div>
-    <p class="vs-nota">Sendo justo: o post pronto é mais rápido no primeiro dia. Com o kit, são cerca de 15 minutos, e o resultado tem a sua cara.</p>
+    <div class="vs-fim"><span class="vs-ic">✦</span><p><b>Cerca de 15 minutos por post.</b> E nenhum outro perfil vai ter um igual ao seu.</p></div>
   </div>
 </section>
 
