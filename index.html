@@ -749,6 +749,10 @@ p,li{text-wrap:pretty}
 }
 .redes span{display:inline-flex;align-items:center;gap:6px}
 .redes svg{width:16px;height:16px;fill:none;stroke:var(--terra-esc);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.fx-num{position:relative}
+.fx.on.ok .fx-num{background:var(--salvia);transform:scale(1)}
+.fx.on.ok .fx-num::after{content:"✓";position:absolute;right:-5px;bottom:-4px;width:16px;height:16px;border-radius:50%;background:#fff;color:var(--salvia);font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px -2px rgba(0,0,0,.3)}
+.fx.done .fx-num::after{content:"✓";position:absolute;right:-5px;bottom:-4px;width:16px;height:16px;border-radius:50%;background:#fff;color:var(--salvia);font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px -2px rgba(0,0,0,.3)}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1331,7 +1335,8 @@ document.querySelectorAll('.faq details').forEach(function(d){
     tm=setInterval(function(){ if(cur===alvo){clearInterval(tm);tm=null;return} cur+=cur<alvo?1:-1; mn.textContent=cur; }, 70); }
   var lb=document.getElementById('fx-lb');
   function marca(n){ if(n===k) return; k=n;
-    ps.forEach(function(p,j){ p.classList.toggle('on',j===n); p.classList.toggle('done',j<n); });
+    ps.forEach(function(p,j){ p.classList.toggle('on',j===n); p.classList.toggle('done',j<n); p.classList.remove('ok'); });
+    clearTimeout(window._fxOk); if(n>=0){ var pn=ps[n]; window._fxOk=setTimeout(function(){ pn.classList.add('ok'); }, n===ps.length-1?1600:1900); }
     var t1=document.getElementById('tk1'), t2=document.getElementById('tk2'), mins=[0,1,3,15];
     if(t1){ t1.style.width=(n>=0?100:0)+'%'; t2.style.width=(n>0?mins[n]/15*100:0)+'%';
       f.parentNode.querySelector('.r1').classList.toggle('ativo',n===0); f.parentNode.querySelector('.r2').classList.toggle('ativo',n>0); }
