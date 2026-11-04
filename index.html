@@ -775,6 +775,20 @@ p,li{text-wrap:pretty}
 .redes-rod a{display:inline-flex;align-items:center;gap:6px;color:#F3E2D8;text-decoration:none;font-size:13px;font-weight:600;border:1px solid rgba(243,226,216,.25);border-radius:999px;padding:6px 12px;transition:background .2s}
 .redes-rod a:hover{background:rgba(243,226,216,.1)}
 .redes-rod svg{width:16px;height:16px;fill:none;stroke:#E0A98C;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* topo: mitos x verdades (sequência controlada por JS, sem sobreposição) */
+.slide.hm,.slide.hv{animation:none;opacity:0;transition:opacity .35s ease}
+.slide.hm.on,.slide.hv.on{opacity:1;transition-delay:.35s}
+.hm{background:#3B3633;color:#F7F2EA}.hm .tag{color:#E0A98C}.hm .ln{background:#E0A98C}
+.hm::before{background:rgba(156,175,154,.22)}.hm::after{background:rgba(201,139,107,.25)}
+.hv{background:#DDE5DA;color:#2F3A30}.hv .tag{color:#5E7A5C}.hv .ln{background:#5E7A5C}
+.hv::before{background:rgba(156,175,154,.45)}.hv::after{background:rgba(59,54,51,.08)}
+.hm .big{font-size:24px}.hv .big{font-size:24px}
+.bars.hb i{animation:none!important;transition:width linear}
+.screen .ico.hi{animation:none;color:#F7F2EA;transition:color .35s .35s}
+.screen.verde .ico.hi{color:#2F3A30}
+@media (max-width:720px){.hm .big,.hv .big{font-size:21px}}
+.screen .ico.hi .sv{animation:none;fill:transparent}
+.screen.verde .ico.hi .sv{fill:currentColor;transition:fill .3s .9s}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -833,15 +847,20 @@ p,li{text-wrap:pretty}
         <div class="fmts" aria-hidden="true"><span class="fmt f1"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M10 9.2v5.6l4.6-2.8z" fill="currentColor"/></svg>Reels</span><span class="fmt f2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3.2 2.2"/><circle cx="12" cy="12" r="4.2"/></svg>Stories</span><span class="fmt f3"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Feed</span><span class="fmt f4"><svg viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="11" height="15" rx="2"/><path d="M3.5 7.5v9M20.5 7.5v9"/></svg>Carrossel</span></div>
       <div class="phone" aria-hidden="true">
         <div class="screen">
-          <div class="bars"><span><i></i></span><span><i></i></span><span><i></i></span></div>
-          <div class="ico">
+          <div class="bars hb"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+          <div class="ico hi">
             <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>
             <svg viewBox="0 0 24 24" class="sv"><path d="M6.5 3.5h11v17l-5.5-4.8-5.5 4.8z"/></svg>
           </div>
-          <div class="slide s1"><div class="tag">Mito</div><div class="big">Terapia é só para quem está em crise.</div><div class="ln"></div><div class="sig">Seu nome · Psicóloga · CRP&nbsp;00/00000</div></div>
-          <div class="slide s2"><div class="tag">Verdade</div><div class="big">Muita gente busca terapia para se conhecer melhor.</div><div class="ln"></div><div class="sig">Seu nome · Psicóloga · CRP&nbsp;00/00000</div></div>
-          <div class="slide s3"><div class="tag">Mito x Verdade</div><div class="big">Salve para lembrar.</div><div class="ln"></div><div class="sig">Seu nome · Psicóloga · CRP&nbsp;00/00000</div></div>
+          <div class="slide hm on"><div class="tag">Mito</div><div class="big">"Psicólogo não pode fazer marketing."</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
+          <div class="slide hv"><div class="tag">Verdade</div><div class="big">Pode divulgar o seu trabalho. Com ética.</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
+          <div class="slide hm"><div class="tag">Mito</div><div class="big">"Para ter pacientes, precisa aparecer."</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
+          <div class="slide hv"><div class="tag">Verdade</div><div class="big">Dá para ter presença sem mostrar o rosto.</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
+          <div class="slide hm"><div class="tag">Mito</div><div class="big">"Psicólogo não pode usar IA."</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
+          <div class="slide hv"><div class="tag">Verdade</div><div class="big">Pode, como apoio. A revisão é sempre sua.</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
+          <div class="slide hm"><div class="tag">Mito</div><div class="big">"Precisa entender de IA para usar."</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
+          <div class="slide hv"><div class="tag">Verdade</div><div class="big">Se você copia e cola, você consegue.</div><div class="ln"></div><div class="sig">@conteudo.semaparecer</div></div>
         </div>
       </div>
       </div>
@@ -1410,6 +1429,25 @@ document.querySelectorAll('.faq details').forEach(function(d){
   $('fx-pilar').textContent=m[0]; $('fx-pilar').style.background=m[1]; $('fx-tema').textContent=m[2];
   $('fx-r1').textContent=m[3][0]; $('fx-r2').textContent=m[3][1]; $('fx-r3').textContent=m[3][2];
   $('fx-ey').textContent=m[4]; $('fx-fone').textContent=m[5];
+})();
+</script>
+<script>
+// Topo: mitos e verdades, um par por barra; o texto antigo sai antes do novo entrar
+(function(){
+  var sc=document.querySelector('.screen'); if(!sc) return;
+  var sl=[].slice.call(sc.querySelectorAll('.slide.hm,.slide.hv')), bs=[].slice.call(sc.querySelectorAll('.bars.hb i')), k=0, D=2800;
+  if(!sl.length) return;
+  function show(n){
+    sl.forEach(function(x,j){x.classList.toggle('on',j===n)});
+    sc.classList.toggle('verde',sl[n].classList.contains('hv'));
+    var p=Math.floor(n/2);
+    bs.forEach(function(b,j){ b.style.transitionDuration='0s'; b.style.width=j<p?'100%':'0'; });
+    if(n%2===0){ void bs[p].offsetWidth; bs[p].style.transitionDuration=(2*D/1000)+'s'; bs[p].style.width='100%'; }
+    else { bs[p].style.width='100%'; }
+  }
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ show(0); return; }
+  show(0);
+  setInterval(function(){ if(document.hidden) return; k=(k+1)%sl.length; show(k); }, D);
 })();
 </script>
 </body>
