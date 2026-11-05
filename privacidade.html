@@ -6,12 +6,56 @@
 <title>Política de Privacidade · Conteúdo Sem Aparecer</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/icone.png">
+<meta name="description" content="Como o site Conteúdo Sem Aparecer trata dados pessoais, cookies e ferramentas de medição, conforme a LGPD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#FAF7F2;color:#3B3633;font-family:Montserrat,system-ui,sans-serif;font-size:16px;line-height:1.7}
-main{max-width:760px;margin:0 auto;padding:40px 20px 64px}
-h1{font-family:"Playfair Display",Georgia,serif;font-size:32px;line-height:1.2}
-h2{font-size:18px;margin-top:32px}
-a{color:#A45F3F}
+:root{--terra:#A45F3F;--creme:#FAF7F2;--areia:#EFE7DC;--graf:#3B3633;--cinza:#625953;--salvia:#5E7A5C;--scl:#DDE5DA;--pes:#F3E2D8;--linha:#E6DDD2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--graf);font-family:Montserrat,system-ui,sans-serif;font-size:16px;line-height:1.7}
+a{color:var(--terra)}
+.top{background:#fff;border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:5}
+.top .in{max-width:860px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top img{height:34px;width:auto;display:block}
+.top a.v{font-weight:600;font-size:14px;text-decoration:none}
+main{max-width:860px;margin:0 auto;padding:36px 20px 64px}
+.ey{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+h1{font-family:"Playfair Display",Georgia,serif;font-size:40px;line-height:1.15;margin:6px 0 8px}
+.meta{color:var(--cinza);font-size:14px}
+.lead{font-size:17px;color:var(--cinza);margin-top:14px}
+.resumo{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 8px}
+.rc{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:16px}
+.rc b{display:block;font-size:15px;margin:6px 0 2px}
+.rc p{margin:0;font-size:14px;color:var(--cinza);line-height:1.55}
+.rc i{font-style:normal;font-size:20px}
+.toc{background:var(--areia);border-radius:16px;padding:18px 22px;margin:28px 0}
+.toc b{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra)}
+.toc ol{margin:8px 0 0;padding-left:20px;columns:2;column-gap:28px;font-size:14.5px}
+.toc a{text-decoration:none;color:var(--graf)}
+.toc a:hover{color:var(--terra);text-decoration:underline}
+h2{font-family:"Playfair Display",Georgia,serif;font-size:25px;margin:44px 0 10px;scroll-margin-top:80px}
+h2 span{color:var(--terra);font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;margin-right:8px;vertical-align:4px}
+h3{font-size:16px;margin:20px 0 4px}
+ul{padding-left:20px}
+li{margin:4px 0}
+.tab{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--linha);border-radius:14px;overflow:hidden;font-size:14.5px;margin:12px 0}
+.tab th{background:var(--graf);color:#fff;text-align:left;padding:10px 14px;font-size:13px}
+.tab td{padding:12px 14px;border-top:1px solid var(--linha);vertical-align:top;line-height:1.55}
+.tab td:first-child{font-weight:700;width:30%}
+.dest{background:var(--scl);border-radius:14px;padding:16px 18px;margin:14px 0}
+.dest b{color:#2F3A30}
+.alerta{background:var(--pes);border-left:4px solid var(--terra);border-radius:10px;padding:14px 16px;margin:14px 0}
+.contato{background:var(--graf);color:#F7F2EA;border-radius:18px;padding:24px;margin-top:44px}
+.contato h2{color:#fff;margin-top:0}
+.contato a{color:#F3D1BE;font-weight:700}
+.rod{text-align:center;color:var(--cinza);font-size:13px;margin-top:28px}
+@media (max-width:720px){
+  h1{font-size:32px}.resumo{grid-template-columns:1fr}.toc ol{columns:1}
+  .tab,.tab tbody,.tab tr,.tab td{display:block;width:100%!important}.tab thead{display:none}
+  .tab td:first-child{border-top:1px solid var(--linha);padding-bottom:0}.tab td+td{border-top:0}
+  .tab tr:first-child td:first-child{border-top:0}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -35,23 +79,119 @@ a{color:#A45F3F}
 <script defer src="https://stats.kitprecocerto.com.br/script.js" data-website-id="519bde5e-3086-4b1c-ae31-8acf3809ff52"></script>
 </head>
 <body>
+<header class="top"><div class="in"><a href="index.html" aria-label="Página inicial"><img src="img/logo.png" alt="Conteúdo Sem Aparecer" width="113" height="36"></a><a class="v" href="index.html">← Voltar ao site</a></div></header>
 <main>
-<p><a href="index.html">← Voltar</a></p>
+<div class="ey">Transparência</div>
 <h1>Política de Privacidade</h1>
-<p>Última atualização: outubro de 2026.</p>
+<p class="meta">Última atualização: 5 de novembro de 2026</p>
+<p class="lead">Psicólogas e psicólogos lidam com sigilo todos os dias. Por isso, explicamos aqui, em linguagem simples, quais dados passam por este site, para que servem e como você pode controlar tudo isso, conforme a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).</p>
 
-<h2>Quais dados coletamos</h2>
-<p>Este site não tem formulários e não pede seus dados pessoais. As compras são feitas na página de pagamento da Hotmart, que trata os dados de pagamento e de cadastro conforme a política de privacidade dela.</p>
+<div class="resumo">
+  <div class="rc"><i>📝</i><b>Sem formulários</b><p>Este site não pede o seu nome, e-mail ou telefone. Você só navega.</p></div>
+  <div class="rc"><i>💳</i><b>Pagamento na Hotmart</b><p>Os dados de compra e de pagamento ficam com a Hotmart, não com a gente.</p></div>
+  <div class="rc"><i>🔒</i><b>Nunca dados de pacientes</b><p>O kit foi feito para funcionar sem nenhuma informação sobre quem você atende.</p></div>
+</div>
 
-<h2>Cookies e ferramentas de medição</h2>
-<p>Usamos o Pixel da Meta (Facebook e Instagram) para medir visitas e compras e para mostrar anúncios a pessoas interessadas no kit. Ele usa cookies e identificadores do seu navegador. Você pode limitar esse uso nas configurações de anúncios da sua conta Meta e nas configurações de cookies do seu navegador.</p>
-<p>Também usamos o Umami, uma ferramenta de estatísticas que conta visitas e cliques de forma agregada (por exemplo, quantas pessoas abriram a página ou clicaram em um botão). O Umami não usa cookies, não guarda o seu endereço IP e não identifica quem você é.</p>
+<nav class="toc" aria-label="Índice"><b>Nesta página</b><ol>
+<li><a href="#quem">Quem somos</a></li>
+<li><a href="#dados">Quais dados passam por aqui</a></li>
+<li><a href="#uso">Para que usamos</a></li>
+<li><a href="#cookies">Cookies e ferramentas de medição</a></li>
+<li><a href="#compartilhamento">Com quem compartilhamos</a></li>
+<li><a href="#pacientes">Dados de pacientes e uso de IA</a></li>
+<li><a href="#guarda">Por quanto tempo guardamos</a></li>
+<li><a href="#seguranca">Segurança</a></li>
+<li><a href="#direitos">Seus direitos</a></li>
+<li><a href="#internacional">Transferência internacional</a></li>
+<li><a href="#menores">Menores de idade</a></li>
+<li><a href="#mudancas">Mudanças nesta política</a></li>
+</ol></nav>
 
-<h2>Seus direitos</h2>
-<p>Conforme a Lei Geral de Proteção de Dados (LGPD), você pode pedir informações, correção ou exclusão de dados relacionados a você. Basta escrever para o e-mail de suporte abaixo.</p>
+<h2 id="quem"><span>01</span>Quem somos</h2>
+<p>Este site e o Kit Conteúdo Sem Aparecer para Psicólogos pertencem à marca <b>Conteúdo Sem Aparecer</b>, CNPJ 39.680.100/0001-41, que é a controladora dos dados tratados neste site. Para qualquer assunto de privacidade, fale com a gente em <a href="mailto:contato@conteudosemaparecer.com">contato@conteudosemaparecer.com</a>.</p>
 
-<h2>Quem somos</h2>
-<p>Este site pertence à marca Conteúdo Sem Aparecer (CNPJ 39.680.100/0001-41). Contato: <a href="mailto:contato@conteudosemaparecer.com">contato@conteudosemaparecer.com</a>.</p>
+<h2 id="dados"><span>02</span>Quais dados passam por aqui</h2>
+<h3>Quando você só visita o site</h3>
+<p>Não pedimos nenhum dado pessoal. As ferramentas de medição registram informações técnicas e de navegação, como páginas vistas, botões clicados, até onde a página foi rolada, tipo de aparelho e navegador, país aproximado e de qual anúncio ou link você veio.</p>
+<h3>Quando você compra</h3>
+<p>A compra acontece na página de pagamento da <b>Hotmart</b>. Lá você informa nome, e-mail, CPF e dados de pagamento, que são tratados pela Hotmart conforme a <a href="https://hotmart.com/pt-br/legal/privacidade" target="_blank" rel="noopener">política de privacidade dela</a>. Nós recebemos da Hotmart apenas o necessário para entregar o produto e dar suporte, como nome, e-mail, produto comprado e situação do pagamento. <b>Não temos acesso aos dados do seu cartão.</b></p>
+<h3>Quando você fala com a gente</h3>
+<p>Se você escrever para o nosso e-mail, guardamos a mensagem e o seu endereço de e-mail para responder e acompanhar o seu atendimento.</p>
+<h3>Quando você usa o kit</h3>
+<p>A Ficha do Negócio e o Calendário 365 são copiados para o <b>seu próprio Google Drive</b>. O que você escreve neles fica na sua conta Google, e nós não temos acesso às suas cópias.</p>
+
+<h2 id="uso"><span>03</span>Para que usamos</h2>
+<table class="tab"><thead><tr><th>Finalidade</th><th>Base legal (LGPD)</th></tr></thead><tbody>
+<tr><td>Entregar o acesso ao kit e dar suporte</td><td>Execução de contrato (art. 7º, V)</td></tr>
+<tr><td>Cumprir obrigações fiscais e legais da venda</td><td>Cumprimento de obrigação legal (art. 7º, II)</td></tr>
+<tr><td>Medir visitas e melhorar o site</td><td>Legítimo interesse (art. 7º, IX), com dados agregados e sem identificar você</td></tr>
+<tr><td>Medir os anúncios e mostrar o kit a pessoas interessadas</td><td>Legítimo interesse, com a possibilidade de você se opor a qualquer momento (veja a seção 4)</td></tr>
+<tr><td>Responder mensagens</td><td>Legítimo interesse e execução de contrato</td></tr>
+</tbody></table>
+<p>Não vendemos, alugamos nem cedemos dados pessoais a terceiros para fins de marketing.</p>
+
+<h2 id="cookies"><span>04</span>Cookies e ferramentas de medição</h2>
+<table class="tab"><thead><tr><th>Ferramenta</th><th>O que faz</th></tr></thead><tbody>
+<tr><td>Pixel da Meta (Facebook e Instagram)</td><td>Mede visitas, cliques e compras para avaliar os anúncios e mostrar o kit a pessoas com interesse parecido. Usa cookies e identificadores do navegador. A compra também é informada à Meta pela Hotmart.</td></tr>
+<tr><td>Umami</td><td>Estatísticas de visitas e cliques de forma agregada (por exemplo: quantas pessoas viram a oferta ou rolaram a página até o fim). <b>Não usa cookies, não guarda o seu IP e não identifica quem você é.</b> Fica num servidor próprio, não numa empresa de anúncios.</td></tr>
+<tr><td>Armazenamento do navegador</td><td>Guardamos, só durante a sua visita, de qual anúncio você veio, para que a Hotmart saiba a origem da compra. Isso é apagado quando você fecha a aba.</td></tr>
+</tbody></table>
+<div class="dest"><b>Como limitar:</b> nas <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">preferências de anúncios da Meta</a> você controla os anúncios que vê. Você também pode bloquear ou apagar cookies nas configurações do seu navegador, e o site continua funcionando normalmente.</div>
+
+<h2 id="compartilhamento"><span>05</span>Com quem compartilhamos</h2>
+<p>Só com os parceiros necessários para o site e o kit funcionarem:</p>
+<ul>
+<li><b>Hotmart</b>: pagamento, emissão de nota e área de membros.</li>
+<li><b>Meta Platforms</b>: medição e exibição de anúncios.</li>
+<li><b>Hostinger</b>: hospedagem do site e do servidor de estatísticas.</li>
+<li><b>Google</b>: os arquivos do kit ficam no Google Drive, e você faz as suas cópias na sua conta.</li>
+<li><b>Autoridades</b>: quando a lei ou uma ordem judicial exigir.</li>
+</ul>
+
+<h2 id="pacientes"><span>06</span>Dados de pacientes e uso de IA</h2>
+<div class="alerta"><b>Importante:</b> o kit foi criado para funcionar <b>sem nenhum dado de paciente</b>. A Ficha do Negócio pergunta só sobre você e o seu trabalho. Nunca coloque nomes, histórias, mensagens ou qualquer informação de quem você atende na Ficha, nos prompts ou nas ferramentas de IA.</div>
+<p>Os prompts são usados em ferramentas de inteligência artificial de terceiros, como ChatGPT, Gemini ou Claude, na <b>sua</b> conta. O que você digita nelas é tratado conforme a política de cada empresa, e não passa por nós. Recomendamos ler essas políticas e, se a ferramenta permitir, desligar o uso das suas conversas para treinamento.</p>
+<p>Esse cuidado também ajuda você a seguir o Código de Ética Profissional do Psicólogo, que protege o sigilo de quem é atendido.</p>
+
+<h2 id="guarda"><span>07</span>Por quanto tempo guardamos</h2>
+<ul>
+<li><b>Dados de compra:</b> pelo prazo exigido pela legislação fiscal (em geral, 5 anos), mantidos pela Hotmart.</li>
+<li><b>Mensagens de suporte:</b> até 2 anos depois do último contato, ou menos, se você pedir a exclusão.</li>
+<li><b>Estatísticas do Umami:</b> agregadas e anônimas, sem prazo, porque não identificam ninguém.</li>
+<li><b>Dados de anúncios na Meta:</b> conforme a política e os prazos da própria Meta.</li>
+</ul>
+
+<h2 id="seguranca"><span>08</span>Segurança</h2>
+<p>O site usa conexão criptografada (HTTPS), não guarda dados de pagamento e tem acesso restrito ao painel de administração. Os pagamentos ficam com a Hotmart, que segue padrões de segurança do mercado de pagamentos. Nenhum sistema é 100% imune, mas trabalhamos para reduzir riscos e, se houver um incidente que afete você, vamos comunicar conforme a LGPD.</p>
+
+<h2 id="direitos"><span>09</span>Seus direitos</h2>
+<p>Pela LGPD (art. 18), você pode pedir, a qualquer momento:</p>
+<ul>
+<li>confirmação de que tratamos dados seus e acesso a eles;</li>
+<li>correção de dados incompletos ou desatualizados;</li>
+<li>anonimização, bloqueio ou exclusão de dados desnecessários;</li>
+<li>portabilidade dos dados a outro fornecedor;</li>
+<li>informação sobre com quem compartilhamos;</li>
+<li>revogação do consentimento, quando ele for a base do tratamento;</li>
+<li>oposição a um tratamento feito com base em legítimo interesse.</li>
+</ul>
+<p>Para pedir, escreva para <a href="mailto:contato@conteudosemaparecer.com">contato@conteudosemaparecer.com</a> com o assunto "Privacidade". Respondemos em até 15 dias. Se não ficar satisfeita ou satisfeito, você também pode procurar a Autoridade Nacional de Proteção de Dados (<a href="https://www.gov.br/anpd" target="_blank" rel="noopener">ANPD</a>).</p>
+
+<h2 id="internacional"><span>10</span>Transferência internacional</h2>
+<p>Alguns parceiros, como a Meta e o Google, guardam dados em servidores fora do Brasil. Essas transferências seguem as regras da LGPD e as garantias contratuais oferecidas por essas empresas.</p>
+
+<h2 id="menores"><span>11</span>Menores de idade</h2>
+<p>O kit é destinado a profissionais adultos. Não coletamos intencionalmente dados de menores de 18 anos.</p>
+
+<h2 id="mudancas"><span>12</span>Mudanças nesta política</h2>
+<p>Podemos atualizar esta política quando o site ou as ferramentas mudarem. A data no topo da página sempre mostra a última atualização.</p>
+
+<div class="contato">
+<h2>Ficou alguma dúvida?</h2>
+<p>Fale com a gente em <a href="mailto:contato@conteudosemaparecer.com">contato@conteudosemaparecer.com</a>. Respondemos em até 1 dia útil.</p>
+<p style="margin:0;font-size:14px;opacity:.8">Conteúdo Sem Aparecer · CNPJ 39.680.100/0001-41</p>
+</div>
+<p class="rod"><a href="index.html">← Voltar ao site</a></p>
 </main>
 </body>
 </html>

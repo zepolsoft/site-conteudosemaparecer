@@ -837,6 +837,35 @@ p,li{text-wrap:pretty}
   .vs-a::before,.vs-b::before{grid-column:1/3}
   .vs-r i{display:inline-flex;flex:none;width:18px;height:18px;font-size:10px;margin-top:2px}
 }
+/* rodapé v2 */
+footer{padding:48px 0 28px}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1.3fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(243,226,216,.14)}
+.ft-marca img{display:block;margin-bottom:14px}
+.ft-tag{font-family:"Playfair Display",Georgia,serif;font-size:19px;line-height:1.4;color:#F7F2EA;max-width:340px}
+.ft-tag em{font-style:italic;color:#E0A98C}
+.ft-selos{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.ft-selos span{font-size:12px;font-weight:600;color:#DDE5DA;background:rgba(156,175,154,.14);padding:5px 10px;border-radius:999px}
+.ft-col{display:flex;flex-direction:column;gap:9px}
+.ft-col h4{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E0A98C;margin:0 0 4px}
+.ft-col a{color:#F3E2D8;text-decoration:none;font-size:14.5px;width:fit-content}
+.ft-col a:hover{color:#fff;text-decoration:underline}
+.ft-nota{font-size:12.5px;color:#A99F95;margin-top:-5px}
+.ft-redes{display:flex;flex-direction:column;gap:8px}
+.ft-redes a{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(243,226,216,.22);border-radius:999px;padding:7px 14px;font-weight:600;font-size:13.5px}
+.ft-redes a:hover{background:rgba(243,226,216,.08);text-decoration:none}
+.ft-redes svg{width:16px;height:16px;fill:none;stroke:#E0A98C;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ft-avisos{padding:22px 0 18px;display:flex;flex-direction:column;gap:10px}
+.ft-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid rgba(243,226,216,.14);font-size:12.5px;color:#A99F95}
+@media (max-width:900px){.ft-top{grid-template-columns:1fr 1fr}.ft-marca{grid-column:1/-1}}
+@media (max-width:720px){
+  footer{padding:40px 0 calc(24px + 80px)}
+  .ft-top{grid-template-columns:1fr;gap:24px}
+  .ft-col[aria-label="O kit"]{flex-direction:row;flex-wrap:wrap;gap:8px 18px}
+  .ft-col[aria-label="O kit"] h4{flex-basis:100%}
+  .ft-col a{overflow-wrap:anywhere}
+  .ft-redes{flex-direction:row;flex-wrap:wrap}
+  .ft-base{flex-direction:column}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -938,7 +967,7 @@ p,li{text-wrap:pretty}
 </section>
 
 <!-- 3. SOLUÇÃO (fluxo animado) -->
-<section class="passos" data-secao="como-funciona">
+<section class="passos" id="como-funciona" data-secao="como-funciona">
   <div class="wrap stack">
     <div class="eyebrow">Como funciona</div>
     <h2 class="h2">Do zero ao vídeo publicado em 4 passos</h2>
@@ -1014,7 +1043,7 @@ p,li{text-wrap:pretty}
 
 
 <!-- 4. O QUE VOCÊ RECEBE -->
-<section data-secao="modulos">
+<section id="o-que-recebe" data-secao="modulos">
   <div class="wrap stack">
     <div class="eyebrow">O que você recebe</div>
     <h2 class="h2">Tudo organizado em 4 módulos</h2>
@@ -1196,7 +1225,7 @@ p,li{text-wrap:pretty}
 </section>
 
 <!-- 8. GARANTIA -->
-<section class="garantia" data-secao="garantia">
+<section class="garantia" id="garantia" data-secao="garantia">
   <div class="wrap narrow">
     <div class="selo" role="img" aria-label="7 dias de garantia"><b>7</b><small>dias de<br>garantia</small></div>
     <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Experimente sem risco</h2>
@@ -1205,7 +1234,7 @@ p,li{text-wrap:pretty}
 </section>
 
 <!-- 9. FAQ -->
-<section class="faq" data-secao="faq">
+<section class="faq" id="faq" data-secao="faq">
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
     <details name="faq"><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. E não precisa pagar nenhuma ferramenta: funciona com as versões gratuitas do ChatGPT (ou Gemini, ou Claude), do Canva ou CapCut e de bancos de vídeo. Cada módulo tem um guia com prints mostrando onde clicar.</p></details>
@@ -1231,12 +1260,36 @@ p,li{text-wrap:pretty}
 
 <footer>
   <div class="wrap">
-    <img src="img/logo-claro.png" alt="Conteúdo Sem Aparecer" width="113" height="36">
-    <div class="redes-rod"><span>Siga @conteudo.semaparecer</span><div><a href="https://www.instagram.com/conteudo.semaparecer/" target="_blank" rel="noopener" aria-label="Instagram" data-umami-event="rede-social" data-umami-event-rede="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.4-2h4.6l1.4 2h1.8A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.4"/></svg><span>Instagram</span></a><a href="https://www.facebook.com/share/18cniw8r8B/" target="_blank" rel="noopener" aria-label="Facebook" data-umami-event="rede-social" data-umami-event-rede="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.8 14.6c2.3.1 4.1 1.6 4.7 4.4"/></svg><span>Facebook</span></a><a href="https://www.tiktok.com/@conteudo.semaparecer" target="_blank" rel="noopener" aria-label="TikTok" data-umami-event="rede-social" data-umami-event-rede="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg><span>TikTok</span></a></div></div>
-    <p>Conteúdo Sem Aparecer · CNPJ 39.680.100/0001-41</p>
-    <p>Suporte: <a href="mailto:contato@conteudosemaparecer.com">contato@conteudosemaparecer.com</a> · <a href="privacidade.html">Política de privacidade</a></p>
-    <p class="aviso">Este material oferece modelos e prompts para apoiar a criação de conteúdo. Ele não substitui o julgamento profissional nem a leitura do Código de Ética Profissional do Psicólogo e das resoluções do CFP. A responsabilidade pelo que é publicado é sempre do profissional. Resultados de alcance, seguidores ou atendimentos não são garantidos.</p>
-    <p class="aviso">A compra é processada pela Hotmart. Este site não é afiliado ao Conselho Federal de Psicologia.</p>
+    <div class="ft-top">
+      <div class="ft-marca">
+        <img src="img/logo-claro.png" alt="Conteúdo Sem Aparecer" width="113" height="36">
+        <p class="ft-tag">Conteúdo para o perfil profissional de psicólogas e psicólogos, <em>sem aparecer na câmera.</em></p>
+        <div class="ft-selos"><span>✓ Compra segura Hotmart</span><span>✓ Garantia de 7 dias</span><span>✓ Acesso imediato</span></div>
+      </div>
+      <nav class="ft-col" aria-label="O kit">
+        <h4>O kit</h4>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#o-que-recebe">O que você recebe</a>
+        <a href="#oferta">Preço e acesso</a>
+        <a href="#garantia">Garantia de 7 dias</a>
+      </nav>
+      <nav class="ft-col" aria-label="Ajuda">
+        <h4>Ajuda</h4>
+        <a href="#faq">Perguntas frequentes</a>
+        <a href="mailto:contato@conteudosemaparecer.com" data-umami-event="email-contato">contato@conteudosemaparecer.com</a>
+        <span class="ft-nota">Respondemos em até 1 dia útil.</span>
+        <a href="privacidade.html">Política de privacidade</a>
+      </nav>
+      <div class="ft-col">
+        <h4>Siga @conteudo.semaparecer</h4>
+        <div class="ft-redes"><a href="https://www.instagram.com/conteudo.semaparecer/" target="_blank" rel="noopener" aria-label="Instagram" data-umami-event="rede-social" data-umami-event-rede="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.4-2h4.6l1.4 2h1.8A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.4"/></svg><span>Instagram</span></a><a href="https://www.facebook.com/share/18cniw8r8B/" target="_blank" rel="noopener" aria-label="Facebook" data-umami-event="rede-social" data-umami-event-rede="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.8 14.6c2.3.1 4.1 1.6 4.7 4.4"/></svg><span>Facebook</span></a><a href="https://www.tiktok.com/@conteudo.semaparecer" target="_blank" rel="noopener" aria-label="TikTok" data-umami-event="rede-social" data-umami-event-rede="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg><span>TikTok</span></a></div>
+      </div>
+    </div>
+    <div class="ft-avisos">
+      <p class="aviso">Este material oferece modelos e prompts para apoiar a criação de conteúdo. Ele não substitui o julgamento profissional nem a leitura do Código de Ética Profissional do Psicólogo e das resoluções do CFP. A responsabilidade pelo que é publicado é sempre do profissional. Resultados de alcance, seguidores ou atendimentos não são garantidos.</p>
+      <p class="aviso">A compra é processada pela Hotmart. Este site não é afiliado ao Conselho Federal de Psicologia.</p>
+    </div>
+    <div class="ft-base"><span>© 2026 Conteúdo Sem Aparecer · <span class="nw">CNPJ 39.680.100/0001-41</span></span><span>Feito com cuidado para quem cuida.</span></div>
   </div>
 </footer>
 
