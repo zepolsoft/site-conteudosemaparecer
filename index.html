@@ -945,6 +945,30 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
 .gp.on .gp-a s{background-size:100% 2px}
 @media (prefers-reduced-motion:reduce){.gp-a s{background-size:100% 2px}}
 @media (max-width:720px){.gp-fb{line-height:1.45}}
+/* chatgpt v2: deixar claro "só com a IA" x "com o kit" */
+.gp-ias{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:2px}
+.gp-ias span{font-size:13px;color:var(--texto2);margin-right:2px}
+.gp-ias b{font-size:13px;font-weight:600;background:#fff;border:1px solid var(--linha);border-radius:999px;padding:4px 11px;color:var(--grafite)}
+.gp-ias b:last-child{background:none;border-style:dashed;color:var(--texto2);font-weight:500}
+.gp-h{text-transform:none;letter-spacing:0;font-size:14px;font-weight:600}
+.gp-ha,.gp-hb{display:flex;align-items:center;gap:10px}
+.gp-tg{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.gp-tg.a{background:#E7E1D9;color:#625953}
+.gp-tg.b{background:#fff;color:var(--terra-esc)}
+.gp-hb{color:#FBE9DE}
+.gp-leg{display:none}
+@media (max-width:720px){
+  .gp-leg{display:flex;justify-content:space-between;gap:8px;padding:12px 14px;background:#F6F3EF;border-bottom:1px solid var(--linha)}
+  .gp-leg span{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .gp-leg .la{color:#8A7F77}.gp-leg .la i{width:16px;height:16px;border:2px solid #CFC6BC;border-radius:4px}
+  .gp-leg .lb{color:var(--terra-esc)}.gp-leg .lb i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--salvia);color:#fff;font-size:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+  .gp-r{padding:10px 10px 12px}
+  .gp-a{background:#F6F3EF;border-radius:10px 10px 0 0;padding:10px 12px}
+  .gp-b{background:#FBF3EE;border-left:3px solid var(--terra-esc);border-radius:0 0 10px 10px;margin-left:0;padding:10px 12px;gap:10px}
+  .gp-fa{padding:12px 16px 6px}
+}
+@media (max-width:720px){.gp-ias{gap:4px}.gp-ias span{font-size:12px}.gp-ias b{font-size:11.5px;padding:3px 8px}}
+@media (max-width:380px){.gp-ias span{flex-basis:100%;margin-bottom:2px}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1202,14 +1226,16 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
 <section class="gpt" id="chatgpt" data-secao="chatgpt">
   <div class="wrap stack">
     <div class="eyebrow">A pergunta que todo mundo faz</div>
-    <h2 class="h2">"Mas eu não posso pedir direto ao ChatGPT?"</h2>
-    <p class="lead">Pode, e o kit foi feito para ele. A diferença é não começar do zero todo dia.</p>
+    <h2 class="h2">"Mas eu não posso pedir direto para a IA?"</h2>
+    <p class="lead">Pode, e o kit foi feito para isso. A diferença é não começar do zero todo dia.</p>
+    <div class="gp-ias"><span>Funciona com</span><b>ChatGPT</b><b>Gemini</b><b>Claude</b><b>ou outra IA</b></div>
     <div class="gp" id="gp">
-      <div class="gp-h"><span class="gp-ha">Sozinha no ChatGPT, todo dia você precisa…</span><span class="gp-hb">Com o kit</span></div>
+      <div class="gp-h"><span class="gp-ha"><em class="gp-tg a">Só com a IA</em>todo dia, você precisa…</span><span class="gp-hb"><em class="gp-tg b">Com o kit</em>já vem pronto</span></div>
+      <div class="gp-leg" aria-hidden="true"><span class="la"><i></i>Só com a IA</span><span class="lb"><i>✓</i>Com o kit</span></div>
       <ul><li class="gp-r" style="--k:0"><span class="gp-a"><i></i><s>Pensar no tema do dia</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O tema do dia já está na aba Hoje</span></li><li class="gp-r" style="--k:1"><span class="gp-a"><i></i><s>Escrever um bom prompt do zero</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>102 prompts prontos para copiar</span></li><li class="gp-r" style="--k:2"><span class="gp-a"><i></i><s>Explicar quem você é, de novo</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>A Ficha ensina a IA uma vez só</span></li><li class="gp-r" style="--k:3"><span class="gp-a"><i></i><s>Lembrar das orientações do CFP</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>Os cuidados já vêm dentro do prompt</span></li><li class="gp-r" style="--k:4"><span class="gp-a"><i></i><s>Organizar o que postar no ano</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O calendário de 365 dias se organiza sozinho</span></li></ul>
       <div class="gp-f"><span class="gp-fa">…e repetir tudo amanhã.</span><span class="gp-fb">Abre a aba Hoje, copia, cola. <span class="nw">⏱ Cerca de 15 min.</span></span></div>
     </div>
-    <p class="gp-fim"><b>Você continua usando o ChatGPT.</b> Só não precisa mais começar do zero.</p>
+    <p class="gp-fim"><b>Você continua usando a sua IA preferida.</b> Só não precisa mais começar do zero.</p>
   </div>
 </section>
 
@@ -1331,7 +1357,7 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
 <section class="faq" id="faq" data-secao="faq">
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
-    <details name="faq"><summary>Não posso fazer isso de graça no ChatGPT?</summary><p>Pode tentar, e o kit inclusive funciona com ele. A diferença é o trabalho de antes: pensar 365 temas, escrever bons prompts, explicar a sua abordagem e lembrar das orientações do CFP a cada post. O kit entrega isso pronto, por menos do que o valor de uma sessão.</p></details>
+    <details name="faq"><summary>Não posso fazer isso de graça numa IA, como o ChatGPT?</summary><p>Pode tentar, e o kit inclusive funciona com ela (ChatGPT, Gemini, Claude ou outra). A diferença é o trabalho de antes: pensar 365 temas, escrever bons prompts, explicar a sua abordagem e lembrar das orientações do CFP a cada post. O kit entrega isso pronto, por menos do que o valor de uma sessão.</p></details>
     <details name="faq"><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. E não precisa pagar nenhuma ferramenta: funciona com as versões gratuitas do ChatGPT (ou Gemini, ou Claude), do Canva ou CapCut e de bancos de vídeo. Cada módulo tem um guia com prints mostrando onde clicar.</p></details>
     <details name="faq"><summary>Consigo usar só pelo celular?</summary><p>Consegue. A planilha, a IA e o Canva funcionam no celular, então dá para criar e postar no intervalo entre um atendimento e outro. Se tiver um computador por perto, preparar a semana nele fica ainda mais confortável.</p></details>
     <details name="faq"><summary>Sem aparecer, as pessoas vão confiar em mim?</summary><p>É possível construir confiança sem mostrar o rosto, com uma comunicação consistente, clara e profissional. O formato é texto no centro da tela, sobre um vídeo de fundo, com música: sem rosto e sem voz. Ajuda postar com constância, explicar com clareza e se identificar bem, com o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP em cada publicação. Se um dia você quiser aparecer, tudo o que já postou continua valendo.</p></details>
