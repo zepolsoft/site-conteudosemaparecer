@@ -888,6 +888,17 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
   .ft-ic a[aria-label="TikTok"]{width:32px;height:32px}
 }
 @media (max-width:340px){.ft-ic a svg{display:none}.ft-ic a[aria-label="TikTok"] svg{display:block}}
+/* comparação v3: rótulos centralizados com ícone, colunas iguais no celular */
+.vs-li{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--pessego);color:var(--terra-esc);font-size:12px;align-items:center;justify-content:center;margin-right:10px;flex:none;letter-spacing:0}
+@media (max-width:720px){
+  .vs-r{grid-template-columns:1fr 1fr!important}
+  .vs-l{justify-content:center!important;text-align:center;padding:14px 14px 10px!important;border-bottom:1px solid var(--linha);letter-spacing:.12em}
+  .vs-li{width:22px;height:22px;font-size:11px;margin-right:8px}
+  .vs-r .vs-a,.vs-r .vs-b{padding:12px 12px 16px}
+}
+.vs-h,.vs-r{grid-template-columns:200px 1fr 1fr}
+.vs-l{flex-direction:row!important;flex-wrap:nowrap;white-space:nowrap}
+@media (max-width:720px){.vs-l{display:flex!important;flex-direction:row!important;align-items:center!important}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1167,10 +1178,10 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
   <div class="wrap stack">
     <div class="eyebrow">Por que não um pack de posts prontos?</div>
     <h2 class="h2">Post pronto é de todo mundo. O seu conteúdo é seu.</h2>
-    <p class="lead">Packs de posts prontos parecem mais rápidos. Mas o mesmo texto vai para centenas de perfis, e o paciente percebe.</p>
+    <p class="lead">Packs prontos parecem práticos, mas deixam o seu perfil igual ao de centenas de outros psicólogos. E quem procura terapia percebe.</p>
     <div class="vs-t">
       <div class="vs-h"><div></div><div class="vs-ha">Pack de posts prontos</div><div class="vs-hb">Kit Conteúdo Sem Aparecer <em>o seu jeito</em></div></div>
-      <div class="vs-r"><div class="vs-l">O texto</div><div class="vs-a"><i>✕</i>Igual para centenas de perfis de psicologia.</div><div class="vs-b"><i>✓</i>Escrito com a sua abordagem, o seu público e o seu tom.</div></div><div class="vs-r"><div class="vs-l">Quando acaba</div><div class="vs-a"><i>✕</i>Acabou o pacote, acabaram as ideias.</div><div class="vs-b"><i>✓</i>102 prompts e mais de 700 temas, que continuam servindo nos anos seguintes.</div></div><div class="vs-r"><div class="vs-l">O formato</div><div class="vs-a"><i>✕</i>Imagens prontas para o feed.</div><div class="vs-b"><i>✓</i>Vídeos sem aparecer para Reels, Stories e TikTok, e também carrossel.</div></div><div class="vs-r"><div class="vs-l">A ética</div><div class="vs-a"><i>✕</i>Depende de quem escreveu cada post.</div><div class="vs-b"><i>✓</i>Prompts feitos considerando as orientações do CFP, e a revisão final é sua.</div></div>
+      <div class="vs-r"><div class="vs-l"><span class="vs-li">✎</span>O texto</div><div class="vs-a"><i>✕</i>Igual para centenas de perfis de psicologia.</div><div class="vs-b"><i>✓</i>Escrito com a sua abordagem, o seu público e o seu tom.</div></div><div class="vs-r"><div class="vs-l"><span class="vs-li">∞</span>Quando acaba</div><div class="vs-a"><i>✕</i>Acabou o pacote, acabaram as ideias.</div><div class="vs-b"><i>✓</i>102 prompts e mais de 700 temas, que continuam servindo nos anos seguintes.</div></div><div class="vs-r"><div class="vs-l"><span class="vs-li">▶</span>O formato</div><div class="vs-a"><i>✕</i>Imagens prontas para o feed.</div><div class="vs-b"><i>✓</i>Vídeos sem aparecer para Reels, Stories e TikTok, e também carrossel.</div></div><div class="vs-r"><div class="vs-l"><span class="vs-li">✓</span>A ética</div><div class="vs-a"><i>✕</i>Você confere sozinha se cada post segue o CFP.</div><div class="vs-b"><i>✓</i>Prompts feitos considerando as orientações do CFP, e a revisão final é sua.</div></div>
     </div>
     <div class="vs-fim"><span class="vs-ic">✦</span><p><b>Cerca de 15 min por post, e um conteúdo que só você publica.</b></p></div>
   </div>
