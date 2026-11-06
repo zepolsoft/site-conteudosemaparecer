@@ -1615,9 +1615,9 @@ document.querySelectorAll('.faq details').forEach(function(d){
     if(t1){ t1.style.transition='none'; t1.style.width='0'; }
     if(!vis){ fichaOn=false; return; }
     fichaOn=true; void fill.offsetWidth;
-    fill.style.transition='width 3.5s linear'; fill.style.width='100%';
-    if(t1){ void t1.offsetWidth; t1.style.transition='width 3.5s linear'; t1.style.width='100%'; }
-    window._fxF=setInterval(function(){ if(cur>=10){clearInterval(window._fxF);return} cur++; mn.textContent=cur; },350);
+    fill.style.transition='width 5s linear'; fill.style.width='100%';
+    if(t1){ void t1.offsetWidth; t1.style.transition='width 5s linear'; t1.style.width='100%'; }
+    window._fxF=setInterval(function(){ if(cur>=10){clearInterval(window._fxF);return} cur++; mn.textContent=cur; },500);
   }
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; fill.style.width='100%'; return; }
   // celular: acompanha a rolagem
@@ -1635,7 +1635,7 @@ document.querySelectorAll('.faq details').forEach(function(d){
   (function roda(){
     if(mob.matches||!vis||document.hidden) return setTimeout(roda,600);
     auto++; if(auto>=ps.length){ auto=-1; marca(-1); return setTimeout(roda,900); }
-    marca(auto); setTimeout(roda, auto===0?4600:(auto===ps.length-1?4200:2800));
+    marca(auto); setTimeout(roda, auto===0?6000:(auto===ps.length-1?4200:2800));
   })();
 })();
 </script>
