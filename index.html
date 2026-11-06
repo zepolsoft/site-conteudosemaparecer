@@ -899,6 +899,52 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
 .vs-h,.vs-r{grid-template-columns:200px 1fr 1fr}
 .vs-l{flex-direction:row!important;flex-wrap:nowrap;white-space:nowrap}
 @media (max-width:720px){.vs-l{display:flex!important;flex-direction:row!important;align-items:center!important}}
+/* E o ChatGPT? */
+.gpt{background:var(--creme)}
+.gp{margin-top:14px;background:#fff;border:1px solid var(--linha);border-radius:20px;overflow:hidden;box-shadow:0 18px 40px -30px rgba(59,54,51,.5)}
+.gp-h,.gp-r,.gp-f{display:grid;grid-template-columns:1fr 34px 1fr;align-items:center}
+.gp-h{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.gp-ha{padding:14px 20px;color:var(--texto2);background:#F6F3EF}
+.gp-hb{grid-column:3;padding:14px 20px;color:#fff;background:var(--terra-esc)}
+.gp-h::after{content:"";grid-column:2;grid-row:1;align-self:stretch;background:linear-gradient(90deg,#F6F3EF 50%,var(--terra-esc) 50%)}
+.gp ul{list-style:none;margin:0;padding:0}
+.gp-r{border-top:1px solid var(--linha)}
+.gp-a,.gp-b{display:flex;align-items:center;gap:12px;padding:15px 20px;font-size:16px;line-height:1.4}
+.gp-a{color:var(--texto2);background:#FAF8F5;position:relative;align-self:stretch}
+.gp-a i{flex:none;width:20px;height:20px;border:2px solid #CFC6BC;border-radius:5px;position:relative}
+.gp-a::after{content:"";position:absolute;left:52px;right:20px;top:50%;height:2px;background:#B9AFA6;transform:scaleX(0);transform-origin:left;transition:transform .5s ease calc(var(--k)*.45s + .2s)}
+.gp-sep{text-align:center;color:var(--terra-esc);font-weight:700;opacity:.35;transition:opacity .4s calc(var(--k)*.45s + .4s)}
+.gp-b{color:var(--grafite);font-weight:600;background:#FBF3EE;align-self:stretch;opacity:.35;transition:opacity .4s calc(var(--k)*.45s + .45s)}
+.gp-b i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--salvia);color:#fff;font-style:normal;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1) calc(var(--k)*.45s + .5s)}
+.gp.on .gp-a::after{transform:scaleX(1)}
+.gp.on .gp-sep,.gp.on .gp-b{opacity:1}
+.gp.on .gp-b i{transform:none}
+.gp-f{border-top:1px solid var(--linha);font-size:14.5px}
+.gp-fa{padding:14px 20px;color:#A45F3F;font-style:italic;background:#FAF8F5;align-self:stretch}
+.gp-fb{grid-column:3;padding:14px 20px;font-weight:700;color:#fff;background:var(--salvia);align-self:stretch}
+.gp-f::after{content:"";grid-column:2;grid-row:1;align-self:stretch;background:linear-gradient(90deg,#FAF8F5 50%,var(--salvia) 50%)}
+.gp-fim{text-align:center;font-size:18px;color:var(--texto2);margin-top:4px}
+.gp-fim b{color:var(--grafite)}
+@media (prefers-reduced-motion:reduce){.gp-a::after{transform:scaleX(1)}.gp-sep,.gp-b{opacity:1}.gp-b i{transform:none}}
+@media (max-width:720px){
+  .gp-h{display:none}
+  .gp-r,.gp-f{grid-template-columns:1fr;}
+  .gp-r{padding:0}
+  .gp-a{padding:14px 16px 6px;background:#fff;font-size:15px}
+  .gp-a::after{left:48px;right:16px;top:calc(50% + 4px)}
+  .gp-sep{display:none}
+  .gp-b{padding:6px 16px 14px 48px;background:#fff;font-size:15px;gap:8px;margin-left:-32px}
+  .gp-b i{width:20px;height:20px;font-size:11px}
+  .gp-f::after{display:none}
+  .gp-fa{padding:12px 16px 4px;background:#fff}
+  .gp-fb{grid-column:1;padding:12px 16px;border-radius:0}
+  .gp-fim{font-size:16px}
+}
+.gp-a::after{display:none}
+.gp-a s{text-decoration:none;background:linear-gradient(#B9AFA6,#B9AFA6) no-repeat 0 55%/0% 2px;transition:background-size .5s ease calc(var(--k)*.45s + .2s)}
+.gp.on .gp-a s{background-size:100% 2px}
+@media (prefers-reduced-motion:reduce){.gp-a s{background-size:100% 2px}}
+@media (max-width:720px){.gp-fb{line-height:1.45}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1152,6 +1198,21 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
   </div>
 </section>
 
+<!-- 4b2. E O CHATGPT? -->
+<section class="gpt" id="chatgpt" data-secao="chatgpt">
+  <div class="wrap stack">
+    <div class="eyebrow">A pergunta que todo mundo faz</div>
+    <h2 class="h2">"Mas eu não posso pedir direto ao ChatGPT?"</h2>
+    <p class="lead">Pode, e o kit foi feito para ele. A diferença é não começar do zero todo dia.</p>
+    <div class="gp" id="gp">
+      <div class="gp-h"><span class="gp-ha">Sozinha no ChatGPT, todo dia você precisa…</span><span class="gp-hb">Com o kit</span></div>
+      <ul><li class="gp-r" style="--k:0"><span class="gp-a"><i></i><s>Pensar no tema do dia</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O tema do dia já está na aba Hoje</span></li><li class="gp-r" style="--k:1"><span class="gp-a"><i></i><s>Escrever um bom prompt do zero</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>102 prompts prontos para copiar</span></li><li class="gp-r" style="--k:2"><span class="gp-a"><i></i><s>Explicar quem você é, de novo</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>A Ficha ensina a IA uma vez só</span></li><li class="gp-r" style="--k:3"><span class="gp-a"><i></i><s>Lembrar das orientações do CFP</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>Os cuidados já vêm dentro do prompt</span></li><li class="gp-r" style="--k:4"><span class="gp-a"><i></i><s>Organizar o que postar no ano</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O calendário de 365 dias se organiza sozinho</span></li></ul>
+      <div class="gp-f"><span class="gp-fa">…e repetir tudo amanhã.</span><span class="gp-fb">Abre a aba Hoje, copia, cola. <span class="nw">⏱ Cerca de 15 min.</span></span></div>
+    </div>
+    <p class="gp-fim"><b>Você continua usando o ChatGPT.</b> Só não precisa mais começar do zero.</p>
+  </div>
+</section>
+
 <!-- 4c. EXEMPLOS -->
 <section class="exemplos" data-secao="exemplos">
   <div class="wrap stack">
@@ -1270,6 +1331,7 @@ footer .aviso{font-size:12px;line-height:1.6;color:#9C928A;max-width:none;margin
 <section class="faq" id="faq" data-secao="faq">
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
+    <details name="faq"><summary>Não posso fazer isso de graça no ChatGPT?</summary><p>Pode tentar, e o kit inclusive funciona com ele. A diferença é o trabalho de antes: pensar 365 temas, escrever bons prompts, explicar a sua abordagem e lembrar das orientações do CFP a cada post. O kit entrega isso pronto, por menos do que o valor de uma sessão.</p></details>
     <details name="faq"><summary>Não entendo de inteligência artificial. Consigo usar?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. E não precisa pagar nenhuma ferramenta: funciona com as versões gratuitas do ChatGPT (ou Gemini, ou Claude), do Canva ou CapCut e de bancos de vídeo. Cada módulo tem um guia com prints mostrando onde clicar.</p></details>
     <details name="faq"><summary>Consigo usar só pelo celular?</summary><p>Consegue. A planilha, a IA e o Canva funcionam no celular, então dá para criar e postar no intervalo entre um atendimento e outro. Se tiver um computador por perto, preparar a semana nele fica ainda mais confortável.</p></details>
     <details name="faq"><summary>Sem aparecer, as pessoas vão confiar em mim?</summary><p>É possível construir confiança sem mostrar o rosto, com uma comunicação consistente, clara e profissional. O formato é texto no centro da tela, sobre um vídeo de fundo, com música: sem rosto e sem voz. Ajuda postar com constância, explicar com clareza e se identificar bem, com o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP em cada publicação. Se um dia você quiser aparecer, tudo o que já postou continua valendo.</p></details>
@@ -1612,6 +1674,13 @@ document.querySelectorAll('.faq details').forEach(function(d){
       all(); document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href*="pay.hotmart.com"]'); if(a) fix(a); },true);
     }
   }catch(e){}
+})();
+</script>
+<script>
+// "E o ChatGPT?": tarefas sendo riscadas quando a seção aparece
+(function(){ var g=document.getElementById('gp'); if(!g) return;
+  if(!('IntersectionObserver' in window)){ g.classList.add('on'); return; }
+  new IntersectionObserver(function(e,o){ if(e[0].isIntersecting){ g.classList.add('on'); o.disconnect(); } },{threshold:.35}).observe(g);
 })();
 </script>
 </body>
