@@ -1602,9 +1602,23 @@ document.querySelectorAll('.faq details').forEach(function(d){
     barra.classList.toggle('ficha',ficha);
     lb.textContent=ficha?'Ficha · só no 1º dia':'Post de hoje';
     document.getElementById('fx-de').style.display=ficha?'none':'';
-    if(ficha){ clearInterval(tm); tm=null; cur=alvo=10; mn.textContent='10'; fill.style.width='100%'; return; }
-    if(cur===10&&n>0){ cur=0; mn.textContent='0'; }
+    clearInterval(tm); tm=null; clearInterval(window._fxF);
+    if(ficha){ fichaAnim(); return; }
+    fill.style.transition=''; if(t1) t1.style.transition='';
+    if(cur===10||fichaOn){ fichaOn=false; fill.style.transition='none'; fill.style.width='0'; cur=0; mn.textContent='0'; void fill.offsetWidth; fill.style.transition=''; }
     conta(n<0?0:+ps[n].dataset.min); }
+  // relógio 1 (Ficha): enche de 0 a 10 min em ~3,5 s quando a seção está na tela
+  var fichaOn=false;
+  function fichaAnim(){
+    var t1=document.getElementById('tk1');
+    fill.style.transition='none'; fill.style.width='0'; cur=0; mn.textContent='0';
+    if(t1){ t1.style.transition='none'; t1.style.width='0'; }
+    if(!vis){ fichaOn=false; return; }
+    fichaOn=true; void fill.offsetWidth;
+    fill.style.transition='width 3.5s linear'; fill.style.width='100%';
+    if(t1){ void t1.offsetWidth; t1.style.transition='width 3.5s linear'; t1.style.width='100%'; }
+    window._fxF=setInterval(function(){ if(cur>=10){clearInterval(window._fxF);return} cur++; mn.textContent=cur; },350);
+  }
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){ ps.forEach(function(p){p.classList.add('done')}); mn.textContent='15'; fill.style.width='100%'; return; }
   // celular: acompanha a rolagem
   function topo(){ if(hd) barra.style.top=(hd.offsetHeight-1)+'px'; }
@@ -1616,12 +1630,12 @@ document.querySelectorAll('.faq details').forEach(function(d){
   }
   addEventListener('scroll',rola,{passive:true}); addEventListener('resize',function(){topo();rola()}); topo(); rola();
   // computador: passa sozinho quando a seção está visível
-  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.25}).observe(f); } else vis=true;
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ var v=e[0].isIntersecting; if(v&&!vis&&k===0&&!fichaOn){ vis=true; fichaAnim(); } vis=v; },{threshold:.25}).observe(f); } else vis=true;
   var auto=-1;
   (function roda(){
     if(mob.matches||!vis||document.hidden) return setTimeout(roda,600);
     auto++; if(auto>=ps.length){ auto=-1; marca(-1); return setTimeout(roda,900); }
-    marca(auto); setTimeout(roda, auto===ps.length-1?4200:2800);
+    marca(auto); setTimeout(roda, auto===0?4600:(auto===ps.length-1?4200:2800));
   })();
 })();
 </script>
