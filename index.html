@@ -1131,6 +1131,15 @@ html,body{overflow-x:clip}
   .pr-x::before{font-size:.8em}
   .cf-l{display:none}.cf-s{display:inline}
 }
+/* chatgpt v4: no computador, Com o kit à esquerda */
+@media (min-width:721px){
+  .gp-h>*,.gp-r>*,.gp-f>*{grid-row:1}
+  .gp-hb,.gp-b,.gp-fb{grid-column:1!important}
+  .gp-ha,.gp-a,.gp-fa{grid-column:3!important}
+  .gp-sep{grid-column:2;transform:scaleX(-1)}
+  .gp-h::after{background:linear-gradient(90deg,var(--terra-esc) 50%,#F6F3EF 50%)!important}
+  .gp-f::after{background:linear-gradient(90deg,var(--salvia) 50%,#FAF8F5 50%)!important}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
