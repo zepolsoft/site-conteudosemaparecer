@@ -1108,6 +1108,20 @@ html,body{overflow-x:clip}
   .gp[data-m="ia"] .gp-fb,.gp[data-m="kit"] .gp-fa{opacity:0}
 }
 @media (max-width:720px) and (prefers-reduced-motion:reduce){.gp[data-m] *{transition:none!important}}
+/* vs v3: kit à esquerda, pack genérico à direita, com marca d'água de cópia */
+.vs-hb{order:1}.vs-ha{order:2}
+.vs-r>.vs-l{order:0}.vs-r>.vs-b{order:1}.vs-r>.vs-a{order:2}
+.vs-ha em{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#E7E1D9;color:#8A7F77;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:1px}
+.vs-a{position:relative;overflow:hidden}
+.vs-a::after{content:"CÓPIA";position:absolute;right:-6px;bottom:2px;font-size:30px;font-weight:900;letter-spacing:.14em;color:rgba(138,127,119,.09);transform:rotate(-12deg);pointer-events:none;font-family:Montserrat,system-ui,sans-serif}
+.vs-a{text-decoration:none}
+@media (max-width:720px){
+  .vs-r{grid-template-areas:"l l" "b a"!important;grid-template-columns:1.2fr .8fr!important}
+  .vs-b{border-left:0!important;border-right:3px solid var(--terra-esc)}
+  .vs-a::before{content:"Pack genérico"!important}
+  .vs-b::before{content:"Com o kit"!important;color:var(--salvia)!important;font-weight:800!important}
+  .vs-a::after{font-size:24px;right:-4px;bottom:6px}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1428,7 +1442,7 @@ html,body{overflow-x:clip}
     <h2 class="h2">Post pronto é de todo mundo. O seu conteúdo é seu.</h2>
     <p class="lead">Packs prontos parecem práticos, mas deixam o seu perfil igual ao de centenas de outros psicólogos. E quem procura terapia percebe.</p>
     <div class="vs-t">
-      <div class="vs-h"><div></div><div class="vs-ha">Pack de posts prontos</div><div class="vs-hb">Kit Conteúdo Sem Aparecer <em>o seu jeito</em></div></div>
+      <div class="vs-h"><div></div><div class="vs-ha">Pack genérico de posts <em>igual para todos</em></div><div class="vs-hb">Com o kit <em>o seu jeito</em></div></div>
       <div class="vs-r"><div class="vs-l"><span class="vs-li">✎</span>O texto</div><div class="vs-a"><i>✕</i>Igual para centenas de perfis de psicologia.</div><div class="vs-b"><i>✓</i>Escrito com a sua abordagem, o seu público e o seu tom.</div></div><div class="vs-r"><div class="vs-l"><span class="vs-li">∞</span>Quando acaba</div><div class="vs-a"><i>✕</i>Acabou o pacote, acabaram as ideias.</div><div class="vs-b"><i>✓</i>102 prompts e mais de 700 temas, que continuam servindo nos anos seguintes.</div></div><div class="vs-r"><div class="vs-l"><span class="vs-li">▶</span>O formato</div><div class="vs-a"><i>✕</i>Imagens prontas para o feed.</div><div class="vs-b"><i>✓</i>Vídeos sem aparecer para Reels, Stories e TikTok, e também carrossel.</div></div><div class="vs-r"><div class="vs-l"><span class="vs-li">✓</span>A ética</div><div class="vs-a"><i>✕</i>Você confere sozinha se cada post segue o CFP.</div><div class="vs-b"><i>✓</i>Prompts feitos considerando as orientações do CFP, como apoio. A revisão final é sua.</div></div>
     </div>
     <div class="vs-fim"><span class="vs-ic">✦</span><p><b>Cerca de 15 min por post, e um conteúdo que só você publica.</b></p></div>
