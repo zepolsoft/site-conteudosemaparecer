@@ -1024,6 +1024,36 @@ html,body{overflow-x:clip}
 .vr-link span{display:inline-block;animation:vrdown 1.6s ease-in-out infinite}
 @keyframes vrdown{0%,100%{transform:none}50%{transform:translateY(3px)}}
 @media (prefers-reduced-motion:reduce){.vr-link span{animation:none}}
+/* Presença: post anotado */
+.pr{display:grid;grid-template-columns:auto minmax(0,500px);gap:56px;align-items:center;justify-content:center;margin-top:6px}
+.pr-fone{position:relative;width:250px;padding:9px;border-radius:30px;background:#2F2B29;box-shadow:0 24px 40px -24px rgba(59,54,51,.55)}
+.pr-tela{position:relative;aspect-ratio:9/16;border-radius:22px;background:#DDE5DA;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 20px;text-align:center}
+.pr-circ{position:absolute;right:-38px;top:-38px;width:120px;height:120px;border-radius:50%;background:#B9CDB6}
+.pr-tag{font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#5E7A5C;margin-bottom:8px}
+.pr-txt{margin:0;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:19px;line-height:1.28;color:#2F3A30}
+.pr-ln{width:34px;height:2px;background:#5E7A5C;margin:12px 0 0}
+.pr-sig{position:absolute;bottom:20px;left:0;right:0;font-size:9.5px;font-weight:700;color:#2F3A30;letter-spacing:.02em}
+.pr-pin{position:absolute;z-index:3;width:22px;height:22px;border-radius:50%;background:var(--terra-esc);color:#fff;font-style:normal;font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 rgba(164,95,63,.5);transition:transform .3s}
+.pr-hl{position:absolute;z-index:2;border:2px dashed var(--terra-esc);border-radius:10px;opacity:0;transition:opacity .35s;pointer-events:none}
+.pr-hl.h1{left:5%;right:5%;top:34%;height:29%}
+.pr-hl.h2{left:4%;right:4%;bottom:4.5%;height:7%}
+.pr-hl.h3{inset:5px;border-radius:17px}
+.pr[data-on="1"] .h1,.pr[data-on="2"] .h2,.pr[data-on="3"] .h3{opacity:1}
+.pr[data-on="1"] .pr-pin[data-n="1"],.pr[data-on="2"] .pr-pin[data-n="2"],.pr[data-on="3"] .pr-pin[data-n="3"]{transform:scale(1.18);animation:prpulse 1.4s ease-out infinite}
+@keyframes prpulse{0%{box-shadow:0 0 0 0 rgba(164,95,63,.45)}100%{box-shadow:0 0 0 12px rgba(164,95,63,0)}}
+.pr-lista{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:pr}
+.pr-lista li{position:relative;cursor:pointer;background:#fff;border:1px solid var(--linha);border-radius:14px;padding:15px 16px 14px 58px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.pr-lista li::before{content:attr(data-n);position:absolute;left:16px;top:15px;width:28px;height:28px;border-radius:50%;background:var(--pessego);color:var(--terra-esc);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;transition:background .3s,color .3s}
+.pr-lista b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:18px;line-height:1.3;color:#3B3633}
+.pr-lista span{display:block;margin-top:3px;font-size:14.5px;line-height:1.45;color:var(--texto2)}
+.pr[data-on="1"] li[data-n="1"],.pr[data-on="2"] li[data-n="2"],.pr[data-on="3"] li[data-n="3"]{border-color:var(--terra-cl);box-shadow:0 10px 22px -16px rgba(164,95,63,.6);transform:translateX(4px)}
+.pr[data-on="1"] li[data-n="1"]::before,.pr[data-on="2"] li[data-n="2"]::before,.pr[data-on="3"] li[data-n="3"]::before{background:var(--terra-esc);color:#fff}
+.pr-nao{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-top:6px}
+.pr-nao-t{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8A7F77;margin-right:4px}
+.pr-x{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid #DCD1C5;color:#5F5650;font-weight:600;font-size:14px;}
+.pr-x::before{content:"✕";text-decoration:none;display:inline-block;color:var(--terra-esc);font-size:11px;font-weight:800}
+@media (max-width:760px){.pr{grid-template-columns:1fr;gap:22px}.pr-fone{width:220px;margin:0 auto}.pr-txt{font-size:17px}.pr-lista li{padding:13px 14px 12px 54px}.pr-lista li::before{left:14px;top:13px}.pr-lista b{font-size:17px}.pr-lista span{font-size:14px}.pr[data-on] li{transform:none!important}.pr-x{font-size:13px;padding:5px 11px}}
+@media (prefers-reduced-motion:reduce){.pr-pin{animation:none!important}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1201,26 +1231,28 @@ html,body{overflow-x:clip}
   <div class="wrap stack">
     <div class="eyebrow">Presença sem exposição</div>
     <h2 class="h2">Sem aparecer não é sem presença</h2>
-    <div class="two" style="margin-top:8px">
-      <div class="box nao">
-        <h3>Você não precisa</h3>
-        <ul>
-          <li>Gravar o rosto ou a voz</li>
-          <li>Falar para a câmera</li>
-          <li>Mostrar a sua casa ou a sua família</li>
-          <li>Dançar trend ou aprender edição</li>
-        </ul>
+    <p class="lead">Veja como fica um post feito com o kit. Repare no que aparece de você:</p>
+    <div class="pr" id="pr">
+      <div class="pr-fone" aria-hidden="true">
+        <div class="pr-tela">
+          <span class="pr-circ"></span>
+          <span class="pr-tag">Psicologia</span>
+          <p class="pr-txt">Desabafar com amigos ajuda. Terapia é outra coisa.</p>
+          <span class="pr-ln"></span>
+          <span class="pr-sig">Ana Souza · Psicóloga · CRP 06/00000</span>
+          <span class="pr-hl h1"></span><span class="pr-hl h2"></span><span class="pr-hl h3"></span>
+        </div>
+        <i class="pr-pin" data-n="1" style="top:44%;left:-11px">1</i>
+        <i class="pr-pin" data-n="2" style="bottom:7%;left:-11px">2</i>
+        <i class="pr-pin" data-n="3" style="top:9%;right:-11px">3</i>
       </div>
-      <div class="box sim">
-        <h3>O que aparece de você</h3>
-        <ul>
-          <li>Seu nome, a palavra psicóloga e o seu CRP</li>
-          <li>O seu jeito de explicar, a partir da Ficha</li>
-          <li>A sua abordagem e o seu público</li>
-          <li>As cores do seu perfil</li>
-        </ul>
-      </div>
+      <ol class="pr-lista">
+        <li data-n="1"><b>O seu jeito de explicar</b><span>O texto segue a sua abordagem, o seu público e o seu tom, a partir da Ficha.</span></li>
+        <li data-n="2"><b>Seu nome, psicóloga e CRP</b><span>Em todo post, como pedem as orientações do CFP.</span></li>
+        <li data-n="3"><b>As cores do seu perfil</b><span>Você escolhe as cores e as fontes no Canva.</span></li>
+      </ol>
     </div>
+    <div class="pr-nao"><span class="pr-nao-t">Não aparece:</span><span class="pr-x">Rosto</span><span class="pr-x">Voz</span><span class="pr-x">Casa e família</span><span class="pr-x">Trends</span></div>
     <p class="quote">Quem acompanha o seu perfil conhece primeiro a sua forma de pensar. Mostrar o rosto é opcional.</p>
   </div>
 </section>
@@ -1791,6 +1823,14 @@ var vis=false,t=null,rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: 
 function go(){v.classList.add('rs');v.classList.remove('go');void v.offsetWidth;v.classList.remove('rs');v.classList.add('go');}
 function loop(){clearTimeout(t);if(!vis||rm)return;t=setTimeout(function(){go();loop();},4300);}
 new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;if(vis){if(!v.classList.contains('on')){v.classList.add('on');go();}loop();}else clearTimeout(t);});},{threshold:.4}).observe(v);})();
+</script>
+<script>
+(function(){var pr=document.getElementById('pr');if(!pr)return;var n=1,t=null,vis=false,hold=0;
+function set(k){pr.setAttribute('data-on',k);}
+function tick(){clearTimeout(t);if(!vis)return;t=setTimeout(function(){if(Date.now()>hold){n=n%3+1;set(n);}tick();},2600);}
+pr.querySelectorAll('.pr-lista li').forEach(function(li){li.addEventListener('click',function(){n=+li.dataset.n;set(n);hold=Date.now()+6000;});});
+if(!('IntersectionObserver' in window)){set(1);return;}
+new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;if(vis){if(!pr.hasAttribute('data-on'))set(1);tick();}else clearTimeout(t);});},{threshold:.35}).observe(pr);})();
 </script>
 </body>
 </html>
