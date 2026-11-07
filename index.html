@@ -1012,8 +1012,9 @@ html,body{overflow-x:clip}
 .js-anim .vr-tr{stroke-dashoffset:0;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s ease .2s}
 .js-anim .vr-pin{opacity:0;transform:translateY(-10px);transform-box:fill-box;transition:opacity .4s ease 1.6s,transform .5s cubic-bezier(.3,1.6,.5,1) 1.6s}
 .js-anim .vr-hl{background-size:0% 100%;transition:background-size .7s ease 1.9s}
-.js-anim .virada.on .vr-tr{clip-path:inset(0 0 0 0)}
-.js-anim .virada.on .vr-pin{opacity:1;transform:none}
+.js-anim .virada.go .vr-tr{clip-path:inset(0 0 0 0)}
+.js-anim .virada.go .vr-pin{opacity:1;transform:none}
+.js-anim .virada.rs .vr-tr,.js-anim .virada.rs .vr-pin{transition:none}
 .js-anim .virada.on .vr-hl{background-size:100% 100%}
 @media (prefers-reduced-motion:reduce){.js-anim .vr-tr{clip-path:none}.js-anim .vr-pin{opacity:1;transform:none}.js-anim .vr-hl{background-size:100% 100%}}
 @media (max-width:640px){.virada{padding:22px 18px 20px;border-radius:18px}.vr-1,.vr-2{font-size:22px}.vr-3{font-size:15px}.diaadia li{gap:12px;padding:10px 0}}
@@ -1059,7 +1060,7 @@ html,body{overflow-x:clip}
       <p class="lead hero-lead">O kit <mark class="mk" style="--d:.4s">diz o que postar em cada dia</mark> e entrega o <mark class="mk" style="--d:.8s">texto pronto para você copiar, colar na IA e revisar</mark>. Em <b class="t15">cerca de 15 minutos</b>, o vídeo está pronto, sem aparecer.</p>
       <ul class="selos-facil">
         <li><b>Sem saber de IA:</b> é copiar e colar, como no WhatsApp.</li>
-        <li><b>Planilha simples:</b> você só coloca a data de início.</li>
+        <li><b>Calendário automático:</b> você coloca a data de início e ele monta o seu ano.</li>
         <li><b>Primeiro vídeo hoje:</b> guias curtos com prints.</li>
       </ul>
       <div class="hero-cta">
@@ -1231,7 +1232,7 @@ html,body{overflow-x:clip}
   <div class="wrap stack">
     <div class="eyebrow">O que você recebe</div>
     <h2 class="h2">Tudo organizado em 4 módulos</h2>
-    <p class="lead">Tudo abre direto no celular, em Google Docs, Google Planilhas e PDF, sem instalar nada. No computador, fica ainda mais confortável.</p>
+    <p class="lead">Tudo abre direto no celular, nos apps gratuitos do Google e em PDF, sem instalar nada. No computador, fica ainda mais confortável.</p>
     <p class="mods-dica">Arraste para o lado: 4 módulos + o complemento opcional →</p>
     <div class="mods" style="margin-top:14px">
       <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui leva você do primeiro acesso ao primeiro vídeo publicado.</p><span class="guia">+ Leitura de 10 minutos.</span></div></article>
@@ -1258,7 +1259,7 @@ html,body{overflow-x:clip}
   <div class="wrap stack">
     <div class="eyebrow">Veja por dentro</div>
     <h2 class="h2">Abriu, viu o dia, postou</h2>
-    <p class="lead"><strong>Como seria abrir uma planilha e o post do dia já estar te esperando?</strong> Toda manhã, a aba Hoje mostra o pilar, o tema e o prompt pronto. Você copia, cola na IA e o roteiro sai em segundos. Veja:</p>
+    <p class="lead"><strong>Como seria abrir o celular e o post do dia já estar te esperando?</strong> Toda manhã, a aba Hoje mostra o pilar, o tema e o prompt pronto. Você copia, cola na IA e o roteiro sai em segundos. Veja:</p>
     <div class="temas700">
       <div class="op-num"><b>102</b> prompts<span>×</span><b>7</b> temas</div>
       <p><strong>Não são 365 posts fixos.</strong> Cada prompt tem 7 temas, mais de 700 no total. Não gostou do tema do dia? Troque na própria aba Hoje.</p>
@@ -1267,7 +1268,7 @@ html,body{overflow-x:clip}
       <figure class="laptop" style="margin:0">
         <div class="tela">
           <div class="app" id="sheet" aria-label="Exemplo da aba Hoje do Calendário 365">
-            <div class="app-top"><span class="app-dots"><i></i><i></i><i></i></span><b>Calendário 365 · Psicólogos</b><span class="app-gs"><i></i>Google Planilhas</span></div>
+            <div class="app-top"><span class="app-dots"><i></i><i></i><i></i></span><b>Calendário 365 · Psicólogos</b><span class="app-gs"><i></i>Roda no Google</span></div>
             <div class="app-body" id="hj-grid">
               <div class="app-head"><div><small>Hoje</small><b id="hj-tit">Hoje</b></div><div class="app-sem" id="hj-sem"></div></div>
               <div class="app-cols">
@@ -1297,7 +1298,7 @@ html,body{overflow-x:clip}
         </div>
         <div class="base"></div>
         <figcaption class="legenda">Da aba Hoje para a IA · temas reais do kit · a cada dia, um post novo</figcaption>
-        <p class="gs-aviso"><span class="gs-dot"></span><span>Funciona no <b>Google Planilhas</b>, grátis com a sua conta Google, no celular ou no computador. No Excel, as fórmulas não funcionam.</span></p>
+        <p class="gs-aviso"><span class="gs-dot"></span><span>Roda no <b>Google</b>, grátis com a sua conta, no celular ou no computador (pelo app Google Planilhas). No Excel, a automação não funciona.</span></p>
       </figure>
     </div>
   </div>
@@ -1395,7 +1396,7 @@ html,body{overflow-x:clip}
       <div class="price"><strong>R$ 47</strong><span>pagamento único</span></div>
       <p class="micro center" style="margin-top:-10px">365 dias de temas por menos de R$ 0,13 por dia</p>
       <ul>
-        <li>Calendário 365 no Google Planilhas: a aba Hoje entrega o post do dia, com mais de 700 temas</li>
+        <li>Calendário 365 automático: a aba Hoje entrega o post do dia, com mais de 700 temas</li>
         <li>Banco de 102 prompts para psicologia</li>
         <li>Ficha do Negócio + Prompt de Contexto</li>
         <li>4 guias em PDF com prints, um para cada módulo</li>
@@ -1422,11 +1423,11 @@ html,body{overflow-x:clip}
   <div class="wrap narrow">
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
     <details name="faq"><summary>Não posso fazer isso de graça numa IA, como o ChatGPT?</summary><p>Pode tentar, e o kit inclusive funciona com ela (ChatGPT, Gemini, Claude ou outra). A diferença é o trabalho de antes: pensar 365 temas, escrever bons prompts, explicar a sua abordagem e lembrar das orientações do CFP a cada post. O kit entrega isso pronto, por menos do que o valor de uma sessão.</p></details>
-    <details name="faq"><summary>Não entendo de IA. Consigo usar, inclusive pelo celular?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. A planilha, a IA e o Canva funcionam no celular, e cada módulo tem um guia com prints mostrando onde clicar. Depois de preencher a Ficha, cada vídeo leva cerca de 15 minutos. Também não precisa pagar nenhuma ferramenta: tudo funciona nas versões gratuitas da IA, do Canva ou CapCut e dos bancos de vídeo.</p></details>
+    <details name="faq"><summary>Não entendo de IA. Consigo usar, inclusive pelo celular?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. O Calendário, a IA e o Canva funcionam no celular, e cada módulo tem um guia com prints mostrando onde clicar. Depois de preencher a Ficha, cada vídeo leva cerca de 15 minutos. Também não precisa pagar nenhuma ferramenta: tudo funciona nas versões gratuitas da IA, do Canva ou CapCut e dos bancos de vídeo.</p></details>
     <details name="faq"><summary>Sem aparecer, as pessoas vão confiar em mim?</summary><p>É possível construir confiança sem mostrar o rosto, com uma comunicação consistente, clara e profissional. O formato é texto no centro da tela, sobre um vídeo de fundo, com música: sem rosto e sem voz. Ajuda postar com constância, explicar com clareza e se identificar bem, com o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP em cada publicação. Se um dia você quiser aparecer, tudo o que já postou continua valendo.</p></details>
     <details name="faq"><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram desenvolvidos considerando as orientações de publicidade do CFP: evitam diagnóstico, promessa de resultado, depoimentos e divulgação de preço. Eles são um material de apoio, não uma garantia de conformidade ética: a IA gera um rascunho, e a revisão profissional de cada publicação continua indispensável e é sempre responsabilidade do psicólogo.</p></details>
     <details name="faq"><summary>Serve para a minha abordagem e para outras redes?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso. E o mesmo vídeo vertical em MP4 vai para o Instagram, o Facebook e o TikTok: use o arquivo original e escolha a música na biblioteca de cada aplicativo. As orientações de publicidade do CFP valem em qualquer rede.</p></details>
-    <details name="faq"><summary>Como recebo o kit? Os arquivos ficam comigo?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart (no Pix, costuma sair em poucos minutos). Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas. Use o Calendário no Google Planilhas (grátis): se baixar para o Excel, as fórmulas da aba Hoje não funcionam.</p></details>
+    <details name="faq"><summary>Como recebo o kit? Os arquivos ficam comigo?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Hotmart (no Pix, costuma sair em poucos minutos). Você faz a sua cópia do Calendário e da Ficha no seu Google Drive, e essas cópias são suas. Use o Calendário direto no Google (grátis): se baixar para o Excel, a aba Hoje deixa de funcionar.</p></details>
   </div>
 </section>
 
@@ -1787,7 +1788,10 @@ document.querySelectorAll('.faq details').forEach(function(d){
 <script>
 (function(){var v=document.getElementById('virada');if(!v)return;document.documentElement.classList.add('js-anim');
 if(!('IntersectionObserver' in window)){v.classList.add('on');return;}
-new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){v.classList.add('on');o.disconnect();}});},{threshold:.5}).observe(v);})();
+var vis=false,t=null,rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function go(){v.classList.add('rs');v.classList.remove('go');void v.offsetWidth;v.classList.remove('rs');v.classList.add('go');}
+function loop(){clearTimeout(t);if(!vis||rm)return;t=setTimeout(function(){go();loop();},4300);}
+new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;if(vis){if(!v.classList.contains('on')){v.classList.add('on');go();}loop();}else clearTimeout(t);});},{threshold:.4}).observe(v);})();
 </script>
 </body>
 </html>
