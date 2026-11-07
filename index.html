@@ -1088,9 +1088,9 @@ html,body{overflow-x:clip}
   .gp-sw{display:grid;grid-template-columns:1fr 1fr;position:relative;margin:12px;padding:4px;border-radius:999px;background:#EFE9E2;box-shadow:inset 0 1px 3px rgba(59,54,51,.12)}
   .gp-sw button{position:relative;z-index:1;border:0;background:none;padding:11px 6px;border-radius:999px;font:inherit;font-size:13.5px;font-weight:800;color:#8A7F77;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:color .35s}
   .gp-sw button i{font-style:normal;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;background:#F3E2D8;color:#B5714F;transition:background .35s,color .35s}
-  .gp-knob{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:#fff;box-shadow:0 4px 10px -4px rgba(59,54,51,.35);transition:transform .45s cubic-bezier(.4,1.3,.5,1),background .35s}
+  .gp-knob{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--salvia);box-shadow:0 4px 10px -4px rgba(59,54,51,.35);transition:transform .45s cubic-bezier(.4,1.3,.5,1),background .35s}
   .gp[data-m="ia"] .gp-sw button[data-m="ia"]{color:#5F5650}
-  .gp[data-m="kit"] .gp-knob{transform:translateX(100%);background:var(--salvia)}
+  .gp[data-m="ia"] .gp-knob{transform:translateX(100%);background:#fff}
   .gp[data-m="kit"] .gp-sw button[data-m="kit"]{color:#fff}
   .gp[data-m="kit"] .gp-sw button[data-m="kit"] i{background:#fff;color:var(--salvia)}
   .gp[data-m] ul{border-top:1px solid var(--linha)}
@@ -1273,7 +1273,7 @@ html,body{overflow-x:clip}
     <div class="gp" id="gp">
       <div class="gp-h"><span class="gp-ha"><em class="gp-tg a">Só com a IA</em>todo dia, você precisa…</span><span class="gp-hb"><em class="gp-tg b">Com o kit</em>já vem pronto</span></div>
       <div class="gp-leg" aria-hidden="true"><span class="la"><i></i>Só com a IA</span><span class="lb"><i>✓</i>Com o kit</span></div>
-      <div class="gp-sw" role="group" aria-label="Comparar"><span class="gp-knob" aria-hidden="true"></span><button type="button" data-m="ia" aria-pressed="true"><i aria-hidden="true">↻</i>Só com a IA</button><button type="button" data-m="kit" aria-pressed="false"><i aria-hidden="true">✓</i>Com o kit</button></div>
+      <div class="gp-sw" role="group" aria-label="Comparar"><span class="gp-knob" aria-hidden="true"></span><button type="button" data-m="kit" aria-pressed="true"><i aria-hidden="true">✓</i>Com o kit</button><button type="button" data-m="ia" aria-pressed="false"><i aria-hidden="true">↻</i>Só com a IA</button></div>
       <ul><li class="gp-r" style="--k:0"><span class="gp-a"><i></i><s>Pensar no tema do dia</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O tema do dia já está na aba Hoje</span></li><li class="gp-r" style="--k:1"><span class="gp-a"><i></i><s>Escrever um bom prompt do zero</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>102 prompts prontos para copiar</span></li><li class="gp-r" style="--k:2"><span class="gp-a"><i></i><s>Explicar quem você é, de novo</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>A Ficha ensina a IA uma vez só</span></li><li class="gp-r" style="--k:3"><span class="gp-a"><i></i><s>Lembrar das orientações do CFP</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>Os cuidados já vêm dentro do prompt</span></li><li class="gp-r" style="--k:4"><span class="gp-a"><i></i><s>Organizar o que postar no ano</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O calendário de 365 dias se organiza sozinho</span></li></ul>
       <div class="gp-f"><span class="gp-fa"><b>Só com a IA:</b> tudo isso de novo, todo santo dia.</span><span class="gp-fb"><b>Com o kit:</b> abre a aba Hoje, copia, cola. <span class="nw">⏱ Cerca de 15 min.</span></span></div>
     </div>
@@ -1917,9 +1917,9 @@ new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersectin
 var t=null,vis=false,hold=0,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function set(m){g.setAttribute('data-m',m);g.querySelectorAll('.gp-sw button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false');});}
 function loop(){clearTimeout(t);if(!vis||!mq.matches)return;var cur=g.getAttribute('data-m');
-t=setTimeout(function(){if(Date.now()>hold&&!rm)set(cur==='ia'?'kit':'ia');loop();},cur==='ia'?2200:4200);}
+t=setTimeout(function(){if(Date.now()>hold&&!rm)set(cur==='ia'?'kit':'ia');loop();},cur==='ia'?4000:5000);}
 g.querySelectorAll('.gp-sw button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.m);hold=Date.now()+8000;loop();});});
-set('ia');
+set('kit');
 if(!('IntersectionObserver' in window))return;
 new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)loop();else clearTimeout(t);},{threshold:.3}).observe(g);})();
 </script>
