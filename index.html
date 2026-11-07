@@ -1122,6 +1122,15 @@ html,body{overflow-x:clip}
   .vs-b::before{content:"Com o kit"!important;color:var(--salvia)!important;font-weight:800!important}
   .vs-a::after{font-size:24px;right:-4px;bottom:6px}
 }
+/* Não aparece: sempre numa linha no celular */
+.cf-s{display:none}
+@media (max-width:600px){
+  .pr-nao{flex-wrap:nowrap;justify-content:center;gap:5px;font-size:12px;white-space:nowrap}
+  .pr-nao-t{font-size:.88em;letter-spacing:.06em;margin-right:1px}
+  .pr-x{font-size:1em!important;padding:.38em .7em!important;gap:.35em}
+  .pr-x::before{font-size:.8em}
+  .cf-l{display:none}.cf-s{display:inline}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1331,7 +1340,7 @@ html,body{overflow-x:clip}
       </div>
     </div>
     <div class="id-dots" id="id-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-    <div class="pr-nao"><span class="pr-nao-t">Não aparece:</span><span class="pr-x">Rosto</span><span class="pr-x">Voz</span><span class="pr-x">Casa e família</span><span class="pr-x">Trends</span></div>
+    <div class="pr-nao"><span class="pr-nao-t">Não aparece:</span><span class="pr-x">Rosto</span><span class="pr-x">Voz</span><span class="pr-x"><span class="cf-l">Casa e família</span><span class="cf-s">Família</span></span><span class="pr-x">Trends</span></div>
     <p class="quote">Quem acompanha o seu perfil conhece primeiro a sua forma de pensar. Mostrar o rosto é opcional.</p>
   </div>
 </section>
@@ -1936,6 +1945,12 @@ g.querySelectorAll('.gp-sw button').forEach(function(b){b.addEventListener('clic
 set('kit');
 if(!('IntersectionObserver' in window))return;
 new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)loop();else clearTimeout(t);},{threshold:.3}).observe(g);})();
+</script>
+<script>
+(function(){var r=document.querySelector('.pr-nao');if(!r)return;
+function fit(){r.style.fontSize='';if(!window.matchMedia('(max-width:600px)').matches)return;var f=12.5;r.style.fontSize=f+'px';
+while(r.scrollWidth>r.clientWidth+1&&f>9){f-=.25;r.style.fontSize=f+'px';}}
+fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 </script>
 </body>
 </html>
