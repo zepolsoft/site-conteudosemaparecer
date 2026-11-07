@@ -1062,6 +1062,25 @@ html,body{overflow-x:clip}
 .js-anim .id3.on .pal i:nth-child(1){transition-delay:.9s}.js-anim .id3.on .pal i:nth-child(2){transition-delay:1s}.js-anim .id3.on .pal i:nth-child(3){transition-delay:1.1s}.js-anim .id3.on .pal i:nth-child(4){transition-delay:1.2s}
 @media (prefers-reduced-motion:reduce){.js-anim .idc,.js-anim .pal i{opacity:1;transform:none;transition:none}.js-anim .selo{opacity:1;transform:rotate(-4deg);animation:none!important}}
 @media (max-width:860px){.id3{grid-template-columns:1fr;gap:12px}.idc{display:grid;grid-template-columns:120px 1fr;column-gap:14px;padding:12px;align-items:center}.idv{grid-row:1/3;height:118px}.idc>b{margin-top:0;font-size:17px;align-self:end}.idc>b em{display:none}.idc>p{align-self:start;font-size:13.5px;margin-top:4px}.idv-voz{padding:8px}.idv-voz p{font-size:13.5px}.idv-voz .v2{display:none}.idv-tags{display:none}.selo{padding:7px 9px;outline-offset:2px}.selo-n{font-size:13.5px}.selo-p{font-size:7.5px;letter-spacing:.14em}.selo-c{font-size:8.5px;letter-spacing:.02em}.pal i{width:30px;height:30px;margin-left:-8px;border-width:2px}.pal-f{font-size:18px}}
+/* Presença: configurável */
+.idv{--bg:#DDE5DA;--ink:#2F3A30;--ac:#5E7A5C}
+.idv-voz,.idv-cor{background:var(--bg);transition:background .6s}
+.idv-cor{background:#FAF7F2;padding-top:16px}
+.idv-voz p{color:var(--ink);transition:color .6s}
+.ed{position:absolute;top:8px;left:8px;font-size:9.5px;font-weight:800;letter-spacing:.06em;color:var(--terra-esc);background:rgba(255,255,255,.85);padding:2px 7px;border-radius:999px}
+.voz-ab{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);transition:color .6s}
+.idv-voz .voz-q{font-size:18px;font-style:italic}
+.selo{color:var(--ac);border-color:var(--ac)!important;outline-color:var(--ac)!important;transition:color .6s,border-color .6s,outline-color .6s}
+.pal i{transition:background .6s}
+.pal-f{color:var(--ink);transition:color .6s}
+.pal-f span{transition:opacity .3s}
+.pal-n{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);transition:color .6s}
+.sw{transition:opacity .3s,color .6s,border-color .6s,outline-color .6s}
+.sw.out,.pal-f.out span{opacity:0}
+.id-dots{display:flex;justify-content:center;gap:6px;margin-top:-2px}
+.id-dots i{width:7px;height:7px;border-radius:50%;background:#D4C8BB;transition:background .3s,width .3s}
+.id-dots i.on{width:20px;border-radius:999px;background:var(--terra-esc)}
+@media (max-width:860px){.idv{padding-top:14px}.ed{top:6px;left:6px;font-size:8.5px;padding:1px 6px}.idv-voz .voz-q{font-size:14px;line-height:1.3}.voz-ab{font-size:9.5px}.idv-cor{gap:8px}.pal-n{font-size:9.5px}.pal-f{font-size:17px}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1239,32 +1258,37 @@ html,body{overflow-x:clip}
   <div class="wrap stack">
     <div class="eyebrow">Presença sem exposição</div>
     <h2 class="h2">Sem aparecer não é sem presença</h2>
-    <p class="lead">Quem chega ao seu perfil não vê o seu rosto. Mas reconhece você por três coisas:</p>
+    <p class="lead">Quem chega ao seu perfil não vê o seu rosto. Mas reconhece você por três coisas, <strong>todas configuráveis</strong>:</p>
     <div class="id3" id="id3">
       <div class="idc">
         <div class="idv idv-voz" aria-hidden="true">
-          <p>“Terapia não é só para quem está em crise.<span class="v2"> Também é para se conhecer melhor.</span>”</p>
-          <div class="idv-tags"><span>sua abordagem</span><span>seu tom</span><span>seu público</span></div>
+          <span class="ed">✎ Editável</span>
+          <span class="voz-ab sw">TCC</span>
+          <p class="sw voz-q">“Pensamento não é fato.”</p>
         </div>
         <b><em>1</em>O seu jeito de explicar</b>
-        <p>A Ficha ensina a IA a escrever como você, e não como todo mundo.</p>
+        <p>Sua abordagem, seu público e seu tom, a partir da Ficha. A IA escreve como você.</p>
       </div>
       <div class="idc">
         <div class="idv idv-sel" aria-hidden="true">
-          <div class="selo"><span class="selo-n">Ana Souza</span><span class="selo-p">Psicóloga</span><span class="selo-c">CRP 06/00000</span></div>
+          <span class="ed">✎ Editável</span>
+          <div class="selo sw"><span class="selo-n">Ana Souza</span><span class="selo-p">Psicóloga</span><span class="selo-c">CRP 06/00000</span></div>
         </div>
         <b><em>2</em>Seu nome, psicóloga e CRP</b>
         <p>Em todo post, como pedem as orientações do CFP. É o que passa confiança.</p>
       </div>
       <div class="idc">
         <div class="idv idv-cor" aria-hidden="true">
-          <div class="pal"><i style="background:#5E7A5C"></i><i style="background:#DDE5DA"></i><i style="background:#B5714F"></i><i style="background:#3B3633"></i></div>
-          <div class="pal-f"><span style="font-family:'Playfair Display',Georgia,serif">Aa</span><span>Aa</span></div>
+          <span class="ed">✎ Editável</span>
+          <div class="pal"><i></i><i></i><i></i><i></i></div>
+          <div class="pal-f"><span class="fa">Aa</span><span class="fb">Aa</span></div>
+          <span class="pal-n sw">Sálvia</span>
         </div>
-        <b><em>3</em>As suas cores</b>
-        <p>Você escolhe as cores e as fontes no Canva, e o feed fica com a sua cara.</p>
+        <b><em>3</em>O seu visual</b>
+        <p>Cores, fontes e fundo: você escolhe no Canva e muda quando quiser.</p>
       </div>
     </div>
+    <div class="id-dots" id="id-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
     <div class="pr-nao"><span class="pr-nao-t">Não aparece:</span><span class="pr-x">Rosto</span><span class="pr-x">Voz</span><span class="pr-x">Casa e família</span><span class="pr-x">Trends</span></div>
     <p class="quote">Quem acompanha o seu perfil conhece primeiro a sua forma de pensar. Mostrar o rosto é opcional.</p>
   </div>
@@ -1841,6 +1865,24 @@ new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersectin
 (function(){var g=document.getElementById('id3');if(!g)return;document.documentElement.classList.add('js-anim');
 if(!('IntersectionObserver' in window)){g.classList.add('on');return;}
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){g.classList.add('on');o.disconnect();}});},{threshold:.25}).observe(g);})();
+</script>
+<script>
+(function(){var g=document.getElementById('id3');if(!g)return;
+var V=[['TCC','“Pensamento não é fato.”'],['Psicanálise','“O que se repete pede escuta.”'],['Infantil','“Birra também é comunicação.”'],['Casal','“Conflito não é o fim da relação.”'],['Adolescentes','“Isolar-se também é um pedido.”']];
+var S=[['Ana Souza','Psicóloga','CRP 06/00000'],['Carlos Lima','Psicólogo','CRP 05/00000'],['Júlia Prado','Psicóloga','CRP 08/00000'],['Rafael Dias','Psicólogo','CRP 04/00000'],['Bia Torres','Psicóloga','CRP 07/00000']];
+var P=[['Sálvia','#DDE5DA','#2F3A30','#5E7A5C',['#5E7A5C','#DDE5DA','#B5714F','#3B3633']],['Lavanda','#E8E3F1','#352F45','#6E5B9A',['#6E5B9A','#E8E3F1','#D9A5B3','#352F45']],['Azul sereno','#DCE7EF','#23384A','#3F6E8C',['#3F6E8C','#DCE7EF','#E8C9A0','#23384A']],['Terracota','#F3E2D8','#4A2E22','#A45F3F',['#A45F3F','#F3E2D8','#E0B98F','#3B3633']],['Preto e branco','#ECECEA','#1F1F1F','#1F1F1F',['#1F1F1F','#ECECEA','#9A9A9A','#FFFFFF']]];
+var F=[['"Playfair Display",Georgia,serif','700','normal','Montserrat,system-ui,sans-serif','600'],['Georgia,serif','400','italic','Montserrat,system-ui,sans-serif','800'],['Montserrat,system-ui,sans-serif','300','normal','"Playfair Display",Georgia,serif','700'],['"Playfair Display",Georgia,serif','400','italic','system-ui,sans-serif','500'],['system-ui,sans-serif','800','normal','Georgia,serif','400']];
+var idv=g.querySelectorAll('.idv'),ab=g.querySelector('.voz-ab'),q=g.querySelector('.voz-q'),selo=g.querySelector('.selo'),sn=g.querySelector('.selo-n'),sp=g.querySelector('.selo-p'),sc=g.querySelector('.selo-c'),pal=g.querySelectorAll('.pal i'),pf=g.querySelector('.pal-f'),fa=g.querySelector('.fa'),fb=g.querySelector('.fb'),pn=g.querySelector('.pal-n'),dots=document.querySelectorAll('#id-dots i');
+var k=0,t=null,vis=false,rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function cores(i){var c=P[i];idv.forEach(function(v){v.style.setProperty('--bg',c[1]);v.style.setProperty('--ink',c[2]);v.style.setProperty('--ac',c[3]);});pal.forEach(function(e,n){e.style.background=c[4][n];});}
+cores(0);
+function apply(i){var sw=[ab,q,selo,pn];sw.forEach(function(e){e.classList.add('out');});pf.classList.add('out');
+setTimeout(function(){ab.textContent=V[i][0];q.textContent=V[i][1];sn.textContent=S[i][0];sp.textContent=S[i][1];sc.textContent=S[i][2];pn.textContent=P[i][0];
+var f=F[i];fa.style.fontFamily=f[0];fa.style.fontWeight=f[1];fa.style.fontStyle=f[2];fb.style.fontFamily=f[3];fb.style.fontWeight=f[4];
+cores(i);sw.forEach(function(e){e.classList.remove('out');});pf.classList.remove('out');dots.forEach(function(d,n){d.classList.toggle('on',n===i);});},300);}
+function loop(){clearTimeout(t);if(!vis||rm)return;t=setTimeout(function(){k=(k+1)%5;apply(k);loop();},3000);}
+if(!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;if(vis)loop();else clearTimeout(t);});},{threshold:.3}).observe(g);})();
 </script>
 </body>
 </html>
