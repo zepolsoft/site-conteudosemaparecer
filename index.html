@@ -1949,7 +1949,7 @@ new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersectin
 var t=null,vis=false,hold=0,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function set(m){g.setAttribute('data-m',m);g.querySelectorAll('.gp-sw button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false');});}
 function loop(){clearTimeout(t);if(!vis||!mq.matches)return;var cur=g.getAttribute('data-m');
-t=setTimeout(function(){if(Date.now()>hold&&!rm)set(cur==='ia'?'kit':'ia');loop();},cur==='ia'?6000:8000);}
+t=setTimeout(function(){if(Date.now()>hold&&!rm)set(cur==='ia'?'kit':'ia');loop();},cur==='ia'?7000:10000);}
 g.querySelectorAll('.gp-sw button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.m);hold=Date.now()+8000;loop();});});
 set('kit');
 if(!('IntersectionObserver' in window))return;
