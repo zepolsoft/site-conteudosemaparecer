@@ -1142,7 +1142,7 @@ html,body{overflow-x:clip}
 }
 /* VSL no topo */
 .phone{width:314px;height:540px}
-.screen .vsl-mini{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;background:#EFE7DC}
+.screen .vsl-mini{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);object-fit:cover;z-index:5;background:#EFE7DC}
 .vsl-open{position:absolute;inset:0;z-index:6;border:0;background:transparent;cursor:pointer;padding:0;display:block}
 .vsl-pill{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:var(--grafite);color:#fff;font:700 13px/1 Montserrat,system-ui,sans-serif;padding:9px 14px 9px 9px;border-radius:999px;box-shadow:0 10px 22px -10px rgba(0,0,0,.6);animation:vslpulse 2.4s ease-in-out infinite}
 .vsl-pill i{font-style:normal;width:22px;height:22px;border-radius:50%;background:var(--terra);display:inline-flex;align-items:center;justify-content:center;font-size:10px;padding-left:2px}
@@ -1999,11 +1999,12 @@ function ev(n,d){try{if(window.umami)umami.track(n,d||{});}catch(e){}}
 if(!rm&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=m.play();if(p&&p.catch)p.catch(function(){});}else m.pause();});},{threshold:.35}).observe(m);}
 m.addEventListener('timeupdate',function(){var q=Math.floor(m.currentTime/m.duration*4)*25;if(q>0&&!sent['m'+q]){sent['m'+q]=1;ev('vsl-mini',{progresso:q+'%'});}});
 document.getElementById('vslOpen').addEventListener('click',function(){m.pause();if(bx.showModal){bx.showModal();}else{bx.setAttribute('open','');}bg.currentTime=0;var p=bg.play();if(p&&p.catch)p.catch(function(){});});
-function fechar(){bg.pause();if(bx.close)bx.close();else bx.removeAttribute('open');}
+function fechar(){bg.pause();if(bx.close)bx.close();else{bx.removeAttribute('open');retoma();}}
 document.getElementById('vslClose').addEventListener('click',fechar);
 document.getElementById('vslCta').addEventListener('click',fechar);
 bx.addEventListener('click',function(e){if(e.target===bx||e.target.classList.contains('vslbox-in'))fechar();});
-bx.addEventListener('close',function(){bg.pause();});
+function retoma(){var r=m.getBoundingClientRect();if(!rm&&r.bottom>0&&r.top<innerHeight){var p=m.play();if(p&&p.catch)p.catch(function(){});}}
+bx.addEventListener('close',function(){bg.pause();retoma();});
 bg.addEventListener('timeupdate',function(){var q=Math.floor(bg.currentTime/bg.duration*4)*25;if(q>0&&!sent['b'+q]){sent['b'+q]=1;ev('vsl-assistiu',{progresso:q+'%'});}});
 })();
 </script>
