@@ -1159,6 +1159,36 @@ html,body{overflow-x:clip}
 .vslbox-x{border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;font:700 14px Montserrat,system-ui,sans-serif;padding:12px 16px;border-radius:999px;cursor:pointer}
 @media (max-width:760px){.phone{width:269px;height:460px}.vsl-pill{font-size:12px;bottom:12px}.vsl-exp{top:34px;right:10px}}
 @media (prefers-reduced-motion:reduce){.vsl-pill{animation:none}}
+/* Topo: celular estilo iPhone moderno */
+.phone .screen>.bars,.phone .screen>.ico,.phone .screen>.slide{display:none!important}
+.phone .screen{isolation:isolate}
+.phone{width:300px!important;height:621px!important;border-radius:52px;padding:9px;background:linear-gradient(145deg,#4A4542,#1C1A19 40%,#2A2725);box-shadow:inset 0 0 0 1.5px #5C5753,0 34px 70px -24px rgba(59,54,51,.6)}
+.phone::before,.phone::after{content:"";position:absolute;width:4px;border-radius:3px;background:#2E2B29}
+.phone::before{left:-3px;top:120px;height:56px;box-shadow:0 70px 0 #2E2B29}
+.phone::after{right:-3px;top:150px;height:86px}
+.phone .screen{border-radius:44px;background:#0F0E0D}
+.screen .vsl-mini{inset:auto!important;top:44px;left:0;width:100%!important;height:auto!important;aspect-ratio:9/16}
+.ios-st{position:absolute;z-index:7;top:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 30px;color:#fff;pointer-events:none}
+.ios-st b{font:700 13px/1 -apple-system,"SF Pro Text",Inter,system-ui,sans-serif}
+.ios-di{position:absolute;left:50%;top:10px;width:88px;height:26px;margin-left:-44px;border-radius:20px;background:#000}
+.ios-ic{display:flex;gap:5px;align-items:center}.ios-ic svg{height:10px;fill:#fff;color:#fff}.ios-ic svg:first-child{width:15px}.ios-ic svg:last-child{width:22px}
+.ios-nav{position:absolute;z-index:7;left:0;right:0;bottom:0;height:58px;display:flex;justify-content:space-around;align-items:flex-start;padding:11px 18px 0;pointer-events:none}
+.ios-nav i{width:20px;height:20px;border:2px solid rgba(255,255,255,.75);border-radius:6px}
+.ios-nav i.n1{border-radius:4px 4px 6px 6px}.ios-nav i.n2{border-radius:50%}.ios-nav i.n3{border-radius:7px}
+.ios-nav i.n4{border-color:#fff;background:linear-gradient(#fff,#fff) center/8px 8px no-repeat;border-radius:6px}
+.ios-nav i.n5{border-radius:50%;background:#E0A98C;border-color:#E0A98C}
+.ios-home{position:absolute;bottom:7px;left:50%;width:110px;height:4px;margin-left:-55px;border-radius:3px;background:rgba(255,255,255,.85)}
+.vsl-pill{bottom:74px!important}
+.vsl-exp{top:56px!important}
+@media (max-width:760px){
+  .phone{width:252px!important;height:525px!important;border-radius:44px;padding:8px}
+  .phone .screen{border-radius:37px}
+  .screen .vsl-mini{top:40px}
+  .ios-st{height:40px;padding:0 20px 0 26px}.ios-st b{font-size:11.5px}.ios-di{width:72px;height:22px;margin-left:-36px;top:9px}
+  .ios-nav{height:49px;padding-top:9px}.ios-nav i{width:17px;height:17px}.ios-home{width:90px;margin-left:-45px;bottom:6px}
+  .vsl-pill{bottom:62px!important}.vsl-exp{top:50px!important}
+  .phone::before{top:100px;height:46px;box-shadow:0 58px 0 #2E2B29}.phone::after{top:125px;height:70px}
+}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1217,6 +1247,8 @@ html,body{overflow-x:clip}
         <div class="fmts" aria-hidden="true"><span class="fmt f1"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M10 9.2v5.6l4.6-2.8z" fill="currentColor"/></svg>Reels</span><span class="fmt f2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3.2 2.2"/><circle cx="12" cy="12" r="4.2"/></svg>Stories</span><span class="fmt f3"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Feed</span><span class="fmt f4"><svg viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="11" height="15" rx="2"/><path d="M3.5 7.5v9M20.5 7.5v9"/></svg>Carrossel</span></div>
       <div class="phone">
         <div class="screen">
+          <div class="ios-st" aria-hidden="true"><b>9:41</b><span class="ios-di"></span><span class="ios-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor"/><rect x="2.5" y="2.5" width="15" height="7" rx="2"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+          <div class="ios-nav" aria-hidden="true"><i class="n1"></i><i class="n2"></i><i class="n3"></i><i class="n4 on"></i><i class="n5"></i><span class="ios-home"></span></div>
           <video class="vsl-mini" id="vslMini" src="video/kit-1min.mp4" poster="img/vsl-poster.jpg" muted playsinline loop preload="metadata" aria-label="Vídeo de 1 minuto mostrando como o kit funciona"></video>
           <button type="button" class="vsl-open" id="vslOpen" data-umami-event="vsl-tela-cheia" aria-label="Assistir o vídeo de 1 minuto em tela cheia"><span class="vsl-pill"><i>▶</i>Veja o kit em 1 min</span><span class="vsl-exp" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></span></button>
           <div class="bars hb"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
