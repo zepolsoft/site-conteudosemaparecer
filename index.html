@@ -1140,6 +1140,25 @@ html,body{overflow-x:clip}
   .gp-h::after{background:linear-gradient(90deg,var(--terra-esc) 50%,#F6F3EF 50%)!important}
   .gp-f::after{background:linear-gradient(90deg,var(--salvia) 50%,#FAF8F5 50%)!important}
 }
+/* VSL no topo */
+.phone{height:479px}
+.screen .vsl-mini{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;background:#EFE7DC}
+.vsl-open{position:absolute;inset:0;z-index:6;border:0;background:transparent;cursor:pointer;padding:0;display:block}
+.vsl-pill{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:var(--grafite);color:#fff;font:700 13px/1 Montserrat,system-ui,sans-serif;padding:9px 14px 9px 9px;border-radius:999px;box-shadow:0 10px 22px -10px rgba(0,0,0,.6);animation:vslpulse 2.4s ease-in-out infinite}
+.vsl-pill i{font-style:normal;width:22px;height:22px;border-radius:50%;background:var(--terra);display:inline-flex;align-items:center;justify-content:center;font-size:10px;padding-left:2px}
+@keyframes vslpulse{0%,100%{box-shadow:0 10px 22px -10px rgba(0,0,0,.6),0 0 0 0 rgba(164,95,63,.45)}50%{box-shadow:0 10px 22px -10px rgba(0,0,0,.6),0 0 0 9px rgba(164,95,63,0)}}
+.vsl-exp{position:absolute;right:12px;top:40px;width:30px;height:30px;border-radius:9px;background:rgba(59,54,51,.55);display:flex;align-items:center;justify-content:center}
+.vsl-exp svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vsl-open:focus-visible{outline:3px solid var(--terra);outline-offset:-3px;border-radius:30px}
+.vslbox{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%}
+.vslbox::backdrop{background:rgba(35,31,29,.88);backdrop-filter:blur(4px)}
+.vslbox-in{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px}
+.vslbox video{height:min(78vh,calc((100vw - 32px)*16/9));aspect-ratio:9/16;max-width:100%;border-radius:18px;background:#000;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.vslbox-cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+.vslbox-cta .btn{padding:14px 22px}
+.vslbox-x{border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;font:700 14px Montserrat,system-ui,sans-serif;padding:12px 16px;border-radius:999px;cursor:pointer}
+@media (max-width:760px){.phone{height:408px}.vsl-pill{font-size:12px;bottom:12px}.vsl-exp{top:34px;right:10px}}
+@media (prefers-reduced-motion:reduce){.vsl-pill{animation:none}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1196,8 +1215,10 @@ html,body{overflow-x:clip}
       <div class="blob" aria-hidden="true" style="width:200px;height:200px;background:var(--pessego);bottom:10px;left:0"></div>
       <div class="phone-wrap">
         <div class="fmts" aria-hidden="true"><span class="fmt f1"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M10 9.2v5.6l4.6-2.8z" fill="currentColor"/></svg>Reels</span><span class="fmt f2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3.2 2.2"/><circle cx="12" cy="12" r="4.2"/></svg>Stories</span><span class="fmt f3"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Feed</span><span class="fmt f4"><svg viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="11" height="15" rx="2"/><path d="M3.5 7.5v9M20.5 7.5v9"/></svg>Carrossel</span></div>
-      <div class="phone" aria-hidden="true">
+      <div class="phone">
         <div class="screen">
+          <video class="vsl-mini" id="vslMini" src="video/kit-1min.mp4" poster="img/vsl-poster.jpg" muted playsinline loop preload="metadata" aria-label="Vídeo de 1 minuto mostrando como o kit funciona"></video>
+          <button type="button" class="vsl-open" id="vslOpen" data-umami-event="vsl-tela-cheia" aria-label="Assistir o vídeo de 1 minuto em tela cheia"><span class="vsl-pill"><i>▶</i>Veja o kit em 1 min</span><span class="vsl-exp" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></span></button>
           <div class="bars hb"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
           <div class="ico hi">
             <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
@@ -1215,7 +1236,7 @@ html,body{overflow-x:clip}
         </div>
       </div>
       </div>
-      <p class="legenda redes-leg"><b>Um vídeo, todas as redes.</b> O mesmo MP4 vertical vai para Reels, Stories e feed, e também para o Facebook e o TikTok. Para carrossel, é só baixar as telas como imagem.</p>
+      <p class="legenda redes-leg"><b>Veja o kit funcionando em 1 minuto.</b> Toque no vídeo para assistir em tela cheia. O post que você cria vira um vídeo vertical que serve para todas as redes:</p>
       <p class="redes" aria-label="Redes"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.4-2h4.6l1.4 2h1.8A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.4"/></svg>Instagram</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.8 14.6c2.3.1 4.1 1.6 4.7 4.4"/></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>TikTok</span></p>
     </div>
   </div>
@@ -1961,6 +1982,30 @@ new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)loop();els
 function fit(){r.style.fontSize='';if(!window.matchMedia('(max-width:600px)').matches)return;var f=12.5;r.style.fontSize=f+'px';
 while(r.scrollWidth>r.clientWidth+1&&f>9){f-=.25;r.style.fontSize=f+'px';}}
 fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+<dialog class="vslbox" id="vslBox" aria-label="Vídeo: o kit em 1 minuto">
+  <div class="vslbox-in">
+    <video id="vslBig" src="video/kit-1min.mp4" poster="img/vsl-poster.jpg" muted playsinline controls preload="none"></video>
+    <div class="vslbox-cta">
+      <a class="btn" href="#oferta" id="vslCta" data-umami-event="quero-o-kit" data-umami-event-local="video">Quero o kit por R$&nbsp;47</a>
+      <button type="button" class="vslbox-x" id="vslClose" aria-label="Fechar vídeo">Fechar ✕</button>
+    </div>
+  </div>
+</dialog>
+<script>
+(function(){var m=document.getElementById('vslMini'),bx=document.getElementById('vslBox'),bg=document.getElementById('vslBig');if(!m)return;
+var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches,sent={};
+function ev(n,d){try{if(window.umami)umami.track(n,d||{});}catch(e){}}
+if(!rm&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=m.play();if(p&&p.catch)p.catch(function(){});}else m.pause();});},{threshold:.35}).observe(m);}
+m.addEventListener('timeupdate',function(){var q=Math.floor(m.currentTime/m.duration*4)*25;if(q>0&&!sent['m'+q]){sent['m'+q]=1;ev('vsl-mini',{progresso:q+'%'});}});
+document.getElementById('vslOpen').addEventListener('click',function(){m.pause();if(bx.showModal){bx.showModal();}else{bx.setAttribute('open','');}bg.currentTime=0;var p=bg.play();if(p&&p.catch)p.catch(function(){});});
+function fechar(){bg.pause();if(bx.close)bx.close();else bx.removeAttribute('open');}
+document.getElementById('vslClose').addEventListener('click',fechar);
+document.getElementById('vslCta').addEventListener('click',fechar);
+bx.addEventListener('click',function(e){if(e.target===bx||e.target.classList.contains('vslbox-in'))fechar();});
+bx.addEventListener('close',function(){bg.pause();});
+bg.addEventListener('timeupdate',function(){var q=Math.floor(bg.currentTime/bg.duration*4)*25;if(q>0&&!sent['b'+q]){sent['b'+q]=1;ev('vsl-assistiu',{progresso:q+'%'});}});
+})();
 </script>
 </body>
 </html>
