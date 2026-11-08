@@ -1167,12 +1167,14 @@ html,body{overflow-x:clip}
 .phone::before{left:-3px;top:120px;height:56px;box-shadow:0 70px 0 #2E2B29}
 .phone::after{right:-3px;top:150px;height:86px}
 .phone .screen{border-radius:44px;background:#0F0E0D}
-.screen .vsl-mini{inset:44px 0 0 0!important;width:100%!important;height:calc(100% - 44px)!important;object-fit:cover}
+.screen .vsl-mini{inset:0!important;width:100%!important;height:100%!important;object-fit:cover}
 .phone .screen>.ios-home{position:absolute;z-index:7;pointer-events:none;background:rgba(59,54,51,.55)}
-.ios-st{position:absolute;z-index:7;top:0;left:0;right:0;height:44px;background:#FAF7F2;color:#3B3633!important;display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 30px;color:#fff;pointer-events:none}
+.ios-st{position:absolute;z-index:7;top:0;left:0;right:0;height:44px;background:transparent;color:#3B3633;transition:color .4s;display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 30px;pointer-events:none}
 .ios-st b{font:700 13px/1 -apple-system,"SF Pro Text",Inter,system-ui,sans-serif}
 .ios-di{position:absolute;left:50%;top:10px;width:88px;height:26px;margin-left:-44px;border-radius:20px;background:#000}
-.ios-ic{display:flex;gap:5px;align-items:center}.ios-ic svg{height:10px;fill:#3B3633;color:#3B3633}.ios-ic svg:first-child{width:15px}.ios-ic svg:last-child{width:22px}
+.ios-ic{display:flex;gap:5px;align-items:center}.ios-ic svg{height:10px;fill:currentColor;color:inherit;transition:fill .4s}
+.ios-st.esc{color:#fff}
+.ios-st.esc+.ios-home{background:rgba(255,255,255,.8)!important}.ios-ic svg:first-child{width:15px}.ios-ic svg:last-child{width:22px}
 .ios-nav{position:absolute;z-index:7;left:0;right:0;bottom:0;height:58px;display:flex;justify-content:space-around;align-items:flex-start;padding:11px 18px 0;pointer-events:none}
 .ios-nav i{width:20px;height:20px;border:2px solid rgba(255,255,255,.75);border-radius:6px}
 .ios-nav i.n1{border-radius:4px 4px 6px 6px}.ios-nav i.n2{border-radius:50%}.ios-nav i.n3{border-radius:7px}
@@ -1187,7 +1189,7 @@ html,body{overflow-x:clip}
   .screen .vsl-mini{top:40px}
   .ios-st{height:40px;padding:0 20px 0 26px}.ios-st b{font-size:11.5px}.ios-di{width:72px;height:22px;margin-left:-36px;top:9px}
   .ios-nav{height:49px;padding-top:9px}.ios-nav i{width:17px;height:17px}.ios-home{width:90px;margin-left:-45px;bottom:6px}
-  .vsl-pill{bottom:36px!important}.screen .vsl-mini{inset:40px 0 0 0!important;height:calc(100% - 40px)!important}.vsl-exp{top:50px!important}
+  .vsl-pill{bottom:36px!important}.vsl-exp{top:50px!important}
   .phone::before{top:100px;height:46px;box-shadow:0 58px 0 #2E2B29}.phone::after{top:125px;height:70px}
 }
 </style>
@@ -2040,6 +2042,12 @@ function retoma(){var r=m.getBoundingClientRect();if(!rm&&r.bottom>0&&r.top<inne
 bx.addEventListener('close',function(){bg.pause();retoma();});
 bg.addEventListener('timeupdate',function(){var q=Math.floor(bg.currentTime/bg.duration*4)*25;if(q>0&&!sent['b'+q]){sent['b'+q]=1;ev('vsl-assistiu',{progresso:q+'%'});}});
 })();
+</script>
+<script>
+(function(){var v=document.getElementById('vslMini'),st=document.querySelector('.ios-st');if(!v||!st)return;
+var c=document.createElement('canvas');c.width=8;c.height=2;var x=c.getContext('2d',{willReadFrequently:true});
+function chk(){if(v.readyState<2)return;try{x.drawImage(v,0,v.videoHeight*.06,v.videoWidth,v.videoHeight*.06,0,0,8,2);var d=x.getImageData(0,0,8,2).data,l=0;for(var i=0;i<d.length;i+=4)l+=.299*d[i]+.587*d[i+1]+.114*d[i+2];l/=d.length/4;st.classList.toggle('esc',l<140);}catch(e){}}
+setInterval(function(){if(!v.paused)chk();},250);v.addEventListener('loadeddata',chk);})();
 </script>
 </body>
 </html>
