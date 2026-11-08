@@ -1192,6 +1192,19 @@ html,body{overflow-x:clip}
   .vsl-pill{bottom:36px!important}.vsl-exp{top:50px!important}
   .phone::before{top:100px;height:46px;box-shadow:0 58px 0 #2E2B29}.phone::after{top:125px;height:70px}
 }
+/* O que você vai encontrar no kit */
+.itens{display:grid;gap:56px;margin-top:22px}
+.it{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:center}
+.it:nth-child(even) .it-img{order:2}
+.it-img img{display:block;width:100%;height:auto;border-radius:20px;box-shadow:0 24px 50px -30px rgba(59,54,51,.55)}
+.it-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--terra-esc);padding:5px 12px;border-radius:999px}
+.it-tag::before{content:"[ "}.it-tag::after{content:" ]"}
+.it-op .it-tag{background:var(--salvia)}
+.it-txt h3{font-family:"Playfair Display",Georgia,serif;font-size:clamp(24px,2.6vw,30px);line-height:1.2;margin-top:12px;color:var(--grafite)}
+.it-txt p{margin-top:10px;font-size:16.5px;line-height:1.6;color:var(--texto2)}
+.guias .it-tag{margin-bottom:4px}
+.it-cta{text-align:center;margin-top:10px}
+@media (max-width:820px){.itens{gap:40px}.it{grid-template-columns:1fr;gap:16px}.it:nth-child(even) .it-img{order:0}.it-txt{text-align:center}.it-txt p{font-size:15.5px}}
 </style>
 <!-- Exclui os acessos do dono: ?nao-contar=1 desliga, ?contar=1 religa (vale por navegador) -->
 <script>
@@ -1415,26 +1428,25 @@ html,body{overflow-x:clip}
 <section id="o-que-recebe" data-secao="modulos">
   <div class="wrap stack">
     <div class="eyebrow">O que você recebe</div>
-    <h2 class="h2">Tudo organizado em 4 módulos</h2>
-    <p class="lead">Tudo abre direto no celular, nos apps gratuitos do Google e em PDF, sem instalar nada. No computador, fica ainda mais confortável.</p>
-    <p class="mods-dica">Arraste para o lado: 4 módulos + o complemento opcional →</p>
-    <div class="mods" style="margin-top:14px">
-      <article class="mod"><img src="img/modulo-01.jpg" alt="Módulo 01, Boas-Vindas" loading="lazy" width="960" height="540"><div><h3>01 · Boas-Vindas</h3><p>O Guia Comece Aqui leva você do primeiro acesso ao primeiro vídeo publicado.</p><span class="guia">+ Leitura de 10 minutos.</span></div></article>
-      <article class="mod"><img src="img/modulo-02.jpg" alt="Módulo 02, Personalize a IA" loading="lazy" width="960" height="540"><div><h3>02 · Personalize a IA</h3><p>Ficha do Negócio + Prompt de Contexto: a IA passa a escrever com a sua abordagem e o seu tom.</p><span class="guia">+ Guia com prints do ChatGPT, Gemini e Claude.</span></div></article>
-      <article class="mod"><img src="img/modulo-03.jpg" alt="Módulo 03, Banco de Prompts" loading="lazy" width="960" height="540"><div><h3>03 · Banco de 102 Prompts</h3><p>Um pilar para cada dia da semana, de Educar a Convite, e prompts para as datas especiais.</p><span class="guia">+ Guia com exemplo completo.</span></div></article>
-      <article class="mod"><img src="img/modulo-04.jpg" alt="Módulo 04, Calendário 365" loading="lazy" width="960" height="540"><div><h3>04 · Calendário 365</h3><p>Mais de 700 temas e 8 datas especiais. A aba Hoje entrega o prompt do dia pronto para copiar.</p><span class="guia">+ Guia: a rotina do dia, passo a passo.</span></div></article>
-      <article class="mod mod-pack"><span class="mod-selo">Opcional · R$&nbsp;27</span><img src="img/modulo-pack.jpg" alt="Complemento opcional, Pack 20 Modelos Canva" loading="lazy" width="960" height="540"><div><h3>Pack 20 Modelos Canva</h3><p>20 modelos de vídeo prontos: troque o texto no Canva e baixe em MP4. Você adiciona no pagamento, se quiser.</p><span class="guia">+ Guia com o link de cada modelo.</span></div></article>
+    <h2 class="h2">O que você vai encontrar no kit</h2>
+    <p class="lead">Tudo abre direto nos apps gratuitos do Google e em PDF, sem instalar nada. O ideal é usar no computador, e você também consulta pelo celular.</p>
+    <div class="itens">
+      <article class="it"><div class="it-img"><img src="img/item-calendario.jpg" alt="Calendário 365 automático" loading="lazy" width="1440" height="810"></div><div class="it-txt"><span class="it-tag">Calendário</span><h3>Calendário 365 automático</h3><p>Você coloca a data de início e ele organiza o seu ano. Todo dia, a aba Hoje mostra o pilar, o tema e o prompt pronto para copiar. Mais de 700 temas e 8 datas especiais.</p></div></article>
+      <article class="it"><div class="it-img"><img src="img/item-prompts.jpg" alt="Banco de 102 prompts para psicologia" loading="lazy" width="1440" height="810"></div><div class="it-txt"><span class="it-tag">Prompts</span><h3>Banco de 102 prompts para psicologia</h3><p>Um pilar para cada dia da semana, de Educar a Convite, com 7 temas em cada prompt. Feitos considerando as orientações do CFP.</p></div></article>
+      <article class="it"><div class="it-img"><img src="img/item-ficha.jpg" alt="Ficha do Negócio + Prompt de Contexto" loading="lazy" width="1440" height="810"></div><div class="it-txt"><span class="it-tag">Ficha</span><h3>Ficha do Negócio + Prompt de Contexto</h3><p>17 perguntas curtas, respondidas uma vez só. A sua IA passa a escrever com a sua abordagem, o seu público e o seu tom. Com guia para ChatGPT, Gemini e Claude.</p></div></article>
+      <article class="it it-op"><div class="it-img"><img src="img/item-pack.jpg" alt="Pack 20 Modelos Canva" loading="lazy" width="1440" height="810"></div><div class="it-txt"><span class="it-tag">Opcional · R$ 27</span><h3>Pack 20 Modelos Canva</h3><p>20 modelos de vídeo com texto centralizado: troque o texto e baixe em MP4. Funciona com o Canva gratuito. Você adiciona no pagamento, se quiser.</p></div></article>
     </div>
     <div class="guias">
       <div class="guias-txt">
-        <div class="eyebrow">Guias com prints</div>
-        <h3 class="h3">Um guia em PDF para cada módulo</h3>
+        <span class="it-tag">Guias</span>
+        <h3 class="h3">4 guias em PDF com prints, um para cada parte</h3>
         <p>Curtos e diretos, com a tela de cada passo. Você nunca fica sem saber onde clicar.</p>
       </div>
       <div class="leque" id="leque"><button class="gl" type="button" style="--i:-2" data-t="01 · Comece Aqui" data-d="Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura." data-p="7" aria-label="01 · Comece Aqui"><img class="pg pa" src="img/guia-01-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-01-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-01.jpg" alt="Capa do guia 01 · Comece Aqui" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:-1" data-t="02 · Personalize a IA" data-d="A Ficha do Negócio e o contexto, com prints do ChatGPT, do Gemini e do Claude." data-p="6" aria-label="02 · Personalize a IA"><img class="pg pa" src="img/guia-02-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-02-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-02.jpg" alt="Capa do guia 02 · Personalize a IA" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:0" data-t="03 · Banco de Prompts" data-d="Como os 102 prompts estão organizados, com um exemplo completo." data-p="5" aria-label="03 · Banco de Prompts"><img class="pg pa" src="img/guia-03-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-03-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-03.jpg" alt="Capa do guia 03 · Banco de Prompts" loading="lazy" width="640" height="905"></button><button class="gl" type="button" style="--i:1" data-t="04 · Calendário 365" data-d="A rotina do dia na aba Hoje, passo a passo." data-p="5" aria-label="04 · Calendário 365"><img class="pg pa" src="img/guia-04-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-04-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-04.jpg" alt="Capa do guia 04 · Calendário 365" loading="lazy" width="640" height="905"></button><button class="gl gl-pack" type="button" style="--i:2" data-t="Pack 20 · Modelos Canva" data-d="Como editar os modelos no Canva e baixar em MP4. Vem com o Pack, se você adicionar no pagamento." data-p="6" aria-label="Pack 20 · Modelos Canva"><img class="pg pa" src="img/guia-pack-a.jpg" alt="" loading="lazy" width="640" height="905"><img class="pg pb" src="img/guia-pack-b.jpg" alt="" loading="lazy" width="640" height="905"><img class="capa" src="img/guia-pack.jpg" alt="Capa do guia Pack 20 · Modelos Canva" loading="lazy" width="640" height="905"><span class=gl-tag>Com o Pack</span></button></div>
       <span class="lq-prog" aria-hidden="true"><i id="lq-prog"></i></span>
       <p class="leque-info" aria-live="polite"><b id="lq-t">01 · Comece Aqui</b><span id="lq-d">Do primeiro acesso ao primeiro vídeo publicado, em 10 minutos de leitura.</span></p>
     </div>
+    <div class="it-cta"><a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="itens">Quero o kit por R$&nbsp;47</a></div>
   </div>
 </section>
 
