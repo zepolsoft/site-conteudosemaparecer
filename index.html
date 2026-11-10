@@ -55,6 +55,18 @@ section{padding:72px 0}
 .h2{font-size:clamp(28px,4.4vw,40px)}
 .lead{font-size:18px;color:var(--texto2)}
 
+
+/* PROVAS / POR QUE AJUDA */
+.porque{background:var(--areia)}
+.porque .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.porque .pq{background:var(--creme);border:1px solid var(--linha);border-radius:18px;padding:22px 20px;display:flex;flex-direction:column;gap:8px}
+.porque .pq-n{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:34px;line-height:1;color:var(--salvia)}
+.porque .pq h3{font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.3;letter-spacing:0}
+.porque .pq p{font-size:15.5px;color:var(--texto2)}
+.porque .pq-nota{font-size:13.5px;color:var(--texto2);border-left:3px solid var(--salvia);padding-left:12px}
+.porque .pq-nota em{display:block;margin-top:4px;font-style:normal;opacity:.85}
+@media (max-width:760px){.porque .pq-grid{grid-template-columns:1fr}}
+
 /* header */
 header{background:var(--creme);border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:10}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
@@ -1636,6 +1648,32 @@ html,body{overflow-x:clip}
         <p class="gs-aviso"><span class="gs-dot"></span><span>Roda no <b>Google</b>, grátis com a sua conta, no celular ou no computador (pelo app Google Planilhas). No Excel, a automação não funciona.</span></p>
       </figure>
     </div>
+  </div>
+</section>
+
+<!-- 4b2. POR QUE UM PLANO PRONTO AJUDA -->
+<section class="porque" data-secao="por-que-ajuda">
+  <div class="wrap stack">
+    <div class="eyebrow">Por que um plano pronto ajuda</div>
+    <h2 class="h2">Saber o que fazer, e quando, ajuda a cumprir o que você se propôs.</h2>
+    <div class="pq-grid">
+      <div class="pq">
+        <span class="pq-n">94</span>
+        <h3>Plano definido ajuda a cumprir</h3>
+        <p>Uma meta-análise de 94 estudos (Gollwitzer &amp; Sheeran, 2006) mostrou que decidir antes <strong>quando</strong> e <strong>o quê</strong> fazer ajuda as pessoas a cumprirem suas metas. É a ideia do Calendário: o tema do dia já vem escolhido.</p>
+      </div>
+      <div class="pq">
+        <span class="pq-n">7 em 10</span>
+        <h3>O seu público está no Instagram</h3>
+        <p>Segundo o DataReportal (Digital 2026: Brasil), o Instagram pode alcançar cerca de 7 em cada 10 brasileiros.</p>
+      </div>
+      <div class="pq">
+        <span class="pq-n">1 bi+</span>
+        <h3>A demanda por informação cuidadosa é real</h3>
+        <p>A OMS estima que mais de 1 bilhão de pessoas no mundo vivem com algum transtorno mental. Por isso, conteúdo claro e responsável tem lugar.</p>
+      </div>
+    </div>
+    <p class="pq-nota">Estas referências mostram o contexto, não prometem resultado. O kit orienta a seguir o Código de Ética Profissional do Psicólogo.<em>Fontes: Gollwitzer &amp; Sheeran (2006); DataReportal (2025); OMS (2025).</em></p>
   </div>
 </section>
 
