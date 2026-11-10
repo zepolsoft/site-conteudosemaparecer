@@ -1415,8 +1415,8 @@ html,body{overflow-x:clip}
         <div class="screen">
           <div class="ios-st" aria-hidden="true"><b>9:41</b><span class="ios-di"></span><span class="ios-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor"/><rect x="2.5" y="2.5" width="15" height="7" rx="2"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
           <span class="ios-home" aria-hidden="true"></span>
-          <video class="vsl-mini" id="vslMini" src="video/kit-1min.mp4" poster="img/vsl-poster.jpg" muted playsinline loop preload="metadata" aria-label="Vídeo de 1 minuto mostrando como o kit funciona"></video>
-          <button type="button" class="vsl-open" id="vslOpen" data-umami-event="vsl-tela-cheia" aria-label="Assistir o vídeo de 1 minuto em tela cheia"><span class="vsl-pill"><i>▶</i>Veja o kit em 1 min</span><span class="vsl-exp" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></span></button>
+          <video class="vsl-mini" id="vslMini" src="video/vsl-ajuda.mp4" poster="img/vsl-ajuda-poster.jpg" muted playsinline loop preload="metadata" aria-label="Vídeo de 1 minuto mostrando como o kit ajuda no dia a dia"></video>
+          <button type="button" class="vsl-open" id="vslOpen" data-umami-event="vsl-tela-cheia" aria-label="Assistir o vídeo de 1 minuto em tela cheia"><span class="vsl-pill"><i>▶</i>Veja como ajuda · 1 min</span><span class="vsl-exp" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></span></button>
           <div class="bars hb"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
           <div class="ico hi">
             <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
@@ -1434,7 +1434,7 @@ html,body{overflow-x:clip}
         </div>
       </div>
       </div>
-      <p class="legenda redes-leg"><span class="rl-play">▶</span> Toque no vídeo para ver o kit em 1 minuto.</p>
+      <p class="legenda redes-leg"><span class="rl-play">▶</span> Toque no vídeo e veja, em 1 minuto, como o kit ajuda.</p>
       <p class="redes" aria-label="Redes"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.4-2h4.6l1.4 2h1.8A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.4"/></svg>Instagram</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.8 14.6c2.3.1 4.1 1.6 4.7 4.4"/></svg>Facebook</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>TikTok</span></p>
     </div>
   </div>
@@ -2188,9 +2188,9 @@ function fit(){r.style.fontSize='';if(!window.matchMedia('(max-width:600px)').ma
 while(r.scrollWidth>r.clientWidth+1&&f>9){f-=.25;r.style.fontSize=f+'px';}}
 fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 </script>
-<dialog class="vslbox" id="vslBox" aria-label="Vídeo: o kit em 1 minuto">
+<dialog class="vslbox" id="vslBox" aria-label="Vídeo: como o kit ajuda, em 1 minuto">
   <div class="vslbox-in">
-    <video id="vslBig" src="video/kit-1min.mp4" poster="img/vsl-poster.jpg" muted playsinline controls preload="none"></video>
+    <video id="vslBig" src="video/vsl-ajuda.mp4" poster="img/vsl-ajuda-poster.jpg" muted playsinline controls preload="none"></video>
     <div class="vslbox-cta">
       <a class="btn" href="#oferta" id="vslCta" data-umami-event="quero-o-kit" data-umami-event-local="video">Quero o kit por R$&nbsp;47</a>
       <button type="button" class="vslbox-x" id="vslClose" aria-label="Fechar vídeo">Fechar ✕</button>
