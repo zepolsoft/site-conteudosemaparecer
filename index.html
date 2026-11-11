@@ -203,6 +203,8 @@ header img{height:40px;width:auto}
 .quote{border-left:4px solid var(--terra);padding:6px 0 6px 18px;font-family:"Playfair Display",serif;font-size:22px;font-weight:600;line-height:1.35}
 
 /* passos */
+.fx .fx-nome{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-esc);margin:2px 0 1px}
+.fx .fx-nome::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--terra-esc);box-shadow:0 0 0 3px rgba(164,95,63,.18)}
 .passos{background:var(--salvia-cl)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
 .step{background:#fff;border-radius:16px;padding:22px 24px;display:grid;grid-template-columns:44px 1fr;align-items:center;gap:8px 14px}
@@ -1526,6 +1528,7 @@ html,body{overflow-x:clip}
       <ol class="fx-steps">
         <li class="fx" data-min="0">
           <div class="fx-top"><span class="fx-num">1</span><span class="fx-t fx-t1">uma vez só · 10 min</span></div>
+          <small class="fx-nome">Ponto de partida</small>
           <h3>Prepare tudo, uma vez só</h3>
           <div class="cena c1" aria-hidden="true">
             <span class="c1-it"><i class="c1-ic ic-f"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M9.5 12h6M9.5 15h6M9.5 18h4"/></svg></i><span><b>Ficha do Negócio</b><small>17 perguntas curtas, com exemplo</small></span><em class="c1-ck">✓</em></span>
@@ -1535,24 +1538,27 @@ html,body{overflow-x:clip}
         </li>
         <li class="fx" data-min="1">
           <div class="fx-top"><span class="fx-num">2</span><span class="fx-t">1 min</span></div>
+          <small class="fx-nome">Destino do dia</small>
           <h3>Abra a aba Hoje</h3>
           <div class="cena c2 c2n" aria-hidden="true"><span class="c2-bar"><i></i><i></i><i></i><b>Calendário 365 · Psicólogos</b></span><span class="c2-in"><span class="c2-t" id="fx-dia">Hoje · terça</span><span class="c2-grid"><span><small>PILAR DO DIA</small><span class="c2-p" id="fx-pilar">Mito x Verdade</span><small>TEMA DE HOJE</small><span class="c2-tema" id="fx-tema">"Terapia é só para quem está em crise"</span></span><span class="c2-pr"><small>SEU PROMPT PRONTO</small><span class="c2-bl"><i></i><i></i><i></i><i></i></span><span class="c2-cp">⧉ Copiar</span></span></span></span></div>
           <p>O pilar, o tema e o prompt do dia já estão lá, prontos para copiar.</p>
         </li>
         <li class="fx" data-min="3">
           <div class="fx-top"><span class="fx-num">3</span><span class="fx-t">2 min</span></div>
+          <small class="fx-nome">Rota traçada</small>
           <h3>Cole o prompt na IA</h3>
           <div class="cena c3 c3n" aria-hidden="true"><span class="c3-h"><i></i><b>Sua IA</b><small>ChatGPT · Gemini · Claude</small></span><span class="c3-eu">Prompt do dia colado ✓</span><span class="c3-r"><i>Tela 1</i><b id="fx-r1"></b></span><span class="c3-r"><i>Tela 2</i><b id="fx-r2"></b></span><span class="c3-r"><i>Tela 3</i><b id="fx-r3"></b></span></div>
           <p>No ChatGPT, Gemini ou Claude. O roteiro sai pronto, no formato sem aparecer.</p>
         </li>
         <li class="fx" data-min="15">
           <div class="fx-top"><span class="fx-num">4</span><span class="fx-t">≈ 12 min</span></div>
+          <small class="fx-nome">Chegada: no ar</small>
           <h3>Monte e publique</h3>
           <div class="cena c4 c4n" aria-hidden="true"><span class="c4-fone"><span class="c4-bg"></span><em class="c4-di"></em><span class="c4-segs"><i></i><i></i><i></i></span><small id="fx-ey">MITO</small><span id="fx-fone">Terapia é só para quem está em crise.</span><i class="c4-ln"></i><span class="c4-play"><b>▶</b><span class="c4-eq"><i></i><i></i><i></i><i></i></span><em>0:12</em></span><u>Seu nome · Psicóloga · CRP</u></span><span class="c4-lado"><span class="c4-tipo">🎬 Vídeo MP4 com música</span><span class="c4-ok">✓ Publicado</span><span class="c4-redes"><b>Instagram</b><b>Facebook</b><b>TikTok</b><b>Reels</b><b>Stories</b><b>Feed</b></span></span></div>
           <p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Revise e poste.</p>
         </li>
       </ol>
-      <p class="fx-fim">Depois da Ficha, todo dia é só repetir os passos 2, 3 e 4.</p>
+      <p class="fx-fim">Depois da Ficha, cada dia é um novo destino: é só repetir os passos 2, 3 e 4.</p>
     </div>
   </div>
 </section>
@@ -1833,13 +1839,13 @@ html,body{overflow-x:clip}
 <section class="garantia" id="garantia" data-secao="garantia">
   <div class="wrap narrow">
     <div class="selo" role="img" aria-label="7 dias de garantia"><b>7</b><small>dias de<br>garantia</small></div>
-    <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Topa testar por 7 dias?</h2>
-    <p>O desafio é simples: abra o kit, teste os prompts e monte o seu primeiro vídeo. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.<span class="g-wa">Ficou com alguma dúvida antes de comprar? <a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20antes%20de%20comprar%20o%20Kit%20Conte%C3%BAdo%20Sem%20Aparecer." target="_blank" rel="noopener" data-umami-event="whatsapp" data-umami-event-local="garantia">Fale com a gente no WhatsApp</a>.</span></p>
+    <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Topa o desafio de 7 dias?</h2>
+    <p>O desafio é simples: em 7 dias, preencha a Ficha, monte os seus primeiros vídeos e coloque o perfil de volta no ritmo. A garantia de 7 dias existe para você comprar com segurança: se o kit não fizer sentido, o reembolso é pedido pela própria Hotmart, sem precisar justificar.<span class="g-wa">Ficou com alguma dúvida antes de comprar? <a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20antes%20de%20comprar%20o%20Kit%20Conte%C3%BAdo%20Sem%20Aparecer." target="_blank" rel="noopener" data-umami-event="whatsapp" data-umami-event-local="garantia">Fale com a gente no WhatsApp</a>.</span></p>
   </div>
   <div class="g-trilha">
-    <div><b>Hoje</b><p>Abra o kit e preencha a Ficha com a sua abordagem.</p></div>
-    <div><b>Nos próximos dias</b><p>Gere, revise e monte o seu primeiro vídeo (cerca de 15 min cada).</p></div>
-    <div><b>Até o 7º dia</b><p>Decida com calma. Se não fizer sentido, é só pedir o reembolso.</p></div>
+    <div><b>Hoje</b><p>Abra o kit e preencha a Ficha com a sua abordagem. É uma vez só.</p></div>
+    <div><b>Nos próximos dias</b><p>Gere, revise e monte os seus primeiros vídeos (cerca de 15 min cada).</p></div>
+    <div><b>Até o 7º dia</b><p>Chegue com vídeos prontos para postar e o perfil voltando ao ritmo.</p></div>
   </div>
 </section>
 
