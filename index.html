@@ -58,14 +58,24 @@ section{padding:72px 0}
 
 /* PROVAS / POR QUE AJUDA */
 .porque{background:var(--areia)}
-.porque .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
-.porque .pq{background:var(--creme);border:1px solid var(--linha);border-radius:18px;padding:22px 20px;display:flex;flex-direction:column;gap:8px}
-.porque .pq-n{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:34px;line-height:1;color:var(--salvia)}
-.porque .pq h3{font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.3;letter-spacing:0}
+.porque .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.porque .pq{background:var(--creme);border:1px solid var(--linha);border-radius:20px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 36px -26px rgba(59,54,51,.45)}
+.porque .pq-tag{align-self:flex-start;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc);background:#fff;border:1px solid var(--linha);padding:5px 11px;border-radius:99px}
+.porque .pq-stat{background:var(--pessego);border-radius:14px;padding:14px 16px}
+.porque .pq-n{display:block;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:44px;line-height:1;color:var(--grafite)}
+.porque .pq-u{display:block;margin-top:6px;font-size:14.5px;font-weight:700;line-height:1.3;color:var(--terra-esc)}
+.porque .pq h3{font-family:Montserrat,system-ui,sans-serif;font-size:17.5px;line-height:1.3;letter-spacing:0;color:var(--grafite)}
 .porque .pq p{font-size:15.5px;color:var(--texto2)}
-.porque .pq-nota{font-size:13.5px;color:var(--texto2);border-left:3px solid var(--salvia);padding-left:12px}
-.porque .pq-nota em{display:block;margin-top:4px;font-style:normal;opacity:.85}
-@media (max-width:760px){.porque .pq-grid{grid-template-columns:1fr}}
+.porque .pq-kit{margin-top:auto;display:flex;gap:10px;align-items:flex-start;background:var(--salvia-cl);border-radius:12px;padding:11px 12px;font-size:14.5px;line-height:1.4;color:#2F3A30}
+.porque .pq-kit i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--salvia);color:#fff;font-style:normal;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.porque .pq-kit b{color:#3F5A3E}
+.porque .pq-fonte{font-size:13px;color:var(--texto2)}
+.porque .pq-fonte a{color:var(--terra-esc);text-decoration:underline;text-underline-offset:2px;font-weight:600}
+.porque .pq-cta{text-align:center;margin-top:10px}
+.porque .pq-cta-t{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:22px;color:var(--grafite);margin-bottom:14px}
+.porque .pq-cta .micro{margin-top:10px}
+.porque .pq-nota{font-size:13.5px;color:var(--texto2);border-left:3px solid var(--salvia);padding-left:12px;max-width:760px;margin:6px auto 0;text-align:left}
+@media (max-width:960px){.porque .pq-grid{grid-template-columns:1fr;gap:14px}.porque .pq-n{font-size:40px}}
 
 /* header */
 header{background:var(--creme);border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:10}
@@ -1654,26 +1664,41 @@ html,body{overflow-x:clip}
 <!-- 4b2. POR QUE UM PLANO PRONTO AJUDA -->
 <section class="porque" data-secao="por-que-ajuda">
   <div class="wrap stack">
-    <div class="eyebrow">Por que um plano pronto ajuda</div>
-    <h2 class="h2">Saber o que fazer, e quando, ajuda a cumprir o que você se propôs.</h2>
+    <div class="eyebrow">Referências · o que dizem as pesquisas</div>
+    <h2 class="h2">Planejar antes realmente ajuda a cumprir o que você se propõe?</h2>
+    <p class="lead">Veja três referências públicas, cada uma com o link da fonte para você conferir.</p>
     <div class="pq-grid">
       <div class="pq">
-        <span class="pq-n">94</span>
-        <h3>Plano definido ajuda a cumprir</h3>
-        <p>Uma meta-análise de 94 estudos (Gollwitzer &amp; Sheeran, 2006) mostrou que decidir antes <strong>quando</strong> e <strong>o quê</strong> fazer ajuda as pessoas a cumprirem suas metas. É a ideia do Calendário: o tema do dia já vem escolhido.</p>
+        <span class="pq-tag">Estudo científico</span>
+        <div class="pq-stat"><span class="pq-n">94</span><span class="pq-u">estudos analisados juntos</span></div>
+        <h3>Quem decide antes o que fazer tende a cumprir mais.</h3>
+        <p>Pesquisadores reuniram 94 estudos sobre planejamento e metas. O resultado: quem define antes <strong>quando</strong> e <strong>o quê</strong> vai fazer costuma cumprir mais o que se propôs.</p>
+        <div class="pq-kit"><i>✓</i><span><b>No kit:</b> o Calendário já escolhe o tema de cada dia. Você só abre e segue.</span></div>
+        <div class="pq-fonte">Fonte: <a href="https://stafforini.com/works/gollwitzer-2006-implementation-intentions-and/" target="_blank" rel="noopener" data-umami-event="fonte" data-umami-event-local="gollwitzer">Gollwitzer &amp; Sheeran, 2006</a></div>
       </div>
       <div class="pq">
-        <span class="pq-n">7 em 10</span>
-        <h3>O seu público está no Instagram</h3>
-        <p>Segundo o DataReportal (Digital 2026: Brasil), o Instagram pode alcançar cerca de 7 em cada 10 brasileiros.</p>
+        <span class="pq-tag">Dado de mercado</span>
+        <div class="pq-stat"><span class="pq-n">7 em 10</span><span class="pq-u">brasileiros alcançados pelo Instagram</span></div>
+        <h3>As pessoas que você quer alcançar estão no Instagram.</h3>
+        <p>O relatório Digital 2026 (DataReportal) estima que o Instagram alcança cerca de 7 em cada 10 brasileiros. É lá que o seu conteúdo pode ser encontrado.</p>
+        <div class="pq-kit"><i>✓</i><span><b>No kit:</b> vídeos e posts prontos para Instagram e Facebook, sem você aparecer.</span></div>
+        <div class="pq-fonte">Fonte: <a href="https://datareportal.com/reports/digital-2026-brazil" target="_blank" rel="noopener" data-umami-event="fonte" data-umami-event-local="datareportal">DataReportal, Digital 2026: Brasil</a></div>
       </div>
       <div class="pq">
-        <span class="pq-n">1 bi+</span>
-        <h3>A demanda por informação cuidadosa é real</h3>
-        <p>A OMS estima que mais de 1 bilhão de pessoas no mundo vivem com algum transtorno mental. Por isso, conteúdo claro e responsável tem lugar.</p>
+        <span class="pq-tag">Dado da OMS</span>
+        <div class="pq-stat"><span class="pq-n">1 bilhão+</span><span class="pq-u">de pessoas vivem com algum transtorno mental</span></div>
+        <h3>Muita gente precisa de informação clara e cuidadosa.</h3>
+        <p>Segundo a Organização Mundial da Saúde, são mais de 1 bilhão de pessoas no mundo. Conteúdo educativo de quem é da área tem seu lugar nessa conversa.</p>
+        <div class="pq-kit"><i>✓</i><span><b>No kit:</b> prompts e guias que orientam a publicar com cuidado ético.</span></div>
+        <div class="pq-fonte">Fonte: <a href="https://www.diariodepernambuco.com.br/dp-/dp-saude/2025/09/11694786-mais-de-1-bilhao-de-pessoas-vivem-com-transtornos-mentais-revela-oms.html" target="_blank" rel="noopener" data-umami-event="fonte" data-umami-event-local="oms">OMS, via Diario de Pernambuco</a></div>
       </div>
     </div>
-    <p class="pq-nota">Estas referências mostram o contexto, não prometem resultado. O kit orienta a seguir o Código de Ética Profissional do Psicólogo.<em>Fontes: Gollwitzer &amp; Sheeran; DataReportal; OMS.</em></p>
+    <div class="pq-cta">
+      <p class="pq-cta-t">Quer ter isso já pronto, do seu jeito?</p>
+      <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="referencias">Quero o kit por R$&nbsp;47</a>
+      <p class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</p>
+    </div>
+    <p class="pq-nota">Estas referências mostram o contexto e não prometem resultado. O kit orienta a seguir o Código de Ética Profissional do Psicólogo.</p>
   </div>
 </section>
 
