@@ -1185,9 +1185,25 @@ html,body{overflow-x:clip}
   .gp-h>*,.gp-r>*,.gp-f>*{grid-row:1}
   .gp-hb,.gp-b,.gp-fb{grid-column:1!important}
   .gp-ha,.gp-a,.gp-fa{grid-column:3!important}
-  .gp-sep{grid-column:2;transform:scaleX(-1)}
+  .gp-sep{grid-column:2}
   .gp-h::after{background:linear-gradient(90deg,var(--terra-esc) 50%,#F6F3EF 50%)!important}
   .gp-f::after{background:linear-gradient(90deg,var(--salvia) 50%,#FAF8F5 50%)!important}
+}
+
+/* chatgpt v5: marcador "vs" no lugar da seta + bloco de ganhos */
+.gp-sep{justify-self:center;width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid var(--linha);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#8A7F77}
+.gg{margin-top:22px}
+.gg-t{text-align:center;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-esc)}
+.gg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.gg-i{background:var(--salvia-cl);border:1px solid #C9D6C5;border-radius:18px;padding:16px 18px;text-align:center}
+.gg-n{display:block;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:34px;line-height:1.1;color:#2F4A2E}
+.gg-u{display:block;font-size:14.5px;line-height:1.4;color:var(--grafite);margin-top:6px}
+@media (max-width:720px){
+  .gp-sep{display:none}
+  .gg-grid{grid-template-columns:1fr;gap:10px}
+  .gg-i{display:flex;align-items:center;gap:14px;text-align:left;padding:12px 16px}
+  .gg-n{flex:0 0 108px;font-size:26px}
+  .gg-u{margin-top:0;font-size:14px}
 }
 /* VSL no topo */
 .phone{width:314px;height:540px}
@@ -1574,8 +1590,16 @@ html,body{overflow-x:clip}
       <div class="gp-h"><span class="gp-ha"><em class="gp-tg a">Só com a IA</em>todo dia, você precisa…</span><span class="gp-hb"><em class="gp-tg b">Com o kit</em>já vem pronto</span></div>
       <div class="gp-leg" aria-hidden="true"><span class="la"><i></i>Só com a IA</span><span class="lb"><i>✓</i>Com o kit</span></div>
       <div class="gp-sw" role="group" aria-label="Comparar"><span class="gp-knob" aria-hidden="true"></span><button type="button" data-m="kit" aria-pressed="true"><i aria-hidden="true">✓</i>Com o kit</button><button type="button" data-m="ia" aria-pressed="false"><i aria-hidden="true">↻</i>Só com a IA</button></div>
-      <ul><li class="gp-r" style="--k:0"><span class="gp-a"><i></i><s>Pensar no tema do dia</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O tema do dia já está na aba Hoje</span></li><li class="gp-r" style="--k:1"><span class="gp-a"><i></i><s>Escrever um bom prompt do zero</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>102 prompts prontos para copiar</span></li><li class="gp-r" style="--k:2"><span class="gp-a"><i></i><s>Explicar quem você é, de novo</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>A Ficha ensina a IA uma vez só</span></li><li class="gp-r" style="--k:3"><span class="gp-a"><i></i><s>Lembrar das orientações do CFP</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>Os cuidados já vêm dentro do prompt</span></li><li class="gp-r" style="--k:4"><span class="gp-a"><i></i><s>Organizar o que postar no ano</s></span><span class="gp-sep" aria-hidden="true">→</span><span class="gp-b"><i>✓</i>O calendário de 365 dias se organiza sozinho</span></li></ul>
+      <ul><li class="gp-r" style="--k:0"><span class="gp-a"><i></i><s>Pensar no tema do dia</s></span><span class="gp-sep" aria-hidden="true">vs</span><span class="gp-b"><i>✓</i>O tema do dia já está na aba Hoje</span></li><li class="gp-r" style="--k:1"><span class="gp-a"><i></i><s>Escrever um bom prompt do zero</s></span><span class="gp-sep" aria-hidden="true">vs</span><span class="gp-b"><i>✓</i>102 prompts prontos para copiar</span></li><li class="gp-r" style="--k:2"><span class="gp-a"><i></i><s>Explicar quem você é, de novo</s></span><span class="gp-sep" aria-hidden="true">vs</span><span class="gp-b"><i>✓</i>A Ficha ensina a IA uma vez só</span></li><li class="gp-r" style="--k:3"><span class="gp-a"><i></i><s>Lembrar das orientações do CFP</s></span><span class="gp-sep" aria-hidden="true">vs</span><span class="gp-b"><i>✓</i>Os cuidados já vêm dentro do prompt</span></li><li class="gp-r" style="--k:4"><span class="gp-a"><i></i><s>Organizar o que postar no ano</s></span><span class="gp-sep" aria-hidden="true">vs</span><span class="gp-b"><i>✓</i>O calendário de 365 dias se organiza sozinho</span></li></ul>
       <div class="gp-f"><span class="gp-fa"><b>Só com a IA:</b> tudo isso de novo, todo santo dia.</span><span class="gp-fb"><b>Com o kit:</b> abre a aba Hoje, copia, cola. <span class="nw">⏱ Cerca de 15 min.</span></span></div>
+    </div>
+    <div class="gg">
+      <p class="gg-t">O que muda no seu dia</p>
+      <div class="gg-grid">
+        <div class="gg-i"><span class="gg-n">≈ 15 min</span><span class="gg-u">por post, do tema ao vídeo pronto</span></div>
+        <div class="gg-i"><span class="gg-n">1 vez</span><span class="gg-u">para ensinar a IA quem você é</span></div>
+        <div class="gg-i"><span class="gg-n">365</span><span class="gg-u">dias de temas já organizados</span></div>
+      </div>
     </div>
     <p class="gp-fim"><b>Você continua usando a sua IA preferida.</b> Só não precisa mais começar do zero.</p>
   </div>
