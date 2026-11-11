@@ -57,6 +57,31 @@ section{padding:72px 0}
 
 
 /* PROVAS / POR QUE AJUDA */
+/* NÍVEL DE IA: selos do topo, seletor e trilha da garantia */
+.nivel{display:flex;flex-wrap:wrap;align-items:center;gap:8px 8px;margin-top:14px}
+.nivel .nv-t{width:100%;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--texto2)}
+.nv{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--linha);border-radius:99px;padding:6px 13px 6px 10px;font-size:14px;font-weight:700;color:var(--grafite);line-height:1.2}
+.nv svg{width:19px;height:15px;flex:none}
+.nv svg rect{fill:#E2D8CB}
+.nv svg rect.on{fill:var(--terra-esc)}
+.nivel-sel{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:22px 20px 20px;margin-top:14px;text-align:center;box-shadow:0 18px 36px -28px rgba(59,54,51,.5)}
+.nivel-sel h3{font-size:22px}
+.nivel-sel .nvs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px}
+.nivel-sel button.nvb{font:inherit;font-weight:700;font-size:15.5px;color:var(--grafite);background:var(--creme);border:1.5px solid var(--linha);border-radius:99px;padding:10px 18px 10px 12px;display:inline-flex;align-items:center;gap:9px;cursor:pointer;transition:.2s}
+.nivel-sel button.nvb svg{width:20px;height:16px}
+.nivel-sel button.nvb svg rect{fill:#CFC3B4}
+.nivel-sel button.nvb svg rect.on{fill:var(--terra-esc)}
+.nivel-sel button.nvb[aria-pressed="true"]{background:var(--terra-esc);border-color:var(--terra-esc);color:#fff;box-shadow:0 10px 20px -10px rgba(164,95,63,.7)}
+.nivel-sel button.nvb[aria-pressed="true"] svg rect{fill:rgba(255,255,255,.45)}
+.nivel-sel button.nvb[aria-pressed="true"] svg rect.on{fill:#fff}
+.nivel-sel .nvr{margin:16px auto 0;max-width:620px;font-size:17px;color:var(--texto2);min-height:3.2em;animation:nvin .35s ease}
+.nivel-sel .nvr b{color:var(--grafite)}
+@keyframes nvin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.g-trilha{max-width:760px;margin:26px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g-trilha div{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:14px 14px 15px;text-align:left}
+.g-trilha b{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-esc)}
+.g-trilha p{margin-top:6px;font-size:15px;line-height:1.4;color:var(--texto2)}
+@media (max-width:760px){.g-trilha{grid-template-columns:1fr}.nivel-sel{padding:20px 16px 18px}.nivel-sel .nvr{font-size:16px}}
 .porque{background:var(--areia)}
 .porque .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
 .porque .pq{background:var(--creme);border:1px solid var(--linha);border-radius:20px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 36px -26px rgba(59,54,51,.45)}
@@ -1316,6 +1341,7 @@ html,body{overflow-x:clip}
   .hero-txt>.hero-lead{order:5}
   .hero-txt>.selos-facil{order:6}
   .hero-txt>.hero-cta{order:7}
+  .hero-txt>.nivel{order:8}
   .hero h1{font-size:clamp(28px,8vw,34px)}
   .phone{width:250px!important;height:520px!important}
   .fmt{display:none}
@@ -1414,6 +1440,12 @@ html,body{overflow-x:clip}
       <div class="hero-cta">
         <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="topo">Quero o kit por R$&nbsp;47</a>
         <span class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</span>
+      </div>
+      <div class="nivel" aria-label="Serve para todos os níveis de IA">
+        <span class="nv-t">Serve em qualquer nível de IA:</span>
+        <span class="nv"><svg viewBox="0 0 19 15" aria-hidden="true"><rect class="on" x="0" y="10" width="5" height="5" rx="1.5"/><rect class="" x="7" y="5" width="5" height="10" rx="1.5"/><rect class="" x="14" y="0" width="5" height="15" rx="1.5"/></svg>Nunca usei</span>
+        <span class="nv"><svg viewBox="0 0 19 15" aria-hidden="true"><rect class="on" x="0" y="10" width="5" height="5" rx="1.5"/><rect class="on" x="7" y="5" width="5" height="10" rx="1.5"/><rect class="" x="14" y="0" width="5" height="15" rx="1.5"/></svg>Abri e desisti</span>
+        <span class="nv"><svg viewBox="0 0 19 15" aria-hidden="true"><rect class="on" x="0" y="10" width="5" height="5" rx="1.5"/><rect class="on" x="7" y="5" width="5" height="10" rx="1.5"/><rect class="on" x="14" y="0" width="5" height="15" rx="1.5"/></svg>Já uso</span>
       </div>
     </div>
     <div class="hero-vis">
@@ -1698,7 +1730,7 @@ html,body{overflow-x:clip}
       <a class="btn" href="#oferta" data-umami-event="quero-o-kit" data-umami-event-local="referencias">Quero o kit por R$&nbsp;47</a>
       <p class="micro">Acesso imediato · Garantia de 7 dias · Pagamento único</p>
     </div>
-    <p class="pq-nota">Estas referências mostram o contexto e não prometem resultado. O kit orienta a seguir o Código de Ética Profissional do Psicólogo.</p>
+    <p class="pq-nota">Estas referências mostram o contexto e não prometem resultado. Os prompts foram desenvolvidos considerando as orientações de publicidade do CFP, e a revisão final é sempre sua.</p>
   </div>
 </section>
 
@@ -1742,6 +1774,15 @@ html,body{overflow-x:clip}
   <div class="wrap stack">
     <div class="eyebrow">Antes de decidir</div>
     <h2 class="h2">Este kit é para você?</h2>
+    <div class="nivel-sel" id="nivelSel">
+      <h3>E qual é o seu nível de IA hoje?</h3>
+      <div class="nvs" role="group" aria-label="Escolha o seu nível">
+        <button type="button" class="nvb" aria-pressed="true" data-r="0" data-umami-event="nivel-ia" data-umami-event-local="nunca-usei"><svg viewBox="0 0 19 15" aria-hidden="true"><rect class="on" x="0" y="10" width="5" height="5" rx="1.5"/><rect class="" x="7" y="5" width="5" height="10" rx="1.5"/><rect class="" x="14" y="0" width="5" height="15" rx="1.5"/></svg>Nunca usei</button>
+        <button type="button" class="nvb" aria-pressed="false" data-r="1" data-umami-event="nivel-ia" data-umami-event-local="abri-e-desisti"><svg viewBox="0 0 19 15" aria-hidden="true"><rect class="on" x="0" y="10" width="5" height="5" rx="1.5"/><rect class="on" x="7" y="5" width="5" height="10" rx="1.5"/><rect class="" x="14" y="0" width="5" height="15" rx="1.5"/></svg>Abri e desisti</button>
+        <button type="button" class="nvb" aria-pressed="false" data-r="2" data-umami-event="nivel-ia" data-umami-event-local="ja-uso"><svg viewBox="0 0 19 15" aria-hidden="true"><rect class="on" x="0" y="10" width="5" height="5" rx="1.5"/><rect class="on" x="7" y="5" width="5" height="10" rx="1.5"/><rect class="on" x="14" y="0" width="5" height="15" rx="1.5"/></svg>Já uso</button>
+      </div>
+      <p class="nvr" id="nivelR" aria-live="polite"><b>Perfeito para começar.</b> Você copia e cola, como no WhatsApp. Cada módulo tem um guia com prints mostrando onde clicar.</p>
+    </div>
     <div class="two" style="margin-top:12px">
       <div class="box sim">
         <h3>É para você se…</h3>
@@ -1792,8 +1833,13 @@ html,body{overflow-x:clip}
 <section class="garantia" id="garantia" data-secao="garantia">
   <div class="wrap narrow">
     <div class="selo" role="img" aria-label="7 dias de garantia"><b>7</b><small>dias de<br>garantia</small></div>
-    <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Experimente sem risco</h2>
-    <p>Você tem 7 dias para abrir o kit, testar os prompts e montar seus primeiros vídeos. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.<span class="g-wa">Ficou com alguma dúvida antes de comprar? <a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20antes%20de%20comprar%20o%20Kit%20Conte%C3%BAdo%20Sem%20Aparecer." target="_blank" rel="noopener" data-umami-event="whatsapp" data-umami-event-local="garantia">Fale com a gente no WhatsApp</a>.</span></p>
+    <h2 class="h2" style="font-size:clamp(26px,3.6vw,32px)">Topa testar por 7 dias?</h2>
+    <p>O desafio é simples: abra o kit, teste os prompts e monte o seu primeiro vídeo. Se não fizer sentido para você, peça o reembolso pela própria Hotmart, sem precisar justificar.<span class="g-wa">Ficou com alguma dúvida antes de comprar? <a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20antes%20de%20comprar%20o%20Kit%20Conte%C3%BAdo%20Sem%20Aparecer." target="_blank" rel="noopener" data-umami-event="whatsapp" data-umami-event-local="garantia">Fale com a gente no WhatsApp</a>.</span></p>
+  </div>
+  <div class="g-trilha">
+    <div><b>Hoje</b><p>Abra o kit e preencha a Ficha com a sua abordagem.</p></div>
+    <div><b>Nos próximos dias</b><p>Gere, revise e monte o seu primeiro vídeo (cerca de 15 min cada).</p></div>
+    <div><b>Até o 7º dia</b><p>Decida com calma. Se não fizer sentido, é só pedir o reembolso.</p></div>
   </div>
 </section>
 
@@ -1804,6 +1850,7 @@ html,body{overflow-x:clip}
     <h2 class="h2" style="margin-bottom:26px">Perguntas frequentes</h2>
     <details name="faq"><summary>Não posso fazer isso de graça numa IA, como o ChatGPT?</summary><p>Pode tentar, e o kit inclusive funciona com ela (ChatGPT, Gemini, Claude ou outra). A diferença é o trabalho de antes: pensar 365 temas, escrever bons prompts, explicar a sua abordagem e lembrar das orientações do CFP a cada post. O kit entrega isso pronto, por menos do que o valor de uma sessão.</p></details>
     <details name="faq"><summary>Não entendo de IA. Consigo usar, inclusive pelo celular?</summary><p>Sim. Se você sabe copiar e colar no WhatsApp, sabe usar o kit. O Calendário, a IA e o Canva funcionam no celular, e cada módulo tem um guia com prints mostrando onde clicar. Depois de preencher a Ficha, cada vídeo leva cerca de 15 minutos. Também não precisa pagar nenhuma ferramenta: tudo funciona nas versões gratuitas da IA, do Canva ou CapCut e dos bancos de vídeo.</p></details>
+    <details name="faq"><summary>Abri o ChatGPT uma vez, achei difícil e deixei de lado. Isso é para mim?</summary><p>É, sim. Muita gente trava porque a IA em branco pede que você já saiba o que escrever. Aqui é o contrário: o prompt do dia já vem pronto, você só copia, cola e revisa. Cada módulo tem um guia com prints mostrando onde clicar, tudo funciona pelo celular e, se travar em algum ponto, você pode tirar a dúvida pelo WhatsApp.</p></details>
     <details name="faq"><summary>Sem aparecer, as pessoas vão confiar em mim?</summary><p>É possível construir confiança sem mostrar o rosto, com uma comunicação consistente, clara e profissional. O formato é texto no centro da tela, sobre um vídeo de fundo, com música: sem rosto e sem voz. Ajuda postar com constância, explicar com clareza e se identificar bem, com o seu nome, a palavra psicóloga (ou psicólogo) e o seu CRP em cada publicação. Se um dia você quiser aparecer, tudo o que já postou continua valendo.</p></details>
     <details name="faq"><summary>Os conteúdos estão de acordo com o Código de Ética?</summary><p>Os prompts foram desenvolvidos considerando as orientações de publicidade do CFP: evitam diagnóstico, promessa de resultado, depoimentos e divulgação de preço. Eles são um material de apoio, não uma garantia de conformidade ética: a IA gera um rascunho, e a revisão profissional de cada publicação continua indispensável e é sempre responsabilidade do psicólogo.</p></details>
     <details name="faq"><summary>Serve para a minha abordagem e para outras redes?</summary><p>Sim. Você informa a sua abordagem, o seu público e o seu tom na Ficha do Negócio, e os textos passam a seguir isso. E o mesmo vídeo vertical em MP4 vai para o Instagram, o Facebook e o TikTok: use o arquivo original e escolha a música na biblioteca de cada aplicativo. As orientações de publicidade do CFP valem em qualquer rede.</p></details>
@@ -2255,6 +2302,15 @@ if(rm)return;mostra(0);setInterval(function(){k=(k+1)%3;mostra(k);},2400);})();
 </script>
 <script>
 (function(){var b=document.querySelector('.ios-st b');if(!b)return;function t(){var d=new Date();b.textContent=d.getHours()+':'+('0'+d.getMinutes()).slice(-2);}t();setInterval(t,15000);})();
+</script>
+<script>
+(function(){var box=document.getElementById('nivelSel');if(!box)return;var r=document.getElementById('nivelR');
+var T=['<b>Perfeito para começar.</b> Você copia e cola, como no WhatsApp. Cada módulo tem um guia com prints mostrando onde clicar.',
+'<b>Normal: IA sem ajuda cansa.</b> Aqui você não escreve prompt do zero. Abre o prompt do dia, cola na sua IA e revisa o resultado.',
+'<b>Ótimo, você sai na frente.</b> Os 365 temas, a Ficha com a sua abordagem e os prompts já vêm prontos para a IA que você usa.'];
+var bs=box.querySelectorAll('.nvb');
+bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+r.style.animation='none';void r.offsetWidth;r.style.animation='';r.innerHTML=T[+b.dataset.r];});});})();
 </script>
 </body>
 </html>
