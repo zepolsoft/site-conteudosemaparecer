@@ -82,6 +82,13 @@ section{padding:72px 0}
 .g-trilha b{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-esc)}
 .g-trilha p{margin-top:6px;font-size:15px;line-height:1.4;color:var(--texto2)}
 @media (max-width:760px){.g-trilha{grid-template-columns:1fr}.nivel-sel{padding:20px 16px 18px}.nivel-sel .nvr{font-size:16px}}
+.nivel-sel .nvs{flex-wrap:nowrap;gap:8px}
+.nivel-sel button.nvb{position:relative;overflow:hidden;white-space:nowrap;font-size:14px;padding:8px 13px 8px 10px;gap:7px}
+.nivel-sel button.nvb svg{width:17px;height:14px;flex:none}
+.nivel-sel.auto button.nvb[aria-pressed="true"]::after{content:"";position:absolute;left:0;top:0;bottom:0;width:100%;background:rgba(255,255,255,.22);transform-origin:left;animation:nvp 5s linear forwards}
+@keyframes nvp{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.nivel-sel.auto button.nvb[aria-pressed="true"]::after{display:none}}
+@media (max-width:480px){.nivel-sel .nvs{gap:6px}.nivel-sel button.nvb{flex:1 1 auto;justify-content:center;font-size:12.5px;padding:8px 8px 8px 7px;gap:5px}.nivel-sel button.nvb svg{width:14px;height:12px}.nivel-sel .nvr{min-height:6.6em}}
 .porque{background:var(--areia)}
 .porque .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
 .porque .pq{background:var(--creme);border:1px solid var(--linha);border-radius:20px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 36px -26px rgba(59,54,51,.45)}
@@ -2341,9 +2348,14 @@ if(rm)return;mostra(0);setInterval(function(){k=(k+1)%3;mostra(k);},2400);})();
 var T=['<b>Perfeito para começar.</b> Você copia e cola, como no WhatsApp. Cada módulo tem um guia com prints mostrando onde clicar.',
 '<b>Normal: IA sem ajuda cansa.</b> Aqui você não escreve prompt do zero. Abre o prompt do dia, cola na sua IA e revisa o resultado.',
 '<b>Ótimo, você sai na frente.</b> Os 365 temas, a Ficha com a sua abordagem e os prompts já vêm prontos para a IA que você usa.'];
-var bs=box.querySelectorAll('.nvb');
-bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
-r.style.animation='none';void r.offsetWidth;r.style.animation='';r.innerHTML=T[+b.dataset.r];});});})();
+var bs=box.querySelectorAll('.nvb');var cur=0,tm=null,auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches),vis=false;
+function show(i){cur=i;bs.forEach(function(x,k){x.setAttribute('aria-pressed',k===i?'true':'false');});
+r.style.animation='none';void r.offsetWidth;r.style.animation='';r.innerHTML=T[i];}
+function tick(){clearTimeout(tm);if(!auto||!vis)return;tm=setTimeout(function(){show((cur+1)%3);tick();},5000);}
+function stop(){auto=false;box.classList.remove('auto');clearTimeout(tm);}
+bs.forEach(function(b){b.addEventListener('click',function(){stop();show(+b.dataset.r);});});
+if(auto&&'IntersectionObserver' in window){box.classList.add('auto');new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis){show(cur);tick();}else{clearTimeout(tm);}},{threshold:.6}).observe(box);}
+})();
 </script>
 </body>
 </html>
