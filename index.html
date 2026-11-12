@@ -129,6 +129,22 @@ section{padding:72px 0}
 @keyframes pp2in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .pp2-leg{max-width:300px;background:#fff;border:1px solid var(--linha);border-radius:16px;padding:12px 14px;font-size:13.5px;line-height:1.5;color:var(--texto2)}
 .pp2-leg b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc);margin-bottom:4px}
+.pp2-bl{filter:blur(5px);user-select:none;-webkit-user-select:none;pointer-events:none}
+.pp2-etica{background:#EEF3EC;border-left:3px solid var(--salvia);border-radius:8px;padding:8px 10px}
+.pp2-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pp2-chips span{font-size:12px;font-weight:700;color:#3F5A3E;background:var(--salvia-cl);border-radius:99px;padding:4px 10px}
+.pp2-chips span::before{content:"✓ "}
+.pp2-fs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
+.pp2-fs small{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2);width:100%;text-align:center}
+.pp2-fs button{font:inherit;font-size:12.5px;font-weight:700;color:var(--grafite);background:#fff;border:1.5px solid var(--linha);border-radius:99px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+.pp2-fs button.on{background:var(--terra-esc);border-color:var(--terra-esc);color:#fff}
+.pp2-ed{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.pp2-ed span{font-size:12px;font-weight:700;color:var(--terra-esc);background:#F3E2D8;border-radius:99px;padding:4px 10px}
+.pp2-ed span::before{content:"✎ "}
+.pp2-edn{font-size:12.5px;color:var(--texto2);text-align:center;max-width:290px;margin:-4px 0 0}
+.pp2-tx b.lk{filter:blur(7px);user-select:none}
+.pp2-tx small.lk2{opacity:.9}
+.pp2-ar span{text-align:center;line-height:1.3}
 .pp2-fim{margin-top:22px;text-align:center;font-size:16px;color:var(--texto2)}
 .pp2-fim small{display:block;margin-top:4px;font-size:13px}
 @media (prefers-reduced-motion:reduce){.pp2-tx b{animation:none}}
@@ -1803,26 +1819,34 @@ html,body{overflow-x:clip}
   <div class="wrap stack">
     <div class="eyebrow">Do prompt ao post</div>
     <h2 class="h2">Veja um prompt do kit virar um post</h2>
-    <p class="lead">Este é um dos 102 prompts. Você troca o trecho destacado pelo seu tema, cola na sua IA e recebe o roteiro, em cerca de <b class="t15">15 min</b> no total.</p>
+    <p class="lead">Este é um dos 102 prompts. O mesmo prompt gera textos diferentes, porque o post nasce da <b>sua Ficha</b>: a sua abordagem, o seu público e o seu tom. Em cerca de <b class="t15">15 min</b>, da ideia ao post.</p>
     <div class="pp2-g">
       <div class="pp2-card">
         <div class="pp2-top"><span class="pp2-cod">PS-01 · Educar</span><span class="pp2-tag">1 dos 102 prompts</span></div>
         <h3>O sinal que passa despercebido</h3>
         <div class="pp2-txt">
           <p>Crie um roteiro de Reels/TikTok de 35 a 45 segundos sobre um sinal emocional comum que as pessoas costumam ignorar: <mark>[Sinal, ex.: cansaço que não passa nem nas férias]</mark>. Público: <mark>[Público-alvo]</mark>.</p>
-          <p><b>Regras:</b> não faça diagnóstico (use “pode ser um sinal de”), não prometa cura, resultado ou prazo, não use depoimentos nem casos de pacientes, sem tom alarmista.</p>
-          <p><b>Entregue:</b> 3 ganchos, roteiro com tempo por bloco, versão em texto centralizado (5 a 7 telas), legenda terminando em pergunta e um CTA.</p>
+          <p><span class="pp2-bl" aria-hidden="true">Estrutura: gancho com uma cena do dia a dia, descrição do sinal em linguagem simples e um fechamento acolhedor.</span></p>
+          <p class="pp2-etica"><b>Regras de ética, já dentro do prompt:</b> não faça diagnóstico (use “pode ser um sinal de”), não prometa cura, resultado ou prazo, não use depoimentos nem casos de pacientes, sem tom alarmista.</p>
+          <p><b>Entregue:</b> 3 ganchos, roteiro com tempo por bloco, versão em texto centralizado (5 a 6 telas) e <span class="pp2-bl" aria-hidden="true">legenda terminando em pergunta com um CTA para a sua agenda.</span></p>
         </div>
-        <details class="pp2-more"><summary>Ver o prompt completo ▾</summary><div><p><b>Estrutura:</b> gancho com uma cena do dia a dia (0–3s), “você já…” descrevendo o sinal (3–15s), por que ele pode acontecer em linguagem simples (15–35s), fechamento acolhedor dizendo que conversar com um profissional pode ajudar a entender (35–45s).</p><p><b>Regras:</b> não faça diagnóstico (use “pode ser um sinal de”), não prometa cura, resultado ou prazo, não use depoimentos nem casos de pacientes, sem tom alarmista e sem analisar pessoas reais.</p><p><b>Entregue:</b> 3 ganchos (até 10 palavras), roteiro com tempo por bloco, versão em texto centralizado (5 a 7 telas, até 8 palavras cada, com sugestão de vídeo de fundo em câmera lenta), legenda de até 300 caracteres terminando em pergunta e um CTA para [Como agendar].</p></div></details>
-        <p class="pp2-seg">E mais 101 prompts, cada um com 7 temas. Na aba Hoje, o prompt do dia já vem pronto para copiar.</p>
+        <div class="pp2-chips"><span>Sem diagnóstico</span><span>Sem promessa</span><span>Sem depoimentos</span></div>
+        <p class="pp2-seg"><b>+ mais no kit:</b> 101 prompts, cada um com 7 temas. Na aba Hoje, o prompt do dia já vem pronto para copiar.</p>
       </div>
-      <div class="pp2-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>sua IA</div>
+      <div class="pp2-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span>sua IA<br>+ sua Ficha</span></div>
       <div class="pp2-out">
-        <div class="pp2-ph" id="pp2Ph" role="img" aria-label="Exemplo de vídeo com 7 telas de texto centralizado. Toque para avançar."><div class="pp2-sc"><i class="c1"></i><i class="c2"></i><div class="pp2-bars" id="pp2Bars"></div><div class="pp2-tx"><small id="pp2S">TELA 1</small><b id="pp2T">Cansaço que não passa nem nas férias.</b><em></em></div><div class="pp2-hd">Seu nome · Psicóloga · CRP 00/00000</div></div></div>
-        <div class="pp2-leg"><b>Legenda sugerida</b>Cansaço que não passa nem nas férias pode ser um sinal de que algo pede atenção. Nem sempre é só esforço: sono, rotina e emoções se misturam. Conversar com um profissional pode ajudar a entender. E você, quando foi a última vez que descansou de verdade?</div>
+        <div class="pp2-fs" role="group" aria-label="Escolha uma Ficha para ver o resultado">
+          <small>Ficha de:</small>
+          <button type="button" class="on" data-f="0">Ana · TCC · adultos</button>
+          <button type="button" data-f="1">Júlia · Infantil · pais</button>
+        </div>
+        <div class="pp2-ph" id="pp2Ph" role="img" aria-label="Exemplo de vídeo de texto centralizado com 6 telas. Toque para avançar."><div class="pp2-sc" id="pp2Sc"><i class="c1"></i><i class="c2"></i><div class="pp2-bars" id="pp2Bars"></div><div class="pp2-tx"><small id="pp2S">TELA 1</small><b id="pp2T"></b><em></em></div><div class="pp2-hd">Seu nome · Psicóloga · CRP 00/00000</div></div></div>
+        <div class="pp2-ed"><span>Cores</span><span>Texto</span><span>Música</span><span>Estilo</span><span>Fontes</span></div>
+        <p class="pp2-edn">Tudo editável no Canva ou no CapCut. Os modelos de vídeo prontos vêm no Pack opcional.</p>
+        <div class="pp2-leg"><b>Legenda sugerida</b><span id="pp2L"></span> <span class="pp2-bl" aria-hidden="true">Mais uma frase de fechamento e a pergunta para quem assiste.</span></div>
       </div>
     </div>
-    <p class="pp2-fim"><b>Da ideia ao post em cerca de <span class="t15">15 min</span>.</b><small>Exemplo ilustrativo: a revisão final é sempre sua.</small></p>
+    <p class="pp2-fim"><b>O mesmo prompt, outra Ficha, outro post. Não é igual para todo mundo.</b><small>Feito com atenção às orientações do CFP. Exemplo ilustrativo: a revisão final é sempre sua.</small></p>
   </div>
 </section>
 
@@ -2430,13 +2454,21 @@ if(auto&&'IntersectionObserver' in window){box.classList.add('auto');new Interse
 })();
 </script>
 <script>
-(function(){var ph=document.getElementById('pp2Ph');if(!ph)return;var T=['Cansaço que não passa nem nas férias.','Você já descansou e continuou exausta?','Pode ser um sinal: algo pede atenção.','Sono, rotina e emoções se misturam.','Nem todo cansaço vem só do esforço.','Conversar com um profissional ajuda a entender.','Você não precisa entender isso sozinha.'];
-var bars=document.getElementById('pp2Bars'),t=document.getElementById('pp2T'),sm=document.getElementById('pp2S'),i=0,tm=null,vis=false,auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches);
-T.forEach(function(){bars.appendChild(document.createElement('span'));});
-function show(n){i=n;var sp=bars.children;for(var k=0;k<sp.length;k++)sp[k].className=k<=n?'on':'';sm.textContent='TELA '+(n+1);var b=t.cloneNode(false);b.id='pp2T';b.textContent=T[n];t.parentNode.replaceChild(b,t);t=b;}
-function tick(){clearTimeout(tm);if(!auto||!vis)return;tm=setTimeout(function(){show((i+1)%T.length);tick();},2600);}
-ph.addEventListener('click',function(){show((i+1)%T.length);tick();});
-show(0);if('IntersectionObserver' in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)tick();else clearTimeout(tm);},{threshold:.5}).observe(ph);}
+(function(){var ph=document.getElementById('pp2Ph');if(!ph)return;
+var F=[{bg:'#F3E2D8',ac:'#A45F3F',t:['Cansaço que não passa nem nas férias.','Você já descansou e continuou exausta?','Pode ser um sinal: algo pede atenção.','Nem todo cansaço vem só do esforço.','Conversar com um profissional ajuda a entender.','Você não precisa entender isso sozinha.'],l:'Cansaço que não passa nem nas férias pode ser um sinal de que algo pede atenção. Nem sempre é só esforço.'},
+{bg:'#DCE8F1',ac:'#3F6E94',t:['Birra no fim do dia? Acontece.','Pode ser um sinal: a criança está cansada.','Ela ainda não sabe nomear o que sente.','Acolher primeiro costuma ajudar.','Conversar com um profissional orienta os pais.','Vocês não precisam entender isso sozinhos.'],l:'Birra no fim do dia pode ser um sinal de que a criança está cansada e ainda não sabe dizer o que sente. Acolher antes de corrigir costuma ajudar.'}];
+var FILL=['Aqui vem a próxima tela do roteiro.','Mais uma frase curta e acolhedora.','E a última tela do seu vídeo.'];
+var bars=document.getElementById('pp2Bars'),sc=document.getElementById('pp2Sc'),sm=document.getElementById('pp2S'),L=document.getElementById('pp2L'),btns=document.querySelectorAll('.pp2-fs button');
+var t=document.getElementById('pp2T'),i=0,f=0,tm=null,vis=false,auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches);
+for(var q=0;q<6;q++)bars.appendChild(document.createElement('span'));
+function show(n){i=n;var sp=bars.children;for(var k=0;k<sp.length;k++)sp[k].className=k<=n?'on':'';
+var d=F[f],lock=n>=3;sm.textContent=lock?'TELA '+(n+1)+' · NO KIT':'TELA '+(n+1);sm.style.color=d.ac;
+var b=t.cloneNode(false);b.id='pp2T';b.className=lock?'lk':'';b.textContent=lock?FILL[n-3]:d.t[n];t.parentNode.replaceChild(b,t);t=b;}
+function setF(k){f=k;var d=F[k];sc.style.background=d.bg;sc.querySelector('.pp2-tx em').style.background=d.ac;L.textContent=d.l;btns.forEach(function(x,j){x.className=j===k?'on':'';});show(i);}
+function tick(){clearTimeout(tm);if(!auto||!vis)return;tm=setTimeout(function(){show((i+1)%6);tick();},2600);}
+ph.addEventListener('click',function(){show((i+1)%6);tick();});
+btns.forEach(function(x){x.addEventListener('click',function(){setF(+x.dataset.f);i=0;show(0);tick();});});
+setF(0);show(0);if('IntersectionObserver' in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)tick();else clearTimeout(tm);},{threshold:.5}).observe(ph);}
 })();
 </script>
 </body>
