@@ -89,6 +89,50 @@ section{padding:72px 0}
 @keyframes nvp{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media (prefers-reduced-motion:reduce){.nivel-sel.auto button.nvb[aria-pressed="true"]::after{display:none}}
 @media (max-width:480px){.nivel-sel .nvs{gap:6px}.nivel-sel button.nvb{flex:1 1 auto;justify-content:center;font-size:12.5px;padding:8px 8px 8px 7px;gap:5px}.nivel-sel button.nvb svg{width:14px;height:12px}.nivel-sel .nvr{min-height:6.6em}}
+
+/* PROMPT -> POST */
+.pp2{background:var(--creme)}
+.pp2-g{display:grid;grid-template-columns:1.05fr 56px 300px;gap:18px;align-items:center;margin-top:10px}
+.pp2-card{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:22px;box-shadow:0 18px 40px -26px rgba(59,54,51,.45)}
+.pp2-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.pp2-cod{font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc)}
+.pp2-tag{font-size:12px;font-weight:700;color:#3F5A3E;background:var(--salvia-cl);border-radius:99px;padding:4px 10px}
+.pp2-card h3{font-family:"Playfair Display",Georgia,serif;font-size:22px;line-height:1.2;margin:8px 0 12px}
+.pp2-txt{font-size:15px;line-height:1.55;color:var(--texto2)}
+.pp2-txt p{margin:0 0 9px}
+.pp2-txt b{color:var(--grafite)}
+.pp2-txt mark{background:#F3E2D8;color:var(--terra-esc);font-weight:700;border-radius:6px;padding:1px 6px}
+.pp2-more{margin-top:8px;font-size:14px;background:none;border:0;border-radius:0;padding:0}
+.pp2-more summary{padding:0;position:static}
+.pp2-more summary::after{content:none!important}
+.pp2-more p{padding:0}
+.pp2-more summary{cursor:pointer;font-weight:700;color:var(--terra-esc);list-style:none}
+.pp2-more summary::-webkit-details-marker{display:none}
+.pp2-more div{margin-top:8px;font-size:14px;line-height:1.5;color:var(--texto2)}
+.pp2-more div p{margin:0 0 8px}
+.pp2-seg{margin-top:12px;font-size:13px;color:var(--texto2);border-top:1px dashed var(--linha);padding-top:10px}
+.pp2-ar{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--terra-esc);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.pp2-ar svg{width:38px;height:38px}
+.pp2-out{display:flex;flex-direction:column;align-items:center;gap:12px}
+.pp2-ph{position:relative;width:236px;aspect-ratio:9/18.6;background:#3B3633;border-radius:34px;padding:9px;box-shadow:0 26px 40px -22px rgba(59,54,51,.7);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pp2-sc{position:relative;width:100%;height:100%;border-radius:26px;overflow:hidden;background:#F3E2D8;font-family:"Playfair Display",Georgia,serif;transition:background .5s}
+.pp2-sc i.c1{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:rgba(0,0,0,.07);right:-28%;top:-12%}
+.pp2-sc i.c2{position:absolute;width:52%;aspect-ratio:1;border-radius:50%;background:rgba(0,0,0,.05);left:-18%;bottom:-7%}
+.pp2-bars{position:absolute;left:14px;right:14px;top:12px;display:flex;gap:4px;z-index:3}
+.pp2-bars span{flex:1;height:3px;border-radius:3px;background:rgba(59,54,51,.2);overflow:hidden}
+.pp2-bars span.on{background:rgba(59,54,51,.7)}
+.pp2-tx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 26px;z-index:2;color:#3B3633}
+.pp2-tx small{font-family:Montserrat,system-ui,sans-serif;font-size:10px;font-weight:800;letter-spacing:.16em;color:var(--terra-esc);margin-bottom:10px}
+.pp2-tx b{font-size:24px;line-height:1.2;font-weight:700;animation:pp2in .45s ease}
+.pp2-tx em{display:block;width:34px;height:3px;border-radius:2px;background:var(--terra-esc);margin-top:14px}
+.pp2-hd{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:Montserrat,system-ui,sans-serif;font-size:9.5px;font-weight:700;color:rgba(59,54,51,.7);z-index:2}
+@keyframes pp2in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pp2-leg{max-width:300px;background:#fff;border:1px solid var(--linha);border-radius:16px;padding:12px 14px;font-size:13.5px;line-height:1.5;color:var(--texto2)}
+.pp2-leg b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc);margin-bottom:4px}
+.pp2-fim{margin-top:22px;text-align:center;font-size:16px;color:var(--texto2)}
+.pp2-fim small{display:block;margin-top:4px;font-size:13px}
+@media (prefers-reduced-motion:reduce){.pp2-tx b{animation:none}}
+@media (max-width:860px){.pp2-g{grid-template-columns:1fr;gap:10px}.pp2-ar{flex-direction:row;padding:2px 0}.pp2-ar svg{transform:rotate(90deg);width:30px;height:30px}.pp2-ph{width:230px}}
 .porque{background:var(--areia)}
 .porque .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
 .porque .pq{background:var(--creme);border:1px solid var(--linha);border-radius:20px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 36px -26px rgba(59,54,51,.45)}
@@ -1754,6 +1798,34 @@ html,body{overflow-x:clip}
   </div>
 </section>
 
+<!-- 4b3. DO PROMPT AO POST -->
+<section class="pp2" data-secao="prompt-ao-post">
+  <div class="wrap stack">
+    <div class="eyebrow">Do prompt ao post</div>
+    <h2 class="h2">Veja um prompt do kit virar um post</h2>
+    <p class="lead">Este é um dos 102 prompts. Você troca o trecho destacado pelo seu tema, cola na sua IA e recebe o roteiro, em cerca de <b class="t15">15 min</b> no total.</p>
+    <div class="pp2-g">
+      <div class="pp2-card">
+        <div class="pp2-top"><span class="pp2-cod">PS-01 · Educar</span><span class="pp2-tag">1 dos 102 prompts</span></div>
+        <h3>O sinal que passa despercebido</h3>
+        <div class="pp2-txt">
+          <p>Crie um roteiro de Reels/TikTok de 35 a 45 segundos sobre um sinal emocional comum que as pessoas costumam ignorar: <mark>[Sinal, ex.: cansaço que não passa nem nas férias]</mark>. Público: <mark>[Público-alvo]</mark>.</p>
+          <p><b>Regras:</b> não faça diagnóstico (use “pode ser um sinal de”), não prometa cura, resultado ou prazo, não use depoimentos nem casos de pacientes, sem tom alarmista.</p>
+          <p><b>Entregue:</b> 3 ganchos, roteiro com tempo por bloco, versão em texto centralizado (5 a 7 telas), legenda terminando em pergunta e um CTA.</p>
+        </div>
+        <details class="pp2-more"><summary>Ver o prompt completo ▾</summary><div><p><b>Estrutura:</b> gancho com uma cena do dia a dia (0–3s), “você já…” descrevendo o sinal (3–15s), por que ele pode acontecer em linguagem simples (15–35s), fechamento acolhedor dizendo que conversar com um profissional pode ajudar a entender (35–45s).</p><p><b>Regras:</b> não faça diagnóstico (use “pode ser um sinal de”), não prometa cura, resultado ou prazo, não use depoimentos nem casos de pacientes, sem tom alarmista e sem analisar pessoas reais.</p><p><b>Entregue:</b> 3 ganchos (até 10 palavras), roteiro com tempo por bloco, versão em texto centralizado (5 a 7 telas, até 8 palavras cada, com sugestão de vídeo de fundo em câmera lenta), legenda de até 300 caracteres terminando em pergunta e um CTA para [Como agendar].</p></div></details>
+        <p class="pp2-seg">E mais 101 prompts, cada um com 7 temas. Na aba Hoje, o prompt do dia já vem pronto para copiar.</p>
+      </div>
+      <div class="pp2-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>sua IA</div>
+      <div class="pp2-out">
+        <div class="pp2-ph" id="pp2Ph" role="img" aria-label="Exemplo de vídeo com 7 telas de texto centralizado. Toque para avançar."><div class="pp2-sc"><i class="c1"></i><i class="c2"></i><div class="pp2-bars" id="pp2Bars"></div><div class="pp2-tx"><small id="pp2S">TELA 1</small><b id="pp2T">Cansaço que não passa nem nas férias.</b><em></em></div><div class="pp2-hd">Seu nome · Psicóloga · CRP 00/00000</div></div></div>
+        <div class="pp2-leg"><b>Legenda sugerida</b>Cansaço que não passa nem nas férias pode ser um sinal de que algo pede atenção. Nem sempre é só esforço: sono, rotina e emoções se misturam. Conversar com um profissional pode ajudar a entender. E você, quando foi a última vez que descansou de verdade?</div>
+      </div>
+    </div>
+    <p class="pp2-fim"><b>Da ideia ao post em cerca de <span class="t15">15 min</span>.</b><small>Exemplo ilustrativo: a revisão final é sempre sua.</small></p>
+  </div>
+</section>
+
 <!-- 4b2. POR QUE UM PLANO PRONTO AJUDA -->
 <section class="porque" data-secao="por-que-ajuda">
   <div class="wrap stack">
@@ -2355,6 +2427,16 @@ function tick(){clearTimeout(tm);if(!auto||!vis)return;tm=setTimeout(function(){
 function stop(){auto=false;box.classList.remove('auto');clearTimeout(tm);}
 bs.forEach(function(b){b.addEventListener('click',function(){stop();show(+b.dataset.r);});});
 if(auto&&'IntersectionObserver' in window){box.classList.add('auto');new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis){show(cur);tick();}else{clearTimeout(tm);}},{threshold:.6}).observe(box);}
+})();
+</script>
+<script>
+(function(){var ph=document.getElementById('pp2Ph');if(!ph)return;var T=['Cansaço que não passa nem nas férias.','Você já descansou e continuou exausta?','Pode ser um sinal: algo pede atenção.','Sono, rotina e emoções se misturam.','Nem todo cansaço vem só do esforço.','Conversar com um profissional ajuda a entender.','Você não precisa entender isso sozinha.'];
+var bars=document.getElementById('pp2Bars'),t=document.getElementById('pp2T'),sm=document.getElementById('pp2S'),i=0,tm=null,vis=false,auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches);
+T.forEach(function(){bars.appendChild(document.createElement('span'));});
+function show(n){i=n;var sp=bars.children;for(var k=0;k<sp.length;k++)sp[k].className=k<=n?'on':'';sm.textContent='TELA '+(n+1);var b=t.cloneNode(false);b.id='pp2T';b.textContent=T[n];t.parentNode.replaceChild(b,t);t=b;}
+function tick(){clearTimeout(tm);if(!auto||!vis)return;tm=setTimeout(function(){show((i+1)%T.length);tick();},2600);}
+ph.addEventListener('click',function(){show((i+1)%T.length);tick();});
+show(0);if('IntersectionObserver' in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)tick();else clearTimeout(tm);},{threshold:.5}).observe(ph);}
 })();
 </script>
 </body>
