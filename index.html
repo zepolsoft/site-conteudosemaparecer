@@ -14,7 +14,8 @@
 <link rel="icon" href="img/icone.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -1447,22 +1448,22 @@ html,body{overflow-x:clip}
 @media (max-width:720px){.c4-tipo{font-size:12.5px}.c4-redes b{font-size:11.5px;padding:4px 9px}.c4-redes{max-width:230px}.c4-play b{font-size:8px}.c4-play em{font-size:7.5px}}
 @media (prefers-reduced-motion:reduce){.c4-bg,.c4-eq i{animation:none}}
 @media (min-width:721px){.c4-tipo{font-size:9.5px;line-height:1.3}.c4-redes{gap:3px!important}.c4-redes b{font-size:8.5px!important;padding:2px 6px!important}.c4n .c4-ok{font-size:10.5px!important;padding:4px 9px!important}.c4-lado{gap:6px!important}.c4n .c4-fone u{font-size:4.8px}.c4-play{bottom:19px}}
-/* Topo no celular: vídeo logo depois do título */
+/* Topo no celular: título, dor e botão na primeira tela; vídeo logo depois */
 @media (max-width:760px){
   .hero{padding-top:22px}
   .hero .wrap{flex-direction:column;align-items:stretch;gap:18px}
   .hero-txt{display:contents}
   .hero-txt>.publico{order:1;align-self:flex-start}
   .hero-txt>h1{order:2}
-  .hero-vis{order:3;margin:2px 0 6px}
+  .hero-vis{order:5;margin:2px 0 6px}
   .hero-vis .redes-leg,.hero-vis .redes{display:none}
-  .hero-txt>.gancho{order:4}
-  .hero-txt>.hero-lead{order:5}
-  .hero-txt>.selos-facil{order:6}
-  .hero-txt>.hero-cta{order:7}
+  .hero-txt>.gancho{order:3}
+  .hero-txt>.hero-cta{order:4;margin-top:0}
+  .hero-txt>.hero-lead{order:6}
+  .hero-txt>.selos-facil{order:7}
   .hero-txt>.nivel{order:8}
   .hero h1{font-size:clamp(28px,8vw,34px)}
-  .phone{width:250px!important;height:520px!important}
+  .phone{width:236px!important;height:490px!important}
   .fmt{display:none}
 }
 /* Topo celular: título acima do círculo, ícones das redes nas laterais */
