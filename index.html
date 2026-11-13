@@ -169,7 +169,14 @@ section{padding:72px 0}
 .pp2-edbox>b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc);margin-bottom:8px}
 .pp2-edbox .pp2-ed{justify-content:flex-start}
 .pp2-edbox .pp2-edn{text-align:left;max-width:none;margin:8px 0 0}
-.pp2-tap{margin:0;font-size:12px;color:var(--texto2);text-align:center}
+.pp2-play{position:absolute;left:20px;right:20px;bottom:38px;z-index:3;display:flex;align-items:center;gap:6px;font-family:Montserrat,system-ui,sans-serif;color:#3B3633}
+.pp2-play b{font-size:11px}
+.pp2-play .c4-eq{height:12px;gap:2px}
+.pp2-play .c4-eq i{width:3px!important;background:var(--terra-esc)!important}
+.pp2-mu{font-size:12px;color:var(--terra-esc);font-weight:800}
+.pp2-play em{margin-left:auto;font-style:normal;font-size:10.5px;font-weight:700}
+@media (prefers-reduced-motion:reduce){.pp2-play .c4-eq i{animation:none}}
+.pp2-tap{max-width:250px;margin:0;font-size:12px;color:var(--texto2);text-align:center}
 @media (max-width:1020px){.pp2-res{grid-template-columns:1fr;justify-items:center}.pp2-side{width:100%}}
 @media (max-width:860px){.pp2-col3{position:static}.pp2-g{grid-template-columns:1fr;gap:18px}.pp2-col3{gap:12px}.pp2-fd div{grid-template-columns:86px 1fr}.pp2-ph{width:230px}.pp2-res{padding:18px 14px}}
 @media (prefers-reduced-motion:reduce){.pp2-tx b{animation:none}}
@@ -1873,8 +1880,8 @@ html,body{overflow-x:clip}
         <div class="pp2-step"><span class="pp2-n">3</span><div><b>O post que a sua IA entrega</b><small>Título e texto de cada tela vêm do prompt</small></div></div>
         <div class="pp2-res">
           <div class="pp2-out">
-        <div class="pp2-ph" id="pp2Ph" role="img" aria-label="Exemplo de vídeo de texto centralizado com 6 telas. Toque para avançar."><div class="pp2-sc" id="pp2Sc"><i class="c1"></i><i class="c2"></i><div class="pp2-bars" id="pp2Bars"></div><div class="pp2-tx"><small id="pp2S">TELA 1</small><b id="pp2T"></b><em></em></div><div class="pp2-hd">Seu nome · Psicóloga · CRP 00/00000</div></div></div>
-            <p class="pp2-tap">Toque no celular para avançar</p>
+        <div class="pp2-ph" id="pp2Ph" role="img" aria-label="Exemplo de vídeo de texto centralizado com 6 telas. Toque para avançar."><div class="pp2-sc" id="pp2Sc"><i class="c1"></i><i class="c2"></i><div class="pp2-bars" id="pp2Bars"></div><div class="pp2-tx"><small id="pp2S">TELA 1</small><b id="pp2T"></b><em></em></div><div class="pp2-play" aria-hidden="true"><b>▶</b><span class="c4-eq"><i></i><i></i><i></i><i></i></span><span class="pp2-mu">♪</span><em id="pp2Tm2">0:00</em></div><div class="pp2-hd">Seu nome · Psicóloga · CRP 00/00000</div></div></div>
+            <p class="pp2-tap">🎬 Vídeo MP4 com música · toque para avançar</p>
           </div>
           <div class="pp2-side">
         <div class="pp2-leg"><b>Legenda sugerida</b><span id="pp2L"></span> <span class="pp2-bl" aria-hidden="true">Mais uma frase de fechamento e a pergunta para quem assiste.</span></div>
@@ -2500,7 +2507,7 @@ var bars=document.getElementById('pp2Bars'),sc=document.getElementById('pp2Sc'),
 var t=document.getElementById('pp2T'),i=0,f=0,tm=null,vis=false,auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches);
 for(var q=0;q<6;q++)bars.appendChild(document.createElement('span'));
 function show(n){i=n;var sp=bars.children;for(var k=0;k<sp.length;k++)sp[k].className=k<=n?'on':'';
-var d=F[f],lock=n>=3;sm.textContent=lock?'TELA '+(n+1)+' · NO KIT':LAB[n];sm.style.color=d.ac;
+var d=F[f],lock=n>=3;sm.textContent=lock?'TELA '+(n+1)+' · NO KIT':LAB[n];sm.style.color=d.ac;document.getElementById('pp2Tm2').textContent='0:0'+(n*2);
 var b=t.cloneNode(false);b.id='pp2T';b.className=lock?'lk':'';b.textContent=lock?FILL[n-3]:d.t[n];t.parentNode.replaceChild(b,t);t=b;}
 function setF(k){f=k;var d=F[k];sc.style.background=d.bg;sc.querySelector('.pp2-tx em').style.background=d.ac;L.textContent=d.l;document.getElementById('pp2A').textContent=d.a;document.getElementById('pp2P').textContent=d.p;document.getElementById('pp2Tm').textContent=d.m;btns.forEach(function(x,j){x.className=j===k?'on':'';});show(i);}
 function tick(){clearTimeout(tm);if(!auto||!vis)return;tm=setTimeout(function(){show((i+1)%6);tick();},2600);}
