@@ -92,7 +92,7 @@ section{padding:72px 0}
 
 /* PROMPT -> POST */
 .pp2{background:var(--creme)}
-.pp2-g{display:grid;grid-template-columns:1.05fr 56px 300px;gap:18px;align-items:center;margin-top:10px}
+.pp2-g{display:grid;grid-template-columns:1.08fr 1fr;gap:22px;align-items:start;margin-top:10px}
 .pp2-card{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:22px;box-shadow:0 18px 40px -26px rgba(59,54,51,.45)}
 .pp2-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
 .pp2-cod{font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc)}
@@ -148,8 +148,31 @@ section{padding:72px 0}
 .pp2-ar span{text-align:center;line-height:1.3}
 .pp2-fim{margin-top:22px;text-align:center;font-size:16px;color:var(--texto2)}
 .pp2-fim small{display:block;margin-top:4px;font-size:13px}
+.pp2-col3{position:sticky;top:92px}
+.pp2-col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.pp2-step{display:flex;gap:12px;align-items:center;margin-top:6px}
+.pp2-step:first-child{margin-top:0}
+.pp2-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--terra-esc);color:#fff;font-weight:800;font-size:16px;display:grid;place-items:center;box-shadow:0 0 0 5px #F3E2D8}
+.pp2-step b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:19px;line-height:1.2;color:var(--grafite)}
+.pp2-step small{display:block;font-size:13px;color:var(--texto2);margin-top:2px;line-height:1.35}
+.pp2-fch{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:18px 20px;box-shadow:0 18px 40px -30px rgba(59,54,51,.45)}
+.pp2-fch .pp2-fs{justify-content:flex-start}
+.pp2-fd{margin:14px 0 0;display:grid;gap:8px}
+.pp2-fd div{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:baseline;font-size:14.5px}
+.pp2-fd dt{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-esc)}
+.pp2-fd dd{margin:0;color:var(--grafite);font-weight:600}
+.pp2-fch .pp2-seg{margin-top:12px}
+.pp2-res{background:linear-gradient(180deg,#fff,#FBF3EC);border:1px solid var(--linha);border-radius:22px;padding:22px 18px;display:grid;grid-template-columns:236px 1fr;gap:22px;align-items:center;box-shadow:0 18px 40px -30px rgba(59,54,51,.45)}
+.pp2-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.pp2-side .pp2-leg{max-width:none}
+.pp2-edbox{background:#fff;border:1px dashed #D9B9A6;border-radius:16px;padding:12px 14px}
+.pp2-edbox>b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc);margin-bottom:8px}
+.pp2-edbox .pp2-ed{justify-content:flex-start}
+.pp2-edbox .pp2-edn{text-align:left;max-width:none;margin:8px 0 0}
+.pp2-tap{margin:0;font-size:12px;color:var(--texto2);text-align:center}
+@media (max-width:1020px){.pp2-res{grid-template-columns:1fr;justify-items:center}.pp2-side{width:100%}}
+@media (max-width:860px){.pp2-col3{position:static}.pp2-g{grid-template-columns:1fr;gap:18px}.pp2-col3{gap:12px}.pp2-fd div{grid-template-columns:86px 1fr}.pp2-ph{width:230px}.pp2-res{padding:18px 14px}}
 @media (prefers-reduced-motion:reduce){.pp2-tx b{animation:none}}
-@media (max-width:860px){.pp2-g{grid-template-columns:1fr;gap:10px}.pp2-ar{flex-direction:row;padding:2px 0}.pp2-ar svg{transform:rotate(90deg);width:30px;height:30px}.pp2-ph{width:230px}}
 .porque{background:var(--areia)}
 .porque .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
 .porque .pq{background:var(--creme);border:1px solid var(--linha);border-radius:20px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 36px -26px rgba(59,54,51,.45)}
@@ -1822,6 +1845,8 @@ html,body{overflow-x:clip}
     <h2 class="h2">Veja um prompt do kit virar um post</h2>
     <p class="lead">Este é um dos 102 prompts. O mesmo prompt gera textos diferentes, porque o post nasce da <b>sua Ficha</b>: a sua abordagem, o seu público e o seu tom. Em cerca de <b class="t15">15 min</b>, da ideia ao post.</p>
     <div class="pp2-g">
+      <div class="pp2-col">
+        <div class="pp2-step"><span class="pp2-n">1</span><div><b>O prompt do kit</b><small>Você copia e cola na sua IA</small></div></div>
       <div class="pp2-card">
         <div class="pp2-top"><span class="pp2-cod">PS-01 · Educar</span><span class="pp2-tag">1 dos 102 prompts</span></div>
         <h3>O sinal que passa despercebido</h3>
@@ -1834,18 +1859,29 @@ html,body{overflow-x:clip}
         <div class="pp2-chips"><span>Sem diagnóstico</span><span>Sem promessa</span><span>Sem depoimentos</span></div>
         <p class="pp2-seg"><b>+ mais no kit:</b> 101 prompts, cada um com 7 temas. Na aba Hoje, o prompt do dia já vem pronto para copiar.</p>
       </div>
-      <div class="pp2-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span>sua IA<br>+ sua Ficha</span></div>
-      <div class="pp2-out">
-        <div class="pp2-fs" role="group" aria-label="Escolha uma Ficha para ver o resultado">
-          <small>Ficha de:</small>
-          <button type="button" class="on" data-f="0">Ana · TCC · adultos</button>
-          <button type="button" data-f="1">Júlia · Infantil · pais</button>
+        <div class="pp2-step"><span class="pp2-n">2</span><div><b>Sua Ficha muda o resultado</b><small>Você preenche uma vez, em cerca de 10 min. Toque para comparar:</small></div></div>
+        <div class="pp2-fch">
+          <div class="pp2-fs" role="group" aria-label="Escolha uma Ficha para ver o resultado">
+            <button type="button" class="on" data-f="0">Ana · TCC · adultos</button>
+            <button type="button" data-f="1">Júlia · Infantil · pais</button>
+          </div>
+          <dl class="pp2-fd"><div><dt>Abordagem</dt><dd id="pp2A"></dd></div><div><dt>Público</dt><dd id="pp2P"></dd></div><div><dt>Tom</dt><dd id="pp2Tm"></dd></div></dl>
+          <p class="pp2-seg"><b>+ 14 perguntas</b> na Ficha (são 17 no total). A sua IA usa todas, em todos os posts.</p>
         </div>
-        <p class="pp2-gen">Gerado pelo prompt: o título e o texto de cada tela</p>
+      </div>
+      <div class="pp2-col pp2-col3">
+        <div class="pp2-step"><span class="pp2-n">3</span><div><b>O post que a sua IA entrega</b><small>Título e texto de cada tela vêm do prompt</small></div></div>
+        <div class="pp2-res">
+          <div class="pp2-out">
         <div class="pp2-ph" id="pp2Ph" role="img" aria-label="Exemplo de vídeo de texto centralizado com 6 telas. Toque para avançar."><div class="pp2-sc" id="pp2Sc"><i class="c1"></i><i class="c2"></i><div class="pp2-bars" id="pp2Bars"></div><div class="pp2-tx"><small id="pp2S">TELA 1</small><b id="pp2T"></b><em></em></div><div class="pp2-hd">Seu nome · Psicóloga · CRP 00/00000</div></div></div>
-        <div class="pp2-ed"><span>Cores</span><span>Texto</span><span>Música</span><span>Estilo</span><span>Fontes</span></div>
-        <p class="pp2-edn">Tudo editável no Canva ou no CapCut. Os modelos de vídeo prontos vêm no Pack opcional.</p>
+            <p class="pp2-tap">Toque no celular para avançar</p>
+          </div>
+          <div class="pp2-side">
         <div class="pp2-leg"><b>Legenda sugerida</b><span id="pp2L"></span> <span class="pp2-bl" aria-hidden="true">Mais uma frase de fechamento e a pergunta para quem assiste.</span></div>
+            <div class="pp2-edbox"><b>Tudo editável</b><div class="pp2-ed"><span>Cores</span><span>Texto</span><span>Música</span><span>Estilo</span><span>Fontes</span></div>
+            <p class="pp2-edn">No Canva ou no CapCut. Os modelos de vídeo prontos vêm no Pack opcional.</p></div>
+          </div>
+        </div>
       </div>
     </div>
     <p class="pp2-fim"><b>O mesmo prompt, outra Ficha, outro post. Não é igual para todo mundo.</b><small>Feito com atenção às orientações do CFP. Exemplo ilustrativo: a revisão final é sempre sua.</small></p>
@@ -2457,8 +2493,8 @@ if(auto&&'IntersectionObserver' in window){box.classList.add('auto');new Interse
 </script>
 <script>
 (function(){var ph=document.getElementById('pp2Ph');if(!ph)return;
-var F=[{bg:'#F3E2D8',ac:'#A45F3F',t:['Cansaço que não passa nem nas férias.','Você já descansou e continuou exausta?','Pode ser um sinal: algo pede atenção.','Nem todo cansaço vem só do esforço.','Conversar com um profissional ajuda a entender.','Você não precisa entender isso sozinha.'],l:'Cansaço que não passa nem nas férias pode ser um sinal de que algo pede atenção. Nem sempre é só esforço.'},
-{bg:'#DCE8F1',ac:'#3F6E94',t:['Birra no fim do dia? Acontece.','Pode ser um sinal: a criança está cansada.','Ela ainda não sabe nomear o que sente.','Acolher primeiro costuma ajudar.','Conversar com um profissional orienta os pais.','Vocês não precisam entender isso sozinhos.'],l:'Birra no fim do dia pode ser um sinal de que a criança está cansada e ainda não sabe dizer o que sente. Acolher antes de corrigir costuma ajudar.'}];
+var F=[{bg:'#F3E2D8',ac:'#A45F3F',t:['Cansaço que não passa nem nas férias.','Você já descansou e continuou exausta?','Pode ser um sinal: algo pede atenção.','Nem todo cansaço vem só do esforço.','Conversar com um profissional ajuda a entender.','Você não precisa entender isso sozinha.'],a:'TCC (Terapia Cognitivo-Comportamental)',p:'Adultos com cansaço e estresse',m:'Acolhedor e direto',l:'Cansaço que não passa nem nas férias pode ser um sinal de que algo pede atenção. Nem sempre é só esforço.'},
+{bg:'#DCE8F1',ac:'#3F6E94',t:['Birra no fim do dia? Acontece.','Pode ser um sinal: a criança está cansada.','Ela ainda não sabe nomear o que sente.','Acolher primeiro costuma ajudar.','Conversar com um profissional orienta os pais.','Vocês não precisam entender isso sozinhos.'],a:'Psicologia infantil',p:'Pais de crianças pequenas',m:'Leve e tranquilizador',l:'Birra no fim do dia pode ser um sinal de que a criança está cansada e ainda não sabe dizer o que sente. Acolher antes de corrigir costuma ajudar.'}];
 var LAB=['GANCHO','VOCÊ JÁ…?','O SINAL'];var FILL=['Aqui vem a próxima tela do roteiro.','Mais uma frase curta e acolhedora.','E a última tela do seu vídeo.'];
 var bars=document.getElementById('pp2Bars'),sc=document.getElementById('pp2Sc'),sm=document.getElementById('pp2S'),L=document.getElementById('pp2L'),btns=document.querySelectorAll('.pp2-fs button');
 var t=document.getElementById('pp2T'),i=0,f=0,tm=null,vis=false,auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches);
@@ -2466,7 +2502,7 @@ for(var q=0;q<6;q++)bars.appendChild(document.createElement('span'));
 function show(n){i=n;var sp=bars.children;for(var k=0;k<sp.length;k++)sp[k].className=k<=n?'on':'';
 var d=F[f],lock=n>=3;sm.textContent=lock?'TELA '+(n+1)+' · NO KIT':LAB[n];sm.style.color=d.ac;
 var b=t.cloneNode(false);b.id='pp2T';b.className=lock?'lk':'';b.textContent=lock?FILL[n-3]:d.t[n];t.parentNode.replaceChild(b,t);t=b;}
-function setF(k){f=k;var d=F[k];sc.style.background=d.bg;sc.querySelector('.pp2-tx em').style.background=d.ac;L.textContent=d.l;btns.forEach(function(x,j){x.className=j===k?'on':'';});show(i);}
+function setF(k){f=k;var d=F[k];sc.style.background=d.bg;sc.querySelector('.pp2-tx em').style.background=d.ac;L.textContent=d.l;document.getElementById('pp2A').textContent=d.a;document.getElementById('pp2P').textContent=d.p;document.getElementById('pp2Tm').textContent=d.m;btns.forEach(function(x,j){x.className=j===k?'on':'';});show(i);}
 function tick(){clearTimeout(tm);if(!auto||!vis)return;tm=setTimeout(function(){show((i+1)%6);tick();},2600);}
 ph.addEventListener('click',function(){show((i+1)%6);tick();});
 btns.forEach(function(x){x.addEventListener('click',function(){setF(+x.dataset.f);i=0;show(0);tick();});});
