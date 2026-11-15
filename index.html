@@ -141,9 +141,9 @@ section{padding:72px 0}
 .pp2-fs button.on{background:var(--terra-esc);border-color:var(--terra-esc);color:#fff}
 .pp2-fs button.mine{border-style:dashed;color:var(--terra-esc)}.pp2-fs button.mine.on{border-style:solid;color:#fff}
 .pp2-fd dd.mn{color:#8A7F77;font-weight:500}
-.pp2-ed{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.pp2-ed{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .pp2-ed span{font-size:12px;font-weight:700;color:var(--terra-esc);background:#F3E2D8;border-radius:99px;padding:4px 10px}
-.pp2-ed span::before{content:"✎ "}
+.pp2-ed span{display:flex;align-items:center;gap:6px;border-radius:12px;padding:7px 10px}.pp2-ed span i{font-style:normal;font-size:12px;width:18px;text-align:center;flex:none}.pp2-ed span.mais{background:transparent;border:1px dashed #D9B9A6;justify-content:center;font-weight:600}
 .pp2-gen{margin:0;font-size:12.5px;font-weight:700;color:#3F5A3E;background:var(--salvia-cl);border-radius:99px;padding:5px 12px;text-align:center}
 .pp2-edn{font-size:12.5px;color:var(--texto2);text-align:center;max-width:290px;margin:-4px 0 0}
 .pp2-tx b.lk{filter:blur(7px);user-select:none}
@@ -170,7 +170,7 @@ section{padding:72px 0}
 .pp2-side .pp2-leg{max-width:none}
 .pp2-edbox{background:#fff;border:1px dashed #D9B9A6;border-radius:16px;padding:12px 14px}
 .pp2-edbox>b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-esc);margin-bottom:8px}
-.pp2-edbox .pp2-ed{justify-content:flex-start}
+.pp2-edbox .pp2-edn b{color:var(--grafite)}.pp2-edbox .pp2-edn2{font-size:12.5px;color:#8A7F77;margin:6px 0 0;text-align:left}
 .pp2-edbox .pp2-edn{text-align:left;max-width:none;margin:8px 0 0}
 .pp2-play{position:absolute;left:20px;right:20px;bottom:38px;z-index:3;display:flex;align-items:center;gap:6px;font-family:Montserrat,system-ui,sans-serif;color:#3B3633}
 .pp2-play b{font-size:11px}
@@ -1694,7 +1694,7 @@ html,body{overflow-x:clip}
           <small class="fx-nome">Chegada: no ar</small>
           <h3>Monte e publique</h3>
           <div class="cena c4 c4n" aria-hidden="true"><span class="c4-fone"><span class="c4-bg"></span><em class="c4-di"></em><span class="c4-segs"><i></i><i></i><i></i></span><small id="fx-ey">MITO</small><span id="fx-fone">Terapia é só para quem está em crise.</span><i class="c4-ln"></i><span class="c4-play"><b>▶</b><span class="c4-eq"><i></i><i></i><i></i><i></i></span><em>0:12</em></span><u>Seu nome · Psicóloga · CRP</u></span><span class="c4-lado"><span class="c4-tipo">🎬 Vídeo MP4 com música</span><span class="c4-ok">✓ Publicado</span><span class="c4-redes"><b>Instagram</b><b>Facebook</b><b>TikTok</b><b>Reels</b><b>Stories</b><b>Feed</b></span></span></div>
-          <p>No Canva ou no CapCut: texto no centro, vídeo de fundo e música. Com os modelos do Pack, é só trocar o texto e leva menos. Nos primeiros posts, pode levar um pouco mais. Revise e poste.</p>
+          <p>No Canva (versão grátis) ou no CapCut: texto no centro, vídeo de fundo e música. O Guia mostra o passo a passo, com prints. Com os modelos do Pack, é só trocar o texto e leva menos. Nos primeiros posts, pode levar um pouco mais. Revise e poste.</p>
         </li>
       </ol>
       <p class="fx-fim">Depois da Ficha, cada dia é um novo destino: é só repetir os passos 2, 3 e 4.</p>
@@ -1760,7 +1760,7 @@ html,body{overflow-x:clip}
           <span class="pal-n sw">Sálvia</span>
         </div>
         <b><em>3</em>O seu visual</b>
-        <p>Cores, fontes e fundo: você escolhe no Canva e muda quando quiser.</p>
+        <p>Cores, fontes e fundo: você escolhe no Canva (grátis) e muda quando quiser.</p>
       </div>
     </div>
     <div class="id-dots" id="id-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
@@ -1908,8 +1908,9 @@ html,body{overflow-x:clip}
           </div>
           <div class="pp2-side">
         <div class="pp2-leg"><b>Legenda sugerida</b><span id="pp2L"></span> <span class="pp2-bl" aria-hidden="true">Mais uma frase de fechamento e a pergunta para quem assiste.</span></div>
-            <div class="pp2-edbox"><b>Tudo editável</b><div class="pp2-ed"><span>Cores</span><span>Texto</span><span>Música</span><span>Estilo</span><span>Fontes</span></div>
-            <p class="pp2-edn">No Canva ou no CapCut. Os modelos de vídeo prontos vêm no Pack opcional.</p></div>
+            <div class="pp2-edbox"><b>✎ Tudo editável</b><div class="pp2-ed"><span><i>🎨</i>Cores</span><span><i>Aa</i>Fontes</span><span><i>✍</i>Texto</span><span><i>♪</i>Música</span><span><i>✦</i>Estilo</span><span class="mais">e mais…</span></div>
+            <p class="pp2-edn"><b>Nunca usou o Canva ou o CapCut? Tudo bem.</b> O Guia mostra o passo a passo, com prints. É simples e a versão grátis já serve.</p>
+            <p class="pp2-edn2">Quer ainda menos trabalho? O Pack opcional traz modelos de vídeo prontos.</p></div>
           </div>
         </div>
       </div>
