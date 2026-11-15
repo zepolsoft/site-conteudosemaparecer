@@ -1421,6 +1421,24 @@ html,body{overflow-x:clip}
 }
 @media (max-width:720px){.c2n .c2-t{font-size:16px}.c2n .c2-p{font-size:16px}.c2n .c2-tema{font-size:14px}.c2-grid small{font-size:9.5px}.c3n .c3-r b{font-size:13.5px}.c3n .c3-r i{font-size:9.5px}.c4n .c4-fone{width:96px;height:196px}}
 @media (prefers-reduced-motion:reduce){.c4-redes{opacity:1}}
+/* Passo 3: roteiro com 5 a 6 telas, editável */
+.c3n{height:auto!important;min-height:150px}
+.c3n .c3-ok{display:flex;align-items:center;gap:6px;margin:2px 10px 0;font-size:11px;line-height:1.2}
+.c3n .c3-ok b{font-weight:800;color:#4F6B4D}.c3n .c3-ok em{font-style:normal;color:#8A7F77}
+.c3n .c3-ok u{text-decoration:none;margin-left:auto;background:#FFF3CD;border:1px solid #F0D98A;border-radius:99px;padding:1px 8px;font-weight:700;font-size:10px;color:#7A5A00;white-space:nowrap}
+.c3n .c3-r{position:relative;padding-right:26px!important}
+.c3n .c3-r u{position:absolute;right:8px;top:50%;transform:translateY(-50%);text-decoration:none;font-size:12px;color:var(--terra-esc);opacity:.65}
+.c3n .c3-r.c3ed{background:#FFF9E6;border-color:#F0D98A}
+.c3n .c3-r.c3ed b::after{content:"";display:inline-block;width:1.5px;height:1em;background:var(--terra-esc);margin-left:2px;vertical-align:-2px;animation:blk 1s steps(1) infinite}
+.c3n .c3-r.c3ed u{opacity:1}
+@keyframes blk{50%{opacity:0}}
+.c3-mais{display:flex;flex-wrap:wrap;gap:4px;margin:0 10px}
+.c3-mais b{font-size:9.5px;font-weight:700;border:1px dashed #D9C9B8;border-radius:6px;padding:2px 7px;color:#8A7F77;background:#FDFBF8}
+.c3-mais b:last-child{border-style:solid;border-color:#EAD9C8;color:var(--terra-esc)}
+.fx.on .c3n>*:nth-child(5){animation-delay:1.8s}.fx.on .c3n>*:nth-child(6){animation-delay:2.25s}.fx.on .c3n>*:nth-child(7){animation-delay:2.7s}
+@media (min-width:721px){.fx .c3n{height:auto!important;min-height:214px}.c3n .c3-ok{font-size:10px}.c3n .c3-ok em{display:none}.c3n .c3-ok u{margin-left:0}.c3n .c3-ok b{margin-right:auto}}
+@media (max-width:720px){.c3n .c3-ok{font-size:12px}.c3n .c3-ok u{font-size:11px}.c3-mais b{font-size:11px}}
+
 /* Presença: carimbo sempre dentro do quadro */
 .idv-sel{padding:10px}.cimb{max-width:100%}
 @media (max-width:860px){.cimb{transform:rotate(-4deg) scale(.92)!important}.js-anim .id3.on .cimb{animation:none;opacity:1}}
@@ -1666,8 +1684,8 @@ html,body{overflow-x:clip}
           <div class="fx-top"><span class="fx-num">3</span><span class="fx-t">2 min</span></div>
           <small class="fx-nome">Rota traçada</small>
           <h3>Cole o prompt na IA</h3>
-          <div class="cena c3 c3n" aria-hidden="true"><span class="c3-h"><i></i><b>Sua IA</b><small>ChatGPT, Claude, Gemini ou outra IA</small></span><span class="c3-eu">Prompt do dia colado ✓</span><span class="c3-r"><i>Tela 1</i><b id="fx-r1"></b></span><span class="c3-r"><i>Tela 2</i><b id="fx-r2"></b></span><span class="c3-r"><i>Tela 3</i><b id="fx-r3"></b></span></div>
-          <p>No ChatGPT, Claude, Gemini ou outra IA. O roteiro sai pronto, no formato sem aparecer.</p>
+          <div class="cena c3 c3n" aria-hidden="true"><span class="c3-h"><i></i><b>Sua IA</b><small>ChatGPT, Claude, Gemini ou outra IA</small></span><span class="c3-eu">Prompt do dia colado ✓</span><span class="c3-ok"><b>Roteiro pronto</b><em>5 a 6 telas + legenda</em><u>✎ editável</u></span><span class="c3-r"><i>Tela 1</i><b id="fx-r1"></b><u>✎</u></span><span class="c3-r c3ed"><i>Tela 2</i><b id="fx-r2"></b><u>✎</u></span><span class="c3-r"><i>Tela 3</i><b id="fx-r3"></b><u>✎</u></span><span class="c3-mais"><b>Tela 4</b><b>Tela 5</b><b>Tela 6</b><b>Legenda</b><b>e mais</b></span></div>
+          <p>No ChatGPT, Claude, Gemini ou outra IA, o roteiro sai pronto: 5 a 6 telas e a legenda. Tudo editável: mude uma frase, peça outra versão ou ajuste o tom.</p>
         </li>
         <li class="fx" data-min="15">
           <div class="fx-top"><span class="fx-num">4</span><span class="fx-t">≈ 12 min</span></div>
@@ -2326,7 +2344,7 @@ document.querySelectorAll('.faq details').forEach(function(d){
          4:['Perguntas Frequentes','#EFE9F7','"Como é a primeira conversa"',['Primeira sessão: o que acontece?','A gente se conhece, sem pressa.','Você fala só o que quiser.'],'PERGUNTA','Como é a primeira sessão?'],
          5:['Convite','#FBE7E7','"Para quem não sabe por onde começar"',['Não sabe por onde começar?','Tudo bem não ter as palavras.','A primeira conversa ajuda nisso.'],'CONVITE','Não sabe por onde começar?'],
          6:['Reaproveitar','#F2F3F4','"O vídeo mais salvo da semana"',['Capa: o tema mais salvo.','A ideia principal.','Um exemplo do dia a dia.'],'CARROSSEL','O post mais salvo da semana.'],
-         0:['Planejar','#F2F3F4','"Escolher a pergunta da caixinha de quarta-feira"',['Seg: Você já sentiu isso?','Ter: Mito ou verdade?','Qua: a pergunta da caixinha.'],'PLANEJAR','A semana já tem ganchos.']};
+         0:['Planejar','#F2F3F4','"Escolher a pergunta da caixinha de quarta-feira"',['A semana começa planejada.','Três ganchos já escolhidos.','Falta a pergunta da caixinha.'],'PLANEJAR','A semana já tem ganchos.']};
   var m=M[d.getDay()]; if($('fx-data')) $('fx-data').textContent=('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+'/'+d.getFullYear();
   $('fx-dia').textContent='Hoje · '+N[d.getDay()]+', '+('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2);
   $('fx-pilar').textContent=m[0]; $('fx-pilar').style.background=m[1]; $('fx-tema').textContent=m[2];
